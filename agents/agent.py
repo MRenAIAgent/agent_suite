@@ -101,7 +101,6 @@ class Agent(ABC):
             Results from executing the tool calls
         """
         results = []
-        import pdb; pdb.set_trace()
         for tool_call in tool_calls:
             # Find matching tool
             tool_name = tool_call.function.name
