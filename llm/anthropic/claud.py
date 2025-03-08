@@ -20,7 +20,7 @@ class ClaudLLM(LLMBase):
         api_key = os.getenv("ANTHROPIC_API_KEY")
         return cls(api_key=api_key)
 
-    def chat_completion(self, model: str, messages: list, tools: list = None, stream: bool = False):
+    def chat_completion(self, model: str, messages: list, tools: list = None, stream: bool = False, **kwargs):
         """Create a chat completion using the LLM.
         
         Args:
@@ -31,9 +31,10 @@ class ClaudLLM(LLMBase):
             model=model,
             messages=messages,
             tools=tools,
-            stream=stream
+            stream=stream,
+            **kwargs
         )
-        return response.choices[0].message.content
+        return response
 
     def get_client(self):
         """Returns the OpenAI client instance."""

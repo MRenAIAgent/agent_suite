@@ -40,19 +40,18 @@ class Tool(BaseModel):
         Returns:
             Dict: Function definition in OpenAI format
         """
-        # Get all class attributes that don't start with _ 
-        params = {
-            name: getattr(self, name) 
-            for name in dir(self) 
-            if not name.startswith('_') and not callable(getattr(self, name))
-        }
+        # Get model fields from Pydantic
+        schema = self.model_json_schema()
         
         return {
-            "name": self.__class__.__name__.lower(),
-            "description": self.__doc__,
-            "parameters": {
-                "type": "object",
-                "properties": params,
-                "required": list(params.keys())
+            "type": "function",
+            "function": {
+                "name": self.__class__.__name__.lower(),
+                "description": self.__doc__.strip() if self.__doc__ else "",
+                "parameters": {
+                    "type": "object",
+                    "properties": schema.get("properties", {}),
+                    "required": schema.get("required", [])
+                }
             }
         }

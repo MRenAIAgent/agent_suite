@@ -9,7 +9,7 @@ class LLMExecutionPattern:
     3. How to handle intermediate steps vs final answers
     """
 
-    def parse_llm_response(self, response: str) -> Dict[str, Any]:
+    def parse_llm_response(self, response: Dict[str, Any]) -> Dict[str, Any]:
         """Parse raw LLM response into structured format.
         
         Args:

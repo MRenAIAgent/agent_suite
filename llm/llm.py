@@ -18,12 +18,15 @@ class LLMBase(ABC):
         pass
 
     @abstractmethod
-    def chat_completion(self, model: str, messages: list, tools: list = None, stream: bool = False):
+    def chat_completion(self, model: str, messages: list, tools: list = None, stream: bool = False, **kwargs):
         """Create a chat completion using the LLM.
         
         Args:
+            model (str): The model to use for completion
             messages (list): List of message dictionaries
-            stream (bool): Whether to stream the response
+            tools (list, optional): List of tools available to the model
+            stream (bool, optional): Whether to stream the response
+            tool_choice (str, optional): Specify which tool to use
+            **kwargs: Additional parameters to pass to the LLM
         """
         pass
-

@@ -6,6 +6,7 @@ from llm.llm import LLMBase
 from pydantic import Field
 from tools.tool import Tool
 from typing import Any, Dict, Optional
+from agents.prompt import PromptManager
 
 
 class CalendlyTool(Tool):
@@ -76,7 +77,8 @@ class CalendarAgent(Agent):
         Help users schedule meetings efficiently while ensuring all required information is collected."""
         
         tools = [CalendlyTool()]
-        super().__init__(llm, system_prompt, tools)
+        prompt_manager = PromptManager(system_prompt, tools)
+        super().__init__(llm, prompt_manager, tools)
 
 
 def main():
@@ -90,7 +92,7 @@ def main():
     request = """Schedule a 30 minute meeting with John Smith (john.smith@email.com) 
                  tomorrow at 2pm for a project review."""
     
-    response = agent.process(request, model="gpt-3.5-turbo")
+    response = agent.run(request, model="gpt-3.5-turbo")
     print("Scheduling Result:")
     print(response)
 

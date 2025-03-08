@@ -1,6 +1,7 @@
 from abc import ABC
 from datetime import datetime
 from typing import List
+import json
 
 from llm.llm import LLMBase
 from agents.prompt import PromptManager
@@ -12,15 +13,16 @@ from tools.tool import Tool
 class Agent(ABC):
     """Base class for AI agents."""
     
-    def __init__(self, llm: LLMBase, system_prompt: str, tools: List[Tool] = None):
+    def __init__(self, llm: LLMBase, prompt_manager: PromptManager, tools: List[Tool] = None):
         self.llm = llm
-        self.prompt_manager = PromptManager(system_prompt)
+        self.prompt_manager = prompt_manager
         self.memory_manager = MemoryManager()
         self.cache_manager = CacheManager()
         self.log_manager = LogManager()
         self.tools = tools
-        
-    async def aprocess(self, user_input: str, model: str) -> str:
+        self.max_iterations = 5
+
+    async def arun(self, user_input: str, model: str) -> str:
         """Process user input asynchronously and return response."""
         messages = self.prompt_manager.get_messages(
             user_input,
@@ -28,10 +30,10 @@ class Agent(ABC):
         )
         
         while True:
-            response = await self.llm.chat_completion(
+            response = self.llm.chat_completion(
                 model=model,
                 messages=messages,
-                tools=self.tools
+                tools=[tool.convert_to_function_call() for tool in self.tools]
             )
             
             if not response.tool_calls:
@@ -60,10 +62,9 @@ class Agent(ABC):
             model=model,
             timestamp=datetime.now().isoformat()
         )
-        
         return response
     
-    def process(self, user_input: str, model: str) -> str:
+    def run(self, user_input: str, model: str) -> str:
         """Process user input synchronously and return response."""
         messages = self.prompt_manager.get_messages(
             user_input,
@@ -100,14 +101,16 @@ class Agent(ABC):
             Results from executing the tool calls
         """
         results = []
+        import pdb; pdb.set_trace()
         for tool_call in tool_calls:
             # Find matching tool
             tool_name = tool_call.function.name
             tool = next((t for t in self.tools if t.__class__.__name__.lower() == tool_name), None)
             
             if tool:
+                arguments = json.loads(tool_call.function.arguments)
                 # Execute tool with provided arguments
-                result = await tool.arun(**tool_call.function.arguments)
+                result = await tool.arun(**arguments)
                 results.append(result)
         
         return results

@@ -18,7 +18,7 @@ class LiteLLM(LLMBase):
         """
         return cls()
 
-    def chat_completion(self, model: str, messages: list, tools: list = None, stream: bool = False):
+    def chat_completion(self, model: str, messages: list, tools: list = None, stream: bool = False, **kwargs):
         """Create a chat completion using the LLM.
         
         Args:
@@ -30,12 +30,10 @@ class LiteLLM(LLMBase):
             messages=messages,
             tools=tools,
             stream=stream,
+            **kwargs
         )
-        return response.choices[0].message.content
+        return response
 
-    def get_client(self):
-        """Returns the OpenAI client instance."""
-        return self.client
 
 def main():
     messages = [

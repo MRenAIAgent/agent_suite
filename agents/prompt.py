@@ -1,7 +1,8 @@
 from abc import ABC
-from typing import List, Dict, Any, Optional
-
 from enum import Enum
+from typing import List, Dict, Any, Optional
+from tools.tool import Tool
+
 
 class PromptFormatType(Enum):
     """Enum defining supported prompt formatting styles."""
@@ -19,7 +20,7 @@ class PromptFormatter(ABC):
                  guide: str = None,
                  output_format: str = None,
                  examples: List[Dict[str, str]] = None,
-                 format_type: PromptFormatType = PromptFormatType.MARKDOWN):
+                 prompt_format_type: PromptFormatType = PromptFormatType.MARKDOWN):
         """Initialize prompt template with optional sections.
         
         Args:
@@ -34,9 +35,9 @@ class PromptFormatter(ABC):
         self.guide: Optional[str] = guide
         self.output_format: Optional[str] = output_format
         self.examples: List[Dict[str, str]] = examples or []
-        self.format_type: PromptFormatType = format_type
+        self.prompt_format_type: PromptFormatType = prompt_format_type
 
-    def format_prompt(self, user_input: str, variables: Dict[str, str] = None) -> str:
+    def format_prompt(self, tools: List[Tool] = None) -> str:
         """Format a prompt by substituting variables.
         
         Args:
@@ -47,40 +48,46 @@ class PromptFormatter(ABC):
             str: Formatted prompt with all sections and variables substituted
         """
         # Initialize ordered sections dictionary
+        examples_str = "Examples:\n"
         if self.examples:
-            examples_str = "Examples:\n"
             for i, example in enumerate(self.examples, 1):
                 examples_str += f"Example {i}\nInput: {example['input']}\nOutput: {example['output']}\n"
-    
+
+        tools_str = "You have access to the following tools:\n"
+        if tools:
+            for tool in tools:
+                tools_str += f"{tool.convert_to_function_call()}\n"
+
         prompt_str = ""
         sections = {
             "ROLE": self.role,
+            "TOOLS": tools_str,
             "TASK": self.task,
             "GUIDE": self.guide,
             "OUTPUT_FORMAT": self.output_format,
             "EXAMPLES": examples_str,
-            "USER_INPUT": user_input,
+            # "USER_INPUT": user_input,
         }
         
         # Filter out None values while preserving order
         sections = {k: v for k, v in sections.items() if v is not None}
 
         # Join sections with double newlines
-        if self.format_type == PromptFormatType.PLAIN:
+        if self.prompt_format_type == PromptFormatType.PLAIN:
             prompt_str = "\n\n".join(sections)
-        elif self.format_type == PromptFormatType.MARKDOWN:
+        elif self.prompt_format_type == PromptFormatType.MARKDOWN:
             prompt_str = "\n\n".join([f"## {key}\n{value}" for key, value in sections.items()])
-        elif self.format_type == PromptFormatType.XML:
+        elif self.prompt_format_type == PromptFormatType.XML:
             prompt_str = "\n\n".join([f"<{key.lower()}>{value}</{key.lower()}>" for key, value in sections.items()])
 
         
         # Substitute variables if provided
-        if variables:
-            try:
-                # Use str.format() to substitute {variable} placeholders with values from variables dict
-                prompt_str = prompt_str.format(**variables)
-            except KeyError as exc:
-                raise ValueError(f"Variables missing: {variables}") from exc
+        # if variables:
+        #     try:
+        #         # Use str.format() to substitute {variable} placeholders with values from variables dict
+        #         prompt_str = prompt_str.format(**variables)
+        #     except KeyError as exc:
+        #         raise ValueError(f"Variables missing: {variables}") from exc
                 
         return prompt_str
 
