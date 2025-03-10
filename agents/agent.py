@@ -2,12 +2,12 @@ from abc import ABC
 from datetime import datetime
 from typing import List
 import json
+from log import log_manager
 
 from llm.llm import LLMBase
 from agents.prompt import PromptManager
 from agents.memory import MemoryManager
 from agents.cache import CacheManager
-from agents.logging import LogManager
 from tools.tool import Tool
 
 class Agent(ABC):
@@ -18,8 +18,8 @@ class Agent(ABC):
         self.prompt_manager = prompt_manager
         self.memory_manager = MemoryManager()
         self.cache_manager = CacheManager()
-        self.log_manager = LogManager()
         self.tools = tools
+        self.log_manager = log_manager
         self.max_iterations = 5
 
     async def arun(self, user_input: str, model: str) -> str:
@@ -114,3 +114,13 @@ class Agent(ABC):
         
         return results
         
+    async def handle_single_tool_call(self, tool_name, tool_input):
+        """Handle a single tool call."""
+        tool = None
+        for t in self.tools:
+            if t.__class__.__name__.lower() == tool_name.replace('functions.', ''):
+                tool = t
+        if tool:
+            result = await tool.arun(tool_input)
+            return result
+        return 'Error to get result from tool'
