@@ -8,6 +8,7 @@ from agents.prompt import PromptManager
 from agents.react_agent_pattern import ReactAgentPattern
 from agents.react_prompt_template import ReActPromptTemplate
 from llm.llm import LLMBase
+from log.logging import LogManager
 from tools.tool import Tool
 
 class ReactAgent(Agent):
@@ -21,6 +22,7 @@ class ReactAgent(Agent):
             guide: str,
             examples: list[str] = None,
             tools: List[Tool] = None,
+            log_manager: LogManager = None,
             max_iterations: int = 5):
         react_prompt_template = ReActPromptTemplate(
             role=role,
@@ -34,6 +36,7 @@ class ReactAgent(Agent):
 
         self.agent_pattern = ReactAgentPattern()
         self.execution_pattern = self.agent_pattern.llm_execution_pattern
+        self.log_manager = log_manager
         self.max_iterations = max_iterations
 
     async def arun(self, user_input: str, model: str) -> str:

@@ -19,7 +19,7 @@ class Store(ABC):
             message: Dict with 'role' and 'content' keys for LLM conversation
         """
 
-    @abstractmethod 
+    @abstractmethod
     async def async_add_history(self, message: dict) -> None:
         """Asynchronously add a message to conversation history.
         

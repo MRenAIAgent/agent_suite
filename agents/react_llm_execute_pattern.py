@@ -26,6 +26,7 @@ class ReActLLMExecutionPattern(LLMExecutionPattern):
         
         current_key = None
         current_value = []
+        unstructured_lines = []
         
         for line in lines:
             line = line.strip()
@@ -76,10 +77,14 @@ class ReActLLMExecutionPattern(LLMExecutionPattern):
             else:
                 if current_key:
                     current_value.append(line)
+                else:
+                    unstructured_lines.append(line)
         
         # Add the last key-value pair
         if current_key and current_value:
             parsed_response[current_key] = '\n'.join(current_value).strip()
+        if not parsed_response:
+            parsed_response["final_answer"] = '\n'.join(unstructured_lines).strip()
         return parsed_response
 
     def should_continue(self, parsed_response: Dict[str, Any]) -> bool:

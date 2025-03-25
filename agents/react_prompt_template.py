@@ -16,7 +16,7 @@ class ReActPromptTemplate(PromptFormatter):
     """
     def __init__(self, role: str, task: str, guide: str, examples: List[str], prompt_format_type: PromptFormatType = PromptFormatType.MARKDOWN):
         """Initialize ReAct prompt template with predefined format."""
-        approach = "\nYou should approach tasks step-by-step if it is complicate."
+        approach = "\nBreaks down tasks into steps through reasoning. Takes actions based on thoughts and observations."
 
         self.output_format = """
             Break down the user's request into a series of steps. 

@@ -1,10 +1,11 @@
 import asyncio
 from typing import List, Optional
 
-from llm.litellm.litellm import LiteLLM
 from agents.react_agent import ReactAgent
+from llm.litellm.litellm import LiteLLM
+from log.logging import LogManager
+from tools.adapter.langchain_tool import convert_langchain_tools
 from tools.serper_api import SerperSearchTool
-from tools.adapter.langchain_tool import LangChainToolAdapter, convert_langchain_tools
 
 # Import LangChain tools
 from langchain_community.tools import WikipediaQueryRun, YouTubeSearchTool
@@ -16,8 +17,10 @@ class ReactAgentExample:
     
     def __init__(
         self,
-        model: str = "openai/gpt-4o",
-        role: str = "You are a seasoned financial analyst specializing in stock market trends and investment strategies.",
+        # model: str = "openai/gpt-4o",
+        # model: str = "anthropic/claude-3-5-sonnet-20240620",
+        model: str = "anthropic/claude-3-7-sonnet-20250219",
+        role: str = "You are a seasoned financial analyst specializing in stock market trends and investment strategies. You know the materials and information you need to collect to complete the task.",
         task: str = "Guide users through a comprehensive analysis of Tesla's stock performance, including actionable insights and strategic recommendations.",
         guide: str = "Utilize various analytical tools to gather in-depth information on Tesla's financial health, market trends, news articles, social media sentiment, quarterly and annual reports, like 10-K, 10-Q, etc. Provide a step-by-step breakdown of the analysis process, ensuring clarity and thoroughness in your explanations.",
         max_iterations: int = 20,
@@ -47,6 +50,7 @@ class ReactAgentExample:
             guide=guide,
             examples=examples or [],
             tools=self.tools,
+            log_manager=LogManager(),
             max_iterations=max_iterations
         )
     
@@ -69,7 +73,7 @@ class ReactAgentExample:
         
         # Combine all tools
         # return [serper_tool] + langchain_tools
-        return langchain_tools
+        return [serper_tool]
     
     async def arun(self, user_input: str) -> str:
         """Run the agent asynchronously.
@@ -96,11 +100,13 @@ class ReactAgentExample:
 
 # Example usage
 if __name__ == "__main__":
-    agent = ReactAgentExample()
+    agent = ReactAgentExample(max_iterations=30)
     
     # Example queries to test the agent
     test_queries = [
-        "Best clips from Elon's interview on YouTube"
+        # "Generate comprehensive report for the most popular agentic agents patterns from 2023 to 2025.",
+        # "estimate the world cup winner in 2026"
+        "Comprehensive report on tesla stock prediction in 2025"
     ]
     
     # Run the agent on each query
