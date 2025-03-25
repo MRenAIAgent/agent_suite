@@ -6,7 +6,7 @@ from llm.litellm.litellm import LiteLLM
 from tools.tool import Tool
 from tools.animal_type import AnimalType
 from tools.serper_api import SerperSearchTool
-from agents.react_agent import ReactAgent
+from agents.react_agent import ReActAgent
 from agents.react_agent_fc.react_agent_fc import ReactAgentFC
 
 
@@ -48,7 +48,7 @@ class TestReactAgent(unittest.TestCase):
         self.test_tool = AnimalType(animal_name="dog")
         self.serper_tool = SerperSearchTool(query="")
  
-        self.agent = ReactAgent(
+        self.agent = ReActAgent(
             llm=self.llm,
             role="You are kindergardener, like to be a story teller.",
             task="Tell a story for kindergardener kids",

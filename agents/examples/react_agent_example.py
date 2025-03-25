@@ -1,7 +1,7 @@
 import asyncio
 from typing import List, Optional
 
-from agents.react_agent import ReactAgent
+from agents.react_agent import ReActAgent
 from llm.litellm.litellm import LiteLLM
 from log.logging import LogManager
 from tools.adapter.langchain_tool import convert_langchain_tools
@@ -43,7 +43,7 @@ class ReactAgentExample:
         self.tools = self._initialize_tools()
         
         # Initialize the ReactAgent
-        self.agent = ReactAgent(
+        self.agent = ReActAgent(
             llm=self.llm,
             role=role,
             task=task,

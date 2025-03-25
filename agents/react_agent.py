@@ -12,7 +12,7 @@ from llm.llm import LLMBase
 from log.logging import LogManager
 from tools.tool import Tool
 
-class ReactAgent(BaseAgent):
+class ReActAgent(BaseAgent):
     """Agent that uses ReAct (Reasoning and Acting) approach to solve tasks."""
 
     def __init__(
