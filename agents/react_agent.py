@@ -1,9 +1,10 @@
 import asyncio
 import json
 from datetime import datetime
-from typing import List
+from typing import List, Dict, Any, Optional
 
-from agents.agent import Agent
+from agents.base_classes.base_agent import BaseAgent
+from agents.memory_manager import MemoryManager
 from agents.prompt import PromptManager
 from agents.react_agent_pattern import ReactAgentPattern
 from agents.react_prompt_template import ReActPromptTemplate
@@ -11,7 +12,7 @@ from llm.llm import LLMBase
 from log.logging import LogManager
 from tools.tool import Tool
 
-class ReactAgent(Agent):
+class ReactAgent(BaseAgent):
     """Agent that uses ReAct (Reasoning and Acting) approach to solve tasks."""
 
     def __init__(
@@ -23,6 +24,7 @@ class ReactAgent(Agent):
             examples: list[str] = None,
             tools: List[Tool] = None,
             log_manager: LogManager = None,
+            memory_manager: MemoryManager = None,
             max_iterations: int = 5):
         react_prompt_template = ReActPromptTemplate(
             role=role,
@@ -32,14 +34,19 @@ class ReactAgent(Agent):
         )
         system_prompt = react_prompt_template.format_prompt()
         prompt_manager = PromptManager(system_prompt)
-        super().__init__(llm, prompt_manager, tools)
-
+        
         self.agent_pattern = ReactAgentPattern()
         self.execution_pattern = self.agent_pattern.llm_execution_pattern
         self.log_manager = log_manager
         self.max_iterations = max_iterations
+        self.llm = llm
+        self.prompt_manager = prompt_manager
+        self.memory_manager = memory_manager if memory_manager else MemoryManager()
+        self.tools = tools or []
+        self.metadata = {}
 
-    async def arun(self, user_input: str, model: str) -> str:
+
+    async def arun(self, user_input: str, model: str, **kwargs) -> str:
         """Process user input using ReAct approach.
         
         The agent thinks and acts in steps, using tools when needed,
@@ -48,6 +55,7 @@ class ReactAgent(Agent):
         Args:
             user_input: The user's question or request
             model: The LLM model to use
+            **kwargs: Additional parameters
             
         Returns:
             str: The agent's final response
@@ -157,5 +165,131 @@ class ReactAgent(Agent):
             self.log_manager.log_debug("\n## Interaction Complete")
             self.log_manager.print_logs_in_pretty_format()
 
-    def run(self, user_input: str, model: str) -> str:
-        return asyncio.run(self.arun(user_input, model))
+    def run(self, user_input: str, model: str, **kwargs) -> str:
+        """Process user input synchronously using React approach."""
+        return asyncio.run(self.arun(user_input, model, **kwargs))
+    
+    async def think(self, user_input: str, model: str) -> Dict[str, Any]:
+        """Process user input using the agent's thinking process.
+        
+        Args:
+            user_input: The user's input
+            model: The LLM model to use
+            
+        Returns:
+            The agent's thoughts
+        """
+        # Use the ReactAgent pattern to generate structured thoughts
+        messages = self.prompt_manager.get_messages(
+            user_input,
+            self.memory_manager.get_history()
+        )
+        
+        response = self.llm.chat_completion(
+            model=model,
+            messages=messages,
+            tools=[tool.convert_to_function_call() for tool in self.tools],
+            tool_choice="auto"
+        )
+        
+        # Parse the LLM response to extract structured thoughts
+        parsed_response = self.execution_pattern.parse_llm_response(response)
+        
+        # Format the thoughts in a structured way
+        thoughts = {
+            "input": user_input,
+            "reasoning": parsed_response.get("reasoning", ""),
+            "observation": parsed_response.get("observation", ""),
+            "plan": parsed_response.get("plan", ""),
+            "final_answer": parsed_response.get("final_answer", "")
+        }
+        
+        return thoughts
+    
+    async def handle_single_tool_call(self, tool_name: str, tool_input: Any) -> Any:
+        """Handle a single tool call.
+        
+        Args:
+            tool_name: Name of the tool to call
+            tool_input: Input for the tool
+            
+        Returns:
+            Result of the tool call
+        """
+        # Find the tool by name
+        tool = None
+        for t in self.tools:
+            if t.__class__.__name__.lower() == tool_name.replace('functions.', '').lower():
+                tool = t
+                break
+        
+        if tool:
+            # Execute the tool with provided arguments
+            if isinstance(tool_input, dict):
+                result = await tool.arun(**tool_input)
+            else:
+                result = await tool.arun(tool_input)
+            return result
+        
+        return f"Error: Tool '{tool_name}' not found"
+    
+    def add_tool(self, tool: Tool) -> None:
+        """Add a tool to the agent's toolset.
+        
+        Args:
+            tool: The tool to add
+        """
+        self.tools.append(tool)
+    
+    def remove_tool(self, tool_name: str) -> bool:
+        """Remove a tool from the agent's toolset.
+        
+        Args:
+            tool_name: Name of the tool to remove
+            
+        Returns:
+            True if tool was removed, False if not found
+        """
+        initial_count = len(self.tools)
+        self.tools = [t for t in self.tools if t.__class__.__name__ != tool_name]
+        return len(self.tools) < initial_count
+    
+    async def save_memory(self, context: str) -> None:
+        """Save the agent's current state to a file.
+        
+        Args:
+            context: Context identifier for saving the state
+        """
+        if self.memory_manager:
+            await self.memory_manager.save_memory(context)
+    
+    async def load_memory(self) -> None:
+        """Load the agent's state from a file."""
+        if self.memory_manager:
+            await self.memory_manager.load_memory()
+            
+    async def handle_tool_calls(self, tool_calls):
+        """Handle tool calls from LLM response.
+        
+        Args:
+            tool_calls: List of tool calls from LLM response
+            
+        Returns:
+            Results from executing the tool calls
+        """
+        results = []
+        for tool_call in tool_calls:
+            # Extract tool name and arguments
+            tool_name = tool_call.function.name
+            
+            try:
+                arguments = json.loads(tool_call.function.arguments)
+                # Use handle_single_tool_call to process each tool individually
+                result = await self.handle_single_tool_call(tool_name, arguments)
+                results.append(result)
+            except json.JSONDecodeError:
+                results.append(f"Error: Could not parse arguments for {tool_name}")
+            except Exception as e:
+                results.append(f"Error executing {tool_name}: {str(e)}")
+        
+        return results
