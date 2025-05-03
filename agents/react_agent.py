@@ -73,6 +73,8 @@ class ReActAgent(BaseAgent):
         self.log_manager.log_debug("# Initial Messages\n```json\n" + pretty_json(messages) + "\n```")
         
         iterations = 0
+        self.iterations = 0  # Store iterations count for external access
+        
         try:
             while True:
                 self.log_manager.log_debug(f"\n## ReAct Iteration {iterations + 1}/{self.max_iterations}")
@@ -87,22 +89,48 @@ class ReActAgent(BaseAgent):
                 self.log_manager.log_debug(f"\n### LLM Response {GREEN}\n```json\n{pretty_json(response.choices[0].message.content)}\n```{RESET}")
                 # Parse the LLM response using the agent pattern
                 parsed_response = self.execution_pattern.parse_llm_response(response)
-
+                
+                # Log thought if present in the parsed response
+                if "thought" in parsed_response:
+                    self.log_manager.log_thought(parsed_response["thought"])
+                
                 iterations += 1
+                self.iterations = iterations  # Update external iteration counter
+                
                 if iterations >= self.max_iterations-1:
                     # last iteration
                     final_answer = parsed_response.get('final_answer', '')
                     observation = parsed_response.get('observation', '')
                     if final_answer:
+                        # Log the final answer
+                        self.log_manager.log_final_answer(final_answer)
                         return final_answer
                     elif observation:
+                        # If we only have an observation but no final answer, treat it as the final answer
+                        self.log_manager.log_final_answer(observation)
                         return observation
                     else:
-                        return "No final answer or observation"
+                        error_msg = "No final answer or observation"
+                        self.log_manager.log_final_answer(error_msg)
+                        return error_msg
 
                 #handle tool calls
                 if "tool_calls" in parsed_response:
+                    # For each tool call
+                    for i, tool_call in enumerate(parsed_response["tool_calls"]):
+                        tool_name = tool_call.function.name if hasattr(tool_call.function, 'name') else "unknown_tool"
+                        tool_args = tool_call.function.arguments if hasattr(tool_call.function, 'arguments') else "{}"
+                        
+                        # Log the action
+                        action_step = self.log_manager.log_action(tool_name, tool_args)
+                    
+                    # Execute the tools and get results
                     tool_results = await self.handle_tool_calls(parsed_response["tool_calls"])
+                    
+                    # Log each result
+                    for i, result in enumerate(tool_results):
+                        self.log_manager.log_result(i + 1, result)  # +1 because action steps are 1-indexed
+                    
                     self.log_manager.log_debug("\n### Tool Results\n```json\n" + pretty_json(tool_results) + "\n```")
 
                     # Format the tool calls properly with required fields
@@ -136,6 +164,12 @@ class ReActAgent(BaseAgent):
                 # Check if we should continue with more steps
                 # Format the intermediate steps for the next iteration
                 if self.execution_pattern.should_continue(parsed_response):
+                    # Log action and action input if present
+                    if "action" in parsed_response:
+                        action_name = parsed_response["action"]
+                        action_input = parsed_response.get("action_input", "")
+                        action_step = self.log_manager.log_action(action_name, action_input)
+                    
                     formatted_steps = self.execution_pattern.format_intermediate_steps(parsed_response)
                     messages.append({
                         "role": "system",
@@ -145,6 +179,9 @@ class ReActAgent(BaseAgent):
                 else:
                     final_answer = self.execution_pattern.get_final_answer(parsed_response)
                     self.log_manager.log_debug(f"\n### Final Answer {GREEN}\n```\n{final_answer}\n```{RESET}")
+                    
+                    # Log the final answer
+                    self.log_manager.log_final_answer(final_answer)
                     
                     # Update history
                     self.memory_manager.add({"role": "user", "content": user_input})
@@ -163,7 +200,8 @@ class ReActAgent(BaseAgent):
             raise e
         finally:
             self.log_manager.log_debug("\n## Interaction Complete")
-            self.log_manager.print_logs_in_pretty_format()
+            # Use the enhanced execution summary instead of the basic pretty format
+            self.log_manager.print_execution_summary()
 
     def run(self, user_input: str, model: str, **kwargs) -> str:
         """Process user input synchronously using React approach."""
