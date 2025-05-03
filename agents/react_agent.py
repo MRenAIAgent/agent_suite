@@ -2,6 +2,7 @@ import asyncio
 import json
 from datetime import datetime
 from typing import List, Dict, Any, Optional
+import time
 
 from agents.base_classes.base_agent import BaseAgent
 from agents.memory_manager import MemoryManager
@@ -66,6 +67,9 @@ class ReActAgent(BaseAgent):
         def pretty_json(obj) -> str:
             return json.dumps(obj, indent=2, ensure_ascii=False)
         
+        # Start timing the total execution
+        self.log_manager.start_execution()
+        
         messages = self.prompt_manager.get_messages(
             user_input,
             self.memory_manager.get_history()
@@ -79,13 +83,20 @@ class ReActAgent(BaseAgent):
             while True:
                 self.log_manager.log_debug(f"\n## ReAct Iteration {iterations + 1}/{self.max_iterations}")
                 self.log_manager.log_debug(f"\n### Tools: {[tool.convert_to_function_call() for tool in self.tools]}")
+                
+                # Time the LLM call
+                llm_start_time = time.time()
                 response = self.llm.chat_completion(
                     model=model,
                     messages=messages,
                     tools=[tool.convert_to_function_call() for tool in self.tools],
                     tool_choice="auto"
                 )
-
+                llm_latency = time.time() - llm_start_time
+                
+                # Log the LLM latency
+                self.log_manager.log_llm_latency(llm_latency)
+                
                 self.log_manager.log_debug(f"\n### LLM Response {GREEN}\n```json\n{pretty_json(response.choices[0].message.content)}\n```{RESET}")
                 # Parse the LLM response using the agent pattern
                 parsed_response = self.execution_pattern.parse_llm_response(response)
@@ -121,10 +132,11 @@ class ReActAgent(BaseAgent):
                         tool_name = tool_call.function.name if hasattr(tool_call.function, 'name') else "unknown_tool"
                         tool_args = tool_call.function.arguments if hasattr(tool_call.function, 'arguments') else "{}"
                         
-                        # Log the action
+                        # Log the action - latency will be added when result is logged
                         action_step = self.log_manager.log_action(tool_name, tool_args)
                     
-                    # Execute the tools and get results
+                    # Execute the tools and get results - this will automatically track action latency
+                    # because log_action recorded the start time and log_result will compute the duration
                     tool_results = await self.handle_tool_calls(parsed_response["tool_calls"])
                     
                     # Log each result
@@ -199,6 +211,8 @@ class ReActAgent(BaseAgent):
             self.log_manager.log_debug("\n### Error\n```\n" + str(e) + "\n```")
             raise e
         finally:
+            # Ensure execution is properly ended even in case of errors
+            self.log_manager.end_execution()
             self.log_manager.log_debug("\n## Interaction Complete")
             # Use the enhanced execution summary instead of the basic pretty format
             self.log_manager.print_execution_summary()
