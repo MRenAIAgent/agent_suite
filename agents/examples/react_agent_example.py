@@ -1,5 +1,10 @@
 import asyncio
+import os
+import sys
 from typing import List, Optional
+
+# Add the parent directory to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 from agents.react_agent import ReActAgent
 from llm.litellm.litellm import LiteLLM
