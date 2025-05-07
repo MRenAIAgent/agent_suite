@@ -14,7 +14,7 @@ from tools.serper_api import SerperSearchTool
 
 # Import LangChain tools
 from langchain_community.tools import WikipediaQueryRun, YouTubeSearchTool
-from langchain.utilities import WikipediaAPIWrapper
+from langchain_community.utilities import WikipediaAPIWrapper
 
 
 class ReactAgentExample:
@@ -80,15 +80,17 @@ class ReactAgentExample:
         # return [serper_tool] + langchain_tools
         return [serper_tool]
     
-    async def arun(self, user_input: str) -> str:
+    async def arun(self, user_input: str, model_override: Optional[str] = None) -> str:
         """Run the agent asynchronously.
         
         Args:
             user_input: The user's input
+            model_override: Optional model override (ignored, using predefined model)
             
         Returns:
             The agent's response
         """
+        # We ignore model_override and use self.model since the agent is already configured
         return await self.agent.arun(user_input, self.model)
     
     def run(self, user_input: str) -> str:
