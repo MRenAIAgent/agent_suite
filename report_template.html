@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Comparison Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .summary-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .metric-label {
+            font-weight: bold;
+            flex: 1;
+        }
+        .metric-value {
+            flex: 1;
+            text-align: center;
+        }
+        .chart-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .highlight {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        .winner {
+            color: #27ae60;
+        }
+        .category-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .task-details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .agent-response {
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Agent Comparison Report</h1>
+        <p>Comparison between Custom React Agent and LangChain ReAct Agent using TauBench</p>
+        <p><small>Generated on {{GENERATION_DATE}}</small></p>
+    </div>
+
+    <h2>Executive Summary</h2>
+    <div class="summary-box">
+        <div class="metric-row">
+            <div class="metric-label">Model Used:</div>
+            <div class="metric-value" colspan="2">{{MODEL_NAME}}</div>
+        </div>
+        <div class="metric-row">
+            <div class="metric-label">Categories Tested:</div>
+            <div class="metric-value" colspan="2">{{CATEGORIES_TESTED}}</div>
+        </div>
+        <div class="metric-row">
+            <div class="metric-label">Total Tasks:</div>
+            <div class="metric-value" colspan="2">{{TOTAL_TASKS}}</div>
+        </div>
+        <div class="metric-row">
+            <div class="metric-label">Metric</div>
+            <div class="metric-value">Custom React</div>
+            <div class="metric-value">LangChain React</div>
+        </div>
+        <div class="metric-row">
+            <div class="metric-label">Overall Success Rate:</div>
+            <div class="metric-value {{CUSTOM_WINNER_CLASS}}">{{CUSTOM_SUCCESS_RATE}}</div>
+            <div class="metric-value {{LANGCHAIN_WINNER_CLASS}}">{{LANGCHAIN_SUCCESS_RATE}}</div>
+        </div>
+        <div class="metric-row">
+            <div class="metric-label">Successful Tasks:</div>
+            <div class="metric-value">{{CUSTOM_SUCCESSFUL_TASKS}}</div>
+            <div class="metric-value">{{LANGCHAIN_SUCCESSFUL_TASKS}}</div>
+        </div>
+    </div>
+
+    <h2>Performance Visualization</h2>
+    
+    <div class="chart-container">
+        <h3>Overall Success Rate</h3>
+        <img src="{{OVERALL_CHART_PATH}}" alt="Overall Success Rate Comparison" style="max-width: 100%;">
+    </div>
+    
+    <div class="chart-container">
+        <h3>Category Success Rates</h3>
+        <img src="{{CATEGORY_CHART_PATH}}" alt="Category Success Rate Comparison" style="max-width: 100%;">
+    </div>
+
+    <h2>Detailed Metrics</h2>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Custom React</th>
+            <th>LangChain React</th>
+            <th>Difference</th>
+        </tr>
+        {{TABLE_ROWS}}
+    </table>
+
+    <h2>Category Breakdown</h2>
+    
+    {{CATEGORY_SECTIONS}}
+
+    <div class="footer">
+        <p>Generated using TauBench Evaluation Framework</p>
+        <p>Custom React Agent vs LangChain ReAct Agent</p>
+    </div>
+</body>
+</html> 

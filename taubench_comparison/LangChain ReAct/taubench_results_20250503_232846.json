@@ -1,0 +1,83 @@
+{
+  "model": "gpt-4",
+  "agent_type": "__class__",
+  "timestamp": "2025-05-03 23:28:24",
+  "categories": {
+    "reasoning": {
+      "total_tasks": 2,
+      "tasks": [
+        {
+          "id": "reasoning_0",
+          "prompt": "Solve the following logical reasoning problem: Alice is taller than Bob. Bob is taller than Charlie. Is Alice taller than Charlie?",
+          "reference": "The answer is Yes, Alice is taller than Charlie.",
+          "response": "Yes, Alice is taller than Charlie. This is because if Alice is taller than Bob, and Bob is taller than Charlie, then Alice must be taller than Charlie.",
+          "metrics": {
+            "success": true,
+            "overlap_score": 0.75,
+            "word_count": 28,
+            "relevance": 0.85
+          }
+        },
+        {
+          "id": "reasoning_1",
+          "prompt": "Solve the following logical reasoning problem: If all A are B, and all B are C, then are all A also C?",
+          "reference": "The answer is Yes, all A are C.",
+          "response": "Yes, if all A are B, and all B are C, then all A are indeed C. This is a basic principle of logical reasoning known as transitivity.",
+          "metrics": {
+            "success": true,
+            "overlap_score": 0.75,
+            "word_count": 28,
+            "relevance": 0.85
+          }
+        }
+      ],
+      "successful_tasks": 2,
+      "success_rate": 1.0
+    },
+    "planning": {
+      "total_tasks": 2,
+      "tasks": [
+        {
+          "id": "planning_0",
+          "prompt": "Create a step-by-step plan to organize a team offsite event for 20 people",
+          "reference": "A good plan should include budget considerations, timeline, activities, and logistics",
+          "response": "1. Define the Purpose: Understand the purpose of the offsite. Is it for team building, strategic planning, training, or celebration?\n\n2. Set a Budget: Determine how much money is available to spend on the event.\n\n3. Choose a Date: Find a date that works for everyone. Consider using a tool like Doodle to find the best date.\n\n4. Select a Location: Choose a location that fits the purpose of the offsite. This could be a conference center, a hotel, a park, or even a fun location like a bowling alley or escape room.\n\n5. Plan Activities: Plan activities that align with the purpose of the offsite. This could include team building exercises, training sessions, brainstorming sessions, or fun activities.\n\n6. Arrange Food and Drinks: Decide whether you'll cater the event or if attendees will bring their own food. Don't forget to consider dietary restrictions.\n\n7. Organize Transportation: If the location is far, you may need to arrange transportation. Consider renting a bus or encouraging carpooling.\n\n8. Communicate the Plan: Once everything is set, communicate the plan to the team. Include the date, location, agenda, what they need to bring, and what to expect.\n\n9. Prepare Materials: If you're doing training or brainstorming, prepare any necessary materials in advance.\n\n10. Follow Up: After the event, follow up with attendees to get feedback on what went well and what could be improved for next time.",
+          "metrics": {
+            "success": true,
+            "overlap_score": 0.36363636363636365,
+            "word_count": 233,
+            "relevance": 0.6181818181818182
+          }
+        },
+        {
+          "id": "planning_1",
+          "prompt": "Create a step-by-step plan to move from one apartment to another across the city",
+          "reference": "A good plan should include inventory, packing strategy, transportation plan, and timeline",
+          "response": "1. Inventory Your Items: Start by making a list of all the items you plan to move. This will help you estimate the size and number of boxes you'll need.\n\n2. Gather Packing Supplies: Purchase or find boxes, packing tape, bubble wrap, and markers for labeling. Don't forget specialty items for large or fragile items.\n\n3. Start Packing: Pack non-essential items first, like books, decor, and out-of-season clothing. Label each box with its contents and the room it belongs in.\n\n4. Hire a Moving Company or Rent a Truck: Depending on the size of your move and your budget, you may want to hire professionals or do it yourself.\n\n5. Notify Important Parties: Inform your landlord, post office, utility companies, and other important contacts about your move.\n\n6. Pack an Essentials Box: This should include items you'll need immediately after the move, like toiletries, a change of clothes, and important documents.\n\n7. Clean Your Old Apartment: Clean your old apartment to ensure you get your security deposit back. Consider hiring professional cleaners if it's within your budget.\n\n8. Move Your Items: On moving day, load your items into the truck, starting with large items first. At your new apartment, unload the truck and move items into the correct rooms.\n\n9. Unpack: Start by unpacking your essentials box, then move on to the rest of your items.\n\n10. Settle In: Take your time to arrange your new space. Update your address with any remaining contacts, and enjoy your new home!",
+          "metrics": {
+            "success": false,
+            "overlap_score": 0.5,
+            "word_count": 249,
+            "relevance": 0.7
+          }
+        }
+      ],
+      "successful_tasks": 1,
+      "success_rate": 0.5
+    }
+  },
+  "summary": {
+    "total_tasks": 4,
+    "successful_tasks": 3,
+    "overall_success_rate": 0.75,
+    "categories_tested": [
+      "reasoning",
+      "planning"
+    ],
+    "category_success_rates": {
+      "reasoning": 1.0,
+      "planning": 0.5
+    }
+  },
+  "elapsed_time": 21.345945119857788
+}

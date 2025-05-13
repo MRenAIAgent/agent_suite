@@ -1,0 +1,11 @@
+{
+  "agent_type": "ReActAgent",
+  "model": "gpt-4",
+  "evaluation_time": "2025-05-03 17:33:28",
+  "frameworks": {
+    "taubench": {
+      "error": "'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    }
+  }
+}

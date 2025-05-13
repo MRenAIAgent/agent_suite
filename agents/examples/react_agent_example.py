@@ -9,21 +9,24 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../.
 from agents.react_agent import ReActAgent
 from llm.litellm.litellm import LiteLLM
 from log.logging import LogManager
-from tools.adapter.langchain_tool import convert_langchain_tools
-from tools.serper_api import SerperSearchTool
 
-# Import LangChain tools
+# Import enhanced tool system components
+from tools.registry import registry
+from tools.base import EnhancedTool
+from tools.tool_types import ToolCategory, ToolCapability, ToolDomain, ToolMetadata, ToolSource
+
+# Import tools that will be registered
+from tools.serper_api import SerperSearchTool
 from langchain_community.tools import WikipediaQueryRun, YouTubeSearchTool
 from langchain_community.utilities import WikipediaAPIWrapper
+from tools.adapter.langchain_tool import convert_langchain_tools
 
 
 class ReactAgentExample:
-    """Example implementation of ReactAgent with multiple tools."""
+    """Example implementation of ReactAgent with enhanced tool system."""
     
     def __init__(
         self,
-        # model: str = "openai/gpt-4o",
-        # model: str = "anthropic/claude-3-5-sonnet-20240620",
         model: str = "anthropic/claude-3-7-sonnet-20250219",
         role: str = "You are a seasoned financial analyst specializing in stock market trends and investment strategies. You know the materials and information you need to collect to complete the task.",
         task: str = "Guide users through a comprehensive analysis of Tesla's stock performance, including actionable insights and strategic recommendations.",
@@ -31,7 +34,7 @@ class ReactAgentExample:
         max_iterations: int = 20,
         examples: Optional[List[str]] = None
     ):
-        """Initialize the ReactAgentExample.
+        """Initialize the ReactAgentExample with enhanced tool system.
         
         Args:
             model: The LLM model to use
@@ -44,10 +47,16 @@ class ReactAgentExample:
         self.llm = LiteLLM.create_llm()
         self.model = model
         
-        # Initialize tools
-        self.tools = self._initialize_tools()
+        # Clear and initialize the tool registry
+        registry.clear()
         
-        # Initialize the ReactAgent
+        # Register enhanced tools
+        self._register_tools()
+        
+        # Get tools from registry for the agent
+        self.tools = self._get_tools_from_registry()
+        
+        # Initialize the ReactAgent with tools from registry
         self.agent = ReActAgent(
             llm=self.llm,
             role=role,
@@ -59,38 +68,58 @@ class ReactAgentExample:
             max_iterations=max_iterations
         )
     
-    def _initialize_tools(self):
-        """Initialize the tools for the agent.
+    def _register_tools(self):
+        """Register all enhanced tools with the registry."""
+        # Register SerperSearchTool as enhanced tool
+        serper_tool = SerperSearchTool(query="")
+        enhanced_serper = serper_tool.to_enhanced_tool()
+        registry.register_tool(enhanced_serper)
+        
+        # Initialize and register LangChain tools
+        # Convert LangChain tools to our format first
+        wikipedia_tool = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
+        youtube_tool = YouTubeSearchTool()
+        langchain_tools = convert_langchain_tools([wikipedia_tool, youtube_tool])
+        
+        # Register converted LangChain tools as enhanced tools
+        for tool in langchain_tools:
+            enhanced_tool = tool.to_enhanced_tool()
+            registry.register_tool(enhanced_tool)
+        
+        print(f"Registered {len(registry.get_all_tools())} tools with the registry")
+    
+    def _get_tools_from_registry(self):
+        """Get tools from registry for use with the agent.
         
         Returns:
             List of tools for the agent
         """
-        # Initialize SerperSearchTool
-        serper_tool = SerperSearchTool(query="")
+        # For now, we still need to return the original tools for ReActAgent
+        # This would ideally be improved to directly use enhanced tools
+        enhanced_tools = registry.get_all_tools()
+        original_tools = []
         
-        # Initialize LangChain tools
-        wikipedia_tool = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
-        youtube_tool = YouTubeSearchTool()
+        for tool in enhanced_tools:
+            # Create original tool version
+            if tool.metadata.name == "search":
+                original_tools.append(SerperSearchTool(query=""))
+            # Add other tool conversions here as needed
         
-        # Convert LangChain tools to our format
-
-        langchain_tools = convert_langchain_tools([wikipedia_tool, youtube_tool])
-        
-        # Combine all tools
-        # return [serper_tool] + langchain_tools
-        return [serper_tool]
+        # For testing purposes, if we don't have any tools, add SerperSearchTool
+        if not original_tools:
+            original_tools.append(SerperSearchTool(query=""))
+            
+        return original_tools
     
-    async def arun(self, user_input: str, model_override: Optional[str] = None) -> str:
+    async def arun(self, user_input: str) -> str:
         """Run the agent asynchronously.
         
         Args:
             user_input: The user's input
-            model_override: Optional model override (ignored, using predefined model)
             
         Returns:
             The agent's response
         """
-        # We ignore model_override and use self.model since the agent is already configured
         return await self.agent.arun(user_input, self.model)
     
     def run(self, user_input: str) -> str:
@@ -103,16 +132,29 @@ class ReactAgentExample:
             The agent's response
         """
         return asyncio.run(self.arun(user_input))
+    
+    def get_registered_tools(self) -> List[EnhancedTool]:
+        """Get all enhanced tools registered in the registry.
+        
+        Returns:
+            List of registered enhanced tools
+        """
+        return registry.get_all_tools()
 
 
 # Example usage
 if __name__ == "__main__":
+    # Create agent with enhanced tools
     agent = ReactAgentExample(max_iterations=30)
+    
+    # Display the registered tools
+    enhanced_tools = agent.get_registered_tools()
+    print(f"\nRegistered {len(enhanced_tools)} enhanced tools:")
+    for tool in enhanced_tools:
+        print(f"- {tool.metadata.display_name}: {tool.metadata.description}")
     
     # Example queries to test the agent
     test_queries = [
-        # "Generate comprehensive report for the most popular agentic agents patterns from 2023 to 2025.",
-        # "estimate the world cup winner in 2026"
         "Comprehensive report on tesla stock prediction in 2025"
     ]
     

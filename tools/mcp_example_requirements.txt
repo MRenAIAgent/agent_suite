@@ -1,0 +1,13 @@
+# MCP Integration Example Requirements
+
+# HTTP client for API calls
+aiohttp>=3.8.4
+
+# Base requirements for agent_suite
+pydantic>=2.0.0
+litellm>=1.0.0
+anthropic>=0.5.0
+
+# Utilities
+typing-extensions>=4.5.0
+python-dotenv>=1.0.0 

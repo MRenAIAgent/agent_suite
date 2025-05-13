@@ -1,0 +1,13 @@
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+select = ["E", "F", "I"]  # Error, F (pyflakes), I (isort)
+
+[tool.ruff.isort]
+known-first-party = ["agent_suite"]
+
+[project]
+name = "agent_suite"
+version = "0.1.0"
+description = "A Python project with code analysis tools"
+requires-python = ">=3.8"
