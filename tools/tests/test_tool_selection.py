@@ -166,9 +166,9 @@ class ToolSelectionTests(unittest.TestCase):
         registry.clear()
         
         # Register test tools
-        self.weather_tool = WeatherTool()
-        self.search_tool = SearchTool()
-        self.code_tool = CodeAnalysisTool()
+        self.weather_tool = WeatherTool(location="New York")
+        self.search_tool = SearchTool(query="default search")
+        self.code_tool = CodeAnalysisTool(code="def example(): pass")
         
         registry.register_tool(self.weather_tool)
         registry.register_tool(self.search_tool)

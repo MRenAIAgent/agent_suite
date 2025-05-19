@@ -38,7 +38,7 @@ class WeatherTool(EnhancedTool):
     
     location: str
     
-    metadata = ToolMetadata(
+    metadata: ToolMetadata = ToolMetadata(
         name="WeatherTool",
         display_name="Weather Information",
         description="Gets weather information for a specific location",
@@ -50,7 +50,7 @@ class WeatherTool(EnhancedTool):
         applicable_roles=["traveler", "researcher", "planner"]
     )
     
-    source = ToolSource.CUSTOM
+    source: ToolSource = ToolSource.CUSTOM
     
     async def arun(self, location: str) -> str:
         """Get weather information for a location."""
@@ -63,7 +63,7 @@ class StockPriceTool(EnhancedTool):
     
     ticker: str
     
-    metadata = ToolMetadata(
+    metadata: ToolMetadata = ToolMetadata(
         name="StockPriceTool",
         display_name="Stock Prices",
         description="Gets current stock price information",
@@ -75,7 +75,7 @@ class StockPriceTool(EnhancedTool):
         applicable_roles=["investor", "financial analyst", "trader"]
     )
     
-    source = ToolSource.CUSTOM
+    source: ToolSource = ToolSource.CUSTOM
     
     async def arun(self, ticker: str) -> str:
         """Get stock price information."""
@@ -88,7 +88,7 @@ class DocumentSearchTool(EnhancedTool):
     
     query: str
     
-    metadata = ToolMetadata(
+    metadata: ToolMetadata = ToolMetadata(
         name="DocumentSearchTool",
         display_name="Document Search",
         description="Searches through documents for specific information",
@@ -100,7 +100,7 @@ class DocumentSearchTool(EnhancedTool):
         applicable_roles=["researcher", "writer", "analyst"]
     )
     
-    source = ToolSource.CUSTOM
+    source: ToolSource = ToolSource.CUSTOM
     
     async def arun(self, query: str) -> str:
         """Search documents for information."""

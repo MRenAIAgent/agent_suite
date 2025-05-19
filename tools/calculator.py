@@ -35,7 +35,7 @@ class CalculatorTool(EnhancedTool):
     )
     
     # Define the tool metadata for selection
-    metadata = ToolMetadata(
+    metadata: ToolMetadata = ToolMetadata(
         name="CalculatorTool",
         display_name="Calculator",
         description="Performs mathematical calculations and evaluates expressions",
@@ -57,7 +57,7 @@ class CalculatorTool(EnhancedTool):
     )
     
     # Set the source
-    source = ToolSource.SYSTEM
+    source: ToolSource = ToolSource.SYSTEM
     
     async def arun(self, expression: str) -> str:
         """

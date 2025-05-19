@@ -152,7 +152,7 @@ async def test_mcp_sdk_wrapper():
         
         assert calculator_tool, "Calculator tool not found"
         
-        result = await calculator_tool._mcp_tool_instance.arun(expression="5 * 10")
+        result = await calculator_tool.mcp_tool_instance.arun(expression="5 * 10")
         print(f"Calculator result: {json.dumps(result, indent=2)}")
         assert "result" in result, "Result not in response"
         assert result["result"] == 50, "Wrong calculation result"
@@ -208,7 +208,6 @@ async def test_tool_selection():
             for i, tool in enumerate(tools):
                 print(f"  {i+1}. {tool.metadata.name}")
                 print(f"     Description: {tool.metadata.description}")
-                print(f"     Score: {tool.metadata.relevance_score:.2f}")
         
         # Close the provider
         await provider.close()
@@ -257,7 +256,7 @@ async def test_end_to_end():
         
         if calculator_tool:
             print("\nExecuting calculator tool...")
-            result = await calculator_tool._mcp_tool_instance.arun(expression="125 * 8 - 32")
+            result = await calculator_tool.mcp_tool_instance.arun(expression="125 * 8 - 32")
             print(f"Result: {result}")
             assert "result" in result, "Result not in response"
             assert result["result"] == 968, "Wrong calculation result"

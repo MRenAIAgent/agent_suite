@@ -12,7 +12,7 @@ from agents.storage_aware_react_agent import StorageAwareReActAgent
 from llm.litellm.litellm import LiteLLM
 from log.logging import LogManager
 from tools.calculator import CalculatorTool
-from tools.wikipedia import WikipediaTool
+from tools.serper_api import SerperSearchTool
 
 
 async def run_comparison(query: str, model: str = "gpt-3.5-turbo"):
@@ -28,9 +28,9 @@ async def run_comparison(query: str, model: str = "gpt-3.5-turbo"):
     print(f"{'=' * 80}\n")
     
     # Create tools
-    calculator = CalculatorTool()
-    wikipedia = WikipediaTool()
-    tools = [calculator, wikipedia]
+    calculator = CalculatorTool(expression="")
+    search_tool = SerperSearchTool(query="")
+    tools = [calculator, search_tool]
     
     # Set up logging
     log_manager = LogManager()

@@ -18,9 +18,19 @@ from tools.tool_types import (
     ToolSource
 )
 from tools.registry import registry
+from pydantic import Field
 
 # Setup logging
 logger = logging.getLogger(__name__)
+
+# Common stop words to filter out when generating keywords
+COMMON_STOP_WORDS = {
+    "the", "and", "for", "with", "this", "that", "from", "will", "can", "are", 
+    "not", "has", "have", "been", "was", "were", "they", "their", "them", "which",
+    "what", "when", "where", "who", "why", "how", "your", "you", "may", "any",
+    "all", "some", "such", "more", "other", "these", "those", "its", "his", "her",
+    "our", "get", "got", "use", "used", "using"
+}
 
 # Define MCP tool categories mapping
 MCP_CATEGORY_MAP = {
@@ -70,8 +80,13 @@ MCP_DOMAIN_MAP = {
 class MCPToolWrapper(EnhancedTool):
     """Wrapper for MCP tools to work with the agent_suite enhanced tool system."""
     
-    # Tool metadata as ClassVar to avoid Pydantic issues
-    metadata: ClassVar[ToolMetadata]
+    # Store MCP tool information as regular Pydantic fields
+    mcp_tool_name: str = Field(..., description="Name of the MCP tool")
+    mcp_namespace: str = Field(..., description="Namespace of the MCP tool")
+    mcp_tool_data: Dict[str, Any] = Field(..., description="MCP tool data")
+    
+    # Optional MCP tool instance
+    mcp_tool_instance: Optional[Any] = Field(default=None, description="MCP tool instance")
     
     def __init__(
         self, 
@@ -88,59 +103,53 @@ class MCPToolWrapper(EnhancedTool):
             mcp_tool_data: The tool data including parameters, description, etc.
             mcp_tool_instance: Optional actual MCP tool instance
         """
-        # Initialize with regular attributes (not using Pydantic fields)
-        self._mcp_tool_name = mcp_tool_name
-        self._mcp_namespace = mcp_namespace
-        self._mcp_tool_data = mcp_tool_data
-        self._mcp_tool_instance = mcp_tool_instance
-        
         # Create metadata from MCP tool data
-        self.metadata = self._create_metadata_from_mcp()
+        metadata = self._create_metadata_from_mcp(
+            mcp_tool_name=mcp_tool_name,
+            mcp_namespace=mcp_namespace,
+            mcp_tool_data=mcp_tool_data
+        )
         
-        # Initialize the parent class
-        super().__init__()
+        # Initialize the parent class with all fields
+        super().__init__(
+            metadata=metadata,
+            mcp_tool_name=mcp_tool_name,
+            mcp_namespace=mcp_namespace,
+            mcp_tool_data=mcp_tool_data,
+            mcp_tool_instance=mcp_tool_instance
+        )
     
-    @property
-    def mcp_tool_name(self) -> str:
-        """Get the MCP tool name."""
-        return self._mcp_tool_name
-    
-    @property
-    def mcp_namespace(self) -> str:
-        """Get the MCP namespace."""
-        return self._mcp_namespace
-    
-    @property
-    def mcp_tool_data(self) -> Dict[str, Any]:
-        """Get the MCP tool data."""
-        return self._mcp_tool_data
-    
-    def _create_metadata_from_mcp(self) -> ToolMetadata:
+    def _create_metadata_from_mcp(
+        self,
+        mcp_tool_name: str,
+        mcp_namespace: str,
+        mcp_tool_data: Dict[str, Any]
+    ) -> ToolMetadata:
         """Create ToolMetadata from MCP tool data.
         
         Returns:
             ToolMetadata instance with appropriate values
         """
         # Extract relevant information from MCP tool data
-        description = self.mcp_tool_data.get("description", "")
-        display_name = self.mcp_tool_data.get("display_name", self.mcp_tool_name)
+        description = mcp_tool_data.get("description", "")
+        display_name = mcp_tool_data.get("display_name", mcp_tool_name)
         
         # Extract or determine categories, capabilities, and domains
-        categories = self._extract_categories()
-        capabilities = self._extract_capabilities()
-        domains = self._extract_domains()
+        categories = self._extract_categories(mcp_tool_data, mcp_tool_name)
+        capabilities = self._extract_capabilities(mcp_tool_data, mcp_tool_name)
+        domains = self._extract_domains(mcp_tool_data, mcp_tool_name, mcp_namespace)
         
         # Extract examples if available
-        examples = self.mcp_tool_data.get("examples", [])
+        examples = mcp_tool_data.get("examples", [])
         if isinstance(examples, str):
             examples = [examples]
         
         # Construct keywords from MCP tool data
-        keywords = self._extract_keywords()
+        keywords = self._extract_keywords(mcp_tool_data, mcp_tool_name)
         
         # Create and return metadata
         return ToolMetadata(
-            name=self.mcp_tool_name,
+            name=mcp_tool_name,
             display_name=display_name,
             description=description,
             categories=categories,
@@ -149,10 +158,10 @@ class MCPToolWrapper(EnhancedTool):
             source=ToolSource.MCP,
             keywords=keywords,
             examples=examples,
-            applicable_roles=self._extract_applicable_roles()
+            applicable_roles=self._extract_applicable_roles(mcp_tool_data)
         )
     
-    def _extract_categories(self) -> List[ToolCategory]:
+    def _extract_categories(self, mcp_tool_data: Dict[str, Any], mcp_tool_name: str) -> List[ToolCategory]:
         """Extract tool categories from MCP tool data.
         
         Returns:
@@ -162,7 +171,7 @@ class MCPToolWrapper(EnhancedTool):
         categories = [ToolCategory.UTILITY]
         
         # Try to extract from MCP data
-        mcp_categories = self.mcp_tool_data.get("categories", [])
+        mcp_categories = mcp_tool_data.get("categories", [])
         if isinstance(mcp_categories, str):
             mcp_categories = [mcp_categories]
         
@@ -182,14 +191,14 @@ class MCPToolWrapper(EnhancedTool):
         
         # Infer category from name/description if none found
         if not categories:
-            if "search" in self.mcp_tool_name.lower() or "find" in self.mcp_tool_name.lower():
+            if "search" in mcp_tool_name.lower() or "find" in mcp_tool_name.lower():
                 categories.append(ToolCategory.SEARCH)
-            elif "analyze" in self.mcp_tool_name.lower() or "data" in self.mcp_tool_name.lower():
+            elif "analyze" in mcp_tool_name.lower() or "data" in mcp_tool_name.lower():
                 categories.append(ToolCategory.DATA_ANALYSIS)
         
         return categories
     
-    def _extract_capabilities(self) -> List[ToolCapability]:
+    def _extract_capabilities(self, mcp_tool_data: Dict[str, Any], mcp_tool_name: str) -> List[ToolCapability]:
         """Extract tool capabilities from MCP tool data.
         
         Returns:
@@ -199,7 +208,7 @@ class MCPToolWrapper(EnhancedTool):
         capabilities = [ToolCapability.READ]
         
         # Try to extract from MCP data
-        mcp_capabilities = self.mcp_tool_data.get("capabilities", [])
+        mcp_capabilities = mcp_tool_data.get("capabilities", [])
         if isinstance(mcp_capabilities, str):
             mcp_capabilities = [mcp_capabilities]
         
@@ -218,8 +227,8 @@ class MCPToolWrapper(EnhancedTool):
                         capabilities.append(ToolCapability.READ)
         
         # Infer capability from name/description
-        name_lower = self.mcp_tool_name.lower()
-        desc_lower = self.mcp_tool_data.get("description", "").lower()
+        name_lower = mcp_tool_name.lower()
+        desc_lower = mcp_tool_data.get("description", "").lower()
         
         if "search" in name_lower or "find" in name_lower:
             capabilities.append(ToolCapability.SEARCH)
@@ -238,7 +247,7 @@ class MCPToolWrapper(EnhancedTool):
         
         return unique_capabilities
     
-    def _extract_domains(self) -> List[ToolDomain]:
+    def _extract_domains(self, mcp_tool_data: Dict[str, Any], mcp_tool_name: str, mcp_namespace: str) -> List[ToolDomain]:
         """Extract tool domains from MCP tool data.
         
         Returns:
@@ -248,7 +257,7 @@ class MCPToolWrapper(EnhancedTool):
         domains = [ToolDomain.GENERAL]
         
         # Try to extract from MCP data
-        mcp_domains = self.mcp_tool_data.get("domains", [])
+        mcp_domains = mcp_tool_data.get("domains", [])
         if isinstance(mcp_domains, str):
             mcp_domains = [mcp_domains]
         
@@ -267,8 +276,8 @@ class MCPToolWrapper(EnhancedTool):
                         domains.append(ToolDomain.GENERAL)
         
         # Infer domain from name/namespace
-        name_lower = self.mcp_tool_name.lower()
-        namespace_lower = self.mcp_namespace.lower()
+        name_lower = mcp_tool_name.lower()
+        namespace_lower = mcp_namespace.lower()
         
         # Add finance domain for finance-related tools
         if any(x in name_lower or x in namespace_lower for x in ["finance", "stock", "market", "invest"]):
@@ -288,44 +297,54 @@ class MCPToolWrapper(EnhancedTool):
         
         return unique_domains
     
-    def _extract_keywords(self) -> List[str]:
+    def _extract_keywords(self, mcp_tool_data: Dict[str, Any], mcp_tool_name: str) -> List[str]:
         """Extract keywords from MCP tool data.
         
         Returns:
-            List of keyword strings
+            List of keywords extracted or inferred from the MCP tool data
         """
-        # Start with empty keywords
-        keywords = []
+        # Start with a default set of keywords
+        keywords = ["mcp"]
         
         # Try to extract from MCP data
-        mcp_keywords = self.mcp_tool_data.get("keywords", [])
+        mcp_keywords = mcp_tool_data.get("keywords", [])
         if isinstance(mcp_keywords, str):
             mcp_keywords = mcp_keywords.split(",")
         
-        # Use MCP keywords if available
         if mcp_keywords:
             keywords.extend([k.strip() for k in mcp_keywords])
         
         # Add name and namespace as keywords
-        keywords.append(self.mcp_tool_name)
-        keywords.append(self.mcp_namespace)
+        keywords.append(mcp_tool_name)
+        if hasattr(self, 'mcp_namespace'):
+            keywords.append(self.mcp_namespace)
         
         # Add additional keywords based on name and description
-        name_parts = self.mcp_tool_name.replace("_", " ").replace("-", " ").split()
+        name_parts = mcp_tool_name.replace("_", " ").replace("-", " ").split()
         keywords.extend(name_parts)
+        
+        # Add keywords based on tool description
+        description = mcp_tool_data.get("description", "")
+        if description:
+            # Extract key terms from description
+            desc_words = description.lower().split()
+            important_words = [
+                word for word in desc_words 
+                if len(word) > 3 and word not in COMMON_STOP_WORDS
+            ]
+            keywords.extend(important_words[:5])  # Limit to 5 words from description
         
         # Remove duplicates while preserving order
         seen = set()
         unique_keywords = []
-        for kw in keywords:
-            kw_lower = kw.lower()
-            if kw_lower not in seen and kw_lower:
-                seen.add(kw_lower)
-                unique_keywords.append(kw)
+        for keyword in keywords:
+            if keyword and keyword not in seen:
+                seen.add(keyword)
+                unique_keywords.append(keyword)
         
         return unique_keywords
     
-    def _extract_applicable_roles(self) -> List[str]:
+    def _extract_applicable_roles(self, mcp_tool_data: Dict[str, Any]) -> List[str]:
         """Extract applicable roles from MCP tool data.
         
         Returns:
@@ -335,7 +354,7 @@ class MCPToolWrapper(EnhancedTool):
         roles = []
         
         # Try to extract from MCP data
-        mcp_roles = self.mcp_tool_data.get("applicable_roles", [])
+        mcp_roles = mcp_tool_data.get("applicable_roles", [])
         if isinstance(mcp_roles, str):
             mcp_roles = mcp_roles.split(",")
         
@@ -344,8 +363,8 @@ class MCPToolWrapper(EnhancedTool):
             roles.extend([r.strip() for r in mcp_roles])
         
         # Add default roles based on categories and capabilities
-        categories = self._extract_categories()
-        capabilities = self._extract_capabilities()
+        categories = self._extract_categories(mcp_tool_data, "")
+        capabilities = self._extract_capabilities(mcp_tool_data, "")
         
         if ToolCategory.SEARCH in categories:
             roles.append("researcher")
@@ -376,19 +395,19 @@ class MCPToolWrapper(EnhancedTool):
         Returns:
             Result from the MCP tool
         """
-        if self._mcp_tool_instance is None:
+        if self.mcp_tool_instance is None:
             return f"Error: MCP tool '{self.mcp_tool_name}' is not initialized"
         
         try:
             # Check if the MCP tool has an async run method
-            if hasattr(self._mcp_tool_instance, "arun"):
-                return await self._mcp_tool_instance.arun(**kwargs)
-            elif hasattr(self._mcp_tool_instance, "run"):
+            if hasattr(self.mcp_tool_instance, "arun"):
+                return await self.mcp_tool_instance.arun(**kwargs)
+            elif hasattr(self.mcp_tool_instance, "run"):
                 # Fall back to synchronous run method
-                return self._mcp_tool_instance.run(**kwargs)
+                return self.mcp_tool_instance.run(**kwargs)
             else:
                 # Try calling directly
-                return self._mcp_tool_instance(**kwargs)
+                return self.mcp_tool_instance(**kwargs)
         except Exception as e:
             logger.error(f"Error running MCP tool '{self.mcp_tool_name}': {e}")
             return f"Error running tool: {str(e)}"
