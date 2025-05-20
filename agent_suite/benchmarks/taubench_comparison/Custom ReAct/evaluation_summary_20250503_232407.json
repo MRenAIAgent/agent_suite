@@ -1,0 +1,26 @@
+{
+  "agent_type": "Custom ReAct",
+  "model": "gpt-4",
+  "evaluation_time": "2025-05-03 23:24:07",
+  "frameworks": {
+    "taubench": {
+      "summary": {
+        "total_tasks": 9,
+        "successful_tasks": 0,
+        "overall_success_rate": 0.0,
+        "categories_tested": [
+          "reasoning",
+          "planning",
+          "tool_use"
+        ],
+        "category_success_rates": {
+          "reasoning": 0.0,
+          "planning": 0.0,
+          "tool_use": 0.0
+        }
+      },
+      "elapsed_time": 0.000874,
+      "results_file": "taubench_comparison/Custom ReAct/taubench_results_20250503_232407.json"
+    }
+  }
+}

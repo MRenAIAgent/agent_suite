@@ -1,0 +1,30 @@
+{
+  "agent_type": "LangChain Structured",
+  "model": "gpt-4",
+  "evaluation_time": "2025-05-03 23:39:42",
+  "frameworks": {
+    "taubench": {
+      "summary": {
+        "total_tasks": 25,
+        "successful_tasks": 19,
+        "overall_success_rate": 0.76,
+        "categories_tested": [
+          "reasoning",
+          "planning",
+          "tool_use",
+          "code_generation",
+          "qa"
+        ],
+        "category_success_rates": {
+          "reasoning": 0.8,
+          "planning": 0.0,
+          "tool_use": 1.0,
+          "code_generation": 1.0,
+          "qa": 1.0
+        }
+      },
+      "elapsed_time": 395.02141,
+      "results_file": "taubench_comparison/LangChain Structured/taubench_results_20250503_234617.json"
+    }
+  }
+}
