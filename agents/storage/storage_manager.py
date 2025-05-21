@@ -146,7 +146,7 @@ class IntermediateStepManager:
         """
         self.storage.add_step(
             "final_answer", 
-            final_answer, 
+            final_answer,
             {
                 "iteration": self.current_iteration,
                 "timestamp": time.time(),
