@@ -134,17 +134,17 @@ def generate_plots(results_dir: str, output_dir: Optional[str] = None) -> List[s
     plot_files = []
     
     # 1. Latency comparison plot
-    latency_plot = _generate_latency_comparison_plot(results_by_type)
+    latency_plot = _generate_latency_comparison_plot(results_by_type, output_dir)
     if latency_plot:
         plot_files.append(latency_plot)
     
     # 2. Throughput comparison plot
-    throughput_plot = _generate_throughput_comparison_plot(results_by_type)
+    throughput_plot = _generate_throughput_comparison_plot(results_by_type, output_dir)
     if throughput_plot:
         plot_files.append(throughput_plot)
     
     # 3. Memory usage plot
-    memory_plot = _generate_memory_usage_plot(results_by_type)
+    memory_plot = _generate_memory_usage_plot(results_by_type, output_dir)
     if memory_plot:
         plot_files.append(memory_plot)
     
@@ -155,12 +155,13 @@ def generate_plots(results_dir: str, output_dir: Optional[str] = None) -> List[s
     return plot_files
 
 
-def _generate_latency_comparison_plot(results_by_type: Dict[str, List[Dict[str, Any]]]) -> Optional[str]:
+def _generate_latency_comparison_plot(results_by_type: Dict[str, List[Dict[str, Any]]], output_dir: str) -> Optional[str]:
     """
     Generate latency comparison plot.
     
     Args:
         results_by_type: Dictionary of results grouped by benchmark type
+        output_dir: Directory to save the plot
         
     Returns:
         Path to saved plot or None
@@ -208,12 +209,13 @@ def _generate_latency_comparison_plot(results_by_type: Dict[str, List[Dict[str, 
     return plot_path
 
 
-def _generate_throughput_comparison_plot(results_by_type: Dict[str, List[Dict[str, Any]]]) -> Optional[str]:
+def _generate_throughput_comparison_plot(results_by_type: Dict[str, List[Dict[str, Any]]], output_dir: str) -> Optional[str]:
     """
     Generate throughput comparison plot.
     
     Args:
         results_by_type: Dictionary of results grouped by benchmark type
+        output_dir: Directory to save the plot
         
     Returns:
         Path to saved plot or None
@@ -261,12 +263,13 @@ def _generate_throughput_comparison_plot(results_by_type: Dict[str, List[Dict[st
     return plot_path
 
 
-def _generate_memory_usage_plot(results_by_type: Dict[str, List[Dict[str, Any]]]) -> Optional[str]:
+def _generate_memory_usage_plot(results_by_type: Dict[str, List[Dict[str, Any]]], output_dir: str) -> Optional[str]:
     """
     Generate memory usage comparison plot.
     
     Args:
         results_by_type: Dictionary of results grouped by benchmark type
+        output_dir: Directory to save the plot
         
     Returns:
         Path to saved plot or None
