@@ -1,37 +1,7 @@
-from typing import List, Dict, Any, Optional
-from agents.memory_stores.mem_store import MemoryStore
+# Compatibility layer for older imports
+# This will be deprecated - use agents.memory.memory_manager instead
 
+from agents.memory.memory_manager import MemoryManager
 
-class MemoryManager:
-    """Manages conversation history and summarization."""
-    
-    def __init__(self, max_history: int = 20):
-        self.store = MemoryStore()  # MemoryStore is a concrete implementation of Store
-        self.max_history = max_history
-    
-    def save_memory(self, message: Dict):
-        """Save a message to memory."""
-        self.store.add_history(message)
-        
-    def load_memory(self):
-        """Load memory from file."""
-        return self.store.load_history()
-    
-    def add(self, message: Dict):
-        """Add a message to history."""
-        self.store.add_history(message)
-        history = self.store.get_history()
-        if len(history) > self.max_history:
-            # Create new truncated history
-            new_history = history[1:]
-            self.store.clear(history=True)
-            for msg in new_history:
-                self.store.add_history(msg)
-            
-    def get_history(self, limit: int = 20) -> List[Dict]:
-        """Get current conversation history."""
-        return self.store.get_history(limit=limit)
-    
-    def clear(self):
-        """Clear conversation history."""
-        self.store.clear(history=True, cache=False)
+# Re-export the class to maintain backward compatibility
+__all__ = ["MemoryManager"] 

@@ -1,11 +1,11 @@
 import asyncio
 import json
 from datetime import datetime
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Set
 import time
 
 from agents.base_classes.base_agent import BaseAgent
-from agents.memory_manager import MemoryManager
+from agents.memory.memory_manager import MemoryManager
 from agents.prompt import PromptManager
 from agents.react_prompt_template import ReActPromptTemplate
 from agents.storage_aware_agent_pattern import (

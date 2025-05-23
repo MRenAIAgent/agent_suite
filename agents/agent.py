@@ -1,19 +1,22 @@
 from abc import ABC
 from datetime import datetime
 import asyncio
-from typing import List, Any, Optional, Dict
+from typing import List, Any, Optional, Dict, Tuple, Union, Callable
 import json
+import uuid
 
 from agents.base_classes.base_agent import BaseAgent
 from agents.base_classes.base_think_pattern import AgentThinkPattern
 from agents.cache import CacheManager
-from agents.memory_manager import MemoryManager
+from agents.memory.memory_manager import MemoryManager
 from agents.prompt import PromptManager
 from agents.agent_pattern import AgentPattern
 from agents.llm_execute_pattern import LLMExecutionPattern
 from log.logging import LogManager
 from llm.llm import LLMBase
 from tools.tool import Tool
+from openai.types.chat import ChatCompletionMessageParam
+from llm.function_call_handler import OutputParser
 
 class BasicExecutionPattern(LLMExecutionPattern):
     """Basic execution pattern for the standard Agent class.

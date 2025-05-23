@@ -5,7 +5,7 @@ from typing import List, Dict, Any, Optional
 import time
 
 from agents.base_classes.base_agent import BaseAgent
-from agents.memory_manager import MemoryManager
+from agents.memory.memory_manager import MemoryManager
 from agents.prompt import PromptManager
 from agents.react_agent_pattern import ReactAgentPattern
 from agents.react_prompt_template import ReActPromptTemplate

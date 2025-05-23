@@ -19,7 +19,7 @@ from agent_suite.memory.minimal_memory import (
 
 # Import the needed components from agent_suite
 from agents.memory_manager import MemoryManager as OldMemoryManager
-from agents.memory_stores.store import Store
+from agents.memory.stores.store import Store
 
 
 class CustomMemoryManager(OldMemoryManager):

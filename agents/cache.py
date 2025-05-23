@@ -1,11 +1,11 @@
 from typing import List, Dict, Any, Optional
-from agents.memory_stores.mem_store import MemoryStore
+from agents.memory.stores.in_memory_store import InMemoryStore
 
 class CacheManager:
     """Manages persistent data cache for the agent."""
     
     def __init__(self):
-        self.store = MemoryStore()
+        self.store = InMemoryStore()
         
     def set(self, key: str, value: Any):
         """Set a value in cache."""

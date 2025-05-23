@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Dict, Any, List, Optional
 
 from agents.base_classes.base_think_pattern import AgentThinkPattern
-from agents.memory_manager import MemoryManager
+from agents.memory.memory_manager import MemoryManager
 from agents.prompt import PromptManager
 from log.logging import LogManager
 from llm.llm import LLMBase

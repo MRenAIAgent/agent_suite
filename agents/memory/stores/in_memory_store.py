@@ -1,9 +1,19 @@
+"""In-memory implementation of the Store interface.
+
+This module provides a simple in-memory implementation of the Store base class
+for temporary storage of conversation history and cache.
+"""
+
 from typing import Any, Optional, Dict, List
-from agents.memory_stores.store import Store
+from agents.memory.stores.store import Store
 
 
-class MemoryStore(Store):
-    """In-memory implementation of Store."""
+class InMemoryStore(Store):
+    """In-memory implementation of Store.
+    
+    This implementation stores all data in memory, which means it's
+    fast but non-persistent across restarts or process boundaries.
+    """
 
     def add_history(self, message: Dict[str, str]) -> None:
         """Add a message to conversation history.
@@ -29,7 +39,7 @@ class MemoryStore(Store):
         Returns:
             List of conversation messages
         """
-        return self.history[-limit:]
+        return self.history[-limit:] if limit > 0 else self.history
 
     def fetch_cache(self, key: Optional[str] = None) -> Any:
         """Get value(s) from cache.
@@ -50,6 +60,36 @@ class MemoryStore(Store):
             self.history = []
         if cache:
             self.cache = {}
+            
+    def save_history(self) -> bool:
+        """Save conversation history to persistent storage.
+        
+        In memory implementation just returns True.
+        
+        Returns:
+            Success status
+        """
+        # This is in-memory only, so nothing to save
+        return True
+        
+    def load_history(self) -> List[Dict[str, Any]]:
+        """Load conversation history from persistent storage.
+        
+        In memory implementation just returns current history.
+        
+        Returns:
+            List of conversation messages
+        """
+        # This is in-memory only, so just return current history
+        return self.history
+
+    def clear_history(self) -> None:
+        """Clear conversation history."""
+        self.history = []
+
+    def clear_cache(self) -> None:
+        """Clear the cache."""
+        self.cache = {}
 
     async def async_add_history(self, message: Dict[str, str]) -> None:
         """Asynchronously add a message to conversation history.
@@ -96,12 +136,4 @@ class MemoryStore(Store):
 
     async def async_clear_cache(self) -> None:
         """Asynchronously clear the cache."""
-        self.cache = {}
-
-    def clear_history(self) -> None:
-        """Clear conversation history."""
-        self.history = []
-
-    def clear_cache(self) -> None:
-        """Clear the cache."""
-        self.cache = {}
+        self.cache = {} 
