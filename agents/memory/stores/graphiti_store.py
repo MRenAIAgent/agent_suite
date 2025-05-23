@@ -304,21 +304,7 @@ class GraphitiStore(Store):
                     self.history = []
                     for record in result:
                         node = record["m"]
-                        message = {
-                            "id": node.properties["id"],
-                            "role": node.properties["role"],
-                            "content": node.properties["content"],
-                            "timestamp": node.properties["timestamp"]
-                        }
-                        
-                        # Add metadata if available
-                        try:
-                            metadata = json.loads(node.properties["metadata"])
-                            if metadata:
-                                message["metadata"] = metadata
-                        except:
-                            pass
-                        
+                        message = self._message_from_node(node)
                         self.history.append(message)
         
         return self.history
@@ -352,13 +338,8 @@ class GraphitiStore(Store):
             if content_result:
                 for record in content_result:
                     node = record["m"]
-                    message = {
-                        "id": node.properties["id"],
-                        "role": node.properties["role"],
-                        "content": node.properties["content"],
-                        "timestamp": node.properties["timestamp"],
-                        "match_type": "content"
-                    }
+                    message = self._message_from_node(node)
+                    message["match_type"] = "content"
                     results.append(message)
             
             # If we need more results, search by entity relationship
@@ -376,19 +357,40 @@ class GraphitiStore(Store):
                 if entity_result:
                     for record in entity_result:
                         node = record["m"]
-                        message = {
-                            "id": node.properties["id"],
-                            "role": node.properties["role"],
-                            "content": node.properties["content"],
-                            "timestamp": node.properties["timestamp"],
-                            "match_type": "entity"
-                        }
+                        message = self._message_from_node(node)
+                        message["match_type"] = "entity"
                         
                         # Avoid duplicates
                         if not any(r["id"] == message["id"] for r in results):
                             results.append(message)
         
         return results
+    
+    def _message_from_node(self, node) -> Dict:
+        """Convert a graph node to a message dictionary.
+        
+        Args:
+            node: Graph node representing a message
+            
+        Returns:
+            Message dictionary
+        """
+        message = {
+            "id": node.properties["id"],
+            "role": node.properties["role"],
+            "content": node.properties["content"],
+            "timestamp": node.properties["timestamp"]
+        }
+        
+        # Add metadata if available
+        try:
+            metadata = json.loads(node.properties["metadata"])
+            if metadata:
+                message["metadata"] = metadata
+        except:
+            pass
+            
+        return message
     
     def _current_timestamp(self) -> int:
         """Get current timestamp in milliseconds."""

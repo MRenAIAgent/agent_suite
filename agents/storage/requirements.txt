@@ -1,0 +1,13 @@
+# Base requirements
+aiohttp>=3.8.0
+
+# Vector storage
+qdrant-client>=1.6.0
+
+# Graph storage
+neo4j>=5.0.0
+
+# Document storage
+pymongo>=4.0.0
+motor>=3.0.0  # Async driver for MongoDB
+elasticsearch>=8.0.0 
