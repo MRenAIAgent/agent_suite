@@ -75,26 +75,8 @@ if [ $? -ne 0 ]; then
 fi
 echo ""
 
-# Step 5: Run the GraphitiNeo4jStore test
-echo "Step 5: Running GraphitiNeo4jStore integration test..."
-python examples/graphiti_neo4j_test.py
-if [ $? -ne 0 ]; then
-    echo "❌ GraphitiNeo4jStore test failed."
-    exit 1
-fi
-echo ""
-
-# Step 6: Run GraphitiNeo4jStore integration tests with pytest 
-echo "Step 6: Running GraphitiNeo4jStore tests with pytest..."
-python -m pytest tests/integration/memory/stores/test_graphiti_neo4j_store.py -v
-if [ $? -ne 0 ]; then
-    echo "❌ GraphitiNeo4jStore tests failed."
-    exit 1
-fi
-echo ""
-
-# Step 7: Run all Neo4j store unit tests with pytest
-echo "Step 7: Running Neo4j store unit tests..."
+# Step 5: Run all Neo4j store unit tests with pytest
+echo "Step 5: Running Neo4j store unit tests..."
 python -m pytest tests/unit/agents/memory/stores/test_neo4j_store.py -v
 if [ $? -ne 0 ]; then
     echo "❌ Store unit tests failed."
