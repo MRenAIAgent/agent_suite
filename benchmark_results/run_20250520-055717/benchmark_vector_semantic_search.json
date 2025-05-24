@@ -1,0 +1,87 @@
+{
+  "benchmark_name": "benchmark_vector_semantic_search",
+  "benchmark_type": "vector",
+  "config": {
+    "name": "hybrid_knowledge_benchmark",
+    "description": "Benchmark for hybrid knowledge retrieval system",
+    "seed": 42,
+    "output_dir": "benchmark_results",
+    "dataset_size": "medium",
+    "dataset_complexity": "medium",
+    "num_entities": 1000,
+    "num_relations": 5000,
+    "num_documents": 100,
+    "graph_name": "benchmark_graph",
+    "graph_persist": true,
+    "graph_persistence_path": "benchmark_suite/data/graph",
+    "vector_collection": "benchmark_vectors",
+    "vector_persist": true,
+    "vector_persistence_path": "benchmark_suite/data/vector",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "iterations": 3,
+    "warmup_iterations": 1,
+    "timeout": 60,
+    "query_complexity": "medium",
+    "num_queries": 100,
+    "measure_memory": true,
+    "measure_storage": true,
+    "measure_accuracy": true,
+    "custom_params": {}
+  },
+  "timestamp": "2025-05-20 06:06:04",
+  "latency_ms": [
+    10948.62174987793,
+    11154.50382232666,
+    10987.221956253052
+  ],
+  "throughput_ops": null,
+  "memory_mb": null,
+  "storage_bytes": null,
+  "accuracy": null,
+  "precision": null,
+  "recall": null,
+  "f1_score": null,
+  "custom_metrics": {
+    "avg_search_time_ms": 92.41518974304199,
+    "search_times_ms": [
+      94.818115234375,
+      90.6839370727539,
+      91.07089042663574,
+      95.05581855773926,
+      93.5811996459961,
+      87.63694763183594,
+      92.9718017578125,
+      88.8979434967041,
+      90.63315391540527,
+      98.80208969116211
+    ],
+    "avg_result_count": 10.0
+  },
+  "stats": {
+    "latency": {
+      "min_ms": 10948.62174987793,
+      "max_ms": 11154.50382232666,
+      "mean_ms": 11030.115842819214,
+      "median_ms": 10987.221956253052,
+      "p95_ms": 11137.7756357193,
+      "p99_ms": 11151.158185005188,
+      "stddev_ms": 109.43843505601293
+    },
+    "custom": {
+      "avg_search_time_ms": 92.41518974304199,
+      "search_times_ms": [
+        94.818115234375,
+        90.6839370727539,
+        91.07089042663574,
+        95.05581855773926,
+        93.5811996459961,
+        87.63694763183594,
+        92.9718017578125,
+        88.8979434967041,
+        90.63315391540527,
+        98.80208969116211
+      ],
+      "avg_result_count": 10.0
+    }
+  }
+}

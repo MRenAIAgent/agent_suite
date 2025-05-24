@@ -1,0 +1,75 @@
+{
+  "benchmark_name": "benchmark_graph_adapter_performance",
+  "benchmark_type": "graph",
+  "config": {
+    "name": "hybrid_knowledge_benchmark",
+    "description": "Benchmark for hybrid knowledge retrieval system",
+    "seed": 42,
+    "output_dir": "benchmark_results/run_20250520-055717",
+    "dataset_size": "medium",
+    "dataset_complexity": "medium",
+    "num_entities": 1000,
+    "num_relations": 5000,
+    "num_documents": 100,
+    "graph_name": "benchmark_graph",
+    "graph_persist": true,
+    "graph_persistence_path": "benchmark_suite/data/graph",
+    "vector_collection": "benchmark_vectors",
+    "vector_persist": true,
+    "vector_persistence_path": "benchmark_suite/data/vector",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "iterations": 3,
+    "warmup_iterations": 1,
+    "timeout": 60,
+    "query_complexity": "medium",
+    "num_queries": 100,
+    "measure_memory": true,
+    "measure_storage": true,
+    "measure_accuracy": true,
+    "custom_params": {}
+  },
+  "timestamp": "2025-05-20 11:06:27",
+  "latency_ms": [
+    15.141963958740234,
+    23.916006088256836,
+    12.949943542480469
+  ],
+  "throughput_ops": null,
+  "memory_mb": null,
+  "storage_bytes": null,
+  "accuracy": null,
+  "precision": null,
+  "recall": null,
+  "f1_score": null,
+  "custom_metrics": {
+    "operation_times": {
+      "add_entity": 0.0014829635620117188,
+      "add_relation": 0.011126200358072916,
+      "add_text": 0.003135204315185547,
+      "query_entities": 0.0026941299438476562,
+      "query_relations": 0.0102996826171875,
+      "semantic_search": 0.05059242248535156
+    }
+  },
+  "stats": {
+    "latency": {
+      "min_ms": 12.949943542480469,
+      "max_ms": 23.916006088256836,
+      "mean_ms": 17.335971196492512,
+      "median_ms": 15.141963958740234,
+      "p95_ms": 23.038601875305176,
+      "p99_ms": 23.740525245666504,
+      "stddev_ms": 5.8029201923645175
+    },
+    "custom": {
+      "operation_times": {
+        "add_entity": 0.0014829635620117188,
+        "add_relation": 0.011126200358072916,
+        "add_text": 0.003135204315185547,
+        "query_entities": 0.0026941299438476562,
+        "query_relations": 0.0102996826171875,
+        "semantic_search": 0.05059242248535156
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark_name": "benchmark_graph_query_performance",
+  "benchmark_type": "graph",
+  "config": {
+    "name": "hybrid_knowledge_benchmark",
+    "description": "Benchmark for hybrid knowledge retrieval system",
+    "seed": 42,
+    "output_dir": "benchmark_results",
+    "dataset_size": "medium",
+    "dataset_complexity": "medium",
+    "num_entities": 1000,
+    "num_relations": 5000,
+    "num_documents": 100,
+    "graph_name": "benchmark_graph",
+    "graph_persist": true,
+    "graph_persistence_path": "benchmark_suite/data/graph",
+    "vector_collection": "benchmark_vectors",
+    "vector_persist": true,
+    "vector_persistence_path": "benchmark_suite/data/vector",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "iterations": 3,
+    "warmup_iterations": 1,
+    "timeout": 60,
+    "query_complexity": "medium",
+    "num_queries": 100,
+    "measure_memory": true,
+    "measure_storage": true,
+    "measure_accuracy": true,
+    "custom_params": {}
+  },
+  "timestamp": "2025-05-20 06:07:43",
+  "latency_ms": [
+    27.467727661132812,
+    28.69892120361328,
+    26.356935501098633
+  ],
+  "throughput_ops": null,
+  "memory_mb": null,
+  "storage_bytes": null,
+  "accuracy": null,
+  "precision": null,
+  "recall": null,
+  "f1_score": null,
+  "custom_metrics": {
+    "query_times": {
+      "entity_type": 0.025415420532226562,
+      "relation_type": 0.5985021591186523,
+      "entity_id": 0.00040531158447265625,
+      "traversal": 0.1708984375
+    }
+  },
+  "stats": {
+    "latency": {
+      "min_ms": 26.356935501098633,
+      "max_ms": 28.69892120361328,
+      "mean_ms": 27.507861455281574,
+      "median_ms": 27.467727661132812,
+      "p95_ms": 28.575801849365234,
+      "p99_ms": 28.674297332763672,
+      "stddev_ms": 1.1715085568489627
+    },
+    "custom": {
+      "query_times": {
+        "entity_type": 0.025415420532226562,
+        "relation_type": 0.5985021591186523,
+        "entity_id": 0.00040531158447265625,
+        "traversal": 0.1708984375
+      }
+    }
+  }
+}

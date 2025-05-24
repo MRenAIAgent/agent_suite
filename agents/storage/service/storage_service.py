@@ -6,6 +6,7 @@ supporting operations across vector, graph, and document storage.
 
 import logging
 from typing import Any, Dict, List, Optional, Union, Type
+import asyncio
 
 from agents.storage.base_storage import BaseStorage
 from agents.storage.vector_storage import VectorStorage
@@ -94,4 +95,25 @@ class StorageService:
             del self.backends[name]
             self.logger.info(f"Removed storage backend: {name}")
             return True
-        return False 
+        return False
+        
+    async def close(self) -> None:
+        """Close all backends and connections.
+        
+        Calls close method on all registered backends that support it.
+        """
+        for name, backend in self.backends.items():
+            if hasattr(backend, 'close'):
+                if callable(getattr(backend, 'close')):
+                    try:
+                        # Check if close is an async method
+                        if asyncio.iscoroutinefunction(backend.close):
+                            await backend.close()
+                        else:
+                            backend.close()
+                        self.logger.info(f"Closed storage backend: {name}")
+                    except Exception as e:
+                        self.logger.error(f"Error closing backend {name}: {e}")
+        
+        # Clear the backends dictionary
+        self.backends.clear() 

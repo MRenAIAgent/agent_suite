@@ -18,6 +18,25 @@ try:
     MONGODB_AVAILABLE = True
 except ImportError:
     MONGODB_AVAILABLE = False
+    # Define dummy types for type hinting when MongoDB isn't available
+    class Collection:
+        """Dummy Collection class when pymongo isn't available."""
+        pass
+    class ObjectId:
+        """Dummy ObjectId class when pymongo isn't available."""
+        pass
+    class InsertOneResult:
+        """Dummy InsertOneResult class when pymongo isn't available."""
+        pass
+    class InsertManyResult:
+        """Dummy InsertManyResult class when pymongo isn't available."""
+        pass
+    class UpdateResult:
+        """Dummy UpdateResult class when pymongo isn't available."""
+        pass
+    class DeleteResult:
+        """Dummy DeleteResult class when pymongo isn't available."""
+        pass
 
 
 class MongoDBStorage(DocumentStorage):

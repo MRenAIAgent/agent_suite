@@ -11,10 +11,16 @@ from typing import Any, Dict, List, Optional, Union, Set
 from agents.storage.graph_storage import GraphStorage
 
 try:
-    from neo4j import GraphDatabase, basic_auth, Result
+    from neo4j import GraphDatabase, basic_auth
+    # Import Result for type hinting
+    from neo4j.work.result import Result
     NEO4J_AVAILABLE = True
 except ImportError:
     NEO4J_AVAILABLE = False
+    # Define a dummy Result type for type hinting when neo4j isn't available
+    class Result:
+        """Dummy Result class when neo4j isn't available."""
+        pass
 
 
 class Neo4jStorage(GraphStorage):

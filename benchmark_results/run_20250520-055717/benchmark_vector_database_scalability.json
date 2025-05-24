@@ -1,0 +1,179 @@
+{
+  "benchmark_name": "benchmark_vector_database_scalability",
+  "benchmark_type": "vector",
+  "config": {
+    "name": "hybrid_knowledge_benchmark",
+    "description": "Benchmark for hybrid knowledge retrieval system",
+    "seed": 42,
+    "output_dir": "benchmark_results",
+    "dataset_size": "medium",
+    "dataset_complexity": "medium",
+    "num_entities": 1000,
+    "num_relations": 5000,
+    "num_documents": 100,
+    "graph_name": "benchmark_graph",
+    "graph_persist": true,
+    "graph_persistence_path": "benchmark_suite/data/graph",
+    "vector_collection": "benchmark_vectors",
+    "vector_persist": true,
+    "vector_persistence_path": "benchmark_suite/data/vector",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "iterations": 3,
+    "warmup_iterations": 1,
+    "timeout": 60,
+    "query_complexity": "medium",
+    "num_queries": 100,
+    "measure_memory": true,
+    "measure_storage": true,
+    "measure_accuracy": true,
+    "custom_params": {}
+  },
+  "timestamp": "2025-05-20 05:57:22",
+  "latency_ms": [
+    13299.679040908813,
+    10165.327072143555,
+    11739.286184310913
+  ],
+  "throughput_ops": null,
+  "memory_mb": null,
+  "storage_bytes": null,
+  "accuracy": null,
+  "precision": null,
+  "recall": null,
+  "f1_score": null,
+  "custom_metrics": {
+    "storage_sizes": [
+      [
+        10,
+        null
+      ],
+      [
+        20,
+        null
+      ],
+      [
+        40,
+        null
+      ],
+      [
+        60,
+        null
+      ],
+      [
+        80,
+        null
+      ],
+      [
+        100,
+        null
+      ]
+    ],
+    "search_times": [
+      [
+        10,
+        59.07912254333496
+      ],
+      [
+        20,
+        1.002359390258789
+      ],
+      [
+        40,
+        0.6178379058837891
+      ],
+      [
+        60,
+        0.62103271484375
+      ],
+      [
+        80,
+        3.5422325134277344
+      ],
+      [
+        100,
+        19.63820457458496
+      ]
+    ],
+    "scaling_factors": [
+      0.008483194630417464,
+      0.3081918081918082,
+      0.6701139667104011,
+      4.277833230958231,
+      4.435215249172119
+    ],
+    "avg_scaling_factor": 1.9399674899325956
+  },
+  "stats": {
+    "latency": {
+      "min_ms": 10165.327072143555,
+      "max_ms": 13299.679040908813,
+      "mean_ms": 11734.764099121094,
+      "median_ms": 11739.286184310913,
+      "p95_ms": 13143.639755249023,
+      "p99_ms": 13268.471183776855,
+      "stddev_ms": 1567.1808775525917
+    },
+    "custom": {
+      "storage_sizes": [
+        [
+          10,
+          null
+        ],
+        [
+          20,
+          null
+        ],
+        [
+          40,
+          null
+        ],
+        [
+          60,
+          null
+        ],
+        [
+          80,
+          null
+        ],
+        [
+          100,
+          null
+        ]
+      ],
+      "search_times": [
+        [
+          10,
+          59.07912254333496
+        ],
+        [
+          20,
+          1.002359390258789
+        ],
+        [
+          40,
+          0.6178379058837891
+        ],
+        [
+          60,
+          0.62103271484375
+        ],
+        [
+          80,
+          3.5422325134277344
+        ],
+        [
+          100,
+          19.63820457458496
+        ]
+      ],
+      "scaling_factors": [
+        0.008483194630417464,
+        0.3081918081918082,
+        0.6701139667104011,
+        4.277833230958231,
+        4.435215249172119
+      ],
+      "avg_scaling_factor": 1.9399674899325956
+    }
+  }
+}
