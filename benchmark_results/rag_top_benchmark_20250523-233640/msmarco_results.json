@@ -1,0 +1,200 @@
+[
+  {
+    "dataset": "msmarco",
+    "query": "what is a corporation?",
+    "reference_answer": "A corporation is a legal entity that is separate and distinct from its owners.",
+    "answer": "A corporation is a legal entity that is separate and distinct from its owners.",
+    "retrieved_context": [
+      "A corporation is a legal entity that is separate and distinct from its owners.",
+      "Blockchain is a decentralized, distributed ledger technology that records transactions across many computers.",
+      "Each block in the chain contains a number of transactions, and every time a new transaction occurs on the blockchain, a record of that transaction is added to every participant's ledger.",
+      "Blockchain is a type of DLT in which transactions are recorded with an immutable cryptographic signature called a hash.",
+      "An airplane wing is shaped with a curved top and flat bottom, creating faster airflow over the top of the wing."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.5,
+      "factual_correctness": 1.0,
+      "retrieval_latency": 0.0008261203765869141,
+      "generation_latency": 3.814697265625e-06,
+      "total_latency": 0.0008618831634521484
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "how to make pancakes?",
+    "reference_answer": "To make pancakes, mix dry ingredients, add wet ingredients, then cook on a griddle until bubbles form, flip, and cook until browned.",
+    "answer": "Heat a lightly oiled griddle and pour batter to form pancakes. The Earth's axis is tilted at approximately 23.",
+    "retrieved_context": [
+      "Heat a lightly oiled griddle and pour batter to form pancakes.",
+      "The Earth's axis is tilted at approximately 23.5 degrees relative to its orbital plane.",
+      "At sunset, the light has to travel through more atmosphere, scattering more blue light, which allows more red and yellow light to reach our eyes.",
+      "A refrigerator works by removing heat from inside the fridge and transferring it to the outside.",
+      "Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods with carbon dioxide and water."
+    ],
+    "metrics": {
+      "context_relevance": 0.0,
+      "answer_relevance": 0.25,
+      "factual_correctness": 0.21052631578947367,
+      "retrieval_latency": 0.000453948974609375,
+      "generation_latency": 4.0531158447265625e-06,
+      "total_latency": 0.000476837158203125
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "what causes seasons on earth?",
+    "reference_answer": "Seasons are caused by Earth's 23.5-degree tilt on its axis as it orbits the Sun, which changes the amount of direct sunlight different hemispheres receive throughout the year.",
+    "answer": "Seasons are caused by the Earth's tilt on its axis as it orbits the Sun. Cook until bubbles form and the edges are dry, then flip and cook until browned on the other side.",
+    "retrieved_context": [
+      "Seasons are caused by the Earth's tilt on its axis as it orbits the Sun.",
+      "Cook until bubbles form and the edges are dry, then flip and cook until browned on the other side.",
+      "Each block in the chain contains a number of transactions, and every time a new transaction occurs on the blockchain, a record of that transaction is added to every participant's ledger."
+    ],
+    "metrics": {
+      "context_relevance": 0.3333333333333333,
+      "answer_relevance": 0.4,
+      "factual_correctness": 0.5,
+      "retrieval_latency": 6.389617919921875e-05,
+      "generation_latency": 9.5367431640625e-07,
+      "total_latency": 0.00011181831359863281
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "why is the sky blue?",
+    "reference_answer": "The sky appears blue due to Rayleigh scattering, where air molecules scatter blue wavelengths of sunlight more than other colors.",
+    "answer": "The Earth's axis is tilted at approximately 23. When the Northern Hemisphere is tilted toward the Sun, it experiences summer while the Southern Hemisphere experiences winter.",
+    "retrieved_context": [
+      "The Earth's axis is tilted at approximately 23.5 degrees relative to its orbital plane.",
+      "When the Northern Hemisphere is tilted toward the Sun, it experiences summer while the Southern Hemisphere experiences winter.",
+      "The sky appears blue because molecules in the air scatter blue light from the sun more than they scatter red light.",
+      "Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods with carbon dioxide and water.",
+      "If the real pathogen enters the body later, the immune system is prepared to fight it off."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.4,
+      "factual_correctness": 0.05263157894736842,
+      "retrieval_latency": 8.0108642578125e-05,
+      "generation_latency": 2.6226043701171875e-06,
+      "total_latency": 0.0001010894775390625
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "how does a refrigerator work?",
+    "reference_answer": "A refrigerator works by continuously circulating refrigerant that evaporates inside the fridge (absorbing heat) and condenses outside (releasing heat), effectively transferring heat from inside to outside.",
+    "answer": "A refrigerator works by removing heat from inside the fridge and transferring it to the outside. A corporation is a legal entity that is separate and distinct from its owners.",
+    "retrieved_context": [
+      "A refrigerator works by removing heat from inside the fridge and transferring it to the outside.",
+      "A corporation is a legal entity that is separate and distinct from its owners.",
+      "A corporation can enter into contracts, loan and borrow money, sue and be sued, hire employees, own assets and pay taxes.",
+      "Mix flour, baking powder, salt, and sugar in a bowl.",
+      "Heat a lightly oiled griddle and pour batter to form pancakes."
+    ],
+    "metrics": {
+      "context_relevance": 0.2,
+      "answer_relevance": 0.4,
+      "factual_correctness": 0.56,
+      "retrieval_latency": 6.29425048828125e-05,
+      "generation_latency": 9.5367431640625e-07,
+      "total_latency": 8.082389831542969e-05
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "what is photosynthesis?",
+    "reference_answer": "Photosynthesis is the process where plants use sunlight, water, and carbon dioxide to create oxygen and energy in the form of glucose.",
+    "answer": "A corporation is a legal entity that is separate and distinct from its owners.",
+    "retrieved_context": [
+      "A corporation is a legal entity that is separate and distinct from its owners.",
+      "The Earth's axis is tilted at approximately 23.5 degrees relative to its orbital plane.",
+      "When the Northern Hemisphere is tilted toward the Sun, it experiences summer while the Southern Hemisphere experiences winter.",
+      "This is called Rayleigh scattering.",
+      "Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods with carbon dioxide and water."
+    ],
+    "metrics": {
+      "context_relevance": 0.0,
+      "answer_relevance": 0.3333333333333333,
+      "factual_correctness": 0.1,
+      "retrieval_latency": 5.412101745605469e-05,
+      "generation_latency": 0.0,
+      "total_latency": 6.508827209472656e-05
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "how does vaccination work?",
+    "reference_answer": "Vaccines contain weakened or inactive parts of a particular organism that triggers an immune response, teaching the immune system to fight off future infections without causing the disease.",
+    "answer": "I don't have enough information to answer this question.",
+    "retrieved_context": [],
+    "metrics": {
+      "context_relevance": 0.0,
+      "answer_relevance": 0.0,
+      "factual_correctness": 0.038461538461538464,
+      "retrieval_latency": 4.506111145019531e-05,
+      "generation_latency": 1.9073486328125e-06,
+      "total_latency": 5.2928924560546875e-05
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "what is blockchain technology?",
+    "reference_answer": "Blockchain is a decentralized, distributed digital ledger that records transactions across many computers so that any involved record cannot be altered retroactively without altering all subsequent blocks.",
+    "answer": "Blockchain is a decentralized, distributed ledger technology that records transactions across many computers.",
+    "retrieved_context": [
+      "Blockchain is a decentralized, distributed ledger technology that records transactions across many computers.",
+      "Blockchain is a type of DLT in which transactions are recorded with an immutable cryptographic signature called a hash.",
+      "A corporation is a legal entity that is separate and distinct from its owners.",
+      "The Earth's axis is tilted at approximately 23.5 degrees relative to its orbital plane.",
+      "When the Northern Hemisphere is tilted toward the Sun, it experiences summer while the Southern Hemisphere experiences winter."
+    ],
+    "metrics": {
+      "context_relevance": 0.4,
+      "answer_relevance": 0.5,
+      "factual_correctness": 0.4230769230769231,
+      "retrieval_latency": 4.506111145019531e-05,
+      "generation_latency": 0.0,
+      "total_latency": 5.602836608886719e-05
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "how do airplanes fly?",
+    "reference_answer": "Airplanes fly due to Bernoulli's principle and Newton's Third Law. The wing shape creates faster airflow over the top, generating lower pressure above than below (lift), while the angle of the wing deflects air downward, creating an upward force.",
+    "answer": "Airplanes fly because of Bernoulli's principle: as the speed of air increases, pressure decreases.",
+    "retrieved_context": [
+      "Airplanes fly because of Bernoulli's principle: as the speed of air increases, pressure decreases."
+    ],
+    "metrics": {
+      "context_relevance": 0.0,
+      "answer_relevance": 0.25,
+      "factual_correctness": 0.2,
+      "retrieval_latency": 4.00543212890625e-05,
+      "generation_latency": 1.1920928955078125e-06,
+      "total_latency": 4.887580871582031e-05
+    }
+  },
+  {
+    "dataset": "msmarco",
+    "query": "what are black holes?",
+    "reference_answer": "Black holes are extremely dense regions of space with gravitational pulls so strong that nothing, not even light, can escape once it passes their event horizon.",
+    "answer": "Black holes are regions of spacetime where gravity is so strong that nothing\u2014no particles or even electromagnetic radiation such as light\u2014can escape from it. Cook until bubbles form and the edges are dry, then flip and cook until browned on the other side.",
+    "retrieved_context": [
+      "Black holes are regions of spacetime where gravity is so strong that nothing\u2014no particles or even electromagnetic radiation such as light\u2014can escape from it.",
+      "Cook until bubbles form and the edges are dry, then flip and cook until browned on the other side.",
+      "Seasons are caused by the Earth's tilt on its axis as it orbits the Sun.",
+      "They contain agents that resemble disease-causing microorganisms but are actually killed or weakened forms of the microbe, its toxins, or its surface proteins.",
+      "Blockchain is a type of DLT in which transactions are recorded with an immutable cryptographic signature called a hash."
+    ],
+    "metrics": {
+      "context_relevance": 0.2,
+      "answer_relevance": 0.5,
+      "factual_correctness": 0.38461538461538464,
+      "retrieval_latency": 4.076957702636719e-05,
+      "generation_latency": 8.106231689453125e-06,
+      "total_latency": 6.771087646484375e-05
+    }
+  }
+]
