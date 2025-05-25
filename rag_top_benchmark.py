@@ -676,6 +676,9 @@ class RagTopBenchmark:
             plt.style.use('ggplot')
             sns.set(font_scale=1.2)
             
+            # Ensure output directory exists
+            output_dir.mkdir(parents=True, exist_ok=True)
+            
             # 1. Summary metrics bar chart
             plt.figure(figsize=(10, 6))
             

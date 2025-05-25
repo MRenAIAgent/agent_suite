@@ -11,12 +11,13 @@ import sys
 from typing import Dict, Any, List, Optional
 import uuid
 
-from agent_suite.rag.models.document import Document
-from agent_suite.rag.api.rag_service import RagService
-from agent_suite.rag.middleware.storage_router import StorageType
-from agent_suite.rag.storage.vector.qdrant_storage import QdrantStorageAdaptor, QDRANT_AVAILABLE
-from agent_suite.rag.utils.embedding_provider import SentenceTransformerEmbeddingProvider, DummyEmbeddingProvider
-from agent_suite.rag.storage.vector.semantic_search import relevance_reranker
+from agents.rag.models.document import Document
+from agents.rag.api.rag_service import RagService
+from agents.rag.middleware.storage_router import StorageType
+from agents.rag.storage.vector.qdrant_storage import QdrantStorageAdaptor, QDRANT_AVAILABLE
+from agents.rag.utils.embedding_provider import SentenceTransformerEmbeddingProvider, DummyEmbeddingProvider
+from agents.rag.storage.vector.semantic_search import relevance_reranker
+from agents.rag.storage.vector.semantic_search import SemanticSearchLayer
 
 # Configure logging
 logging.basicConfig(
@@ -213,8 +214,6 @@ async def test_reranking(service: RagService) -> None:
     original_semantic_search = getattr(vector_adaptor, "semantic_search", None)
     
     # Apply a custom reranker that boosts NLP content
-    from agent_suite.rag.storage.vector.semantic_search import SemanticSearchLayer
-    
     def nlp_boosting_reranker(query: str, results: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Reranker that boosts NLP-related content specifically."""
         logger.info(f"Applying NLP-boosting reranker for query: {query}")

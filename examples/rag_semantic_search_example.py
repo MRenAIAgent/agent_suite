@@ -11,21 +11,21 @@ import logging
 import sys
 from typing import List, Dict, Any
 
-from agent_suite.rag import (
+from agents.rag import (
     RagService,
     Document,
     Entity,
     Relationship,
     ContextItem,
-    create_rag_service
+    RetrievalResult
 )
-from agent_suite.rag.middleware.storage_router import StorageType
-from agent_suite.rag.storage.vector.semantic_search import (
+from agents.rag.middleware.storage_router import StorageType
+from agents.rag.storage.vector.semantic_search import (
     SemanticSearchLayer,
     basic_query_expansion,
     relevance_reranker
 )
-from agent_suite.rag.utils.embedding_provider import (
+from agents.rag.utils.embedding_provider import (
     DummyEmbeddingProvider,
     SentenceTransformerEmbeddingProvider,
     OpenAIEmbeddingProvider,

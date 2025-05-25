@@ -10,11 +10,11 @@ import asyncio
 import logging
 from typing import Dict, Any, List, Optional, Union
 
-from agent_suite.rag.models.document import Document
-from agent_suite.rag.api.rag_service import RagService
-from agent_suite.rag.middleware.storage_router import StorageType
-from agent_suite.rag.storage.vector.base import VectorStorageAdaptor
-from agent_suite.rag.api.rag_retrieval import RetrievalResult
+from agents.rag.models.document import Document
+from agents.rag.api.rag_service import RagService
+from agents.rag.middleware.storage_router import StorageType
+from agents.rag.storage.vector.base import VectorStorageAdaptor
+from agents.rag.api.rag_retrieval import RetrievalResult
 
 # Configure logging
 logging.basicConfig(

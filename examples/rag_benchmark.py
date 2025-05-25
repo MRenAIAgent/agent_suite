@@ -18,12 +18,12 @@ from pathlib import Path
 from typing import Dict, List, Any, Tuple, Optional, Union
 from tqdm import tqdm
 
-from agent_suite.rag.models.document import Document
-from agent_suite.rag.api.rag_service import RagService
-from agent_suite.rag.middleware.storage_router import StorageType
-from agent_suite.rag.storage.vector.qdrant_storage import QdrantStorageAdaptor, QDRANT_AVAILABLE
-from agent_suite.rag.utils.embedding_provider import SentenceTransformerEmbeddingProvider, DummyEmbeddingProvider
-from agent_suite.rag.storage.vector.semantic_search import SemanticSearchLayer, relevance_reranker
+from agents.rag.models.document import Document
+from agents.rag.api.rag_service import RagService
+from agents.rag.middleware.storage_router import StorageType
+from agents.rag.storage.vector.qdrant_storage import QdrantStorageAdaptor, QDRANT_AVAILABLE
+from agents.rag.utils.embedding_provider import SentenceTransformerEmbeddingProvider, DummyEmbeddingProvider
+from agents.rag.storage.vector.semantic_search import SemanticSearchLayer, relevance_reranker
 
 # Configure logging
 logging.basicConfig(

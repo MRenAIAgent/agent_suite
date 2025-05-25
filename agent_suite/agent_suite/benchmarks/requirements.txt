@@ -1,5 +1,0 @@
-matplotlib>=3.6.0
-numpy>=1.23.0
-jinja2>=3.0.0
-pandas>=1.5.0
-jsonlines>=3.0.0 
