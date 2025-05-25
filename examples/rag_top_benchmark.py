@@ -15,7 +15,7 @@ Datasets used:
 
 NOTE: This example has been updated to work with the new location of the RAG modules.
 For a simpler standalone implementation that doesn't require external services like Qdrant,
-please use the standalone version at: rag_top_benchmark.py
+please use the standalone version at: benchmark/rag/code/rag_top_benchmark.py
 """
 
 # Run the standalone version
@@ -25,5 +25,5 @@ if __name__ == "__main__":
 
     # Import and run the standalone version
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    from rag_top_benchmark import main
+    from benchmark.rag.code.rag_top_benchmark import main
     main() 
