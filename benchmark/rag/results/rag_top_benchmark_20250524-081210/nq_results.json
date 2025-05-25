@@ -1,0 +1,210 @@
+[
+  {
+    "dataset": "nq",
+    "query": "What is the capital of France?",
+    "reference_answer": "Paris",
+    "answer": "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+    "retrieved_context": [
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+      "The city of Paris is the centre and seat of government of the region and province of \u00cele-de-France, or Paris Region.",
+      "Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas.",
+      "The speed of light in vacuum, commonly denoted c, is a universal physical constant important in many areas of physics.",
+      "Water is an inorganic, transparent, tasteless, odorless, and nearly colorless chemical substance, which is the main constituent of Earth's hydrosphere and the fluids of all known living organisms."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.6666666666666666,
+      "factual_correctness": 1.0,
+      "retrieval_latency": 0.002934694290161133,
+      "generation_latency": 0.000102996826171875,
+      "total_latency": 0.0035216808319091797
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "Who invented the telephone?",
+    "reference_answer": "Alexander Graham Bell",
+    "answer": "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone. The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.",
+    "retrieved_context": [
+      "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone.",
+      "The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.",
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+      "The city of Paris is the centre and seat of government of the region and province of \u00cele-de-France, or Paris Region.",
+      "He also co-founded the American Telephone and Telegraph Company (AT&T) in 1885."
+    ],
+    "metrics": {
+      "context_relevance": 0.4,
+      "answer_relevance": 0.5,
+      "factual_correctness": 1.0,
+      "retrieval_latency": 0.000370025634765625,
+      "generation_latency": 5.9604644775390625e-06,
+      "total_latency": 0.0005409717559814453
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "What year did World War II end?",
+    "reference_answer": "1945",
+    "answer": "World War II ended in 1945 with the victory of the Allies over the Axis powers. The war in Europe concluded with Germany's unconditional surrender on May 8, 1945 (V-E Day).",
+    "retrieved_context": [
+      "World War II ended in 1945 with the victory of the Allies over the Axis powers.",
+      "The war in Europe concluded with Germany's unconditional surrender on May 8, 1945 (V-E Day).",
+      "The war in Asia ended on September 2, 1945, when Japan formally surrendered (V-J Day)."
+    ],
+    "metrics": {
+      "context_relevance": 0.3333333333333333,
+      "answer_relevance": 0.42857142857142855,
+      "factual_correctness": 1.0,
+      "retrieval_latency": 0.00014328956604003906,
+      "generation_latency": 5.9604644775390625e-06,
+      "total_latency": 0.0001761913299560547
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "How tall is Mount Everest?",
+    "reference_answer": "8,848.86 meters (29,031.7 feet)",
+    "answer": "Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+    "retrieved_context": [
+      "Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas.",
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+      "The city of Paris is the centre and seat of government of the region and province of \u00cele-de-France, or Paris Region.",
+      "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone.",
+      "Pride and Prejudice is an 1813 novel of manners by Jane Austen."
+    ],
+    "metrics": {
+      "context_relevance": 0.2,
+      "answer_relevance": 0.4,
+      "factual_correctness": 0.0,
+      "retrieval_latency": 0.00014591217041015625,
+      "generation_latency": 3.0994415283203125e-06,
+      "total_latency": 0.0002048015594482422
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "Who wrote the novel 'Pride and Prejudice'?",
+    "reference_answer": "Jane Austen",
+    "answer": "The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness. Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone.",
+    "retrieved_context": [
+      "The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.",
+      "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone.",
+      "The painting's novel qualities include the subject's enigmatic expression, the monumentality of the composition, the subtle modeling of forms, and the atmospheric illusionism.",
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+      "The city of Paris is the centre and seat of government of the region and province of \u00cele-de-France, or Paris Region."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.5714285714285714,
+      "factual_correctness": 0.0,
+      "retrieval_latency": 0.0002129077911376953,
+      "generation_latency": 1.3113021850585938e-05,
+      "total_latency": 0.00030303001403808594
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "What is the speed of light in a vacuum?",
+    "reference_answer": "299,792,458 meters per second",
+    "answer": "The speed of light in vacuum, commonly denoted c, is a universal physical constant important in many areas of physics.",
+    "retrieved_context": [
+      "The speed of light in vacuum, commonly denoted c, is a universal physical constant important in many areas of physics.",
+      "It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined, but slightly less than one-thousandth the mass of the Sun.",
+      "Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas.",
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+      "The city of Paris is the centre and seat of government of the region and province of \u00cele-de-France, or Paris Region."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.7777777777777778,
+      "factual_correctness": 0.0,
+      "retrieval_latency": 0.0008521080017089844,
+      "generation_latency": 1.9073486328125e-06,
+      "total_latency": 0.0010080337524414062
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "What is the chemical formula for water?",
+    "reference_answer": "H\u2082O",
+    "answer": "According to special relativity, c is the upper limit for the speed at which conventional matter, energy or any signal carrying information can travel through space.",
+    "retrieved_context": [
+      "According to special relativity, c is the upper limit for the speed at which conventional matter, energy or any signal carrying information can travel through space.",
+      "Water is an inorganic, transparent, tasteless, odorless, and nearly colorless chemical substance, which is the main constituent of Earth's hydrosphere and the fluids of all known living organisms.",
+      "Its chemical formula is H\u2082O, meaning that each of its molecules contains one oxygen and two hydrogen atoms.",
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+      "The city of Paris is the centre and seat of government of the region and province of \u00cele-de-France, or Paris Region."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.42857142857142855,
+      "factual_correctness": 0.0,
+      "retrieval_latency": 0.0006611347198486328,
+      "generation_latency": 9.5367431640625e-07,
+      "total_latency": 0.0006859302520751953
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "Who was the first person to walk on the Moon?",
+    "reference_answer": "Neil Armstrong",
+    "answer": "Neil Alden Armstrong (August 5, 1930 \u2013 August 25, 2012) was an American astronaut and aeronautical engineer, and the first person to walk on the Moon. Armstrong's first spaceflight was the NASA Gemini 8 mission in 1966.",
+    "retrieved_context": [
+      "Neil Alden Armstrong (August 5, 1930 \u2013 August 25, 2012) was an American astronaut and aeronautical engineer, and the first person to walk on the Moon.",
+      "Armstrong's first spaceflight was the NASA Gemini 8 mission in 1966. On July 20, 1969, he and Apollo 11 Lunar Module pilot Buzz Aldrin became the first people to land on the Moon.",
+      "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone.",
+      "The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.",
+      "The war in Europe concluded with Germany's unconditional surrender on May 8, 1945 (V-E Day)."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.7777777777777778,
+      "factual_correctness": 1.0,
+      "retrieval_latency": 0.0009019374847412109,
+      "generation_latency": 4.76837158203125e-06,
+      "total_latency": 0.0011589527130126953
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "What is the largest planet in our solar system?",
+    "reference_answer": "Jupiter",
+    "answer": "Jupiter is the fifth planet from the Sun and the largest in the Solar System.",
+    "retrieved_context": [
+      "Jupiter is the fifth planet from the Sun and the largest in the Solar System.",
+      "It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined, but slightly less than one-thousandth the mass of the Sun.",
+      "Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas.",
+      "The speed of light in vacuum, commonly denoted c, is a universal physical constant important in many areas of physics.",
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018."
+    ],
+    "metrics": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.6666666666666666,
+      "factual_correctness": 1.0,
+      "retrieval_latency": 0.0003662109375,
+      "generation_latency": 9.5367431640625e-07,
+      "total_latency": 0.0004169940948486328
+    }
+  },
+  {
+    "dataset": "nq",
+    "query": "Who painted the Mona Lisa?",
+    "reference_answer": "Leonardo da Vinci",
+    "answer": "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone. The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.",
+    "retrieved_context": [
+      "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone.",
+      "The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.",
+      "The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci.",
+      "Paris is the capital and most populous city of France, with an estimated population of 2,175,601 residents as of 2018.",
+      "The city of Paris is the centre and seat of government of the region and province of \u00cele-de-France, or Paris Region."
+    ],
+    "metrics": {
+      "context_relevance": 0.6,
+      "answer_relevance": 0.4,
+      "factual_correctness": 0.0,
+      "retrieval_latency": 5.888938903808594e-05,
+      "generation_latency": 3.0994415283203125e-06,
+      "total_latency": 8.20159912109375e-05
+    }
+  }
+]

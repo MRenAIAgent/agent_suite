@@ -1,0 +1,5 @@
+{"id": "qa_0", "instruction": "Answer the following question: What is the capital of France?", "input": "", "reference": "Paris", "evaluation_criteria": {"success": true}}
+{"id": "qa_1", "instruction": "Answer the following question: Who wrote 'Pride and Prejudice'?", "input": "", "reference": "Jane Austen", "evaluation_criteria": {"success": true}}
+{"id": "qa_2", "instruction": "Answer the following question: What is the boiling point of water in Celsius?", "input": "", "reference": "100 degrees Celsius", "evaluation_criteria": {"success": true}}
+{"id": "qa_3", "instruction": "Answer the following question: What planet is known as the Red Planet?", "input": "", "reference": "Mars", "evaluation_criteria": {"success": true}}
+{"id": "qa_4", "instruction": "Answer the following question: Who painted the Mona Lisa?", "input": "", "reference": "Leonardo da Vinci", "evaluation_criteria": {"success": true}}

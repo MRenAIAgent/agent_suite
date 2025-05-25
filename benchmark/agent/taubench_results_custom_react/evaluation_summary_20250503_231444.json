@@ -1,0 +1,24 @@
+{
+  "agent_type": "ReActAgent",
+  "model": "gpt-4",
+  "evaluation_time": "2025-05-03 23:13:24",
+  "frameworks": {
+    "taubench": {
+      "summary": {
+        "total_tasks": 10,
+        "successful_tasks": 8,
+        "overall_success_rate": 0.8,
+        "categories_tested": [
+          "reasoning",
+          "planning"
+        ],
+        "category_success_rates": {
+          "reasoning": 0.6,
+          "planning": 1.0
+        }
+      },
+      "elapsed_time": 80.14514803886414,
+      "results_file": "taubench_results_custom_react/taubench_results_20250503_231444.json"
+    }
+  }
+}

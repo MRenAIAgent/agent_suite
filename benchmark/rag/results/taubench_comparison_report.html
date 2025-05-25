@@ -1,0 +1,113 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TauBench Agent Comparison Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                line-height: 1.6;
+            }
+            h1, h2, h3 {
+                color: #333;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .chart {
+                margin: 30px 0;
+                text-align: center;
+            }
+            .chart img {
+                max-width: 100%;
+                height: auto;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 20px 0;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .highlightRow {
+                background-color: #e6f7ff !important;
+            }
+            .timestamp {
+                font-size: 0.8em;
+                color: #666;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>TauBench Agent Comparison Report</h1>
+            <div class="timestamp">Generated on: 2025-05-18 21:55:59</div>
+            
+            <h2>Overall Performance Comparison</h2>
+            <div class="chart">
+                <img src="taubench_comparison.png" alt="Overall Performance Comparison Chart">
+            </div>
+            
+            <h2>Performance by Category</h2>
+            <div class="chart">
+                <img src="category_comparison.png" alt="Performance by Category Chart">
+            </div>
+            
+            <h2>Detailed Results</h2>
+    
+            <h3>Simple ReAct</h3>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Score</th>
+                    <th>Correct</th>
+                    <th>Incorrect</th>
+                    <th>Success Rate</th>
+                </tr>
+        
+                <tr class="highlightRow">
+                    <td><strong>Overall</strong></td>
+                    <td><strong>0.00</strong></td>
+                    <td><strong>0</strong></td>
+                    <td><strong>0</strong></td>
+                    <td><strong>0.00%</strong></td>
+                </tr>
+            </table>
+        
+            <h3>Enhanced ReAct</h3>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Score</th>
+                    <th>Correct</th>
+                    <th>Incorrect</th>
+                    <th>Success Rate</th>
+                </tr>
+        
+                <tr class="highlightRow">
+                    <td><strong>Overall</strong></td>
+                    <td><strong>0.00</strong></td>
+                    <td><strong>0</strong></td>
+                    <td><strong>0</strong></td>
+                    <td><strong>0.00%</strong></td>
+                </tr>
+            </table>
+        
+        </div>
+    </body>
+    </html>
+    

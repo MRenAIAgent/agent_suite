@@ -1,0 +1,71 @@
+{
+  "benchmark_name": "benchmark_graph_query_performance",
+  "benchmark_type": "graph",
+  "config": {
+    "name": "hybrid_knowledge_benchmark",
+    "description": "Benchmark for hybrid knowledge retrieval system",
+    "seed": 42,
+    "output_dir": "benchmark_results/run_20250520-055717",
+    "dataset_size": "medium",
+    "dataset_complexity": "medium",
+    "num_entities": 1000,
+    "num_relations": 5000,
+    "num_documents": 100,
+    "graph_name": "benchmark_graph",
+    "graph_persist": true,
+    "graph_persistence_path": "benchmark_suite/data/graph",
+    "vector_collection": "benchmark_vectors",
+    "vector_persist": true,
+    "vector_persistence_path": "benchmark_suite/data/vector",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "iterations": 3,
+    "warmup_iterations": 1,
+    "timeout": 60,
+    "query_complexity": "medium",
+    "num_queries": 100,
+    "measure_memory": true,
+    "measure_storage": true,
+    "measure_accuracy": true,
+    "custom_params": {}
+  },
+  "timestamp": "2025-05-20 11:06:27",
+  "latency_ms": [
+    31.73828125,
+    27.695178985595703,
+    27.97102928161621
+  ],
+  "throughput_ops": null,
+  "memory_mb": null,
+  "storage_bytes": null,
+  "accuracy": null,
+  "precision": null,
+  "recall": null,
+  "f1_score": null,
+  "custom_metrics": {
+    "query_times": {
+      "entity_type": 0.027132034301757812,
+      "relation_type": 0.5970001220703125,
+      "entity_id": 0.00040531158447265625,
+      "traversal": 0.18918514251708984
+    }
+  },
+  "stats": {
+    "latency": {
+      "min_ms": 27.695178985595703,
+      "max_ms": 31.73828125,
+      "mean_ms": 29.134829839070637,
+      "median_ms": 27.97102928161621,
+      "p95_ms": 31.36155605316162,
+      "p99_ms": 31.662936210632324,
+      "stddev_ms": 2.2588698021922853
+    },
+    "custom": {
+      "query_times": {
+        "entity_type": 0.027132034301757812,
+        "relation_type": 0.5970001220703125,
+        "entity_id": 0.00040531158447265625,
+        "traversal": 0.18918514251708984
+      }
+    }
+  }
+}

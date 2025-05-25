@@ -1,0 +1,46 @@
+{
+  "langchain_react": {
+    "agent_type": "langchain_react",
+    "results": [
+      {
+        "id": "tool_use_0",
+        "query": "Use the available tools to find the current weather in Tokyo",
+        "expected_answer": "The solution should use the weather search tool with appropriate parameters",
+        "actual_answer": "The current weather in Tokyo is 28\u00b0C with thunderstorms, 42% humidity, and wind speed of 14 km/h.",
+        "is_correct": false,
+        "execution_time": 1.3859050273895264,
+        "timeout": false
+      }
+    ],
+    "metrics": {
+      "num_cases": 1,
+      "num_correct": 0,
+      "num_timeout": 0,
+      "accuracy": 0.0,
+      "timeout_rate": 0.0,
+      "avg_execution_time": 1.3859050273895264
+    }
+  },
+  "langchain_structured": {
+    "agent_type": "langchain_structured",
+    "results": [
+      {
+        "id": "tool_use_0",
+        "query": "Use the available tools to find the current weather in Tokyo",
+        "expected_answer": "The solution should use the weather search tool with appropriate parameters",
+        "actual_answer": "{\n  \"action\": \"Final Answer\",\n  \"action_input\": \"The current weather in Tokyo is 28\u00b0C with thunderstorms, 42% humidity, and a wind speed of 14 km/h.\"\n}",
+        "is_correct": false,
+        "execution_time": 1.434570074081421,
+        "timeout": false
+      }
+    ],
+    "metrics": {
+      "num_cases": 1,
+      "num_correct": 0,
+      "num_timeout": 0,
+      "accuracy": 0.0,
+      "timeout_rate": 0.0,
+      "avg_execution_time": 1.434570074081421
+    }
+  }
+}

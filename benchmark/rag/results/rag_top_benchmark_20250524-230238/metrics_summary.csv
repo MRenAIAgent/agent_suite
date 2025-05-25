@@ -1,0 +1,9 @@
+dataset,metric,value
+overall,context_relevance,0.7533333333333333
+overall,answer_relevance,0.5617460317460318
+overall,factual_correctness,0.5
+overall,summary_score,0.6006984126984127
+nq,context_relevance,0.7533333333333333
+nq,answer_relevance,0.5617460317460318
+nq,factual_correctness,0.5
+nq,total_latency,0.0001108407974243164

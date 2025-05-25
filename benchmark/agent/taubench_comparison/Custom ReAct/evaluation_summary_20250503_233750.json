@@ -1,0 +1,30 @@
+{
+  "agent_type": "Custom ReAct",
+  "model": "gpt-4",
+  "evaluation_time": "2025-05-03 23:36:03",
+  "frameworks": {
+    "taubench": {
+      "summary": {
+        "total_tasks": 25,
+        "successful_tasks": 17,
+        "overall_success_rate": 0.68,
+        "categories_tested": [
+          "reasoning",
+          "planning",
+          "tool_use",
+          "code_generation",
+          "qa"
+        ],
+        "category_success_rates": {
+          "reasoning": 0.8,
+          "planning": 0.6,
+          "tool_use": 0.6,
+          "code_generation": 0.8,
+          "qa": 0.6
+        }
+      },
+      "elapsed_time": 107.129742,
+      "results_file": "taubench_comparison/Custom ReAct/taubench_results_20250503_233750.json"
+    }
+  }
+}

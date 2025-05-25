@@ -1,0 +1,48 @@
+{
+  "overall": {
+    "context_relevance": 0.6888888888888888,
+    "answer_relevance": 0.4943657976010917,
+    "factual_correctness": 0.33231039136302293,
+    "summary_score": 0.5041061031160102
+  },
+  "latency": {
+    "retrieval": {
+      "mean": 8.867581685384115e-05,
+      "p50": 4.506111145019531e-05,
+      "p95": 0.0003019213676452627,
+      "p99": 0.000718190670013428
+    },
+    "generation": {
+      "mean": 1.5974044799804688e-06,
+      "p50": 9.5367431640625e-07,
+      "p95": 4.184246063232421e-06,
+      "p99": 6.999969482421878e-06
+    },
+    "total": {
+      "mean": 0.00010697046915690105,
+      "p50": 6.020069122314453e-05,
+      "p95": 0.0003270626068115225,
+      "p99": 0.000750219821929932
+    }
+  },
+  "per_dataset": {
+    "nq": {
+      "context_relevance": 0.7533333333333333,
+      "answer_relevance": 0.5617460317460318,
+      "factual_correctness": 0.5,
+      "total_latency": 6.558895111083985e-05
+    },
+    "msmarco": {
+      "context_relevance": 0.31333333333333335,
+      "answer_relevance": 0.35333333333333333,
+      "factual_correctness": 0.3469311740890688,
+      "total_latency": 0.00019230842590332032
+    },
+    "hotpotqa": {
+      "context_relevance": 1.0,
+      "answer_relevance": 0.5680180277239101,
+      "factual_correctness": 0.15,
+      "total_latency": 6.301403045654297e-05
+    }
+  }
+}
