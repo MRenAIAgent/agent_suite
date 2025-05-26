@@ -1,0 +1,39 @@
+{
+  "user_id": "user1",
+  "name": "John's Geometry Learning",
+  "concept_mastery": {
+    "6991cb32-3b5d-4502-8e9f-ffe6f1864c88": {
+      "mastery": 0.9,
+      "confidence": 0.8,
+      "last_practiced": "2025-05-25T22:15:38.115136",
+      "history": []
+    },
+    "63fffc00-1444-43db-9e63-977c1de5d110": {
+      "mastery": 0.7,
+      "confidence": 0.8,
+      "last_practiced": "2025-05-25T22:15:38.115156",
+      "history": []
+    },
+    "7e14f742-1756-4529-9c3a-139eb0eed2f5": {
+      "mastery": 0.64,
+      "confidence": 0.8500000000000001,
+      "last_practiced": "2025-05-25T22:15:38.115489",
+      "history": [
+        {
+          "mastery": 0.4,
+          "confidence": 0.8,
+          "timestamp": "2025-05-25T22:15:38.115158"
+        }
+      ]
+    }
+  },
+  "exercise_history": {
+    "6253a986-bc41-4f8a-b948-6a5f1ddbd238": [
+      {
+        "concept_id": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+        "result": true,
+        "timestamp": "2025-05-25T22:15:38.115483"
+      }
+    ]
+  }
+}

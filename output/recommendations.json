@@ -1,0 +1,104 @@
+{
+  "gaps": [
+    {
+      "concept_id": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+      "mastery": 0.0,
+      "impact_score": 1.0,
+      "centrality": 0.375,
+      "priority": 0.6525
+    },
+    {
+      "concept_id": "d7789984-501d-447c-9bf2-db4f3d336abb",
+      "mastery": 0.0,
+      "impact_score": 0.5,
+      "centrality": 0.25,
+      "priority": 0.41500000000000004
+    },
+    {
+      "concept_id": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "mastery": 0.4,
+      "impact_score": 0.5,
+      "centrality": 0.5,
+      "priority": 0.41
+    },
+    {
+      "concept_id": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+      "mastery": 0.0,
+      "impact_score": 0.0,
+      "centrality": 0.375,
+      "priority": 0.25249999999999995
+    },
+    {
+      "concept_id": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+      "mastery": 0.0,
+      "impact_score": 0.0,
+      "centrality": 0.375,
+      "priority": 0.25249999999999995
+    },
+    {
+      "concept_id": "9e28f17c-3530-47ac-8f15-0bc8cdb444c2",
+      "mastery": 0.0,
+      "impact_score": 0.0,
+      "centrality": 0.375,
+      "priority": 0.25249999999999995
+    },
+    {
+      "concept_id": "9b01281a-6f34-4091-8742-32bef71fbbce",
+      "mastery": 0.0,
+      "impact_score": 0.0,
+      "centrality": 0.125,
+      "priority": 0.1775
+    }
+  ],
+  "recommendations": [
+    {
+      "exercise_id": "6253a986-bc41-4f8a-b948-6a5f1ddbd238",
+      "exercise_title": "Triangle Properties",
+      "concept_id": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "reason": "You should continue learning Angles to build on your current knowledge."
+    },
+    {
+      "exercise_id": "55b0992e-24ca-4ee1-a753-5b1c11cc99db",
+      "exercise_title": "Circle Properties",
+      "concept_id": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+      "reason": "You should start learning Circles as it's the next logical concept to study."
+    },
+    {
+      "exercise_id": "d5b26a19-d5b6-4ba8-b018-09d26f3cae32",
+      "exercise_title": "Finding Perimeter",
+      "concept_id": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+      "reason": "You should start learning Perimeter as it's the next logical concept to study."
+    }
+  ],
+  "learning_path": [
+    {
+      "concept_id": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "name": "Angles",
+      "description": "An angle is formed by two rays sharing a common endpoint.",
+      "prerequisites": [
+        "Lines"
+      ],
+      "unlocks": [
+        "Triangles"
+      ]
+    },
+    {
+      "concept_id": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+      "name": "Circles",
+      "description": "A circle is the set of all points equidistant from a fixed point called the center.",
+      "prerequisites": [
+        "Points"
+      ],
+      "unlocks": []
+    },
+    {
+      "concept_id": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+      "name": "Perimeter",
+      "description": "The perimeter is the total length of the boundary of a two-dimensional shape.",
+      "prerequisites": [
+        "Lines"
+      ],
+      "unlocks": []
+    }
+  ]
+}

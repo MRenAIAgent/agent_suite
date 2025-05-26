@@ -1,0 +1,242 @@
+{
+  "name": "Basic Geometry",
+  "concepts": [
+    {
+      "id": "6991cb32-3b5d-4502-8e9f-ffe6f1864c88",
+      "name": "Points",
+      "description": "A point is a position in space with no size or shape.",
+      "difficulty": 1,
+      "time_to_master": 10,
+      "category": "Geometry Basics",
+      "examples": [
+        "Point A is represented as a dot."
+      ],
+      "prerequisites": [],
+      "dependents": [
+        "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+        "63fffc00-1444-43db-9e63-977c1de5d110"
+      ],
+      "related": []
+    },
+    {
+      "id": "63fffc00-1444-43db-9e63-977c1de5d110",
+      "name": "Lines",
+      "description": "A line is a straight path that extends infinitely in both directions.",
+      "difficulty": 1,
+      "time_to_master": 15,
+      "category": "Geometry Basics",
+      "examples": [
+        "Line AB is represented by a straight line passing through points A and B."
+      ],
+      "prerequisites": [
+        "6991cb32-3b5d-4502-8e9f-ffe6f1864c88"
+      ],
+      "dependents": [
+        "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+        "0bc297f1-1097-4769-ad5a-4c66a8502827"
+      ],
+      "related": []
+    },
+    {
+      "id": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "name": "Angles",
+      "description": "An angle is formed by two rays sharing a common endpoint.",
+      "difficulty": 2,
+      "time_to_master": 20,
+      "category": "Geometry Basics",
+      "examples": [
+        "Angle ABC measures 45 degrees."
+      ],
+      "prerequisites": [
+        "63fffc00-1444-43db-9e63-977c1de5d110"
+      ],
+      "dependents": [
+        "18725b3b-72c4-4dd6-820a-0e07c780515c"
+      ],
+      "related": [
+        "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8"
+      ]
+    },
+    {
+      "id": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+      "name": "Triangles",
+      "description": "A triangle is a polygon with three sides and three angles.",
+      "difficulty": 2,
+      "time_to_master": 30,
+      "category": "Polygons",
+      "examples": [
+        "Triangle ABC has angles that sum to 180 degrees."
+      ],
+      "prerequisites": [
+        "7e14f742-1756-4529-9c3a-139eb0eed2f5"
+      ],
+      "dependents": [
+        "d7789984-501d-447c-9bf2-db4f3d336abb",
+        "9e28f17c-3530-47ac-8f15-0bc8cdb444c2"
+      ],
+      "related": []
+    },
+    {
+      "id": "d7789984-501d-447c-9bf2-db4f3d336abb",
+      "name": "Right Triangles",
+      "description": "A right triangle has one angle that measures 90 degrees.",
+      "difficulty": 3,
+      "time_to_master": 40,
+      "category": "Polygons",
+      "examples": [
+        "The Pythagorean theorem applies to right triangles."
+      ],
+      "prerequisites": [
+        "18725b3b-72c4-4dd6-820a-0e07c780515c"
+      ],
+      "dependents": [
+        "9b01281a-6f34-4091-8742-32bef71fbbce"
+      ],
+      "related": []
+    },
+    {
+      "id": "9b01281a-6f34-4091-8742-32bef71fbbce",
+      "name": "Pythagorean Theorem",
+      "description": "In a right triangle, the square of the hypotenuse equals the sum of squares of the other two sides.",
+      "difficulty": 3,
+      "time_to_master": 45,
+      "category": "Theorems",
+      "examples": [
+        "a\u00b2 + b\u00b2 = c\u00b2 where c is the hypotenuse."
+      ],
+      "prerequisites": [
+        "d7789984-501d-447c-9bf2-db4f3d336abb"
+      ],
+      "dependents": [],
+      "related": []
+    },
+    {
+      "id": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+      "name": "Circles",
+      "description": "A circle is the set of all points equidistant from a fixed point called the center.",
+      "difficulty": 3,
+      "time_to_master": 35,
+      "category": "Curved Shapes",
+      "examples": [
+        "The circumference of a circle is 2\u03c0r."
+      ],
+      "prerequisites": [
+        "6991cb32-3b5d-4502-8e9f-ffe6f1864c88"
+      ],
+      "dependents": [],
+      "related": [
+        "7e14f742-1756-4529-9c3a-139eb0eed2f5"
+      ]
+    },
+    {
+      "id": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+      "name": "Perimeter",
+      "description": "The perimeter is the total length of the boundary of a two-dimensional shape.",
+      "difficulty": 2,
+      "time_to_master": 25,
+      "category": "Measurement",
+      "examples": [
+        "The perimeter of a rectangle is 2(length + width)."
+      ],
+      "prerequisites": [
+        "63fffc00-1444-43db-9e63-977c1de5d110"
+      ],
+      "dependents": [],
+      "related": [
+        "9e28f17c-3530-47ac-8f15-0bc8cdb444c2"
+      ]
+    },
+    {
+      "id": "9e28f17c-3530-47ac-8f15-0bc8cdb444c2",
+      "name": "Area",
+      "description": "The area is the amount of space inside a two-dimensional shape.",
+      "difficulty": 2,
+      "time_to_master": 30,
+      "category": "Measurement",
+      "examples": [
+        "The area of a rectangle is length \u00d7 width."
+      ],
+      "prerequisites": [
+        "18725b3b-72c4-4dd6-820a-0e07c780515c"
+      ],
+      "dependents": [],
+      "related": [
+        "0bc297f1-1097-4769-ad5a-4c66a8502827"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "6991cb32-3b5d-4502-8e9f-ffe6f1864c88",
+      "target": "63fffc00-1444-43db-9e63-977c1de5d110",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "6991cb32-3b5d-4502-8e9f-ffe6f1864c88",
+      "target": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "63fffc00-1444-43db-9e63-977c1de5d110",
+      "target": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "63fffc00-1444-43db-9e63-977c1de5d110",
+      "target": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "target": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "target": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+      "type": "related",
+      "strength": 0.5
+    },
+    {
+      "source": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+      "target": "d7789984-501d-447c-9bf2-db4f3d336abb",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+      "target": "9e28f17c-3530-47ac-8f15-0bc8cdb444c2",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "d7789984-501d-447c-9bf2-db4f3d336abb",
+      "target": "9b01281a-6f34-4091-8742-32bef71fbbce",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+      "target": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+      "type": "related",
+      "strength": 0.5
+    },
+    {
+      "source": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+      "target": "9e28f17c-3530-47ac-8f15-0bc8cdb444c2",
+      "type": "related",
+      "strength": 0.5
+    },
+    {
+      "source": "9e28f17c-3530-47ac-8f15-0bc8cdb444c2",
+      "target": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+      "type": "related",
+      "strength": 0.5
+    }
+  ]
+}

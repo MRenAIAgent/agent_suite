@@ -1,0 +1,196 @@
+{
+  "exercises": [
+    {
+      "id": "85b4a85f-ea57-4579-a702-75fc55b51c1a",
+      "title": "Identifying Points",
+      "problem": "Plot the following points on a coordinate plane: A(3, 4), B(-2, 5), C(0, 0).",
+      "solution": "Points should be plotted at the coordinates specified.",
+      "difficulty": 1,
+      "estimated_time": 5,
+      "format_type": "graphing",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "6991cb32-3b5d-4502-8e9f-ffe6f1864c88",
+          "weight": 0.9,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "c39787bc-df78-46e2-96db-a06c845f0ee4",
+      "title": "Drawing Lines",
+      "problem": "Draw a line passing through the points A(1, 2) and B(5, 4).",
+      "solution": "Draw a straight line connecting the two points.",
+      "difficulty": 1,
+      "estimated_time": 5,
+      "format_type": "graphing",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "63fffc00-1444-43db-9e63-977c1de5d110",
+          "weight": 0.9,
+          "type": "primary"
+        },
+        {
+          "concept_id": "6991cb32-3b5d-4502-8e9f-ffe6f1864c88",
+          "weight": 0.4,
+          "type": "foundational"
+        }
+      ]
+    },
+    {
+      "id": "02baed0a-f3ca-4d67-9783-9014ef9e2dd0",
+      "title": "Measuring Angles",
+      "problem": "Using a protractor, measure the angle formed by the rays OA and OB.",
+      "solution": "The angle measures 45 degrees.",
+      "difficulty": 2,
+      "estimated_time": 7,
+      "format_type": "measurement",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+          "weight": 0.9,
+          "type": "primary"
+        },
+        {
+          "concept_id": "63fffc00-1444-43db-9e63-977c1de5d110",
+          "weight": 0.3,
+          "type": "foundational"
+        }
+      ]
+    },
+    {
+      "id": "6253a986-bc41-4f8a-b948-6a5f1ddbd238",
+      "title": "Triangle Properties",
+      "problem": "Find the missing angle in a triangle where two angles are 45\u00b0 and 60\u00b0.",
+      "solution": "The missing angle is 75\u00b0 because the sum of angles in a triangle is 180\u00b0. 180\u00b0 - 45\u00b0 - 60\u00b0 = 75\u00b0",
+      "difficulty": 2,
+      "estimated_time": 8,
+      "format_type": "calculation",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+          "weight": 0.9,
+          "type": "primary"
+        },
+        {
+          "concept_id": "7e14f742-1756-4529-9c3a-139eb0eed2f5",
+          "weight": 0.5,
+          "type": "foundational"
+        }
+      ]
+    },
+    {
+      "id": "bb3531ef-3388-4f0c-9d59-8f23a4848449",
+      "title": "Identifying Right Triangles",
+      "problem": "Which of the following triangles is a right triangle? A(3,4,5), B(5,6,7), C(8,15,17)",
+      "solution": "Triangles A(3,4,5) and C(8,15,17) are right triangles because they satisfy the Pythagorean theorem.",
+      "difficulty": 3,
+      "estimated_time": 10,
+      "format_type": "multiple-choice",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "d7789984-501d-447c-9bf2-db4f3d336abb",
+          "weight": 0.9,
+          "type": "primary"
+        },
+        {
+          "concept_id": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+          "weight": 0.4,
+          "type": "foundational"
+        }
+      ]
+    },
+    {
+      "id": "ddba2aa7-7725-4943-baf9-fb6382e41195",
+      "title": "Applying Pythagorean Theorem",
+      "problem": "Find the hypotenuse of a right triangle with legs of length 6 and 8.",
+      "solution": "Using the Pythagorean theorem: c\u00b2 = 6\u00b2 + 8\u00b2 = 36 + 64 = 100, so c = 10.",
+      "difficulty": 3,
+      "estimated_time": 10,
+      "format_type": "calculation",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "9b01281a-6f34-4091-8742-32bef71fbbce",
+          "weight": 0.9,
+          "type": "primary"
+        },
+        {
+          "concept_id": "d7789984-501d-447c-9bf2-db4f3d336abb",
+          "weight": 0.5,
+          "type": "foundational"
+        }
+      ]
+    },
+    {
+      "id": "55b0992e-24ca-4ee1-a753-5b1c11cc99db",
+      "title": "Circle Properties",
+      "problem": "Find the circumference of a circle with radius 5 cm.",
+      "solution": "The circumference is 2\u03c0r = 2\u03c0 \u00d7 5 = 10\u03c0 \u2248 31.4 cm.",
+      "difficulty": 2,
+      "estimated_time": 7,
+      "format_type": "calculation",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "6d8c2eeb-01f1-42ea-beba-bfbc5aebd2b8",
+          "weight": 0.9,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "d5b26a19-d5b6-4ba8-b018-09d26f3cae32",
+      "title": "Finding Perimeter",
+      "problem": "Calculate the perimeter of a rectangle with length 8 cm and width 5 cm.",
+      "solution": "The perimeter is 2(l + w) = 2(8 + 5) = 2(13) = 26 cm.",
+      "difficulty": 2,
+      "estimated_time": 6,
+      "format_type": "calculation",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "0bc297f1-1097-4769-ad5a-4c66a8502827",
+          "weight": 0.9,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "851f6bb4-a504-44d9-ae9a-dd4a41c127e5",
+      "title": "Calculating Area",
+      "problem": "Find the area of a triangle with base 10 cm and height 6 cm.",
+      "solution": "The area is (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 10 \u00d7 6 = 30 cm\u00b2.",
+      "difficulty": 2,
+      "estimated_time": 8,
+      "format_type": "calculation",
+      "hints": [],
+      "metadata": {},
+      "concept_relationships": [
+        {
+          "concept_id": "9e28f17c-3530-47ac-8f15-0bc8cdb444c2",
+          "weight": 0.9,
+          "type": "primary"
+        },
+        {
+          "concept_id": "18725b3b-72c4-4dd6-820a-0e07c780515c",
+          "weight": 0.4,
+          "type": "foundational"
+        }
+      ]
+    }
+  ]
+}
