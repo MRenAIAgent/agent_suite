@@ -1,0 +1,96 @@
+
+================================================================================
+LEARNING REPORT FOR ALICE CHEN
+================================================================================
+
+👤 USER PROFILE:
+   • User ID: alice_2024
+   • Learning Style: analytical
+   • Base Ability: 75.0%
+   • Learning Speed: 0.94x average
+   • Consistency: 73.8%
+
+📊 PERFORMANCE SUMMARY:
+   • Total Exercises Completed: 150
+   • Overall Success Rate: 70.0%
+   • Concepts Tracked: 51
+   • Concepts Mastered (≥70%): 33
+   • Struggling Concepts (≤30%): 10
+
+🎯 MASTERY BY CATEGORY:
+   • Number Sense: 81.4% 🟢 Strong
+   • Exponential: 56.4% 🟡 Developing
+   • Polynomials: 55.5% 🟡 Developing
+   • Pre-Algebra: 49.4% 🟡 Developing
+   • Linear: 78.3% 🟢 Strong
+   • Function Tools: 73.5% 🟢 Strong
+   • Quadratic: 78.8% 🟢 Strong
+
+✅ MASTERED CONCEPTS:
+   • Counting Up/Down: 100.0%
+   • Commutative Property: 79.3%
+   • Place Value to 1,000,000: 100.0%
+   • Identity & Inverse Properties: 99.6%
+   • Associative Property: 100.0%
+   • Absolute Value as Distance: 99.8%
+   • Scientific Notation: 97.0%
+   • Greatest Common Factor: 98.9%
+   • Multiplication Facts 0–12: 92.6%
+   • Equivalent Fractions: 74.4%
+   ... and 23 more
+
+⚠️  STRUGGLING CONCEPTS:
+   • Identify Like Terms: 21.5%
+   • Translate Expressions: 22.8%
+   • Fractional Exponents (Roots): 28.5%
+   • Power of a Product: 0.0%
+   • Two-Step Linear Equations: 0.0%
+   • Distance Formula: 0.0%
+   • Unit Rate & Slope Concept: 0.0%
+   • Special Products & Diff Squares: 0.0%
+   • Zero Exponent: 0.0%
+   • Order of Operations: 0.0%
+
+🔍 DETECTED WEAKNESSES:
+   • Power of a Product: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Two-Step Linear Equations: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Distance Formula: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Unit Rate & Slope Concept: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Special Products & Diff Squares: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+
+💡 ADAPTIVE RECOMMENDATIONS:
+   1. Power of a Product (weakness_remediation) - Priority: 83.0%
+      Reason: Detected conceptual weakness with severity 0.83
+   2. Two-Step Linear Equations (weakness_remediation) - Priority: 83.0%
+      Reason: Detected conceptual weakness with severity 0.83
+   3. Division Facts 0–12 (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   4. Order of Operations (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   5. Translate Expressions (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+
+🧠 LEARNING INSIGHTS:
+   • Strong in Number Sense
+     Consistently strong performance in Number Sense (confidence: 70.8%)
+   • Strong in Linear
+     Consistently strong performance in Linear (confidence: 78.3%)
+   • Strong in Quadratic
+     Consistently strong performance in Quadratic (confidence: 78.8%)
+   • Fast Learning Pattern Detected
+     You learn quickly in 24 concept areas (confidence: 80.0%)
+   • Review Strategy Needed
+     Knowledge retention could be improved in 2 areas (confidence: 70.0%)
+
+📈 NEXT STEPS:
+   1. Focus on struggling concepts with targeted practice
+   2. Follow adaptive recommendations in priority order
+   3. Continue building on mastered concepts to maintain retention
+   4. Consider adjusting study approach based on learning insights
+
+================================================================================

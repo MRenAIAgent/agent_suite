@@ -4,8 +4,8 @@ Algebra Exercises - High School Level
 This module contains exercises for high school algebra concepts (Grades 9-12).
 """
 
-from exercises.exercise import Exercise
-from exercises.exercise_bank import ExerciseBank
+from .exercise import Exercise
+from .exercise_bank import ExerciseBank
 
 
 def create_high_school_exercises() -> ExerciseBank:

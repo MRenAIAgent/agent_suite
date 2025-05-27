@@ -1,8 +1,9 @@
 """
-Knowledge Graph Package
+Knowledge Graph package.
 
-This package contains modules for building and managing knowledge graphs.
+This package contains modules for knowledge graph management.
 """
 
-from .concept import Concept
-from .graph import KnowledgeGraph 
+from .graph import KnowledgeGraph
+
+__all__ = ['KnowledgeGraph'] 

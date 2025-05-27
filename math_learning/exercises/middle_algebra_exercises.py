@@ -4,8 +4,8 @@ Algebra Exercises - Middle School Level
 This module contains exercises for middle school algebra concepts (Grades 6-8).
 """
 
-from exercises.exercise import Exercise
-from exercises.exercise_bank import ExerciseBank
+from .exercise import Exercise
+from .exercise_bank import ExerciseBank
 
 
 def create_middle_school_exercises() -> ExerciseBank:

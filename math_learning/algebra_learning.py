@@ -1,26 +1,26 @@
 """
-Algebra Learning Module
+Algebra Learning System module.
 
-This module builds a comprehensive K-12 algebra learning system with:
-1. A knowledge graph of algebra concepts
-2. A connected bank of exercises 
-3. Utilities for finding appropriate exercises for any concept
+This module provides a comprehensive algebra learning system.
 """
 
-import os
 import json
-from typing import Dict, List, Optional, Tuple
+import os
+from typing import Dict, List, Optional, Any, Tuple
+from dataclasses import dataclass
 
-from knowledge_graph.graph import KnowledgeGraph
-from knowledge_graph.concept import Concept
-from exercises.exercise_bank import ExerciseBank
-from exercises.exercise import Exercise
+from .knowledge_graph.graph import KnowledgeGraph
+from .knowledge_graph.concept import Concept
+from .exercises.exercise_bank import ExerciseBank
+from .exercises.exercise import Exercise
+from .learning_graph.user_model import LearningGraph
+from .recommendation.gap_analyzer import GapAnalyzer
 
 # Import our algebra knowledge graph and exercise modules
-from knowledge_graph.algebra_graph import build_algebra_knowledge_graph
-from exercises.algebra_exercises import create_elementary_exercises
-from exercises.middle_algebra_exercises import create_middle_school_exercises
-from exercises.high_algebra_exercises import create_high_school_exercises
+from .knowledge_graph.algebra_graph import build_algebra_knowledge_graph
+from .exercises.algebra_exercises import create_elementary_exercises
+from .exercises.middle_algebra_exercises import create_middle_school_exercises
+from .exercises.high_algebra_exercises import create_high_school_exercises
 
 
 class AlgebraLearningSystem:

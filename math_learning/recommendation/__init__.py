@@ -1,4 +1,9 @@
-"""Recommendation package for the math learning system."""
+"""
+Recommendation package.
 
-from math_learning.recommendation.gap_analyzer import GapAnalyzer, GapInfo
-from math_learning.recommendation.recommender import Recommender, ExerciseRecommendation 
+This package contains modules for recommendation and gap analysis.
+"""
+
+from .gap_analyzer import GapAnalyzer
+
+__all__ = ['GapAnalyzer'] 

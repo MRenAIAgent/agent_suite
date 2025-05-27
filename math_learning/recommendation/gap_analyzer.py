@@ -5,8 +5,8 @@ This module defines the gap analyzer that identifies knowledge gaps.
 """
 
 from typing import Dict, List, Tuple, Any, Optional
-from math_learning.knowledge_graph.graph import KnowledgeGraph
-from math_learning.learning_graph.user_model import LearningGraph
+from ..knowledge_graph.graph import KnowledgeGraph
+from ..learning_graph.user_model import LearningGraph
 
 
 class GapInfo:

@@ -1,8 +1,10 @@
 """
-Exercises Package
+Exercises package.
 
-This package contains modules for creating and managing exercises.
+This package contains exercise-related modules.
 """
 
-from exercises.exercise import Exercise
-from exercises.exercise_bank import ExerciseBank 
+from .exercise import Exercise
+from .exercise_bank import ExerciseBank
+
+__all__ = ['Exercise', 'ExerciseBank'] 

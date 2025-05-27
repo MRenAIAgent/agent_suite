@@ -1,0 +1,96 @@
+
+================================================================================
+LEARNING REPORT FOR GRACE THOMPSON
+================================================================================
+
+👤 USER PROFILE:
+   • User ID: grace_2024
+   • Learning Style: practical
+   • Base Ability: 60.0%
+   • Learning Speed: 0.99x average
+   • Consistency: 68.8%
+
+📊 PERFORMANCE SUMMARY:
+   • Total Exercises Completed: 157
+   • Overall Success Rate: 62.4%
+   • Concepts Tracked: 50
+   • Concepts Mastered (≥70%): 27
+   • Struggling Concepts (≤30%): 16
+
+🎯 MASTERY BY CATEGORY:
+   • Number Sense: 82.0% 🟢 Strong
+   • Pre-Algebra: 52.1% 🟡 Developing
+   • Exponential: 56.2% 🟡 Developing
+   • Polynomials: 59.2% 🟡 Developing
+   • Function Tools: 80.5% 🟢 Strong
+   • Linear: 30.0% 🔴 Needs Work
+   • Quadratic: 13.4% 🔴 Needs Work
+
+✅ MASTERED CONCEPTS:
+   • Identity & Inverse Properties: 99.1%
+   • Counting Up/Down: 100.0%
+   • Associative Property: 88.9%
+   • Place Value to 1,000,000: 100.0%
+   • Commutative Property: 100.0%
+   • Fraction-Decimal Conversion: 79.6%
+   • Division Facts 0–12: 99.4%
+   • Scientific Notation: 80.9%
+   • Least Common Multiple: 99.9%
+   • Equivalent Fractions: 89.9%
+   ... and 17 more
+
+⚠️  STRUGGLING CONCEPTS:
+   • One-Step Equations (+/−): 8.4%
+   • Fractions as Part–Whole: 5.9%
+   • Translate Expressions: 0.0%
+   • Power of a Power: 16.3%
+   • Zero Exponent: 25.5%
+   • System – Solution Classification: 25.6%
+   • Discriminant & Roots: 26.9%
+   • Slope-Intercept Form: 0.0%
+   • Combine Like Terms: 0.0%
+   • System – Elimination: 0.0%
+   • Order of Operations: 0.0%
+   • Factor Trinomials a=1: 0.0%
+   • Convert Linear Forms: 0.0%
+   • Evaluate Expression: 0.0%
+   • Graph Parabola (Vertex Form): 0.0%
+   • Graph Linear Inequality (1-var): 0.0%
+
+🔍 DETECTED WEAKNESSES:
+   • Fractions as Part–Whole: procedural (severity: 86.6%)
+     Interventions: Break down procedures into smaller steps, Practice step-by-step guided examples
+   • Translate Expressions: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Slope-Intercept Form: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Combine Like Terms: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • System – Elimination: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+
+💡 ADAPTIVE RECOMMENDATIONS:
+   1. Fractions as Part–Whole (weakness_remediation) - Priority: 86.6%
+      Reason: Detected procedural weakness with severity 0.87
+   2. Translate Expressions (weakness_remediation) - Priority: 83.0%
+      Reason: Detected conceptual weakness with severity 0.83
+   3. Fractions as Part–Whole (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   4. Integer Multiplication/Division (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   5. Translate Expressions (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+
+🧠 LEARNING INSIGHTS:
+   • Fast Learning Pattern Detected
+     You learn quickly in 16 concept areas (confidence: 80.0%)
+   • Review Strategy Needed
+     Knowledge retention could be improved in 3 areas (confidence: 70.0%)
+
+📈 NEXT STEPS:
+   1. Focus on struggling concepts with targeted practice
+   2. Follow adaptive recommendations in priority order
+   3. Continue building on mastered concepts to maintain retention
+   4. Consider adjusting study approach based on learning insights
+
+================================================================================

@@ -1,11 +1,12 @@
 """
-Algebra Exercises - Elementary Level
+Elementary Algebra Exercises
 
-This module contains exercises for elementary-level algebra concepts (K-5).
+This module creates exercises for elementary algebra concepts.
 """
 
-from exercises.exercise import Exercise
-from exercises.exercise_bank import ExerciseBank
+from typing import List
+from .exercise import Exercise
+from .exercise_bank import ExerciseBank
 
 
 def create_elementary_exercises() -> ExerciseBank:

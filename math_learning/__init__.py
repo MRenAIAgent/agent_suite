@@ -1,14 +1,23 @@
 """
-Math Learning Package
+Math Learning System
 
-A comprehensive framework for building math learning systems
-with knowledge graphs and personalized exercises.
+A comprehensive personalized math learning platform with knowledge graphs,
+adaptive recommendations, and learning analytics.
 """
 
-from math_learning.knowledge_graph.graph import KnowledgeGraph
-from math_learning.knowledge_graph.concept import Concept
-from math_learning.exercises.exercise import Exercise
-from math_learning.exercises.exercise_bank import ExerciseBank
-from math_learning.algebra_learning import AlgebraLearningSystem
+from .learning_graph import LearningGraph, PersonalizedLearningSystem
+from .knowledge_graph import KnowledgeGraph
+from .recommendation import GapAnalyzer
+from .exercises import Exercise, ExerciseBank
+from .algebra_learning import AlgebraLearningSystem
 
-__version__ = "0.2.0" 
+__version__ = "1.0.0"
+__all__ = [
+    'LearningGraph', 
+    'PersonalizedLearningSystem',
+    'KnowledgeGraph', 
+    'GapAnalyzer',
+    'Exercise',
+    'ExerciseBank',
+    'AlgebraLearningSystem'
+] 

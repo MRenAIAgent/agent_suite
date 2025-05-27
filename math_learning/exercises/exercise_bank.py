@@ -6,8 +6,9 @@ This module defines the exercise bank that stores and retrieves exercises.
 
 import json
 import os
+import random
 from typing import Dict, List, Optional, Set, Any
-from math_learning.exercises.exercise import Exercise
+from .exercise import Exercise
 
 
 class ExerciseBank:

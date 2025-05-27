@@ -1,0 +1,647 @@
+{
+  "user_profile": {
+    "user_id": "alice_2024",
+    "name": "Alice Chen",
+    "learning_style": "analytical",
+    "base_ability": 0.75,
+    "learning_speed": 0.9375689281094538,
+    "consistency": 0.7378371507443995
+  },
+  "performance_metrics": {
+    "total_exercises": 150,
+    "overall_success_rate": 0.7,
+    "concepts_tracked": 51,
+    "mastered_concepts": 33,
+    "struggling_concepts": 10
+  },
+  "mastery_analysis": {
+    "mastered_concepts": [
+      "NS-01",
+      "NS-03",
+      "NS-02",
+      "NS-05",
+      "NS-04",
+      "NS-15",
+      "EXP-48",
+      "NS-11",
+      "NS-06",
+      "NS-09",
+      "AT-22",
+      "NS-13",
+      "NS-10",
+      "NS-12",
+      "AT-28",
+      "NS-08",
+      "AT-23",
+      "POL-52",
+      "LF-34",
+      "AT-20",
+      "POL-51",
+      "LF-40",
+      "NS-14",
+      "LF-32",
+      "LF-31",
+      "FN-62",
+      "LF-30",
+      "AT-19",
+      "LF-35",
+      "EXP-42",
+      "EXP-41",
+      "Q-60",
+      "EXP-45"
+    ],
+    "struggling_concepts": [
+      "AT-18",
+      "AT-17",
+      "EXP-46",
+      "EXP-43",
+      "AT-24",
+      "AT-29",
+      "AT-27",
+      "POL-55",
+      "EXP-44",
+      "NS-16"
+    ],
+    "category_performance": {
+      "Number Sense": 0.8143812291452134,
+      "Exponential": 0.5640028890951247,
+      "Polynomials": 0.5551597905687834,
+      "Pre-Algebra": 0.49385329548474194,
+      "Linear": 0.7830990993897854,
+      "Function Tools": 0.7350688509528738,
+      "Quadratic": 0.7884091479847866
+    }
+  },
+  "learning_patterns": {
+    "NS-01": {
+      "attempts": 6,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5607344967213579,
+      "retention_rate": 0.737905554475404
+    },
+    "NS-03": {
+      "attempts": 8,
+      "success_rate": 0.625,
+      "learning_velocity": 0.5073510700384344,
+      "retention_rate": 0.6034207778627537
+    },
+    "NS-02": {
+      "attempts": 10,
+      "success_rate": 0.9,
+      "learning_velocity": 0.5482937086106826,
+      "retention_rate": 0.7271546813747636
+    },
+    "NS-05": {
+      "attempts": 14,
+      "success_rate": 0.5714285714285714,
+      "learning_velocity": 0.653229124794976,
+      "retention_rate": 0.7824414923137111
+    },
+    "NS-04": {
+      "attempts": 6,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5808002799710618,
+      "retention_rate": 0.7504635179157957
+    },
+    "NS-15": {
+      "attempts": 6,
+      "success_rate": 0.6666666666666666,
+      "learning_velocity": 0.8990219082416064,
+      "retention_rate": 0.9475325856636388
+    },
+    "EXP-48": {
+      "attempts": 4,
+      "success_rate": 0.75,
+      "learning_velocity": 1.0,
+      "retention_rate": 1.0
+    },
+    "NS-11": {
+      "attempts": 3,
+      "success_rate": 1.0,
+      "learning_velocity": 0.699735157519283,
+      "retention_rate": 0.8703656222918076
+    },
+    "NS-06": {
+      "attempts": 7,
+      "success_rate": 0.5714285714285714,
+      "learning_velocity": 0.8086399532178281,
+      "retention_rate": 0.8534790383267801
+    },
+    "POL-49": {
+      "attempts": 3,
+      "success_rate": 0.3333333333333333,
+      "learning_velocity": 1.0,
+      "retention_rate": 0.7
+    },
+    "NS-07": {
+      "attempts": 4,
+      "success_rate": 0.5,
+      "learning_velocity": 0.7262402293016456,
+      "retention_rate": 1.0
+    },
+    "NS-09": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "AT-22": {
+      "attempts": 3,
+      "success_rate": 1.0,
+      "learning_velocity": 0.6932015218885208,
+      "retention_rate": 0.8500986402663978
+    },
+    "AT-18": {
+      "attempts": 2,
+      "success_rate": 0.5,
+      "learning_velocity": 0.0,
+      "retention_rate": 0.7
+    },
+    "NS-13": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.758222781500623,
+      "retention_rate": 0.7
+    },
+    "AT-17": {
+      "attempts": 2,
+      "success_rate": 0.5,
+      "learning_velocity": 0.0,
+      "retention_rate": 0.7
+    },
+    "NS-10": {
+      "attempts": 4,
+      "success_rate": 0.5,
+      "learning_velocity": 1.0,
+      "retention_rate": 1.0
+    },
+    "NS-12": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "AT-28": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.8536749491913815,
+      "retention_rate": 0.7
+    },
+    "NS-08": {
+      "attempts": 3,
+      "success_rate": 0.3333333333333333,
+      "learning_velocity": 1.0,
+      "retention_rate": 0.7
+    },
+    "AT-23": {
+      "attempts": 3,
+      "success_rate": 0.3333333333333333,
+      "learning_velocity": 1.0,
+      "retention_rate": 0.7
+    },
+    "POL-52": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "LF-34": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.8416060009695634,
+      "retention_rate": 0.7
+    },
+    "AT-20": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.8344781402856796,
+      "retention_rate": 0.7
+    },
+    "FN-64": {
+      "attempts": 4,
+      "success_rate": 0.5,
+      "learning_velocity": 0.49836382792868616,
+      "retention_rate": 0.40919434570477053
+    },
+    "EXP-46": {
+      "attempts": 3,
+      "success_rate": 0.3333333333333333,
+      "learning_velocity": 0.7850995326931614,
+      "retention_rate": 1.0
+    },
+    "POL-51": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.9329515202422822,
+      "retention_rate": 0.7
+    },
+    "LF-40": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.8373892882752985,
+      "retention_rate": 0.7
+    },
+    "NS-14": {
+      "attempts": 3,
+      "success_rate": 0.6666666666666666,
+      "learning_velocity": 1.0,
+      "retention_rate": 1.0
+    },
+    "LF-32": {
+      "attempts": 3,
+      "success_rate": 0.6666666666666666,
+      "learning_velocity": 0.5116963137685575,
+      "retention_rate": 0.2606889193334977
+    },
+    "EXP-43": {
+      "attempts": 1,
+      "success_rate": 0.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "LF-31": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "AT-24": {
+      "attempts": 1,
+      "success_rate": 0.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "FN-62": {
+      "attempts": 3,
+      "success_rate": 0.6666666666666666,
+      "learning_velocity": 1.0,
+      "retention_rate": 1.0
+    },
+    "LF-30": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "AT-19": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.952383308146223,
+      "retention_rate": 0.7
+    },
+    "LF-39": {
+      "attempts": 2,
+      "success_rate": 0.5,
+      "learning_velocity": 1.0,
+      "retention_rate": 0.7
+    },
+    "AT-21": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "LF-35": {
+      "attempts": 3,
+      "success_rate": 1.0,
+      "learning_velocity": 0.8505774528345829,
+      "retention_rate": 0.95555074855064
+    },
+    "EXP-42": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 1.0,
+      "retention_rate": 0.7
+    },
+    "EXP-47": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "EXP-41": {
+      "attempts": 2,
+      "success_rate": 1.0,
+      "learning_velocity": 0.87614860835849,
+      "retention_rate": 0.7
+    },
+    "Q-61": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "AT-29": {
+      "attempts": 2,
+      "success_rate": 0.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "AT-27": {
+      "attempts": 1,
+      "success_rate": 0.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "Q-60": {
+      "attempts": 3,
+      "success_rate": 1.0,
+      "learning_velocity": 0.8033496136267523,
+      "retention_rate": 0.9280379743055264
+    },
+    "POL-55": {
+      "attempts": 1,
+      "success_rate": 0.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "EXP-45": {
+      "attempts": 3,
+      "success_rate": 0.6666666666666666,
+      "learning_velocity": 1.0,
+      "retention_rate": 1.0
+    },
+    "EXP-44": {
+      "attempts": 1,
+      "success_rate": 0.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "LF-33": {
+      "attempts": 1,
+      "success_rate": 1.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    },
+    "NS-16": {
+      "attempts": 1,
+      "success_rate": 0.0,
+      "learning_velocity": 0.5,
+      "retention_rate": 0.7
+    }
+  },
+  "weaknesses": [
+    {
+      "concept_id": "EXP-43",
+      "weakness_type": "conceptual",
+      "severity": 0.83,
+      "confidence_level": 0.3,
+      "suggested_interventions": [
+        "Review fundamental concepts and definitions",
+        "Work through visual examples and analogies",
+        "Practice with concrete manipulatives"
+      ]
+    },
+    {
+      "concept_id": "AT-24",
+      "weakness_type": "conceptual",
+      "severity": 0.83,
+      "confidence_level": 0.3,
+      "suggested_interventions": [
+        "Review fundamental concepts and definitions",
+        "Work through visual examples and analogies",
+        "Practice with concrete manipulatives"
+      ]
+    },
+    {
+      "concept_id": "AT-29",
+      "weakness_type": "conceptual",
+      "severity": 0.83,
+      "confidence_level": 0.1,
+      "suggested_interventions": [
+        "Review fundamental concepts and definitions",
+        "Work through visual examples and analogies",
+        "Practice with concrete manipulatives"
+      ]
+    },
+    {
+      "concept_id": "AT-27",
+      "weakness_type": "conceptual",
+      "severity": 0.83,
+      "confidence_level": 0.3,
+      "suggested_interventions": [
+        "Review fundamental concepts and definitions",
+        "Work through visual examples and analogies",
+        "Practice with concrete manipulatives"
+      ]
+    },
+    {
+      "concept_id": "POL-55",
+      "weakness_type": "conceptual",
+      "severity": 0.83,
+      "confidence_level": 0.3,
+      "suggested_interventions": [
+        "Review fundamental concepts and definitions",
+        "Work through visual examples and analogies",
+        "Practice with concrete manipulatives"
+      ]
+    },
+    {
+      "concept_id": "EXP-44",
+      "weakness_type": "conceptual",
+      "severity": 0.83,
+      "confidence_level": 0.3,
+      "suggested_interventions": [
+        "Review fundamental concepts and definitions",
+        "Work through visual examples and analogies",
+        "Practice with concrete manipulatives"
+      ]
+    },
+    {
+      "concept_id": "NS-16",
+      "weakness_type": "conceptual",
+      "severity": 0.83,
+      "confidence_level": 0.3,
+      "suggested_interventions": [
+        "Review fundamental concepts and definitions",
+        "Work through visual examples and analogies",
+        "Practice with concrete manipulatives"
+      ]
+    },
+    {
+      "concept_id": "AT-18",
+      "weakness_type": "procedural",
+      "severity": 0.6939329428334859,
+      "confidence_level": 0.39999999999999997,
+      "suggested_interventions": [
+        "Break down procedures into smaller steps",
+        "Practice step-by-step guided examples",
+        "Use procedural checklists"
+      ]
+    },
+    {
+      "concept_id": "AT-17",
+      "weakness_type": "procedural",
+      "severity": 0.68895797384969,
+      "confidence_level": 0.39999999999999997,
+      "suggested_interventions": [
+        "Break down procedures into smaller steps",
+        "Practice step-by-step guided examples",
+        "Use procedural checklists"
+      ]
+    },
+    {
+      "concept_id": "EXP-46",
+      "weakness_type": "computational",
+      "severity": 0.5289402803841032,
+      "confidence_level": 0.2,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "NS-07",
+      "weakness_type": "computational",
+      "severity": 0.46900781655868357,
+      "confidence_level": 0.3,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "FN-64",
+      "weakness_type": "computational",
+      "severity": 0.4578518131160836,
+      "confidence_level": 0.29999999999999993,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "POL-49",
+      "weakness_type": "computational",
+      "severity": 0.3984787510927146,
+      "confidence_level": 0.2,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "LF-32",
+      "weakness_type": "computational",
+      "severity": 0.3766180376516519,
+      "confidence_level": 0.5,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "AT-23",
+      "weakness_type": "computational",
+      "severity": 0.33566423871140905,
+      "confidence_level": 0.2,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "NS-03",
+      "weakness_type": "computational",
+      "severity": 0.3334878538555298,
+      "confidence_level": 0.3999999999999999,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "NS-08",
+      "weakness_type": "computational",
+      "severity": 0.3119459039141135,
+      "confidence_level": 0.2,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    },
+    {
+      "concept_id": "LF-39",
+      "weakness_type": "computational",
+      "severity": 0.31102599183965396,
+      "confidence_level": 0.4,
+      "suggested_interventions": [
+        "Practice basic computational skills",
+        "Use computational aids when appropriate",
+        "Focus on accuracy before speed"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "weakness_remediation",
+      "concept_id": "EXP-43",
+      "priority": 0.83,
+      "reason": "Detected conceptual weakness with severity 0.83"
+    },
+    {
+      "type": "weakness_remediation",
+      "concept_id": "AT-24",
+      "priority": 0.83,
+      "reason": "Detected conceptual weakness with severity 0.83"
+    },
+    {
+      "type": "ready_to_learn",
+      "concept_id": "NS-07",
+      "priority": 0.8,
+      "reason": "All prerequisites have been mastered"
+    },
+    {
+      "type": "ready_to_learn",
+      "concept_id": "NS-16",
+      "priority": 0.8,
+      "reason": "All prerequisites have been mastered"
+    },
+    {
+      "type": "ready_to_learn",
+      "concept_id": "AT-17",
+      "priority": 0.8,
+      "reason": "All prerequisites have been mastered"
+    }
+  ],
+  "insights": [
+    {
+      "type": "strength",
+      "title": "Strong in Number Sense",
+      "description": "Consistently strong performance in Number Sense",
+      "confidence": 0.708407738095238
+    },
+    {
+      "type": "strength",
+      "title": "Strong in Linear",
+      "description": "Consistently strong performance in Linear",
+      "confidence": 0.7830990993897854
+    },
+    {
+      "type": "strength",
+      "title": "Strong in Quadratic",
+      "description": "Consistently strong performance in Quadratic",
+      "confidence": 0.7884091479847866
+    },
+    {
+      "type": "pattern",
+      "title": "Fast Learning Pattern Detected",
+      "description": "You learn quickly in 24 concept areas",
+      "confidence": 0.8
+    },
+    {
+      "type": "pattern",
+      "title": "Review Strategy Needed",
+      "description": "Knowledge retention could be improved in 2 areas",
+      "confidence": 0.7
+    }
+  ]
+}

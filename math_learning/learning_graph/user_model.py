@@ -94,14 +94,17 @@ class LearningGraph:
         
         return posterior_mastery
         
-    def record_exercise_attempt(self, exercise_id: str, concept_id: str, result: bool) -> None:
+    def record_exercise_attempt(self, exercise_id: str, concept_id: str, result: bool,
+                              difficulty: float = 0.5, concept_weight: float = 1.0) -> None:
         """
-        Record an attempt at an exercise.
+        Record an attempt at an exercise and update concept mastery.
 
         Args:
             exercise_id: The ID of the exercise
             concept_id: The ID of the concept being tested
             result: Whether the exercise was completed correctly
+            difficulty: The difficulty of the exercise (0.0-1.0)
+            concept_weight: How strongly the exercise tests the concept (0.0-1.0)
         """
         timestamp = datetime.datetime.now().isoformat()
         
@@ -111,8 +114,12 @@ class LearningGraph:
         self.exercise_history[exercise_id].append({
             "concept_id": concept_id,
             "result": result,
-            "timestamp": timestamp
+            "timestamp": timestamp,
+            "difficulty": difficulty
         })
+        
+        # Automatically update mastery based on exercise performance
+        self.update_mastery(concept_id, result, difficulty, concept_weight)
         
     def has_seen_exercise(self, exercise_id: str) -> bool:
         """

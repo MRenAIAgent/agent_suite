@@ -1,3 +1,10 @@
-"""Learning Graph package for the math learning system."""
+"""
+Learning Graph package.
 
-from math_learning.learning_graph.user_model import LearningGraph 
+This package contains modules for user learning models and personalization.
+"""
+
+from .user_model import LearningGraph
+from .personalized_learning import PersonalizedLearningSystem
+
+__all__ = ['LearningGraph', 'PersonalizedLearningSystem'] 

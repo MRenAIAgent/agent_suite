@@ -1,0 +1,92 @@
+
+================================================================================
+LEARNING REPORT FOR IRIS PATEL
+================================================================================
+
+👤 USER PROFILE:
+   • User ID: iris_2024
+   • Learning Style: analytical
+   • Base Ability: 90.0%
+   • Learning Speed: 1.25x average
+   • Consistency: 72.0%
+
+📊 PERFORMANCE SUMMARY:
+   • Total Exercises Completed: 193
+   • Overall Success Rate: 80.8%
+   • Concepts Tracked: 52
+   • Concepts Mastered (≥70%): 44
+   • Struggling Concepts (≤30%): 4
+
+🎯 MASTERY BY CATEGORY:
+   • Number Sense: 95.5% 🟢 Strong
+   • Pre-Algebra: 72.3% 🟢 Strong
+   • Polynomials: 82.2% 🟢 Strong
+   • Exponential: 64.6% 🟡 Developing
+   • Linear: 84.9% 🟢 Strong
+   • Quadratic: 87.0% 🟢 Strong
+   • Function Tools: 29.1% 🔴 Needs Work
+
+✅ MASTERED CONCEPTS:
+   • Place Value to 1,000,000: 100.0%
+   • Associative Property: 100.0%
+   • Counting Up/Down: 100.0%
+   • Commutative Property: 100.0%
+   • Identity & Inverse Properties: 100.0%
+   • Greatest Common Factor: 98.4%
+   • Least Common Multiple: 99.3%
+   • Fractions as Part–Whole: 99.5%
+   • One-Step Equations (+/−): 97.3%
+   • Equivalent Fractions: 73.2%
+   ... and 34 more
+
+⚠️  STRUGGLING CONCEPTS:
+   • Identify Like Terms: 0.0%
+   • Power of a Product: 0.0%
+   • Domain & Range: 0.0%
+   • Composition of Functions: 0.0%
+
+🔍 DETECTED WEAKNESSES:
+   • Identify Like Terms: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Power of a Product: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Domain & Range: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Composition of Functions: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Combine Like Terms: procedural (severity: 65.4%)
+     Interventions: Break down procedures into smaller steps, Practice step-by-step guided examples
+
+💡 ADAPTIVE RECOMMENDATIONS:
+   1. Identify Like Terms (weakness_remediation) - Priority: 83.0%
+      Reason: Detected conceptual weakness with severity 0.83
+   2. Power of a Product (weakness_remediation) - Priority: 83.0%
+      Reason: Detected conceptual weakness with severity 0.83
+   3. Identify Like Terms (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   4. Distributive Property (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   5. Combine Like Terms (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+
+🧠 LEARNING INSIGHTS:
+   • Strong in Number Sense
+     Consistently strong performance in Number Sense (confidence: 83.8%)
+   • Strong in Pre-Algebra
+     Consistently strong performance in Pre-Algebra (confidence: 71.0%)
+   • Strong in Polynomials
+     Consistently strong performance in Polynomials (confidence: 82.2%)
+   • Strong in Linear
+     Consistently strong performance in Linear (confidence: 84.9%)
+   • Strong in Quadratic
+     Consistently strong performance in Quadratic (confidence: 87.0%)
+   • Fast Learning Pattern Detected
+     You learn quickly in 29 concept areas (confidence: 80.0%)
+
+📈 NEXT STEPS:
+   1. Focus on struggling concepts with targeted practice
+   2. Follow adaptive recommendations in priority order
+   3. Continue building on mastered concepts to maintain retention
+   4. Consider adjusting study approach based on learning insights
+
+================================================================================

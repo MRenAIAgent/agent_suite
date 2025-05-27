@@ -1,0 +1,107 @@
+
+================================================================================
+LEARNING REPORT FOR EMMA WILSON
+================================================================================
+
+👤 USER PROFILE:
+   • User ID: emma_2024
+   • Learning Style: analytical
+   • Base Ability: 45.0%
+   • Learning Speed: 0.96x average
+   • Consistency: 78.6%
+
+📊 PERFORMANCE SUMMARY:
+   • Total Exercises Completed: 147
+   • Overall Success Rate: 31.3%
+   • Concepts Tracked: 47
+   • Concepts Mastered (≥70%): 13
+   • Struggling Concepts (≤30%): 27
+
+🎯 MASTERY BY CATEGORY:
+   • Number Sense: 49.1% 🟡 Developing
+   • Polynomials: 31.9% 🔴 Needs Work
+   • Exponential: 22.7% 🔴 Needs Work
+   • Pre-Algebra: 20.5% 🔴 Needs Work
+   • Linear: 27.5% 🔴 Needs Work
+   • Function Tools: 43.1% 🟡 Developing
+   • Quadratic: 0.0% 🔴 Needs Work
+
+✅ MASTERED CONCEPTS:
+   • Associative Property: 93.4%
+   • Commutative Property: 98.9%
+   • Counting Up/Down: 84.1%
+   • Place Value to 1,000,000: 100.0%
+   • Add/Subtract Polynomials: 76.7%
+   • Greatest Common Factor: 70.1%
+   • Absolute Value as Distance: 78.3%
+   • Division Facts 0–12: 70.8%
+   • Equivalent Fractions: 77.3%
+   • System – Substitution: 96.1%
+   ... and 3 more
+
+⚠️  STRUGGLING CONCEPTS:
+   • Integer Addition/Subtraction: 4.2%
+   • Least Common Multiple: 0.0%
+   • Fraction-Decimal Conversion: 0.0%
+   • Scientific Notation: 7.6%
+   • One-Step Equations (×/÷): 11.7%
+   • Fractions as Part–Whole: 0.0%
+   • Multiplication Facts 0–12: 0.0%
+   • Multiply Monomial·Polynomial: 0.0%
+   • One-Step Equations (+/−): 0.0%
+   • Evaluate Expression: 0.0%
+   • System – Elimination: 0.0%
+   • Slope from Two Points: 0.0%
+   • Fractional Exponents (Roots): 0.0%
+   • Power of a Product: 0.0%
+   • Discriminant & Roots: 0.0%
+   • Simplify Radical Expressions: 0.0%
+   • Graph Linear Inequality (1-var): 0.0%
+   • Parallel & Perpendicular Slopes: 0.0%
+   • Convert Linear Forms: 0.0%
+   • Binomial Product (FOIL): 0.0%
+   • Integer Multiplication/Division: 0.0%
+   • Point-Slope Form: 0.0%
+   • Factor Trinomials a=1: 20.7%
+   • Slope-Intercept Form: 0.0%
+   • Function Notation: 0.0%
+   • Distance Formula: 0.0%
+   • Two-Step Linear Equations: 0.0%
+
+🔍 DETECTED WEAKNESSES:
+   • Least Common Multiple: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Fraction-Decimal Conversion: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Fractions as Part–Whole: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Multiplication Facts 0–12: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+   • Multiply Monomial·Polynomial: conceptual (severity: 83.0%)
+     Interventions: Review fundamental concepts and definitions, Work through visual examples and analogies
+
+💡 ADAPTIVE RECOMMENDATIONS:
+   1. Least Common Multiple (weakness_remediation) - Priority: 83.0%
+      Reason: Detected conceptual weakness with severity 0.83
+   2. Fraction-Decimal Conversion (weakness_remediation) - Priority: 83.0%
+      Reason: Detected conceptual weakness with severity 0.83
+   3. Identity & Inverse Properties (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   4. Multiplication Facts 0–12 (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+   5. Fractions as Part–Whole (ready_to_learn) - Priority: 80.0%
+      Reason: All prerequisites have been mastered
+
+🧠 LEARNING INSIGHTS:
+   • Fast Learning Pattern Detected
+     You learn quickly in 12 concept areas (confidence: 80.0%)
+   • Review Strategy Needed
+     Knowledge retention could be improved in 1 areas (confidence: 70.0%)
+
+📈 NEXT STEPS:
+   1. Focus on struggling concepts with targeted practice
+   2. Follow adaptive recommendations in priority order
+   3. Continue building on mastered concepts to maintain retention
+   4. Consider adjusting study approach based on learning insights
+
+================================================================================

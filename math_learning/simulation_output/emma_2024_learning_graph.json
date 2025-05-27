@@ -1,0 +1,1997 @@
+{
+  "user_id": "emma_2024",
+  "name": "Emma Wilson",
+  "concept_mastery": {
+    "NS-04": {
+      "mastery": 0.9338315510601765,
+      "confidence": 0.8999999999999999,
+      "last_practiced": "2025-05-27T15:26:51.748702",
+      "history": [
+        {
+          "mastery": 0.7713978187791132,
+          "confidence": 0.6,
+          "timestamp": "2025-05-27T15:26:51.747882"
+        },
+        {
+          "mastery": 0.9456844089142653,
+          "confidence": 0.7,
+          "timestamp": "2025-05-27T15:26:51.747935"
+        },
+        {
+          "mastery": 0.21046052913311414,
+          "confidence": 0.49999999999999994,
+          "timestamp": "2025-05-27T15:26:51.747953"
+        },
+        {
+          "mastery": 0.8868795672688423,
+          "confidence": 0.6,
+          "timestamp": "2025-05-27T15:26:51.747959"
+        },
+        {
+          "mastery": 0.9735395018824342,
+          "confidence": 0.7,
+          "timestamp": "2025-05-27T15:26:51.747971"
+        },
+        {
+          "mastery": 0.9941061169364521,
+          "confidence": 0.7999999999999999,
+          "timestamp": "2025-05-27T15:26:51.748254"
+        },
+        {
+          "mastery": 0.9991074693217761,
+          "confidence": 0.8999999999999999,
+          "timestamp": "2025-05-27T15:26:51.748388"
+        },
+        {
+          "mastery": 0.15708102596775855,
+          "confidence": 0.7,
+          "timestamp": "2025-05-27T15:26:51.748445"
+        },
+        {
+          "mastery": 0.7809085136243156,
+          "confidence": 0.7999999999999999,
+          "timestamp": "2025-05-27T15:26:51.748619"
+        }
+      ]
+    },
+    "NS-03": {
+      "mastery": 0.9892445826937406,
+      "confidence": 0.4,
+      "last_practiced": "2025-05-27T15:26:51.748781",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.747891"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.747922"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.747928"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.747942"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.747947"
+        },
+        {
+          "mastery": 0.8559511867664804,
+          "confidence": 0.2,
+          "timestamp": "2025-05-27T15:26:51.747965"
+        },
+        {
+          "mastery": 0.9618469197348609,
+          "confidence": 0.30000000000000004,
+          "timestamp": "2025-05-27T15:26:51.748226"
+        }
+      ]
+    },
+    "NS-01": {
+      "mastery": 0.8407655017032469,
+      "confidence": 0.4,
+      "last_practiced": "2025-05-27T15:26:51.748457",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.747913"
+        },
+        {
+          "mastery": 0.8106648578911251,
+          "confidence": 0.4,
+          "timestamp": "2025-05-27T15:26:51.748050"
+        },
+        {
+          "mastery": 0.9517909917820184,
+          "confidence": 0.5,
+          "timestamp": "2025-05-27T15:26:51.748345"
+        },
+        {
+          "mastery": 0.18270016365487501,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748451"
+        }
+      ]
+    },
+    "NS-05": {
+      "mastery": 0.5940780710464708,
+      "confidence": 0.2,
+      "last_practiced": "2025-05-27T15:26:51.750131",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.747977"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748074"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748092"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748167"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748175"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748214"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748238"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748301"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748314"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748379"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748420"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748427"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748439"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748464"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748469"
+        }
+      ]
+    },
+    "NS-02": {
+      "mastery": 0.9998657420923972,
+      "confidence": 0.7,
+      "last_practiced": "2025-05-27T15:26:51.750040",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748220"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748233"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748290"
+        },
+        {
+          "mastery": 0.8431397782668018,
+          "confidence": 0.2,
+          "timestamp": "2025-05-27T15:26:51.748308"
+        },
+        {
+          "mastery": 0.9606943385275679,
+          "confidence": 0.30000000000000004,
+          "timestamp": "2025-05-27T15:26:51.748320"
+        },
+        {
+          "mastery": 0.9942530876315893,
+          "confidence": 0.4,
+          "timestamp": "2025-05-27T15:26:51.748394"
+        },
+        {
+          "mastery": 0.9986159229354741,
+          "confidence": 0.5,
+          "timestamp": "2025-05-27T15:26:51.748433"
+        },
+        {
+          "mastery": 0.999633585918393,
+          "confidence": 0.6,
+          "timestamp": "2025-05-27T15:26:51.748994"
+        }
+      ]
+    },
+    "POL-49": {
+      "mastery": 0.7669187759873801,
+      "confidence": 0.6,
+      "last_practiced": "2025-05-27T15:26:51.748576",
+      "history": []
+    },
+    "NS-11": {
+      "mastery": 0.7007592649090293,
+      "confidence": 0.2,
+      "last_practiced": "2025-05-27T15:26:51.749536",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748586"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748595"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748694"
+        }
+      ]
+    },
+    "NS-13": {
+      "mastery": 0.04180383226670174,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.750054",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748603"
+        },
+        {
+          "mastery": 0.8082125563568454,
+          "confidence": 0.4,
+          "timestamp": "2025-05-27T15:26:51.748684"
+        },
+        {
+          "mastery": 0.94841273457357,
+          "confidence": 0.5,
+          "timestamp": "2025-05-27T15:26:51.748789"
+        },
+        {
+          "mastery": 0.28632060840815,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748969"
+        },
+        {
+          "mastery": 0.09624833598135164,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748977"
+        }
+      ]
+    },
+    "NS-12": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749425",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748611"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748675"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748797"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748950"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748960"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749010"
+        }
+      ]
+    },
+    "NS-10": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.750092",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748627"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748738"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748764"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749998"
+        }
+      ]
+    },
+    "NS-15": {
+      "mastery": 0.7831867054987285,
+      "confidence": 0.5,
+      "last_practiced": "2025-05-27T15:26:51.749121",
+      "history": [
+        {
+          "mastery": 0.814162051591812,
+          "confidence": 0.6,
+          "timestamp": "2025-05-27T15:26:51.748636"
+        },
+        {
+          "mastery": 0.21465015346988187,
+          "confidence": 0.39999999999999997,
+          "timestamp": "2025-05-27T15:26:51.748814"
+        }
+      ]
+    },
+    "EXP-48": {
+      "mastery": 0.0759664059958521,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749721",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748644"
+        },
+        {
+          "mastery": 0.7522289448022852,
+          "confidence": 0.4,
+          "timestamp": "2025-05-27T15:26:51.748747"
+        },
+        {
+          "mastery": 0.23591281033228753,
+          "confidence": 0.2,
+          "timestamp": "2025-05-27T15:26:51.749063"
+        }
+      ]
+    },
+    "AT-23": {
+      "mastery": 0.11676626780493025,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749864",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748755"
+        },
+        {
+          "mastery": 0.7419198667865519,
+          "confidence": 0.4,
+          "timestamp": "2025-05-27T15:26:51.749203"
+        },
+        {
+          "mastery": 0.2695697985489992,
+          "confidence": 0.2,
+          "timestamp": "2025-05-27T15:26:51.749440"
+        }
+      ]
+    },
+    "NS-08": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.748857",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748772"
+        }
+      ]
+    },
+    "NS-06": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.748986",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748805"
+        }
+      ]
+    },
+    "AT-18": {
+      "mastery": 0.6789523883512787,
+      "confidence": 0.2,
+      "last_practiced": "2025-05-27T15:26:51.749985",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748822"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.748831"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749594"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749928"
+        }
+      ]
+    },
+    "NS-07": {
+      "mastery": 0.7083776450531054,
+      "confidence": 0.2,
+      "last_practiced": "2025-05-27T15:26:51.749634",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.748839"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749549"
+        }
+      ]
+    },
+    "NS-09": {
+      "mastery": 0.7729156658823713,
+      "confidence": 0.6,
+      "last_practiced": "2025-05-27T15:26:51.749002",
+      "history": []
+    },
+    "LF-38": {
+      "mastery": 0.9612367594568155,
+      "confidence": 0.7999999999999999,
+      "last_practiced": "2025-05-27T15:26:51.749782",
+      "history": [
+        {
+          "mastery": 0.6584052851454694,
+          "confidence": 0.6,
+          "timestamp": "2025-05-27T15:26:51.749095"
+        },
+        {
+          "mastery": 0.8970779482898289,
+          "confidence": 0.7,
+          "timestamp": "2025-05-27T15:26:51.749452"
+        }
+      ]
+    },
+    "POL-50": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749940",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749108"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749278"
+        }
+      ]
+    },
+    "FN-63": {
+      "mastery": 0.6136421323499968,
+      "confidence": 0.2,
+      "last_practiced": "2025-05-27T15:26:51.749795",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749133"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749489"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749565"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749684"
+        }
+      ]
+    },
+    "AT-22": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749513",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749147"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749318"
+        }
+      ]
+    },
+    "LF-36": {
+      "mastery": 0.8914535224922993,
+      "confidence": 0.30000000000000004,
+      "last_practiced": "2025-05-27T15:26:51.749659",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749160"
+        },
+        {
+          "mastery": 0.0,
+          "confidence": 0.1,
+          "timestamp": "2025-05-27T15:26:51.749172"
+        },
+        {
+          "mastery": 0.6877637432067705,
+          "confidence": 0.2,
+          "timestamp": "2025-05-27T15:26:51.749581"
+        }
+      ]
+    },
+    "AT-21": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749477",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749221"
+        }
+      ]
+    },
+    "LF-40": {
+      "mastery": 0.8960583720910928,
+      "confidence": 0.7,
+      "last_practiced": "2025-05-27T15:26:51.749465",
+      "history": [
+        {
+          "mastery": 0.6598869370447432,
+          "confidence": 0.6,
+          "timestamp": "2025-05-27T15:26:51.749235"
+        }
+      ]
+    },
+    "LF-39": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749247",
+      "history": []
+    },
+    "LF-30": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749290",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749265"
+        }
+      ]
+    },
+    "EXP-46": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749331",
+      "history": []
+    },
+    "EXP-43": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749408",
+      "history": []
+    },
+    "EXP-42": {
+      "mastery": 0.7191475374941403,
+      "confidence": 0.4,
+      "last_practiced": "2025-05-27T15:26:51.749647",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749501"
+        }
+      ]
+    },
+    "AT-27": {
+      "mastery": 0.6398358876338978,
+      "confidence": 0.4,
+      "last_practiced": "2025-05-27T15:26:51.749807",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749606"
+        }
+      ]
+    },
+    "FN-64": {
+      "mastery": 0.6805085894706039,
+      "confidence": 0.6,
+      "last_practiced": "2025-05-27T15:26:51.749618",
+      "history": []
+    },
+    "Q-60": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749671",
+      "history": []
+    },
+    "EXP-47": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749696",
+      "history": []
+    },
+    "LF-35": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749964",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749708"
+        }
+      ]
+    },
+    "LF-34": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.750104",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749743"
+        }
+      ]
+    },
+    "LF-33": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749757",
+      "history": []
+    },
+    "POL-52": {
+      "mastery": 0.6217963910013724,
+      "confidence": 0.6,
+      "last_practiced": "2025-05-27T15:26:51.749770",
+      "history": []
+    },
+    "POL-51": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749820",
+      "history": []
+    },
+    "NS-14": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749832",
+      "history": []
+    },
+    "LF-32": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.749916",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749844"
+        }
+      ]
+    },
+    "POL-53": {
+      "mastery": 0.20745546313201238,
+      "confidence": 0.39999999999999997,
+      "last_practiced": "2025-05-27T15:26:51.750080",
+      "history": [
+        {
+          "mastery": 0.557113058068347,
+          "confidence": 0.6,
+          "timestamp": "2025-05-27T15:26:51.749877"
+        }
+      ]
+    },
+    "LF-31": {
+      "mastery": 0.0,
+      "confidence": 0.1,
+      "last_practiced": "2025-05-27T15:26:51.750011",
+      "history": [
+        {
+          "mastery": 0.0,
+          "confidence": 0.3,
+          "timestamp": "2025-05-27T15:26:51.749890"
+        }
+      ]
+    },
+    "FN-62": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749903",
+      "history": []
+    },
+    "AT-29": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.749952",
+      "history": []
+    },
+    "AT-24": {
+      "mastery": 0.0,
+      "confidence": 0.3,
+      "last_practiced": "2025-05-27T15:26:51.750067",
+      "history": []
+    },
+    "EXP-45": {
+      "mastery": 0.5684105780119519,
+      "confidence": 0.6,
+      "last_practiced": "2025-05-27T15:26:51.750116",
+      "history": []
+    }
+  },
+  "exercise_history": {
+    "session_01_ex_00_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.747874",
+        "difficulty": 0.45720436244177365
+      }
+    ],
+    "session_01_ex_01_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747889",
+        "difficulty": 0.43126898238960976
+      }
+    ],
+    "session_01_ex_02_NS-01": [
+      {
+        "concept_id": "NS-01",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747910",
+        "difficulty": 0.3047123924917201
+      }
+    ],
+    "session_01_ex_03_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747920",
+        "difficulty": 0.2585484098771958
+      }
+    ],
+    "session_01_ex_04_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747927",
+        "difficulty": 0.4471429397321515
+      }
+    ],
+    "session_01_ex_05_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.747933",
+        "difficulty": 0.4751974875799827
+      }
+    ],
+    "session_01_ex_06_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747940",
+        "difficulty": 0.28279219889210305
+      }
+    ],
+    "session_01_ex_07_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747946",
+        "difficulty": 0.34257275081307725
+      }
+    ],
+    "session_01_ex_08_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747951",
+        "difficulty": 0.44509675140936855
+      }
+    ],
+    "session_01_ex_09_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.747957",
+        "difficulty": 0.286547884951098
+      }
+    ],
+    "session_01_ex_10_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.747963",
+        "difficulty": 0.2880976264670393
+      }
+    ],
+    "session_01_ex_11_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.747969",
+        "difficulty": 0.46782879942568534
+      }
+    ],
+    "session_01_ex_12_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.747975",
+        "difficulty": 0.3972945182183735
+      }
+    ],
+    "session_01_ex_13_NS-01": [
+      {
+        "concept_id": "NS-01",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748033",
+        "difficulty": 0.3786702842177498
+      }
+    ],
+    "session_01_ex_14_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748068",
+        "difficulty": 0.3203656680436564
+      }
+    ],
+    "session_01_ex_15_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748087",
+        "difficulty": 0.22099202537713503
+      }
+    ],
+    "session_02_ex_00_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748164",
+        "difficulty": 0.3862327623948814
+      }
+    ],
+    "session_02_ex_01_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748174",
+        "difficulty": 0.4330218685920014
+      }
+    ],
+    "session_02_ex_02_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748212",
+        "difficulty": 0.46870601245862287
+      }
+    ],
+    "session_02_ex_03_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748218",
+        "difficulty": 0.4553005445032654
+      }
+    ],
+    "session_02_ex_04_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748224",
+        "difficulty": 0.5297243262016823
+      }
+    ],
+    "session_02_ex_05_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748230",
+        "difficulty": 0.2553368778500523
+      }
+    ],
+    "session_02_ex_06_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748237",
+        "difficulty": 0.4139624087255528
+      }
+    ],
+    "session_02_ex_07_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748242",
+        "difficulty": 0.44548542036971045
+      }
+    ],
+    "session_02_ex_08_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748284",
+        "difficulty": 0.40276750605880984
+      }
+    ],
+    "session_02_ex_09_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748298",
+        "difficulty": 0.3299097469569183
+      }
+    ],
+    "session_02_ex_10_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748306",
+        "difficulty": 0.3137204434663964
+      }
+    ],
+    "session_02_ex_11_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748312",
+        "difficulty": 0.3195318183024612
+      }
+    ],
+    "session_02_ex_12_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748318",
+        "difficulty": 0.5011552455827404
+      }
+    ],
+    "session_03_ex_00_NS-01": [
+      {
+        "concept_id": "NS-01",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748342",
+        "difficulty": 0.5092452217904644
+      }
+    ],
+    "session_03_ex_01_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748349",
+        "difficulty": 0.4331346001973265
+      }
+    ],
+    "session_03_ex_02_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748386",
+        "difficulty": 0.3028667751296272
+      }
+    ],
+    "session_03_ex_03_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748393",
+        "difficulty": 0.29242160814118345
+      }
+    ],
+    "session_03_ex_04_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748418",
+        "difficulty": 0.5728886880829337
+      }
+    ],
+    "session_03_ex_05_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748425",
+        "difficulty": 0.34117896953303384
+      }
+    ],
+    "session_03_ex_06_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748431",
+        "difficulty": 0.48167675990114633
+      }
+    ],
+    "session_03_ex_07_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748438",
+        "difficulty": 0.5758583351607642
+      }
+    ],
+    "session_03_ex_08_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748443",
+        "difficulty": 0.314442701693322
+      }
+    ],
+    "session_03_ex_09_NS-01": [
+      {
+        "concept_id": "NS-01",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748449",
+        "difficulty": 0.38390815889696395
+      }
+    ],
+    "session_03_ex_10_NS-01": [
+      {
+        "concept_id": "NS-01",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748456",
+        "difficulty": 0.3896599294790815
+      }
+    ],
+    "session_03_ex_11_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748462",
+        "difficulty": 0.43871394063188074
+      }
+    ],
+    "session_03_ex_12_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748468",
+        "difficulty": 0.5429128510046561
+      }
+    ],
+    "session_04_ex_00_POL-49": [
+      {
+        "concept_id": "POL-49",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748572",
+        "difficulty": 0.46616244802523976
+      }
+    ],
+    "session_04_ex_01_NS-11": [
+      {
+        "concept_id": "NS-11",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748584",
+        "difficulty": 0.5022062765949016
+      }
+    ],
+    "session_04_ex_02_NS-11": [
+      {
+        "concept_id": "NS-11",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748593",
+        "difficulty": 0.37028581744591504
+      }
+    ],
+    "session_04_ex_03_NS-13": [
+      {
+        "concept_id": "NS-13",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748601",
+        "difficulty": 0.45534385544213474
+      }
+    ],
+    "session_04_ex_04_NS-12": [
+      {
+        "concept_id": "NS-12",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748609",
+        "difficulty": 0.3851743935806506
+      }
+    ],
+    "session_04_ex_05_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748617",
+        "difficulty": 0.5198399683130261
+      }
+    ],
+    "session_04_ex_06_NS-10": [
+      {
+        "concept_id": "NS-10",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748626",
+        "difficulty": 0.6173588300381208
+      }
+    ],
+    "session_04_ex_07_NS-15": [
+      {
+        "concept_id": "NS-15",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748634",
+        "difficulty": 0.3716758968163759
+      }
+    ],
+    "session_04_ex_08_EXP-48": [
+      {
+        "concept_id": "EXP-48",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748643",
+        "difficulty": 0.45477340261336197
+      }
+    ],
+    "session_05_ex_00_NS-12": [
+      {
+        "concept_id": "NS-12",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748672",
+        "difficulty": 0.6106222865583568
+      }
+    ],
+    "session_05_ex_01_NS-13": [
+      {
+        "concept_id": "NS-13",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748683",
+        "difficulty": 0.3835748872863093
+      }
+    ],
+    "session_05_ex_02_NS-11": [
+      {
+        "concept_id": "NS-11",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748692",
+        "difficulty": 0.5265226215663882
+      }
+    ],
+    "session_05_ex_03_NS-04": [
+      {
+        "concept_id": "NS-04",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748701",
+        "difficulty": 0.6040257431670535
+      }
+    ],
+    "session_05_ex_04_NS-10": [
+      {
+        "concept_id": "NS-10",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748735",
+        "difficulty": 0.5595803698663376
+      }
+    ],
+    "session_05_ex_05_EXP-48": [
+      {
+        "concept_id": "EXP-48",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748745",
+        "difficulty": 0.4955421103954295
+      }
+    ],
+    "session_05_ex_06_AT-23": [
+      {
+        "concept_id": "AT-23",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748754",
+        "difficulty": 0.46322005416517426
+      }
+    ],
+    "session_05_ex_07_NS-10": [
+      {
+        "concept_id": "NS-10",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748762",
+        "difficulty": 0.5177865363481482
+      }
+    ],
+    "session_05_ex_08_NS-08": [
+      {
+        "concept_id": "NS-08",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748771",
+        "difficulty": 0.6107648165107517
+      }
+    ],
+    "session_05_ex_09_NS-03": [
+      {
+        "concept_id": "NS-03",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748779",
+        "difficulty": 0.5638033538323144
+      }
+    ],
+    "session_05_ex_10_NS-13": [
+      {
+        "concept_id": "NS-13",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748787",
+        "difficulty": 0.5379629077533861
+      }
+    ],
+    "session_05_ex_11_NS-12": [
+      {
+        "concept_id": "NS-12",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748795",
+        "difficulty": 0.4114151988396121
+      }
+    ],
+    "session_05_ex_12_NS-06": [
+      {
+        "concept_id": "NS-06",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748804",
+        "difficulty": 0.57209944411201
+      }
+    ],
+    "session_05_ex_13_NS-15": [
+      {
+        "concept_id": "NS-15",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748812",
+        "difficulty": 0.5272909810773122
+      }
+    ],
+    "session_05_ex_14_AT-18": [
+      {
+        "concept_id": "AT-18",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748821",
+        "difficulty": 0.6104320293446062
+      }
+    ],
+    "session_05_ex_15_AT-18": [
+      {
+        "concept_id": "AT-18",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748829",
+        "difficulty": 0.5124567001327447
+      }
+    ],
+    "session_05_ex_16_NS-07": [
+      {
+        "concept_id": "NS-07",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748838",
+        "difficulty": 0.46590300358907066
+      }
+    ],
+    "session_06_ex_00_NS-08": [
+      {
+        "concept_id": "NS-08",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748855",
+        "difficulty": 0.66918573725292
+      }
+    ],
+    "session_06_ex_01_NS-12": [
+      {
+        "concept_id": "NS-12",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748947",
+        "difficulty": 0.40347176615116714
+      }
+    ],
+    "session_06_ex_02_NS-12": [
+      {
+        "concept_id": "NS-12",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748958",
+        "difficulty": 0.5626987355948595
+      }
+    ],
+    "session_06_ex_03_NS-13": [
+      {
+        "concept_id": "NS-13",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748967",
+        "difficulty": 0.6037890424086025
+      }
+    ],
+    "session_06_ex_04_NS-13": [
+      {
+        "concept_id": "NS-13",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748975",
+        "difficulty": 0.6723116195963768
+      }
+    ],
+    "session_06_ex_05_NS-06": [
+      {
+        "concept_id": "NS-06",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.748984",
+        "difficulty": 0.6310273638498947
+      }
+    ],
+    "session_06_ex_06_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.748992",
+        "difficulty": 0.5294706357012576
+      }
+    ],
+    "session_06_ex_07_NS-09": [
+      {
+        "concept_id": "NS-09",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749000",
+        "difficulty": 0.45416866823525737
+      }
+    ],
+    "session_06_ex_08_NS-12": [
+      {
+        "concept_id": "NS-12",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749008",
+        "difficulty": 0.5786362883208241
+      }
+    ],
+    "session_07_ex_00_EXP-48": [
+      {
+        "concept_id": "EXP-48",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749048",
+        "difficulty": 0.6272367261653153
+      }
+    ],
+    "session_07_ex_01_LF-38": [
+      {
+        "concept_id": "LF-38",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749092",
+        "difficulty": 0.6831894297090614
+      }
+    ],
+    "session_07_ex_02_POL-50": [
+      {
+        "concept_id": "POL-50",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749106",
+        "difficulty": 0.6362730485611161
+      }
+    ],
+    "session_07_ex_03_NS-15": [
+      {
+        "concept_id": "NS-15",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749118",
+        "difficulty": 0.5521444881136977
+      }
+    ],
+    "session_07_ex_04_FN-63": [
+      {
+        "concept_id": "FN-63",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749131",
+        "difficulty": 0.5853976965543477
+      }
+    ],
+    "session_07_ex_05_AT-22": [
+      {
+        "concept_id": "AT-22",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749145",
+        "difficulty": 0.547953322026334
+      }
+    ],
+    "session_07_ex_06_LF-36": [
+      {
+        "concept_id": "LF-36",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749159",
+        "difficulty": 0.5126631704224188
+      }
+    ],
+    "session_07_ex_07_LF-36": [
+      {
+        "concept_id": "LF-36",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749170",
+        "difficulty": 0.5397380867997629
+      }
+    ],
+    "session_07_ex_08_AT-23": [
+      {
+        "concept_id": "AT-23",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749182",
+        "difficulty": 0.5161602664268962
+      }
+    ],
+    "session_07_ex_09_AT-21": [
+      {
+        "concept_id": "AT-21",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749219",
+        "difficulty": 0.586486468491483
+      }
+    ],
+    "session_07_ex_10_LF-40": [
+      {
+        "concept_id": "LF-40",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749233",
+        "difficulty": 0.6802261259105136
+      }
+    ],
+    "session_07_ex_11_LF-39": [
+      {
+        "concept_id": "LF-39",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749246",
+        "difficulty": 0.45570649809884806
+      }
+    ],
+    "session_07_ex_12_LF-30": [
+      {
+        "concept_id": "LF-30",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749264",
+        "difficulty": 0.5651148297105426
+      }
+    ],
+    "session_07_ex_13_POL-50": [
+      {
+        "concept_id": "POL-50",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749276",
+        "difficulty": 0.5878789043511604
+      }
+    ],
+    "session_07_ex_14_LF-30": [
+      {
+        "concept_id": "LF-30",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749288",
+        "difficulty": 0.5424314184218707
+      }
+    ],
+    "session_08_ex_00_AT-22": [
+      {
+        "concept_id": "AT-22",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749316",
+        "difficulty": 0.71425991493683
+      }
+    ],
+    "session_08_ex_01_EXP-46": [
+      {
+        "concept_id": "EXP-46",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749329",
+        "difficulty": 0.5829277917683772
+      }
+    ],
+    "session_08_ex_02_EXP-43": [
+      {
+        "concept_id": "EXP-43",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749405",
+        "difficulty": 0.6618306700575224
+      }
+    ],
+    "session_08_ex_03_NS-12": [
+      {
+        "concept_id": "NS-12",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749424",
+        "difficulty": 0.7216226150180042
+      }
+    ],
+    "session_08_ex_04_AT-23": [
+      {
+        "concept_id": "AT-23",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749438",
+        "difficulty": 0.7266817094858943
+      }
+    ],
+    "session_08_ex_05_LF-38": [
+      {
+        "concept_id": "LF-38",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749450",
+        "difficulty": 0.6025974479962364
+      }
+    ],
+    "session_08_ex_06_LF-40": [
+      {
+        "concept_id": "LF-40",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749463",
+        "difficulty": 0.6112180873369226
+      }
+    ],
+    "session_08_ex_07_AT-21": [
+      {
+        "concept_id": "AT-21",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749475",
+        "difficulty": 0.48425850607862847
+      }
+    ],
+    "session_08_ex_08_FN-63": [
+      {
+        "concept_id": "FN-63",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749487",
+        "difficulty": 0.6899110901652158
+      }
+    ],
+    "session_08_ex_09_EXP-42": [
+      {
+        "concept_id": "EXP-42",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749500",
+        "difficulty": 0.7688864069948234
+      }
+    ],
+    "session_08_ex_10_AT-22": [
+      {
+        "concept_id": "AT-22",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749511",
+        "difficulty": 0.560499038422286
+      }
+    ],
+    "session_09_ex_00_NS-11": [
+      {
+        "concept_id": "NS-11",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749534",
+        "difficulty": 0.5984814701819413
+      }
+    ],
+    "session_09_ex_01_NS-07": [
+      {
+        "concept_id": "NS-07",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749547",
+        "difficulty": 0.7256900313974965
+      }
+    ],
+    "session_09_ex_02_FN-63": [
+      {
+        "concept_id": "FN-63",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749560",
+        "difficulty": 0.6164614576629052
+      }
+    ],
+    "session_09_ex_03_LF-36": [
+      {
+        "concept_id": "LF-36",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749579",
+        "difficulty": 0.6244725135864592
+      }
+    ],
+    "session_09_ex_04_AT-18": [
+      {
+        "concept_id": "AT-18",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749592",
+        "difficulty": 0.7974452277096888
+      }
+    ],
+    "session_09_ex_05_AT-27": [
+      {
+        "concept_id": "AT-27",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749605",
+        "difficulty": 0.5781815518893302
+      }
+    ],
+    "session_09_ex_06_FN-64": [
+      {
+        "concept_id": "FN-64",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749617",
+        "difficulty": 0.6389828210587922
+      }
+    ],
+    "session_09_ex_07_NS-07": [
+      {
+        "concept_id": "NS-07",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749632",
+        "difficulty": 0.5832447098937893
+      }
+    ],
+    "session_09_ex_08_EXP-42": [
+      {
+        "concept_id": "EXP-42",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749645",
+        "difficulty": 0.5617049250117195
+      }
+    ],
+    "session_09_ex_09_LF-36": [
+      {
+        "concept_id": "LF-36",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749657",
+        "difficulty": 0.6952842608511215
+      }
+    ],
+    "session_09_ex_10_Q-60": [
+      {
+        "concept_id": "Q-60",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749669",
+        "difficulty": 0.695708688600259
+      }
+    ],
+    "session_09_ex_11_FN-63": [
+      {
+        "concept_id": "FN-63",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749682",
+        "difficulty": 0.7337135869063421
+      }
+    ],
+    "session_09_ex_12_EXP-47": [
+      {
+        "concept_id": "EXP-47",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749694",
+        "difficulty": 0.6728716599023025
+      }
+    ],
+    "session_09_ex_13_LF-35": [
+      {
+        "concept_id": "LF-35",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749707",
+        "difficulty": 0.6372409436501689
+      }
+    ],
+    "session_09_ex_14_EXP-48": [
+      {
+        "concept_id": "EXP-48",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749719",
+        "difficulty": 0.644021033778132
+      }
+    ],
+    "session_10_ex_00_LF-34": [
+      {
+        "concept_id": "LF-34",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749741",
+        "difficulty": 0.8275493801830204
+      }
+    ],
+    "session_10_ex_01_LF-33": [
+      {
+        "concept_id": "LF-33",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749756",
+        "difficulty": 0.8508617820416656
+      }
+    ],
+    "session_10_ex_02_POL-52": [
+      {
+        "concept_id": "POL-52",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749768",
+        "difficulty": 0.7564072179972551
+      }
+    ],
+    "session_10_ex_03_LF-38": [
+      {
+        "concept_id": "LF-38",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749781",
+        "difficulty": 0.7532543298367571
+      }
+    ],
+    "session_10_ex_04_FN-63": [
+      {
+        "concept_id": "FN-63",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749793",
+        "difficulty": 0.7727157353000065
+      }
+    ],
+    "session_10_ex_05_AT-27": [
+      {
+        "concept_id": "AT-27",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749806",
+        "difficulty": 0.7203282247322045
+      }
+    ],
+    "session_10_ex_06_POL-51": [
+      {
+        "concept_id": "POL-51",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749818",
+        "difficulty": 0.570477535186684
+      }
+    ],
+    "session_10_ex_07_NS-14": [
+      {
+        "concept_id": "NS-14",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749830",
+        "difficulty": 0.7614335035150014
+      }
+    ],
+    "session_10_ex_08_LF-32": [
+      {
+        "concept_id": "LF-32",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749843",
+        "difficulty": 0.7175705942142355
+      }
+    ],
+    "session_11_ex_00_AT-23": [
+      {
+        "concept_id": "AT-23",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749861",
+        "difficulty": 0.8663156513336627
+      }
+    ],
+    "session_11_ex_01_POL-53": [
+      {
+        "concept_id": "POL-53",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749875",
+        "difficulty": 0.8857738838633059
+      }
+    ],
+    "session_11_ex_02_LF-31": [
+      {
+        "concept_id": "LF-31",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749888",
+        "difficulty": 0.8948892561803832
+      }
+    ],
+    "session_11_ex_03_FN-62": [
+      {
+        "concept_id": "FN-62",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749902",
+        "difficulty": 0.8940888601034471
+      }
+    ],
+    "session_11_ex_04_LF-32": [
+      {
+        "concept_id": "LF-32",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749914",
+        "difficulty": 0.8407015062316189
+      }
+    ],
+    "session_11_ex_05_AT-18": [
+      {
+        "concept_id": "AT-18",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749926",
+        "difficulty": 0.6721977335863458
+      }
+    ],
+    "session_11_ex_06_POL-50": [
+      {
+        "concept_id": "POL-50",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749939",
+        "difficulty": 0.7905414828728675
+      }
+    ],
+    "session_11_ex_07_AT-29": [
+      {
+        "concept_id": "AT-29",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749951",
+        "difficulty": 0.6405971627294664
+      }
+    ],
+    "session_11_ex_08_LF-35": [
+      {
+        "concept_id": "LF-35",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749963",
+        "difficulty": 0.635898515958818
+      }
+    ],
+    "session_12_ex_00_AT-18": [
+      {
+        "concept_id": "AT-18",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.749981",
+        "difficulty": 0.6420952232974427
+      }
+    ],
+    "session_12_ex_01_NS-10": [
+      {
+        "concept_id": "NS-10",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.749996",
+        "difficulty": 0.9
+      }
+    ],
+    "session_12_ex_02_LF-31": [
+      {
+        "concept_id": "LF-31",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.750009",
+        "difficulty": 0.8850106882295803
+      }
+    ],
+    "session_12_ex_03_NS-02": [
+      {
+        "concept_id": "NS-02",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.750038",
+        "difficulty": 0.7328206766179851
+      }
+    ],
+    "session_12_ex_04_NS-13": [
+      {
+        "concept_id": "NS-13",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.750052",
+        "difficulty": 0.8686660780255222
+      }
+    ],
+    "session_12_ex_05_AT-24": [
+      {
+        "concept_id": "AT-24",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.750065",
+        "difficulty": 0.861274127565797
+      }
+    ],
+    "session_12_ex_06_POL-53": [
+      {
+        "concept_id": "POL-53",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.750078",
+        "difficulty": 0.7447517523689478
+      }
+    ],
+    "session_12_ex_07_NS-10": [
+      {
+        "concept_id": "NS-10",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.750090",
+        "difficulty": 0.6671468044632534
+      }
+    ],
+    "session_12_ex_08_LF-34": [
+      {
+        "concept_id": "LF-34",
+        "result": false,
+        "timestamp": "2025-05-27T15:26:51.750102",
+        "difficulty": 0.8625776933557665
+      }
+    ],
+    "session_12_ex_09_EXP-45": [
+      {
+        "concept_id": "EXP-45",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.750114",
+        "difficulty": 0.8631788439760961
+      }
+    ],
+    "session_12_ex_10_NS-05": [
+      {
+        "concept_id": "NS-05",
+        "result": true,
+        "timestamp": "2025-05-27T15:26:51.750129",
+        "difficulty": 0.8118438579070585
+      }
+    ]
+  }
+}
