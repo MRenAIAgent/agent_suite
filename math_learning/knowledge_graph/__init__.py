@@ -1,4 +1,8 @@
-"""Knowledge Graph package for the math learning system."""
+"""
+Knowledge Graph Package
 
-from math_learning.knowledge_graph.concept import Concept
-from math_learning.knowledge_graph.graph import KnowledgeGraph 
+This package contains modules for building and managing knowledge graphs.
+"""
+
+from .concept import Concept
+from .graph import KnowledgeGraph 

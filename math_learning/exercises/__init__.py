@@ -1,4 +1,8 @@
-"""Exercises package for the math learning system."""
+"""
+Exercises Package
 
-from math_learning.exercises.exercise import Exercise
-from math_learning.exercises.exercise_bank import ExerciseBank 
+This package contains modules for creating and managing exercises.
+"""
+
+from exercises.exercise import Exercise
+from exercises.exercise_bank import ExerciseBank 

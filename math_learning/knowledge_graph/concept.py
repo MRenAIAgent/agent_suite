@@ -20,6 +20,7 @@ class Concept:
         category: str = "",
         concept_id: Optional[str] = None,
         examples: Optional[List[str]] = None,
+        prefix: Optional[str] = None,
     ):
         """
         Initialize a concept node.
@@ -32,8 +33,17 @@ class Concept:
             category: The category this concept belongs to (e.g., "Algebra")
             concept_id: Unique identifier (auto-generated if not provided)
             examples: List of example descriptions or problems
+            prefix: Category prefix for the concept ID (e.g., "NS" for Number Sense)
         """
-        self.id = concept_id or str(uuid.uuid4())
+        if concept_id:
+            self.id = concept_id
+        elif prefix:
+            # Generate a prefixed ID using a random UUID and taking first 2 digits
+            uuid_part = str(uuid.uuid4())[:2]
+            self.id = f"{prefix}-{uuid_part}"
+        else:
+            self.id = str(uuid.uuid4())
+            
         self.name = name
         self.description = description
         self.difficulty = max(1, min(5, difficulty))  # Ensure 1-5 range

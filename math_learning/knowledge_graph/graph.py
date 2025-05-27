@@ -8,7 +8,7 @@ import json
 import os
 import networkx as nx
 from typing import Dict, List, Optional, Set, Tuple, Any
-from math_learning.knowledge_graph.concept import Concept
+from .concept import Concept
 
 
 class KnowledgeGraph:
