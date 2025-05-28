@@ -9,7 +9,7 @@ from typing import Dict, List, Tuple, Any
 # Add the parent directory to the path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from math_learning.config.rag_config import get_memory_config, create_configured_rag_service
+from math_learning.config.rag_config import get_memory_config, create_simple_rag_service
 from math_learning.learning_graph.user_model import LearningGraph
 from agents.rag.models.knowledge import Entity, Relationship
 from agents.rag.models.context import ContextItem
@@ -432,7 +432,7 @@ async def run_edge_case_tests():
     print("1. Creating RAG service...")
     try:
         config = get_memory_config()
-        rag_service = await create_configured_rag_service(config)
+        rag_service = await create_simple_rag_service()
         print("✓ RAG service created successfully")
     except Exception as e:
         print(f"✗ Failed to create RAG service: {e}")

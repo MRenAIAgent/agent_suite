@@ -8,6 +8,7 @@ import unittest
 import os
 import sys
 import json
+import tempfile
 from typing import Dict
 
 # Add the parent directory to the Python path
@@ -20,6 +21,7 @@ from math_learning.exercises.exercise_bank import ExerciseBank
 from math_learning.learning_graph.user_model import LearningGraph
 from math_learning.recommendation.gap_analyzer import GapAnalyzer
 from math_learning.recommendation.recommender import Recommender
+from math_learning.config.storage_config import MathLearningStorageConfig, StorageBackend
 
 
 class TestGapAnalysis(unittest.TestCase):
@@ -35,7 +37,22 @@ class TestGapAnalysis(unittest.TestCase):
 
     def _create_test_knowledge_graph(self):
         """Create a test knowledge graph."""
-        graph = KnowledgeGraph(name="Test Geometry")
+        # Create a temporary file for test persistence to avoid loading the algebra graph
+        temp_file = tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False)
+        temp_file.write('{"concepts": {}, "relationships": []}')  # Empty graph
+        temp_file.close()
+        
+        # Create config that uses the temporary file
+        config = MathLearningStorageConfig(
+            backend=StorageBackend.NETWORKX,
+            networkx_persistence_file=temp_file.name,
+            networkx_auto_save=False  # Don't auto-save during tests
+        )
+        
+        graph = KnowledgeGraph(name="Test Geometry", config=config)
+        
+        # Clean up the temp file
+        os.unlink(temp_file.name)
         
         # Define concepts with fixed IDs
         points = Concept(

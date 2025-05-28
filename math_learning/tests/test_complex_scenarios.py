@@ -8,8 +8,9 @@ exercise bank functionality, and recommendation accuracy.
 import unittest
 import os
 import sys
+import tempfile
 import random
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Tuple
 
 # Add the parent directory to the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -20,11 +21,12 @@ from math_learning.exercises.exercise import Exercise
 from math_learning.exercises.exercise_bank import ExerciseBank
 from math_learning.learning_graph.user_model import LearningGraph
 from math_learning.recommendation.gap_analyzer import GapAnalyzer
-from math_learning.recommendation.recommender import Recommender
+from math_learning.recommendation.recommender import Recommender, ExerciseRecommendation
+from math_learning.config.storage_config import MathLearningStorageConfig, StorageBackend
 
 
 class TestComplexScenarios(unittest.TestCase):
-    """Tests for complex learning scenarios."""
+    """Tests for complex learning scenarios with multiple paths and dependencies."""
 
     def setUp(self):
         """Set up test fixtures for all tests."""
@@ -36,7 +38,22 @@ class TestComplexScenarios(unittest.TestCase):
 
     def _create_complex_knowledge_graph(self):
         """Create a more complex knowledge graph with multiple learning paths."""
-        graph = KnowledgeGraph(name="Advanced Math")
+        # Create a temporary file for test persistence to avoid loading the algebra graph
+        temp_file = tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False)
+        temp_file.write('{"concepts": {}, "relationships": []}')  # Empty graph
+        temp_file.close()
+        
+        # Create config that uses the temporary file
+        config = MathLearningStorageConfig(
+            backend=StorageBackend.NETWORKX,
+            networkx_persistence_file=temp_file.name,
+            networkx_auto_save=False  # Don't auto-save during tests
+        )
+        
+        graph = KnowledgeGraph(name="Advanced Math", config=config)
+        
+        # Clean up the temp file
+        os.unlink(temp_file.name)
         
         # Core concepts (level 1)
         numbers = Concept(

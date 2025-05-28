@@ -21,6 +21,7 @@ class Concept:
         concept_id: Optional[str] = None,
         examples: Optional[List[str]] = None,
         prefix: Optional[str] = None,
+        grade_level: str = "",
     ):
         """
         Initialize a concept node.
@@ -34,6 +35,7 @@ class Concept:
             concept_id: Unique identifier (auto-generated if not provided)
             examples: List of example descriptions or problems
             prefix: Category prefix for the concept ID (e.g., "NS" for Number Sense)
+            grade_level: Grade level range (e.g., "6-8", "9-10")
         """
         if concept_id:
             self.id = concept_id
@@ -50,6 +52,7 @@ class Concept:
         self.time_to_master = time_to_master
         self.category = category
         self.examples = examples or []
+        self.grade_level = grade_level
         
         # Relationships (to be populated by knowledge graph)
         self.prerequisites: Set[str] = set()
@@ -66,6 +69,7 @@ class Concept:
             "time_to_master": self.time_to_master,
             "category": self.category,
             "examples": self.examples,
+            "grade_level": self.grade_level,
             "prerequisites": list(self.prerequisites),
             "dependents": list(self.dependents),
             "related": list(self.related)
@@ -81,7 +85,8 @@ class Concept:
             time_to_master=data.get("time_to_master", 60),
             category=data.get("category", ""),
             concept_id=data.get("id"),
-            examples=data.get("examples", [])
+            examples=data.get("examples", []),
+            grade_level=data.get("grade_level", "")
         )
         
         concept.prerequisites = set(data.get("prerequisites", []))

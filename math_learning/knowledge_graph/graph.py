@@ -2,28 +2,49 @@
 Knowledge Graph module.
 
 This module defines the knowledge graph structure that represents domain concepts and their relationships.
+Now supports configurable storage backends (NetworkX or RAG).
 """
 
 import json
 import os
 import networkx as nx
 from typing import Dict, List, Optional, Set, Tuple, Any
+
 from .concept import Concept
+from .storage_interface import KnowledgeGraphStorageInterface
+from .storage_factory import create_storage, create_storage_from_env
+from math_learning.config.storage_config import MathLearningStorageConfig
 
 
 class KnowledgeGraph:
-    """A knowledge graph representing concepts and their relationships."""
+    """A knowledge graph representing concepts and their relationships with configurable storage."""
 
-    def __init__(self, name: str = ""):
+    def __init__(self, name: str = "", config: Optional[MathLearningStorageConfig] = None):
         """
-        Initialize a knowledge graph.
+        Initialize a knowledge graph with configurable storage.
 
         Args:
             name: Optional name for the knowledge graph
+            config: Storage configuration. If None, uses default configuration.
         """
         self.name = name
-        self.concepts: Dict[str, Concept] = {}
-        self.graph = nx.DiGraph()  # Directed graph
+        self._storage: KnowledgeGraphStorageInterface = create_storage(config, name)
+        
+    @classmethod
+    def from_env(cls, name: str = "") -> "KnowledgeGraph":
+        """
+        Create a knowledge graph using configuration from environment variables.
+        
+        Args:
+            name: Optional name for the knowledge graph
+            
+        Returns:
+            A new KnowledgeGraph instance
+        """
+        instance = cls.__new__(cls)
+        instance.name = name
+        instance._storage = create_storage_from_env(name)
+        return instance
         
     def add_concept(self, concept: Concept) -> None:
         """
@@ -32,8 +53,7 @@ class KnowledgeGraph:
         Args:
             concept: The concept to add
         """
-        self.concepts[concept.id] = concept
-        self.graph.add_node(concept.id, data=concept.to_dict())
+        self._storage.add_concept(concept)
         
     def add_prerequisite(self, prerequisite_id: str, concept_id: str, strength: float = 0.8) -> None:
         """
@@ -44,16 +64,7 @@ class KnowledgeGraph:
             concept_id: The ID of the dependent concept
             strength: The strength of the relationship (0.0-1.0)
         """
-        if prerequisite_id not in self.concepts or concept_id not in self.concepts:
-            raise ValueError("Both concepts must exist in the knowledge graph")
-            
-        self.graph.add_edge(prerequisite_id, concept_id, 
-                            type="prerequisite", 
-                            strength=strength)
-        
-        # Update concept relationship sets
-        self.concepts[prerequisite_id].dependents.add(concept_id)
-        self.concepts[concept_id].prerequisites.add(prerequisite_id)
+        self._storage.add_prerequisite(prerequisite_id, concept_id, strength)
         
     def add_related(self, concept_id1: str, concept_id2: str, strength: float = 0.5) -> None:
         """
@@ -64,20 +75,7 @@ class KnowledgeGraph:
             concept_id2: The ID of the second concept
             strength: The strength of the relationship (0.0-1.0)
         """
-        if concept_id1 not in self.concepts or concept_id2 not in self.concepts:
-            raise ValueError("Both concepts must exist in the knowledge graph")
-            
-        # Add as undirected by adding both directions
-        self.graph.add_edge(concept_id1, concept_id2, 
-                           type="related", 
-                           strength=strength)
-        self.graph.add_edge(concept_id2, concept_id1, 
-                           type="related", 
-                           strength=strength)
-        
-        # Update concept relationship sets
-        self.concepts[concept_id1].related.add(concept_id2)
-        self.concepts[concept_id2].related.add(concept_id1)
+        self._storage.add_related(concept_id1, concept_id2, strength)
         
     def get_concept(self, concept_id: str) -> Optional[Concept]:
         """
@@ -89,7 +87,7 @@ class KnowledgeGraph:
         Returns:
             The concept or None if not found
         """
-        return self.concepts.get(concept_id)
+        return self._storage.get_concept(concept_id)
         
     def get_all_concepts(self) -> List[Concept]:
         """
@@ -98,7 +96,7 @@ class KnowledgeGraph:
         Returns:
             List of all concepts
         """
-        return list(self.concepts.values())
+        return self._storage.get_all_concepts()
         
     def get_prerequisites(self, concept_id: str) -> List[Concept]:
         """
@@ -110,11 +108,7 @@ class KnowledgeGraph:
         Returns:
             List of prerequisite concepts
         """
-        if concept_id not in self.concepts:
-            return []
-            
-        return [self.concepts[pre_id] for pre_id in self.concepts[concept_id].prerequisites
-                if pre_id in self.concepts]
+        return self._storage.get_prerequisites(concept_id)
                 
     def get_dependent_concepts(self, concept_id: str) -> List[Concept]:
         """
@@ -126,15 +120,11 @@ class KnowledgeGraph:
         Returns:
             List of dependent concepts
         """
-        if concept_id not in self.concepts:
-            return []
-            
-        return [self.concepts[dep_id] for dep_id in self.concepts[concept_id].dependents
-                if dep_id in self.concepts]
+        return self._storage.get_dependent_concepts(concept_id)
                 
     def get_central_concepts(self, limit: int = 5) -> List[Concept]:
         """
-        Get the most central concepts in the knowledge graph based on degree centrality.
+        Get the most central concepts in the knowledge graph.
 
         Args:
             limit: Maximum number of concepts to return
@@ -142,14 +132,7 @@ class KnowledgeGraph:
         Returns:
             List of central concepts
         """
-        if not self.graph.nodes:
-            return []
-            
-        centrality = nx.degree_centrality(self.graph)
-        sorted_concepts = sorted(centrality.items(), key=lambda x: x[1], reverse=True)
-        
-        return [self.concepts[concept_id] for concept_id, _ in sorted_concepts[:limit]
-                if concept_id in self.concepts]
+        return self._storage.get_central_concepts(limit)
                 
     def calculate_centrality(self, concept_id: str) -> float:
         """
@@ -161,73 +144,8 @@ class KnowledgeGraph:
         Returns:
             Centrality score (0.0-1.0)
         """
-        if not self.graph.nodes or concept_id not in self.graph:
-            return 0.0
-            
-        centrality = nx.degree_centrality(self.graph)
-        return centrality.get(concept_id, 0.0)
+        return self._storage.calculate_centrality(concept_id)
         
-    def save_to_file(self, file_path: str) -> None:
-        """
-        Save the knowledge graph to a JSON file.
-
-        Args:
-            file_path: Path to save the file
-        """
-        data = {
-            "name": self.name,
-            "concepts": [concept.to_dict() for concept in self.concepts.values()],
-            "relationships": [
-                {
-                    "source": u,
-                    "target": v,
-                    "type": data["type"],
-                    "strength": data["strength"]
-                }
-                for u, v, data in self.graph.edges(data=True)
-            ]
-        }
-        
-        with open(file_path, 'w') as f:
-            json.dump(data, f, indent=2)
-            
-    @classmethod
-    def load_from_file(cls, file_path: str) -> "KnowledgeGraph":
-        """
-        Load a knowledge graph from a JSON file.
-
-        Args:
-            file_path: Path to the JSON file
-
-        Returns:
-            Loaded knowledge graph
-        """
-        with open(file_path, 'r') as f:
-            data = json.load(f)
-            
-        graph = cls(name=data.get("name", ""))
-        
-        # Add concepts
-        for concept_data in data.get("concepts", []):
-            concept = Concept.from_dict(concept_data)
-            graph.add_concept(concept)
-            
-        # Add relationships
-        for rel in data.get("relationships", []):
-            source = rel["source"]
-            target = rel["target"]
-            rel_type = rel["type"]
-            strength = rel.get("strength", 0.5)
-            
-            if rel_type == "prerequisite":
-                graph.add_prerequisite(source, target, strength)
-            elif rel_type == "related":
-                # Only add once since add_related adds both directions
-                if not graph.graph.has_edge(target, source):
-                    graph.add_related(source, target, strength)
-                    
-        return graph 
-    
     def find_learning_path(self, start_concept: str, end_concept: str) -> List[Concept]:
         """
         Find a learning path from start concept to end concept.
@@ -239,16 +157,89 @@ class KnowledgeGraph:
         Returns:
             List of concepts representing the learning path
         """
-        if start_concept not in self.concepts or end_concept not in self.concepts:
-            return []
+        return self._storage.find_learning_path(start_concept, end_concept)
+        
+    def save_to_file(self, file_path: str) -> None:
+        """
+        Save the knowledge graph to a JSON file.
+
+        Args:
+            file_path: Path to save the file
+        """
+        self._storage.save_to_file(file_path)
             
-        try:
-            # Use NetworkX to find shortest path
-            path_ids = nx.shortest_path(self.graph, start_concept, end_concept)
-            return [self.concepts[concept_id] for concept_id in path_ids]
-        except nx.NetworkXNoPath:
-            # No path exists
-            return []
-        except nx.NodeNotFound:
-            # One of the nodes doesn't exist
-            return [] 
+    @classmethod
+    def load_from_file(cls, file_path: str, config: Optional[MathLearningStorageConfig] = None) -> "KnowledgeGraph":
+        """
+        Load a knowledge graph from a JSON file.
+
+        Args:
+            file_path: Path to the JSON file
+            config: Storage configuration. If None, uses default configuration.
+
+        Returns:
+            Loaded knowledge graph
+        """
+        # Create a new instance
+        graph = cls(config=config)
+        
+        # Load data into the storage backend
+        graph._storage.load_from_file(file_path)
+        
+        return graph
+    
+    # Additional convenience methods
+    def get_concept_count(self) -> int:
+        """Get the total number of concepts in the graph."""
+        return self._storage.get_concept_count()
+    
+    def get_relationship_count(self) -> int:
+        """Get the total number of relationships in the graph."""
+        return self._storage.get_relationship_count()
+    
+    def search_concepts(self, query: str, limit: int = 10) -> List[Concept]:
+        """Search for concepts by name or description."""
+        return self._storage.search_concepts(query, limit)
+    
+    def get_concepts_by_category(self, category: str) -> List[Concept]:
+        """Get all concepts in a specific category."""
+        return self._storage.get_concepts_by_category(category)
+    
+    def get_concepts_by_difficulty(self, min_difficulty: int, max_difficulty: int) -> List[Concept]:
+        """Get concepts within a difficulty range."""
+        return self._storage.get_concepts_by_difficulty(min_difficulty, max_difficulty)
+    
+    # Backward compatibility properties
+    @property
+    def concepts(self) -> Dict[str, Concept]:
+        """
+        Get concepts dictionary for backward compatibility.
+        
+        Note: This creates a new dictionary each time it's accessed.
+        For better performance, use get_all_concepts() or get_concept().
+        """
+        return {concept.id: concept for concept in self._storage.get_all_concepts()}
+    
+    @property 
+    def graph(self) -> nx.DiGraph:
+        """
+        Get NetworkX graph for backward compatibility.
+        
+        Note: This only works with NetworkX storage backend.
+        For RAG storage, this will raise an AttributeError.
+        """
+        if hasattr(self._storage, 'graph'):
+            return self._storage.graph
+        else:
+            raise AttributeError("Graph property is only available with NetworkX storage backend")
+    
+    def __repr__(self) -> str:
+        """String representation of the knowledge graph."""
+        concept_count = self.get_concept_count()
+        relationship_count = self.get_relationship_count()
+        storage_type = type(self._storage).__name__
+        
+        return (f"KnowledgeGraph(name='{self.name}', "
+                f"concepts={concept_count}, "
+                f"relationships={relationship_count}, "
+                f"storage={storage_type})") 

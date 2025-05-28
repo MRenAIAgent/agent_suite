@@ -295,6 +295,10 @@ class PersonalizedLearningSystem:
         patterns = self.analyze_learning_patterns(learning_graph)
         weaknesses = self.detect_weaknesses(learning_graph)
         
+        # If no patterns, return empty list
+        if not patterns:
+            return insights
+        
         # Identify strengths
         strengths = self._identify_strengths(learning_graph, patterns)
         for strength in strengths:
@@ -306,6 +310,24 @@ class PersonalizedLearningSystem:
                 actionable_steps=[f"Leverage this strength to learn {c}" for c in strength['related_concepts']],
                 related_concepts=strength['related_concepts']
             ))
+        
+        # If no category-based strengths found, look for individual concept strengths
+        if not strengths:
+            strong_concepts = []
+            for concept_id, pattern in patterns.items():
+                mastery = learning_graph.get_mastery(concept_id)
+                if mastery > 0.7 and pattern.success_rate > 0.7:
+                    strong_concepts.append(concept_id)
+            
+            if strong_concepts:
+                insights.append(LearningInsight(
+                    insight_type='strength',
+                    title="Individual Concept Mastery",
+                    description=f"You've shown strong performance in {len(strong_concepts)} concept(s)",
+                    confidence=0.8,
+                    actionable_steps=["Build on these strengths to tackle related concepts"],
+                    related_concepts=strong_concepts
+                ))
         
         # Learning velocity insights
         fast_learners = [p for p in patterns.values() if p.learning_velocity > 0.7]
@@ -329,6 +351,20 @@ class PersonalizedLearningSystem:
                 confidence=0.7,
                 actionable_steps=["Schedule regular review sessions", "Use spaced repetition"],
                 related_concepts=[p.concept_id for p in low_retention]
+            ))
+        
+        # Progress insights - if we have learning data but no other insights
+        if not insights and patterns:
+            total_attempts = sum(p.attempts for p in patterns.values())
+            avg_success_rate = sum(p.success_rate for p in patterns.values()) / len(patterns)
+            
+            insights.append(LearningInsight(
+                insight_type='pattern',
+                title="Learning Progress Overview",
+                description=f"You've completed {total_attempts} exercises with {avg_success_rate:.1%} success rate",
+                confidence=0.6,
+                actionable_steps=["Continue practicing to build mastery", "Focus on areas with lower success rates"],
+                related_concepts=list(patterns.keys())
             ))
         
         return insights
