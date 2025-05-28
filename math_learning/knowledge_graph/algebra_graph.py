@@ -766,6 +766,56 @@ def build_algebra_knowledge_graph() -> KnowledgeGraph:
     return graph
 
 
+class AlgebraGraph:
+    """
+    Simple wrapper class for the algebra knowledge graph.
+    
+    This provides a class-based interface for tests and other code
+    that expects an AlgebraGraph class rather than just a function.
+    """
+    
+    def __init__(self):
+        """Initialize the algebra graph by building it."""
+        self.graph = build_algebra_knowledge_graph()
+    
+    @property
+    def knowledge_graph(self):
+        """Provide access to the underlying knowledge graph for compatibility."""
+        return self.graph
+    
+    def get_concept(self, concept_id: str):
+        """Get a concept by ID."""
+        return self.graph.get_concept(concept_id)
+    
+    def get_all_concepts(self):
+        """Get all concepts."""
+        return self.graph.get_all_concepts()
+    
+    def get_prerequisites(self, concept_id: str):
+        """Get prerequisites for a concept."""
+        return self.graph.get_prerequisites(concept_id)
+    
+    def get_dependent_concepts(self, concept_id: str):
+        """Get dependent concepts."""
+        return self.graph.get_dependent_concepts(concept_id)
+    
+    def find_learning_path(self, start_concept: str, end_concept: str):
+        """Find learning path between concepts."""
+        return self.graph.find_learning_path(start_concept, end_concept)
+    
+    def calculate_centrality(self, concept_id: str):
+        """Calculate centrality of a concept."""
+        return self.graph.calculate_centrality(concept_id)
+    
+    def get_central_concepts(self, n: int = 10):
+        """Get the most central concepts."""
+        return self.graph.get_central_concepts(n)
+    
+    def save_to_file(self, filename: str):
+        """Save the graph to a file."""
+        return self.graph.save_to_file(filename)
+
+
 if __name__ == "__main__":
     # Build the graph and save it to a file
     graph = build_algebra_knowledge_graph()

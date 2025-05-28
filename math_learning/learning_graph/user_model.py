@@ -75,19 +75,25 @@ class LearningGraph:
         current_mastery = self.get_mastery(concept_id)
         current_confidence = self.get_confidence(concept_id)
         
-        # Adjust likelihood based on difficulty
-        likelihood_correct = 0.5 + (1 - exercise_difficulty) * 0.5
+        # Calculate learning rate based on difficulty and confidence
+        # More difficult exercises and lower confidence lead to larger updates
+        learning_rate = 0.1 + (exercise_difficulty * 0.1) + ((1 - current_confidence) * 0.1)
+        learning_rate = min(0.3, learning_rate)  # Cap at 0.3 for stability
         
         if exercise_result:
-            # Correct answer: increase mastery more for difficult exercises
-            posterior_mastery = current_mastery + (1 - current_mastery) * likelihood_correct * concept_weight
+            # Correct answer: increase mastery
+            # Use exponential approach to mastery ceiling
+            mastery_gain = (1 - current_mastery) * learning_rate * concept_weight
+            posterior_mastery = current_mastery + mastery_gain
             # Increase confidence
-            posterior_confidence = min(1.0, current_confidence + 0.1 * concept_weight)
+            posterior_confidence = min(1.0, current_confidence + 0.05 * concept_weight)
         else:
-            # Incorrect answer: decrease mastery more for easier exercises
-            posterior_mastery = current_mastery * (1 - likelihood_correct) * concept_weight
+            # Incorrect answer: decrease mastery, but not too harshly
+            # Use a more moderate decrease that considers the current mastery level
+            mastery_loss = current_mastery * learning_rate * concept_weight * 0.5  # 0.5 factor to be less harsh
+            posterior_mastery = max(0.0, current_mastery - mastery_loss)
             # Decrease confidence slightly
-            posterior_confidence = max(0.1, current_confidence - 0.2 * concept_weight)
+            posterior_confidence = max(0.1, current_confidence - 0.1 * concept_weight)
             
         # Update mastery
         self.set_mastery(concept_id, posterior_mastery, posterior_confidence)

@@ -113,9 +113,21 @@ async def _configure_graph_storage(service: RagService, config: Dict[str, Any]) 
         service: RAG service to configure
         config: Graph storage configuration
     """
-    # This would be implemented similar to vector storage
-    # Placeholder for future implementation
-    logger.info("Graph storage configuration is not implemented yet")
+    graph_type = config.get("type", "").lower()
+    
+    if graph_type == "memory":
+        # Use memory-based graph storage
+        from agents.rag.storage.graph.memory_storage import MemoryGraphStorageAdaptor
+        adaptor = MemoryGraphStorageAdaptor()
+        service.register_storage_adaptor(StorageType.GRAPH, adaptor)
+        logger.info("Configured memory graph storage")
+    
+    elif graph_type == "neo4j":
+        # Neo4j graph storage (would need implementation)
+        logger.warning("Neo4j graph storage is not implemented yet")
+    
+    else:
+        logger.warning(f"Unsupported graph storage type: {graph_type}")
 
 
 async def _configure_key_value_storage(service: RagService, config: Dict[str, Any]) -> None:
@@ -126,6 +138,18 @@ async def _configure_key_value_storage(service: RagService, config: Dict[str, An
         service: RAG service to configure
         config: Key-value storage configuration
     """
-    # This would be implemented similar to vector storage
-    # Placeholder for future implementation
-    logger.info("Key-value storage configuration is not implemented yet") 
+    kv_type = config.get("type", "").lower()
+    
+    if kv_type == "memory":
+        # Use memory-based key-value storage
+        from agents.rag.storage.key_value.memory_storage import MemoryKeyValueStorage
+        adaptor = MemoryKeyValueStorage()
+        service.register_storage_adaptor(StorageType.KEY_VALUE, adaptor)
+        logger.info("Configured memory key-value storage")
+    
+    elif kv_type == "redis":
+        # Redis storage (would need implementation)
+        logger.warning("Redis storage is not implemented yet")
+    
+    else:
+        logger.warning(f"Unsupported key-value storage type: {kv_type}") 

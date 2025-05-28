@@ -227,3 +227,28 @@ class KnowledgeGraph:
                     graph.add_related(source, target, strength)
                     
         return graph 
+    
+    def find_learning_path(self, start_concept: str, end_concept: str) -> List[Concept]:
+        """
+        Find a learning path from start concept to end concept.
+        
+        Args:
+            start_concept: The ID of the starting concept
+            end_concept: The ID of the target concept
+            
+        Returns:
+            List of concepts representing the learning path
+        """
+        if start_concept not in self.concepts or end_concept not in self.concepts:
+            return []
+            
+        try:
+            # Use NetworkX to find shortest path
+            path_ids = nx.shortest_path(self.graph, start_concept, end_concept)
+            return [self.concepts[concept_id] for concept_id in path_ids]
+        except nx.NetworkXNoPath:
+            # No path exists
+            return []
+        except nx.NodeNotFound:
+            # One of the nodes doesn't exist
+            return [] 

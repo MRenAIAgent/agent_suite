@@ -12,7 +12,7 @@ import uuid
 @dataclass
 class Entity:
     """Entity in a knowledge graph."""
-    entity_type: str = "entity"
+    type: str = "entity"
     properties: Dict[str, Any] = field(default_factory=dict)
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
 
@@ -22,7 +22,7 @@ class Relationship:
     """Relationship between entities in a knowledge graph."""
     source_id: str
     target_id: str
-    relationship_type: str
+    type: str
     properties: Dict[str, Any] = field(default_factory=dict)
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
 
