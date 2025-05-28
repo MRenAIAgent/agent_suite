@@ -10,10 +10,18 @@ from datetime import datetime, timedelta
 import numpy as np
 from collections import defaultdict, Counter
 import statistics
+import sys
+import os
 
-from .user_model import LearningGraph
-from ..knowledge_graph.graph import KnowledgeGraph
-from ..recommendation.gap_analyzer import GapAnalyzer
+# Add the parent directory to the path for imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+from knowledge_graph.graph import KnowledgeGraph
+from learning_graph.user_model import LearningGraph
+from math_learning.recommendation.gap_analyzer import GapAnalyzer
 
 
 @dataclass
@@ -64,14 +72,16 @@ class LearningInsight:
 class PersonalizedLearningSystem:
     """Advanced personalized learning system with pattern analysis and adaptive recommendations."""
     
-    def __init__(self, knowledge_graph: KnowledgeGraph):
+    def __init__(self, knowledge_graph: KnowledgeGraph, rag_service=None):
         """
         Initialize the personalized learning system.
         
         Args:
             knowledge_graph: The knowledge graph containing concept relationships
+            rag_service: Optional RAG service for enhanced capabilities
         """
         self.knowledge_graph = knowledge_graph
+        self.rag_service = rag_service
         self.gap_analyzer = GapAnalyzer(knowledge_graph)
         
     def analyze_learning_patterns(self, learning_graph: LearningGraph) -> Dict[str, LearningPattern]:

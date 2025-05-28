@@ -4,9 +4,20 @@ Gap Analyzer module.
 This module defines the gap analyzer that identifies knowledge gaps.
 """
 
-from typing import Dict, List, Tuple, Any, Optional
-from ..knowledge_graph.graph import KnowledgeGraph
-from ..learning_graph.user_model import LearningGraph
+import sys
+import os
+from typing import Dict, List, Tuple, Any, Optional, Set
+from dataclasses import dataclass
+from datetime import datetime, timedelta
+
+# Add the parent directory to the path for imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+from knowledge_graph.graph import KnowledgeGraph
+from math_learning.learning_graph.user_model import LearningGraph
 
 
 class GapInfo:

@@ -138,12 +138,43 @@ async def create_configured_rag_service(config: RagConfig = None) -> RagService:
     return await create_rag_service(rag_config_dict)
 
 
+async def create_simple_rag_service() -> RagService:
+    """
+    Create a simple RAG service with only graph and key-value storage for testing.
+    
+    Returns:
+        Configured RagService instance with memory backends
+    """
+    simple_config = {
+        "graph": {
+            "type": "memory"
+        },
+        "key_value": {
+            "type": "memory"
+        }
+        # No vector storage to avoid external dependencies
+    }
+    
+    return await create_rag_service(simple_config)
+
+
 # Default configurations for different environments
 def get_memory_config() -> RagConfig:
     """Get configuration for memory-based storage (testing/development)."""
     return RagConfig(
         primary_storage_type="graph",
-        vector_storage_type="memory",
+        vector_storage_type="qdrant",
+        graph_storage_type="memory",
+        kv_storage_type="memory",
+        embedding_provider="dummy"
+    )
+
+
+def get_simple_memory_config() -> RagConfig:
+    """Get configuration for simple memory-based storage without vector storage."""
+    return RagConfig(
+        primary_storage_type="graph",
+        vector_storage_type="qdrant",
         graph_storage_type="memory",
         kv_storage_type="memory",
         embedding_provider="dummy"
@@ -359,4 +390,22 @@ def create_config_by_flags(
     if not enable_kv:
         base_config.kv_storage_type = "disabled"
     
-    return base_config 
+    return base_config
+
+
+def get_real_backends_config() -> RagConfig:
+    """Get configuration for real backends (Neo4j + Redis) testing."""
+    return RagConfig(
+        primary_storage_type="graph",
+        vector_storage_type="memory",  # Keep vector as memory for simplicity
+        graph_storage_type="neo4j",
+        kv_storage_type="redis",
+        embedding_provider="dummy",
+        # Neo4j settings
+        neo4j_uri="bolt://localhost:7687",
+        neo4j_username="neo4j",
+        neo4j_password="password",
+        # Redis settings
+        redis_host="localhost",
+        redis_port=6379
+    ) 

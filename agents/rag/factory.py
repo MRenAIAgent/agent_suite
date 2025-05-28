@@ -12,6 +12,19 @@ from agents.rag.middleware.storage_router import StorageType
 from agents.rag.storage.vector.qdrant_storage import QdrantStorageAdaptor, QDRANT_AVAILABLE
 from agents.rag.utils.embedding_provider import create_embedding_provider
 
+# Import real backend adaptors
+try:
+    from agents.rag.storage.graph.neo4j_storage import Neo4jGraphStorageAdaptor
+    NEO4J_GRAPH_AVAILABLE = True
+except ImportError:
+    NEO4J_GRAPH_AVAILABLE = False
+
+try:
+    from agents.rag.storage.key_value.redis_storage import RedisKeyValueStorageAdaptor
+    REDIS_KV_AVAILABLE = True
+except ImportError:
+    REDIS_KV_AVAILABLE = False
+
 logger = logging.getLogger(__name__)
 
 
@@ -123,8 +136,17 @@ async def _configure_graph_storage(service: RagService, config: Dict[str, Any]) 
         logger.info("Configured memory graph storage")
     
     elif graph_type == "neo4j":
-        # Neo4j graph storage (would need implementation)
-        logger.warning("Neo4j graph storage is not implemented yet")
+        if NEO4J_GRAPH_AVAILABLE:
+            # Neo4j graph storage
+            adaptor = Neo4jGraphStorageAdaptor(
+                uri=config.get("uri", "bolt://localhost:7687"),
+                username=config.get("username", "neo4j"),
+                password=config.get("password", "password")
+            )
+            service.register_storage_adaptor(StorageType.GRAPH, adaptor)
+            logger.info("Configured Neo4j graph storage")
+        else:
+            logger.warning("Neo4j graph storage is not available. Install with 'pip install neo4j'")
     
     else:
         logger.warning(f"Unsupported graph storage type: {graph_type}")
@@ -148,8 +170,16 @@ async def _configure_key_value_storage(service: RagService, config: Dict[str, An
         logger.info("Configured memory key-value storage")
     
     elif kv_type == "redis":
-        # Redis storage (would need implementation)
-        logger.warning("Redis storage is not implemented yet")
+        if REDIS_KV_AVAILABLE:
+            # Redis storage
+            adaptor = RedisKeyValueStorageAdaptor(
+                host=config.get("host", "localhost"),
+                port=config.get("port", 6379)
+            )
+            service.register_storage_adaptor(StorageType.KEY_VALUE, adaptor)
+            logger.info("Configured Redis key-value storage")
+        else:
+            logger.warning("Redis storage is not available. Install with 'pip install redis'")
     
     else:
         logger.warning(f"Unsupported key-value storage type: {kv_type}") 

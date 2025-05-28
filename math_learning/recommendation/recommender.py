@@ -5,10 +5,19 @@ This module defines the recommender that suggests exercises to address knowledge
 """
 
 from typing import Dict, List, Tuple, Any, Optional
-from math_learning.knowledge_graph.graph import KnowledgeGraph
+import sys
+import os
+
+# Add the parent directory to the path for imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+from knowledge_graph.graph import KnowledgeGraph
 from math_learning.learning_graph.user_model import LearningGraph
-from math_learning.exercises.exercise_bank import ExerciseBank
-from math_learning.exercises.exercise import Exercise
+from exercises.exercise_bank import ExerciseBank
+from exercises.exercise import Exercise
 from math_learning.recommendation.gap_analyzer import GapAnalyzer, GapInfo
 
 
