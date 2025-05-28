@@ -5,7 +5,7 @@ interface, suitable for testing and development.
 """
 
 import uuid
-from typing import Dict, Any, List, Optional, Union
+from typing import Dict, Any, List, Optional, Union, Set
 from collections import defaultdict
 
 from agents.rag.storage.graph.base import GraphStorageAdaptor
@@ -320,8 +320,8 @@ class MemoryGraphStorageAdaptor(GraphStorageAdaptor):
                 return False
         return True
     
-    async def store(self, key: str, data: Any, **kwargs) -> str:
-        """Store data with the given key (base storage interface)."""
+    async def store(self, data: Any, metadata: Dict[str, Any] = None) -> str:
+        """Store data (base storage interface)."""
         if isinstance(data, Entity):
             return await self.store_entity(data)
         elif isinstance(data, Relationship):
@@ -333,7 +333,7 @@ class MemoryGraphStorageAdaptor(GraphStorageAdaptor):
             entity = Entity(
                 type="Generic",
                 properties={"data": data},
-                id=key
+                id=str(uuid.uuid4())
             )
             return await self.store_entity(entity)
     
