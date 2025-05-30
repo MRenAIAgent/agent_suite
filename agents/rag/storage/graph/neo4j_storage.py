@@ -86,6 +86,10 @@ class Neo4jGraphStorageAdaptor(GraphStorageAdaptor):
         Returns:
             The entity ID
         """
+        # Extract name and description from properties
+        name = entity.properties.get("name", "")
+        description = entity.properties.get("description", "")
+        
         with self.driver.session(database=self.database) as session:
             result = session.run(
                 """
@@ -100,8 +104,8 @@ class Neo4jGraphStorageAdaptor(GraphStorageAdaptor):
                 id=entity.id,
                 namespace=self.namespace,
                 type=entity.type,
-                name=entity.name,
-                description=entity.description,
+                name=name,
+                description=description,
                 properties=json.dumps(entity.properties)
             )
             
@@ -175,11 +179,15 @@ class Neo4jGraphStorageAdaptor(GraphStorageAdaptor):
             
             for record in result:
                 properties = json.loads(record["properties"]) if record["properties"] else {}
+                # Add name and description to properties if they exist as separate fields
+                if record.get("name"):
+                    properties["name"] = record["name"]
+                if record.get("description"):
+                    properties["description"] = record["description"]
+                
                 return Entity(
                     id=record["id"],
                     type=record["type"],
-                    name=record["name"],
-                    description=record["description"],
                     properties=properties
                 )
         
@@ -325,9 +333,11 @@ class Neo4jGraphStorageAdaptor(GraphStorageAdaptor):
             entity = Entity(
                 id=data.get("id", str(uuid.uuid4())),
                 type=data.get("type", "Generic"),
-                name=data.get("name", ""),
-                description=data.get("description", ""),
-                properties=data.get("properties", {})
+                properties={
+                    "name": data.get("name", ""),
+                    "description": data.get("description", ""),
+                    **data.get("properties", {})
+                }
             )
             return await self.store_entity(entity)
     
@@ -410,4 +420,114 @@ class Neo4jGraphStorageAdaptor(GraphStorageAdaptor):
     async def close(self) -> None:
         """Close the storage connection."""
         if hasattr(self, 'driver'):
-            self.driver.close() 
+            self.driver.close()
+    
+    async def find_paths(self, start_entity_id: str, end_entity_id: str, 
+                       max_depth: int = 3) -> List[List[Union[Entity, Relationship]]]:
+        """Find paths between entities.
+        
+        Args:
+            start_entity_id: Start entity ID
+            end_entity_id: End entity ID
+            max_depth: Maximum path depth
+            
+        Returns:
+            List of paths (each a list of alternating entities and relationships)
+        """
+        with self.driver.session(database=self.database) as session:
+            result = session.run(
+                """
+                MATCH path = (start:Entity {id: $start_id, namespace: $namespace})
+                -[*1..$max_depth]->
+                (end:Entity {id: $end_id, namespace: $namespace})
+                RETURN path
+                LIMIT 10
+                """,
+                start_id=start_entity_id,
+                end_id=end_entity_id,
+                namespace=self.namespace,
+                max_depth=max_depth
+            )
+            
+            paths = []
+            for record in result:
+                path = record["path"]
+                path_elements = []
+                
+                # Extract nodes and relationships from the path
+                nodes = path.nodes
+                relationships = path.relationships
+                
+                # Alternate between nodes and relationships
+                for i, node in enumerate(nodes):
+                    # Add entity
+                    properties = json.loads(node.get("properties", "{}")) if node.get("properties") else dict(node)
+                    # Add name and description to properties if they exist as separate fields
+                    if node.get("name"):
+                        properties["name"] = node["name"]
+                    if node.get("description"):
+                        properties["description"] = node["description"]
+                    
+                    entity = Entity(
+                        id=node["id"],
+                        type=node.get("type", "Unknown"),
+                        properties=properties
+                    )
+                    path_elements.append(entity)
+                    
+                    # Add relationship if not the last node
+                    if i < len(relationships):
+                        rel = relationships[i]
+                        rel_properties = json.loads(rel.get("properties", "{}")) if rel.get("properties") else dict(rel)
+                        relationship = Relationship(
+                            id=rel.get("id", str(uuid.uuid4())),
+                            type=rel.type,
+                            source_id=rel.start_node["id"],
+                            target_id=rel.end_node["id"],
+                            properties=rel_properties
+                        )
+                        path_elements.append(relationship)
+                
+                paths.append(path_elements)
+            
+            return paths
+    
+    async def store_knowledge_graph(self, graph: 'KnowledgeGraph') -> str:
+        """Store a complete knowledge graph.
+        
+        Args:
+            graph: The knowledge graph to store
+            
+        Returns:
+            The ID of the stored graph
+        """
+        # Store all entities first
+        for entity in graph.entities:
+            await self.store_entity(entity)
+        
+        # Store all relationships
+        for relationship in graph.relationships:
+            await self.store_relationship(relationship)
+        
+        # Return a graph identifier (could be based on entities/relationships)
+        graph_id = f"graph_{len(graph.entities)}_{len(graph.relationships)}_{uuid.uuid4().hex[:8]}"
+        
+        # Optionally store graph metadata
+        with self.driver.session(database=self.database) as session:
+            session.run(
+                """
+                CREATE (g:KnowledgeGraph {
+                    id: $graph_id,
+                    namespace: $namespace,
+                    entity_count: $entity_count,
+                    relationship_count: $relationship_count,
+                    created_at: datetime()
+                })
+                """,
+                graph_id=graph_id,
+                namespace=self.namespace,
+                entity_count=len(graph.entities),
+                relationship_count=len(graph.relationships)
+            )
+        
+        return graph_id 
