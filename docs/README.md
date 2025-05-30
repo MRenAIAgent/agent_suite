@@ -1,86 +1,103 @@
-# Agent Framework Documentation
+# RAG Benchmarking Framework
 
-Welcome to the documentation for the Agent Framework! This directory contains comprehensive guides, references, and examples to help you understand and use the framework effectively.
+A comprehensive benchmarking framework for evaluating Retrieval Augmented Generation (RAG) systems across multiple dimensions including accuracy, relevance, factual correctness, and performance.
 
-## Documentation Overview
+## Overview
 
-### For New Users
+This benchmarking system provides tools to:
 
-Start here if you're new to the framework:
+1. **Evaluate RAG performance** across multiple metrics
+2. **Test with real or mock backends** for comprehensive assessment
+3. **Generate detailed reports** with visualizations and recommendations
+4. **Compare different configurations** to optimize your RAG pipeline
 
-- [**Developer Quick Reference**](developer_quickstart.md) - Quick start guide with code examples
-- [**Agent Framework Overview**](agent_framework.md) - Comprehensive overview of the framework architecture
+The framework is designed to work with the RAG system in `agent_suite`, which supports multiple storage backends including vector databases (Qdrant), graph databases, and key-value stores.
 
-### Technical Reference
+## Components
 
-For developers looking to understand the structure in detail:
+- **`rag_benchmark.py`**: Main benchmarking script for collecting performance metrics
+- **`rag_benchmark_report.py`**: Report generator with visualizations and analysis
+- **`rag_e2e_test.py`**: End-to-end test with real Qdrant backend
+- **`rag_simple_test.py`**: Simple test with mock storage adaptors
+- **`rag_reranking_test.py`**: Focused test for the reranking capability
 
-- [**Class Diagram**](class_diagram.md) - Detailed class hierarchy and relationships
-- [API Reference](../README.md) - Main README with API details
+## Key Metrics
 
-## Framework Architecture
+The framework evaluates RAG systems on:
 
-The Agent Framework is built around a few core concepts:
+- **Retrieval Accuracy**: How well the system retrieves relevant information
+- **Answer Relevance**: How relevant the generated answers are to the questions
+- **Factual Correctness**: How factually accurate the answers are
+- **Context Relevance**: How relevant the retrieved context is
+- **Latency**: Processing time for retrieval and generation
+- **Token Usage**: Number of tokens used in the process
 
-1. **Agents** - Central entities that process user input and generate responses
-2. **Tools** - Extensions that provide agents with capabilities for specific tasks
-3. **Thinking Patterns** - Different reasoning approaches an agent can use
-4. **Memory Management** - Systems for storing and retrieving conversation history
-5. **Prompt Management** - Systems for formatting prompts and messages
+## Getting Started
 
-## Key Components
+### Prerequisites
 
-The framework is organized into several key components:
+- Python 3.7+
+- `qdrant-client` for vector database testing
+- `sentence-transformers` for embeddings
+- Dependencies: numpy, pandas, matplotlib, seaborn, tqdm
 
-```
-agents/
-├── base_classes/      # Abstract interfaces
-│   ├── base_agent.py  # BaseAgent abstract class
-│   └── base_think_pattern.py  # AgentThinkPattern abstract class
-├── agent.py           # Main Agent implementation
-├── prompt.py          # Prompt management
-├── memory_manager.py  # Memory management
-└── examples/          # Example implementations
-```
+### Running a Benchmark
 
-## Example Usage
+1. Start a Qdrant server (if using the real backend):
 
-Here's a simple example of creating and using an agent:
-
-```python
-from agents.agent import Agent
-from agents.prompt import PromptManager
-from llm.openai.openai_llm import OpenAILLM
-
-# Create components
-llm = OpenAILLM.create_llm()
-prompt_manager = PromptManager("You are a helpful assistant.")
-
-# Create agent
-agent = Agent(llm, prompt_manager)
-
-# Use the agent
-async def main():
-    response = await agent.arun("Hello, can you help me?", model="gpt-3.5-turbo")
-    print(response)
-
-import asyncio
-asyncio.run(main())
+```bash
+docker run -d --name qdrant-test -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
 
-## Getting Help
+2. Run the benchmark:
 
-If you encounter issues or have questions:
+```bash
+PYTHONPATH=. python examples/rag_benchmark.py
+```
 
-1. Check the documentation in this directory
-2. Look at the example implementations in `agents/examples/`
-3. Review the abstract interfaces in `agents/base_classes/` to understand expected behavior
+3. Generate a report from the results:
+
+```bash
+PYTHONPATH=. python examples/rag_benchmark_report.py benchmark_results/rag_benchmark_results_*.json
+```
+
+### Using Mock Backends
+
+For quick testing without external dependencies:
+
+```bash
+PYTHONPATH=. python examples/rag_simple_test.py
+```
+
+## Customizing Benchmarks
+
+You can customize the benchmark by:
+
+- Creating your own test dataset with questions and reference answers
+- Configuring different embedding models
+- Adjusting the evaluation metrics and weights
+- Testing with different vector database settings
+
+## Visualizations & Reports
+
+The reporting tool generates:
+
+1. Summary metrics chart
+2. System performance radar chart
+3. Latency distribution analysis
+4. Correlation heatmap between metrics
+5. Per-query performance breakdown
+6. Detailed HTML report with recommendations
 
 ## Contributing
 
-When contributing to the framework:
+Contributions to improve the benchmarking framework are welcome. Areas for enhancement include:
 
-1. Follow the established patterns and class hierarchies
-2. Ensure new components implement the appropriate abstract interfaces
-3. Add thorough documentation for new features
-4. Include examples demonstrating the usage of new components 
+- Adding more sophisticated evaluation metrics
+- Supporting additional storage backends
+- Improving the reporting capabilities
+- Adding support for LLM-based evaluation
+
+## License
+
+[MIT License](LICENSE)

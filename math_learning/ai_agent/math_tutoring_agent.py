@@ -7,8 +7,15 @@ progress tracking, and personalized learning paths.
 """
 
 import asyncio
+import sys
+from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 from datetime import datetime
+
+# Import the proper ReActAgent from agents directory
+from agents.react_agent import ReActAgent
+from agents.memory.memory_manager import MemoryManager
+from log.logging import LogManager
 
 # Fix import paths to match actual structure
 from math_learning.learning_graph import LearningGraph
@@ -25,46 +32,8 @@ from .tools import (
     ExerciseRecognitionTool
 )
 
-# Use a simpler base for testing - avoid Redis dependency
-class SimpleReActAgent:
-    """Simplified React agent for testing without Redis dependencies."""
-    
-    def __init__(self, llm, tools: List[Any] = None, max_iterations: int = 5):
-        self.llm = llm
-        self.tools = tools or []
-        self.max_iterations = max_iterations
-        self.memory = {}  # Simple in-memory storage
-        
-    async def run(self, query: str, **kwargs) -> str:
-        """Run the React reasoning loop."""
-        thought = f"I need to help with: {query}"
-        
-        # Simple reasoning: analyze the query and use appropriate tools
-        if "exercise" in query.lower() or "practice" in query.lower():
-            # Use exercise generation tool
-            if len(self.tools) > 1:
-                result = await self.tools[1].execute(
-                    student_id=kwargs.get('student_id', 'default'),
-                    concept="general",
-                    difficulty="medium",
-                    count=3
-                )
-                return f"I've generated some practice exercises for you: {result.get('summary', 'Exercises created')}"
-        
-        elif "explain" in query.lower():
-            # Use explanation tool
-            if len(self.tools) > 4:
-                result = await self.tools[4].execute(
-                    explanation_type="concept",
-                    content="general",
-                    student_level="middle_school"
-                )
-                return result.get('explanation', {}).get('main_explanation', 'Here is an explanation of the concept.')
-        
-        # Default: use LLM to generate response
-        return await self.llm.generate_response(query, **kwargs)
 
-class MathTutoringAgent(SimpleReActAgent):
+class MathTutoringAgent:
     """
     AI Math Tutoring Agent that provides personalized learning experiences.
     
@@ -98,7 +67,22 @@ class MathTutoringAgent(SimpleReActAgent):
             ExerciseRecognitionTool(llm)
         ]
         
-        super().__init__(llm, self.tools, max_iterations)
+        # Create proper ReActAgent with tutoring-specific configuration
+        self.react_agent = ReActAgent(
+            llm=llm,
+            role="You are an expert math tutor who helps students learn mathematics through personalized instruction.",
+            task="Provide intelligent math tutoring including concept explanations, exercise generation, progress tracking, and personalized learning paths.",
+            guide="Use the available tools to analyze student needs, generate appropriate exercises, track progress, and provide clear explanations. Always be encouraging and adapt to the student's level.",
+            examples=[
+                "When a student asks about fractions, use concept analysis to assess their current understanding, then provide explanations and generate practice exercises.",
+                "If a student is struggling with a concept, identify prerequisite knowledge gaps and create a learning path to address them.",
+                "Track student progress and provide positive feedback while identifying areas for improvement."
+            ],
+            tools=self.tools,
+            log_manager=LogManager(),
+            memory_manager=MemoryManager(),
+            max_iterations=max_iterations
+        )
         
         self.learning_graph = learning_graph
         self.user_model = user_model
@@ -124,8 +108,8 @@ class MathTutoringAgent(SimpleReActAgent):
             "interactions": []
         }
         
-        # Store in memory
-        self.memory[f"session_{student_id}"] = self.current_session
+        # Store in memory manager
+        self.react_agent.memory_manager.set_context(f"session_{student_id}", self.current_session)
         
     async def tutor(self, student_input: str, model: str = "gpt-4", **kwargs) -> str:
         """
@@ -147,8 +131,8 @@ class MathTutoringAgent(SimpleReActAgent):
                 "type": "student_message"
             })
         
-        # Use React reasoning to generate response
-        response = await self.run(student_input, model=model, **kwargs)
+        # Use ReActAgent to generate response
+        response = await self.react_agent.arun(student_input, model=model, **kwargs)
         
         # Add response to session history
         if self.current_session:
@@ -207,7 +191,7 @@ class MathTutoringAgent(SimpleReActAgent):
         """
         # Get session data
         session_key = f"session_{student_id}"
-        session_data = self.memory.get(session_key, {})
+        session_data = self.react_agent.memory_manager.get_context(session_key)
         
         # Get mastery data from learning graph
         mastery_data = {}
