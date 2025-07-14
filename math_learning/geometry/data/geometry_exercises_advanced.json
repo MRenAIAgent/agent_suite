@@ -1,0 +1,128 @@
+{
+  "name": "Advanced Geometry Exercises (9-12)",
+  "description": "Advanced geometry concepts for high school",
+  "exercises": [
+    {
+      "id": "GEO-912-001",
+      "title": "Volume of a Cylinder",
+      "problem": "Find the volume of a cylinder with radius 4 cm and height 10 cm. (Use π ≈ 3.14)",
+      "solution": "502.4 cubic cm",
+      "difficulty": 4,
+      "estimated_time": 6,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "volume",
+        "cylinders",
+        "pi",
+        "3d_geometry"
+      ],
+      "hints": [
+        "Volume = π × r² × h",
+        "r = 4, h = 10",
+        "π × 16 × 10"
+      ]
+    },
+    {
+      "id": "GEO-912-002",
+      "title": "Surface Area of a Sphere",
+      "problem": "Find the surface area of a sphere with radius 5 cm. (Use π ≈ 3.14)",
+      "solution": "314 square cm",
+      "difficulty": 4,
+      "estimated_time": 6,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "surface_area",
+        "spheres",
+        "pi",
+        "3d_geometry"
+      ],
+      "hints": [
+        "Surface Area = 4π × r²",
+        "r = 5, so r² = 25",
+        "4 × 3.14 × 25"
+      ]
+    },
+    {
+      "id": "GEO-912-003",
+      "title": "Trigonometric Ratios",
+      "problem": "In a right triangle, if the opposite side is 3 and the hypotenuse is 5, find sin θ.",
+      "solution": "0.6 or 3/5",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "trigonometry",
+        "sine",
+        "right_triangles"
+      ],
+      "hints": [
+        "sin θ = opposite/hypotenuse",
+        "opposite = 3, hypotenuse = 5",
+        "3/5 = 0.6"
+      ]
+    },
+    {
+      "id": "GEO-912-004",
+      "title": "Circle Theorems",
+      "problem": "If an inscribed angle intercepts an arc of 80°, what is the measure of the inscribed angle?",
+      "solution": "40°",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "circles",
+        "inscribed_angles",
+        "arc_measures"
+      ],
+      "hints": [
+        "Inscribed angle = ½ × intercepted arc",
+        "Arc = 80°",
+        "80° ÷ 2 = 40°"
+      ]
+    },
+    {
+      "id": "GEO-912-005",
+      "title": "Polygon Interior Angles",
+      "problem": "What is the sum of interior angles in a regular octagon?",
+      "solution": "1080°",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "polygons",
+        "interior_angles",
+        "octagons"
+      ],
+      "hints": [
+        "Formula: (n-2) × 180°",
+        "Octagon has 8 sides",
+        "(8-2) × 180° = 6 × 180°"
+      ]
+    },
+    {
+      "id": "GEO-912-006",
+      "title": "Law of Sines",
+      "problem": "In triangle ABC, angle A = 30°, angle B = 45°, and side a = 10. Find side b.",
+      "solution": "14.14",
+      "difficulty": 5,
+      "estimated_time": 8,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "trigonometry",
+        "law_of_sines",
+        "triangles"
+      ],
+      "hints": [
+        "a/sin(A) = b/sin(B)",
+        "10/sin(30°) = b/sin(45°)",
+        "sin(30°) = 0.5, sin(45°) ≈ 0.707"
+      ]
+    }
+  ]
+}

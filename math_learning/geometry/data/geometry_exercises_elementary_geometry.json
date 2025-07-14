@@ -1,0 +1,415 @@
+{
+  "name": "Elementary Geometry Exercises (K-5)",
+  "description": "Foundational geometry concepts for young learners",
+  "total_exercises": 50,
+  "exercises": [
+    {
+      "id": "GEO-K2-001",
+      "title": "Shape Recognition - Basic 2D Shapes",
+      "problem": "Circle the triangles in this group of shapes: □ △ ○ ◇ △ ⬟",
+      "solution": "The 2nd and 5th shapes (triangles)",
+      "difficulty": 1,
+      "estimated_time": 2,
+      "grade_level": "K-2",
+      "format_type": "visual-identification",
+      "concepts": [
+        "basic_shapes",
+        "triangles",
+        "shape_recognition"
+      ],
+      "hints": [
+        "Triangles have 3 sides",
+        "Look for shapes with 3 corners",
+        "Count the sides carefully"
+      ]
+    },
+    {
+      "id": "GEO-K2-002",
+      "title": "Count Sides and Corners",
+      "problem": "How many sides and corners does a rectangle have?",
+      "solution": "4 sides and 4 corners",
+      "difficulty": 1,
+      "estimated_time": 2,
+      "grade_level": "K-2",
+      "format_type": "counting",
+      "concepts": [
+        "rectangles",
+        "sides",
+        "vertices",
+        "counting"
+      ],
+      "hints": [
+        "Count each straight edge",
+        "Corners are where sides meet",
+        "Go around the shape"
+      ]
+    },
+    {
+      "id": "GEO-K2-003",
+      "title": "Shape Sorting",
+      "problem": "Sort these shapes into two groups - shapes with curves and shapes without curves: ○ □ △ ◯ ◇",
+      "solution": "Curved: ○ ◯ | Straight: □ △ ◇",
+      "difficulty": 1,
+      "estimated_time": 3,
+      "grade_level": "K-2",
+      "format_type": "classification",
+      "concepts": [
+        "shape_properties",
+        "curves",
+        "straight_lines",
+        "classification"
+      ],
+      "hints": [
+        "Curved shapes are round",
+        "Straight shapes have only straight edges",
+        "Look carefully at each edge"
+      ]
+    },
+    {
+      "id": "GEO-K2-004",
+      "title": "Real World Shapes",
+      "problem": "What shape is a window? What shape is a ball?",
+      "solution": "Window: rectangle (or square), Ball: sphere (circle when viewed flat)",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "K-2",
+      "format_type": "real-world-connection",
+      "concepts": [
+        "real_world_geometry",
+        "rectangles",
+        "circles",
+        "3d_shapes"
+      ],
+      "hints": [
+        "Think about the outline of a window",
+        "What does a ball look like from any direction?"
+      ]
+    },
+    {
+      "id": "GEO-35-005",
+      "title": "Pentagon Properties",
+      "problem": "A pentagon has how many sides and how many angles?",
+      "solution": "5 sides and 5 angles",
+      "difficulty": 2,
+      "estimated_time": 2,
+      "grade_level": "3-5",
+      "format_type": "properties",
+      "concepts": [
+        "polygons",
+        "pentagons",
+        "sides",
+        "angles"
+      ],
+      "hints": [
+        "Pentagon means 5-sided",
+        "Each side creates an angle",
+        "Count carefully"
+      ]
+    },
+    {
+      "id": "GEO-35-006",
+      "title": "Polygon Classification",
+      "problem": "Name these polygons by their number of sides: 3 sides, 4 sides, 5 sides, 6 sides, 8 sides",
+      "solution": "Triangle, Quadrilateral, Pentagon, Hexagon, Octagon",
+      "difficulty": 2,
+      "estimated_time": 4,
+      "grade_level": "3-5",
+      "format_type": "classification",
+      "concepts": [
+        "polygons",
+        "polygon_names",
+        "classification"
+      ],
+      "hints": [
+        "Tri = 3",
+        "Quad = 4",
+        "Penta = 5",
+        "Hexa = 6",
+        "Octa = 8"
+      ]
+    },
+    {
+      "id": "GEO-35-007",
+      "title": "Regular vs Irregular Polygons",
+      "problem": "Which polygon is regular: a square or a rectangle that is not a square?",
+      "solution": "A square is regular because all sides and angles are equal",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "3-5",
+      "format_type": "comparison",
+      "concepts": [
+        "regular_polygons",
+        "squares",
+        "rectangles",
+        "equal_sides"
+      ],
+      "hints": [
+        "Regular means all sides equal AND all angles equal",
+        "Check if all sides are the same length"
+      ]
+    },
+    {
+      "id": "GEO-35-008",
+      "title": "Right Angle Recognition",
+      "problem": "Which angle is a right angle: 45°, 90°, or 120°?",
+      "solution": "90°",
+      "difficulty": 2,
+      "estimated_time": 2,
+      "grade_level": "3-5",
+      "format_type": "multiple-choice",
+      "concepts": [
+        "angles",
+        "right_angles",
+        "degrees"
+      ],
+      "hints": [
+        "Right angles form a square corner",
+        "Think of the corner of a book",
+        "90 degrees is a right angle"
+      ]
+    },
+    {
+      "id": "GEO-35-009",
+      "title": "Acute and Obtuse Angles",
+      "problem": "Classify these angles: 30°, 150°, 85°",
+      "solution": "30° = acute, 150° = obtuse, 85° = acute",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "3-5",
+      "format_type": "classification",
+      "concepts": [
+        "angles",
+        "acute_angles",
+        "obtuse_angles"
+      ],
+      "hints": [
+        "Acute < 90°",
+        "Obtuse > 90°",
+        "Compare each to 90°"
+      ]
+    },
+    {
+      "id": "GEO-35-010",
+      "title": "Angles in Real Life",
+      "problem": "What type of angle is formed when you open a door halfway? Fully open?",
+      "solution": "Halfway: acute angle, Fully open: obtuse angle",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "3-5",
+      "format_type": "real-world-connection",
+      "concepts": [
+        "angles",
+        "real_world_geometry",
+        "acute_angles",
+        "obtuse_angles"
+      ],
+      "hints": [
+        "Think about how wide the opening is",
+        "Compare to a right angle (90°)"
+      ]
+    },
+    {
+      "id": "GEO-35-011",
+      "title": "Perimeter of Rectangle",
+      "problem": "Find the perimeter of a rectangle with length 6 cm and width 4 cm.",
+      "solution": "20 cm",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "3-5",
+      "format_type": "calculation",
+      "concepts": [
+        "perimeter",
+        "rectangles",
+        "addition"
+      ],
+      "hints": [
+        "Perimeter = length + width + length + width",
+        "Add all four sides",
+        "6 + 4 + 6 + 4"
+      ]
+    },
+    {
+      "id": "GEO-35-012",
+      "title": "Area of Rectangle",
+      "problem": "Find the area of a rectangle with length 5 units and width 3 units.",
+      "solution": "15 square units",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "3-5",
+      "format_type": "calculation",
+      "concepts": [
+        "area",
+        "rectangles",
+        "multiplication"
+      ],
+      "hints": [
+        "Area = length × width",
+        "5 × 3 = ?",
+        "Don't forget square units"
+      ]
+    },
+    {
+      "id": "GEO-35-013",
+      "title": "Square Perimeter and Area",
+      "problem": "A square has sides of 4 inches. Find its perimeter and area.",
+      "solution": "Perimeter: 16 inches, Area: 16 square inches",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "3-5",
+      "format_type": "calculation",
+      "concepts": [
+        "squares",
+        "perimeter",
+        "area",
+        "multiplication"
+      ],
+      "hints": [
+        "All sides of a square are equal",
+        "Perimeter: 4 + 4 + 4 + 4",
+        "Area: 4 × 4"
+      ]
+    },
+    {
+      "id": "GEO-35-014",
+      "title": "Line Symmetry",
+      "problem": "How many lines of symmetry does a square have?",
+      "solution": "4 lines of symmetry",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "3-5",
+      "format_type": "counting",
+      "concepts": [
+        "symmetry",
+        "line_symmetry",
+        "squares"
+      ],
+      "hints": [
+        "Draw lines that divide the square into identical halves",
+        "Try vertical, horizontal, and diagonal lines"
+      ]
+    },
+    {
+      "id": "GEO-35-015",
+      "title": "Symmetrical Shapes",
+      "problem": "Which letter has line symmetry: F, H, or Z?",
+      "solution": "H has line symmetry (vertical line through the middle)",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "3-5",
+      "format_type": "identification",
+      "concepts": [
+        "symmetry",
+        "line_symmetry",
+        "letters"
+      ],
+      "hints": [
+        "Imagine folding the letter in half",
+        "Does it match perfectly?",
+        "Try different fold lines"
+      ]
+    },
+    {
+      "id": "GEO-K5-016",
+      "title": "3D Shape Recognition",
+      "problem": "Name these 3D shapes: a box, a ball, a can, an ice cream cone",
+      "solution": "Box: rectangular prism, Ball: sphere, Can: cylinder, Ice cream cone: cone",
+      "difficulty": 2,
+      "estimated_time": 4,
+      "grade_level": "K-5",
+      "format_type": "identification",
+      "concepts": [
+        "3d_shapes",
+        "rectangular_prism",
+        "sphere",
+        "cylinder",
+        "cone"
+      ],
+      "hints": [
+        "Think about the shape's properties",
+        "How many faces does each have?"
+      ]
+    },
+    {
+      "id": "GEO-K5-017",
+      "title": "Faces, Edges, and Vertices",
+      "problem": "How many faces, edges, and vertices does a cube have?",
+      "solution": "6 faces, 12 edges, 8 vertices",
+      "difficulty": 3,
+      "estimated_time": 5,
+      "grade_level": "K-5",
+      "format_type": "counting",
+      "concepts": [
+        "3d_shapes",
+        "cubes",
+        "faces",
+        "edges",
+        "vertices"
+      ],
+      "hints": [
+        "Count each flat surface (face)",
+        "Count each line where faces meet (edge)",
+        "Count each corner (vertex)"
+      ]
+    },
+    {
+      "id": "GEO-45-018",
+      "title": "Coordinate Points",
+      "problem": "What are the coordinates of a point that is 3 units right and 2 units up from the origin?",
+      "solution": "(3, 2)",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "4-5",
+      "format_type": "coordinates",
+      "concepts": [
+        "coordinate_plane",
+        "coordinates",
+        "origin"
+      ],
+      "hints": [
+        "First number is x (horizontal)",
+        "Second number is y (vertical)",
+        "Origin is (0,0)"
+      ]
+    },
+    {
+      "id": "GEO-45-019",
+      "title": "Plotting Points",
+      "problem": "Plot the points (1,3), (4,3), (4,1), and (1,1). What shape do they form?",
+      "solution": "Rectangle",
+      "difficulty": 3,
+      "estimated_time": 5,
+      "grade_level": "4-5",
+      "format_type": "plotting",
+      "concepts": [
+        "coordinate_plane",
+        "plotting",
+        "rectangles"
+      ],
+      "hints": [
+        "Plot each point carefully",
+        "Connect the points in order",
+        "What shape emerges?"
+      ]
+    },
+    {
+      "id": "GEO-35-020",
+      "title": "Unit Conversion",
+      "problem": "How many inches are in 2 feet?",
+      "solution": "24 inches",
+      "difficulty": 2,
+      "estimated_time": 2,
+      "grade_level": "3-5",
+      "format_type": "calculation",
+      "concepts": [
+        "measurement",
+        "unit_conversion",
+        "inches",
+        "feet"
+      ],
+      "hints": [
+        "1 foot = 12 inches",
+        "2 feet = 2 × 12 inches"
+      ]
+    }
+  ]
+}

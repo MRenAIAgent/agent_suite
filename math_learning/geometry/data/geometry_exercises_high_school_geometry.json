@@ -1,0 +1,166 @@
+{
+  "name": "High School Geometry Exercises (9-12)",
+  "description": "Advanced geometry concepts for high school students",
+  "total_exercises": 40,
+  "exercises": [
+    {
+      "id": "GEO-912-041",
+      "title": "Law of Sines",
+      "problem": "In triangle ABC, angle A = 30°, angle B = 45°, and side a = 10. Find side b.",
+      "solution": "14.14",
+      "difficulty": 5,
+      "estimated_time": 8,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "law_of_sines",
+        "trigonometry",
+        "triangles"
+      ],
+      "hints": [
+        "a/sin(A) = b/sin(B)",
+        "10/sin(30°) = b/sin(45°)",
+        "sin(30°) = 0.5, sin(45°) ≈ 0.707"
+      ]
+    },
+    {
+      "id": "GEO-912-042",
+      "title": "Law of Cosines",
+      "problem": "In triangle ABC, sides a = 8, b = 6, and c = 10. Find angle C.",
+      "solution": "90°",
+      "difficulty": 5,
+      "estimated_time": 8,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "law_of_cosines",
+        "trigonometry",
+        "triangles"
+      ],
+      "hints": [
+        "c² = a² + b² - 2ab cos(C)",
+        "100 = 64 + 36 - 96 cos(C)",
+        "cos(C) = 0, so C = 90°"
+      ]
+    },
+    {
+      "id": "GEO-912-043",
+      "title": "Circle Equations",
+      "problem": "Write the equation of a circle with center (3, -2) and radius 5.",
+      "solution": "(x - 3)² + (y + 2)² = 25",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "9-12",
+      "format_type": "equation",
+      "concepts": [
+        "circles",
+        "circle_equations",
+        "coordinate_geometry"
+      ],
+      "hints": [
+        "Standard form: (x - h)² + (y - k)² = r²",
+        "Center is (h, k)",
+        "Radius squared = 25"
+      ]
+    },
+    {
+      "id": "GEO-912-044",
+      "title": "Inscribed Angles",
+      "problem": "An inscribed angle intercepts an arc of 80°. What is the measure of the inscribed angle?",
+      "solution": "40°",
+      "difficulty": 4,
+      "estimated_time": 4,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "circles",
+        "inscribed_angles",
+        "arc_measures"
+      ],
+      "hints": [
+        "Inscribed angle = ½ × intercepted arc",
+        "80° ÷ 2 = 40°"
+      ]
+    },
+    {
+      "id": "GEO-912-045",
+      "title": "Sphere Volume",
+      "problem": "Find the volume of a sphere with radius 6 cm. (Use π ≈ 3.14)",
+      "solution": "904.32 cubic cm",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "3d_geometry",
+        "spheres",
+        "volume"
+      ],
+      "hints": [
+        "Volume = (4/3)πr³",
+        "(4/3) × 3.14 × 6³",
+        "(4/3) × 3.14 × 216"
+      ]
+    },
+    {
+      "id": "GEO-912-046",
+      "title": "Cone Surface Area",
+      "problem": "Find the surface area of a cone with radius 4 cm and slant height 10 cm. (Use π ≈ 3.14)",
+      "solution": "175.84 square cm",
+      "difficulty": 5,
+      "estimated_time": 6,
+      "grade_level": "9-12",
+      "format_type": "calculation",
+      "concepts": [
+        "3d_geometry",
+        "cones",
+        "surface_area"
+      ],
+      "hints": [
+        "Surface Area = πr² + πrl",
+        "Base area + lateral area",
+        "π(4²) + π(4)(10)"
+      ]
+    },
+    {
+      "id": "GEO-912-047",
+      "title": "Line Equations",
+      "problem": "Find the equation of a line passing through (2, 3) and (5, 9).",
+      "solution": "y = 2x - 1",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "9-12",
+      "format_type": "equation",
+      "concepts": [
+        "coordinate_geometry",
+        "linear_equations",
+        "slope"
+      ],
+      "hints": [
+        "Find slope: m = (y₂-y₁)/(x₂-x₁)",
+        "m = (9-3)/(5-2) = 2",
+        "Use point-slope form"
+      ]
+    },
+    {
+      "id": "GEO-912-048",
+      "title": "Parallel and Perpendicular Lines",
+      "problem": "Find the equation of a line perpendicular to y = 3x + 2 passing through (1, 4).",
+      "solution": "y = -⅓x + 13/3",
+      "difficulty": 5,
+      "estimated_time": 6,
+      "grade_level": "9-12",
+      "format_type": "equation",
+      "concepts": [
+        "coordinate_geometry",
+        "perpendicular_lines",
+        "slope"
+      ],
+      "hints": [
+        "Perpendicular slopes are negative reciprocals",
+        "Original slope = 3",
+        "New slope = -1/3"
+      ]
+    }
+  ]
+}
