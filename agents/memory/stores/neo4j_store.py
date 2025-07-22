@@ -235,12 +235,14 @@ class Neo4jStore(Store):
                 
                 # Then create new history node with all messages as a JSON property
                 serialized = json.dumps(self.history)
+                # Store serialized history
+                escaped_serialized = serialized.replace("'", "\\'")
                 session.execute_write(
                     lambda tx: tx.run(
                         f"""
                         CREATE (h:History {{
                             prefix: '{self.prefix}',
-                            messages: '{serialized.replace("'", "\\'")}'
+                            messages: '{escaped_serialized}'
                         }})
                         """
                     )
@@ -268,12 +270,13 @@ class Neo4jStore(Store):
                 
                 # Then create new cache node with all items as a JSON property
                 serialized = json.dumps(self.cache)
+                escaped_serialized = serialized.replace("'", "\\'")
                 session.execute_write(
                     lambda tx: tx.run(
                         f"""
                         CREATE (c:Cache {{
                             prefix: '{self.prefix}',
-                            data: '{serialized.replace("'", "\\'")}'
+                            data: '{escaped_serialized}'
                         }})
                         """
                     )

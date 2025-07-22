@@ -38,13 +38,61 @@ class ReActPromptTemplate(PromptFormatter):
                 Thought: I now know the final answer
                 Final Answer: the final answer to the original input question                             
         """
+        # Convert string examples to empty list to avoid the parent class trying to process them
         super().__init__(
             role = role,
             task = task,
             guide = guide + approach,
-            examples = examples,
+            examples = [],  # Don't pass string examples to parent
             output_format = self.output_format,
             prompt_format_type = prompt_format_type)
+        
+        # Store the string examples separately
+        self.string_examples = examples or []
+
+    def format_prompt(self, tools: List = None) -> str:
+        """Format a prompt by substituting variables.
+        Override parent method to handle string examples correctly.
+        
+        Args:
+            tools: Optional tools to include in the prompt
+            
+        Returns:
+            str: Formatted prompt with all sections and variables substituted
+        """
+        # Handle string examples format
+        examples_str = "Examples:\n"
+        if self.string_examples:
+            for i, example in enumerate(self.string_examples, 1):
+                examples_str += f"Example {i}:\n{example}\n\n"
+
+        tools_str = "You have access to the following tools:\n"
+        if tools:
+            for tool in tools:
+                tools_str += f"{tool.convert_to_function_call()}\n"
+
+        prompt_str = ""
+        sections = {
+            "ROLE": self.role,
+            "TOOLS": tools_str,
+            "TASK": self.task,
+            "GUIDE": self.guide,
+            "OUTPUT_FORMAT": self.output_format,
+            "EXAMPLES": examples_str,
+        }
+        
+        # Filter out None values while preserving order
+        sections = {k: v for k, v in sections.items() if v is not None}
+
+        # Join sections with double newlines
+        if self.prompt_format_type == PromptFormatType.PLAIN:
+            prompt_str = "\n\n".join(sections.values())
+        elif self.prompt_format_type == PromptFormatType.MARKDOWN:
+            prompt_str = "\n\n".join([f"## {key}\n{value}" for key, value in sections.items()])
+        elif self.prompt_format_type == PromptFormatType.XML:
+            prompt_str = "\n\n".join([f"<{key.lower()}>{value}</{key.lower()}>" for key, value in sections.items()])
+
+        return prompt_str
 
     def format_thought(self, thought: str) -> str:
         """Format a thought/reasoning step.
