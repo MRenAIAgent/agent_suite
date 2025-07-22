@@ -1,0 +1,250 @@
+#!/usr/bin/env python3
+"""
+Download Geometry Exercise Data Files
+
+This script provides multiple ways to access and download the geometry exercise data files.
+"""
+
+import json
+import os
+import shutil
+from pathlib import Path
+
+def display_file_info():
+    """Display information about the available geometry exercise files"""
+    data_dir = Path("data")
+    
+    print("📚 Geometry Exercise Data Files Available:")
+    print("=" * 50)
+    
+    files = [
+        ("geometry_exercises_basic.json", "Basic Geometry (K-8)", "11 exercises"),
+        ("geometry_exercises_advanced.json", "Advanced Geometry (9-12)", "6 exercises"), 
+        ("geometry_exercises_complete.json", "Complete Collection", "17 exercises")
+    ]
+    
+    for filename, description, count in files:
+        filepath = data_dir / filename
+        if filepath.exists():
+            size = filepath.stat().st_size
+            print(f"📄 {filename}")
+            print(f"   Description: {description}")
+            print(f"   Content: {count}")
+            print(f"   Size: {size:,} bytes ({size/1024:.1f} KB)")
+            print(f"   Path: {filepath.absolute()}")
+            print()
+
+def copy_to_desktop():
+    """Copy all geometry exercise files to Desktop for easy access"""
+    data_dir = Path("data")
+    desktop = Path.home() / "Desktop" / "geometry_exercises"
+    
+    # Create desktop directory
+    desktop.mkdir(exist_ok=True)
+    
+    files_copied = []
+    geometry_files = [
+        "geometry_exercises_basic.json",
+        "geometry_exercises_advanced.json", 
+        "geometry_exercises_complete.json"
+    ]
+    
+    for filename in geometry_files:
+        src = data_dir / filename
+        dst = desktop / filename
+        
+        if src.exists():
+            shutil.copy2(src, dst)
+            files_copied.append(str(dst))
+            print(f"✅ Copied {filename} to Desktop")
+    
+    print(f"\n📁 All files copied to: {desktop}")
+    return files_copied
+
+def create_download_readme():
+    """Create a README file explaining how to use the data"""
+    readme_content = """# Geometry Exercise Data Files
+
+## Overview
+This folder contains comprehensive geometry exercise data in JSON format, suitable for educational applications, learning management systems, or math tutoring programs.
+
+## Files Included
+
+### 1. geometry_exercises_basic.json
+- **Target Audience**: Elementary to Middle School (K-8)
+- **Exercise Count**: 11 exercises
+- **Topics Covered**: 
+  - Basic shapes identification
+  - Angle types (acute, right, obtuse)
+  - Triangle classification
+  - Area calculations (rectangles, triangles, circles)
+  - Coordinate plotting
+  - Pythagorean theorem basics
+
+### 2. geometry_exercises_advanced.json
+- **Target Audience**: High School (9-12)
+- **Exercise Count**: 6 exercises
+- **Topics Covered**:
+  - 3D geometry (volume, surface area)
+  - Trigonometric ratios
+  - Circle theorems
+  - Polygon angle calculations
+  - Law of Sines
+
+### 3. geometry_exercises_complete.json
+- **Target Audience**: Complete K-12 collection
+- **Exercise Count**: 17 exercises
+- **Content**: Combined basic and advanced exercises in a single file
+
+## Data Structure
+
+Each exercise follows this JSON structure:
+```json
+{
+  "id": "GEO-K5-001",
+  "title": "Identify Basic Shapes",
+  "problem": "Name these shapes: □ △ ○ ◇",
+  "solution": "Square, Triangle, Circle, Diamond",
+  "difficulty": 1,
+  "estimated_time": 2,
+  "grade_level": "K-5",
+  "format_type": "multiple-choice",
+  "concepts": ["basic_shapes", "shape_recognition"],
+  "hints": ["Look at the number of sides", "Count the corners"]
+}
+```
+
+## Usage Examples
+
+### Python
+```python
+import json
+
+# Load basic exercises
+with open('geometry_exercises_basic.json', 'r') as f:
+    basic_exercises = json.load(f)
+
+# Access exercises
+for exercise in basic_exercises['exercises']:
+    print(f"Title: {exercise['title']}")
+    print(f"Problem: {exercise['problem']}")
+    print(f"Difficulty: {exercise['difficulty']}")
+```
+
+### JavaScript/Node.js
+```javascript
+const fs = require('fs');
+
+// Load exercises
+const basicExercises = JSON.parse(
+  fs.readFileSync('geometry_exercises_basic.json', 'utf8')
+);
+
+// Filter by difficulty
+const easyExercises = basicExercises.exercises.filter(
+  ex => ex.difficulty <= 2
+);
+```
+
+## Concepts Covered (37 total)
+- Basic shapes and recognition
+- Angles and angle types
+- Triangles and classification
+- Quadrilaterals and properties
+- Area and perimeter calculations
+- Coordinate geometry
+- 3D geometry (volume, surface area)
+- Trigonometry basics
+- Circle theorems
+- Pythagorean theorem
+
+## Educational Standards Alignment
+These exercises are designed to align with:
+- Common Core State Standards for Mathematics
+- National Council of Teachers of Mathematics (NCTM) standards
+- State mathematics curriculum standards
+
+## License
+These educational materials are provided for educational use.
+
+---
+Generated by Agent Suite Math Learning System
+"""
+    
+    desktop = Path.home() / "Desktop" / "geometry_exercises"
+    readme_path = desktop / "README.md"
+    
+    with open(readme_path, 'w', encoding='utf-8') as f:
+        f.write(readme_content)
+    
+    print(f"📝 Created README.md at {readme_path}")
+    return str(readme_path)
+
+def show_download_methods():
+    """Show different ways to download/access the files"""
+    print("\n🔽 How to Download/Access These Files:")
+    print("=" * 50)
+    
+    print("1. 📋 COPY FROM TERMINAL:")
+    print("   cp data/geometry_exercises_*.json ~/Desktop/")
+    print()
+    
+    print("2. 🖱️ USING FINDER/FILE EXPLORER:")
+    data_path = Path("data").absolute()
+    print(f"   Navigate to: {data_path}")
+    print("   Right-click files → Copy")
+    print("   Paste to desired location")
+    print()
+    
+    print("3. 🐍 PYTHON SCRIPT (this script):")
+    print("   python download_geometry_exercises.py")
+    print("   (Automatically copies to Desktop)")
+    print()
+    
+    print("4. 🌐 PROGRAMMATIC ACCESS:")
+    print("   Use the file paths directly in your code:")
+    for filename in ["geometry_exercises_basic.json", "geometry_exercises_advanced.json", "geometry_exercises_complete.json"]:
+        filepath = Path("data") / filename
+        if filepath.exists():
+            print(f"   {filepath.absolute()}")
+    print()
+    
+    print("5. 📧 SHARING:")
+    print("   Files are in standard JSON format")
+    print("   Can be shared via email, cloud storage, or version control")
+    print("   Total size: ~20 KB (very lightweight)")
+
+def main():
+    """Main function to run the download helper"""
+    print("🎯 Geometry Exercise Data Download Helper")
+    print("=" * 50)
+    
+    # Show file information
+    display_file_info()
+    
+    # Show download methods
+    show_download_methods()
+    
+    # Ask user if they want to copy to desktop
+    print("\n" + "=" * 50)
+    response = input("📁 Copy all files to Desktop? (y/n): ").lower().strip()
+    
+    if response in ['y', 'yes']:
+        copied_files = copy_to_desktop()
+        readme_path = create_download_readme()
+        
+        print(f"\n🎉 Success! Files copied to Desktop:")
+        for file_path in copied_files:
+            print(f"   📄 {file_path}")
+        print(f"   📝 {readme_path}")
+        
+        print(f"\n💡 Next Steps:")
+        print(f"   1. Open the Desktop/geometry_exercises folder")
+        print(f"   2. Read the README.md for usage instructions")
+        print(f"   3. Use the JSON files in your applications")
+    else:
+        print("\n📍 Files remain in the data/ directory")
+        print("   Use the paths shown above to access them")
+
+if __name__ == "__main__":
+    main() 
