@@ -1,0 +1,19 @@
+# Image Analysis Feature Dependencies
+# These are optional dependencies for the image analysis functionality
+
+# Image processing
+Pillow>=9.0.0
+
+# OCR (Optical Character Recognition)
+pytesseract>=0.3.10
+
+# Additional image processing (optional)
+opencv-python>=4.5.0
+
+# Math expression parsing (optional)
+sympy>=1.11.0
+
+# Note: You may also need to install tesseract-ocr system package:
+# - Ubuntu/Debian: sudo apt-get install tesseract-ocr
+# - macOS: brew install tesseract
+# - Windows: Download from https://github.com/UB-Mannheim/tesseract/wiki 
