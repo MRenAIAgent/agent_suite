@@ -16,8 +16,8 @@
       "prerequisites": [],
       "dependents": [
         "NS-03",
-        "NS-02",
-        "NS-04"
+        "NS-04",
+        "NS-02"
       ],
       "related": []
     },
@@ -98,8 +98,8 @@
         "NS-04"
       ],
       "dependents": [
-        "NS-12",
-        "NS-11"
+        "NS-11",
+        "NS-12"
       ],
       "related": []
     },
@@ -120,8 +120,8 @@
       ],
       "dependents": [
         "AT-19",
-        "NS-13",
-        "NS-07"
+        "NS-07",
+        "NS-13"
       ],
       "related": []
     },
@@ -261,8 +261,8 @@
         "NS-06"
       ],
       "dependents": [
-        "NS-15",
-        "NS-14"
+        "NS-14",
+        "NS-15"
       ],
       "related": []
     },
@@ -282,8 +282,8 @@
         "NS-13"
       ],
       "dependents": [
-        "NS-16",
-        "EXP-41"
+        "EXP-41",
+        "NS-16"
       ],
       "related": []
     },
@@ -303,8 +303,8 @@
         "NS-13"
       ],
       "dependents": [
-        "AT-28",
-        "AT-22"
+        "AT-22",
+        "AT-28"
       ],
       "related": []
     },
@@ -423,8 +423,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "AT-19",
-        "AT-18"
+        "AT-18",
+        "AT-19"
       ],
       "dependents": [
         "POL-49",
@@ -445,12 +445,12 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "NS-15",
-        "AT-20"
+        "AT-20",
+        "NS-15"
       ],
       "dependents": [
-        "LF-35",
-        "AT-24"
+        "AT-24",
+        "LF-35"
       ],
       "related": []
     },
@@ -487,9 +487,9 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "NS-16",
         "AT-22",
-        "AT-23"
+        "AT-23",
+        "NS-16"
       ],
       "dependents": [
         "AT-25"
@@ -572,8 +572,8 @@
         "NS-15"
       ],
       "dependents": [
-        "AT-29",
-        "LF-30"
+        "LF-30",
+        "AT-29"
       ],
       "related": []
     },
@@ -610,9 +610,9 @@
       ],
       "grade_level": "",
       "prerequisites": [
+        "AT-27",
         "AT-28",
-        "AT-29",
-        "AT-27"
+        "AT-29"
       ],
       "dependents": [
         "LF-32",
@@ -636,11 +636,11 @@
         "LF-30"
       ],
       "dependents": [
-        "FN-62",
-        "LF-36",
         "LF-35",
+        "FN-62",
         "LF-37",
-        "LF-33"
+        "LF-33",
+        "LF-36"
       ],
       "related": []
     },
@@ -758,8 +758,8 @@
         "LF-31"
       ],
       "dependents": [
-        "LF-39",
-        "LF-38"
+        "LF-38",
+        "LF-39"
       ],
       "related": []
     },
@@ -816,9 +816,9 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-39",
+        "LF-36",
         "LF-38",
-        "LF-36"
+        "LF-39"
       ],
       "dependents": [
         "FN-63"
@@ -841,10 +841,10 @@
         "NS-14"
       ],
       "dependents": [
-        "FN-62",
         "EXP-43",
-        "POL-50",
         "EXP-48",
+        "POL-50",
+        "FN-62",
         "EXP-42"
       ],
       "related": []
@@ -1021,8 +1021,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "AT-19",
-        "EXP-41"
+        "EXP-41",
+        "AT-19"
       ],
       "dependents": [
         "POL-51"
@@ -1062,8 +1062,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "NS-12",
-        "NS-11"
+        "NS-11",
+        "NS-12"
       ],
       "dependents": [
         "POL-53"
@@ -1166,8 +1166,8 @@
         "POL-54"
       ],
       "dependents": [
-        "Q-61",
-        "FN-65"
+        "FN-65",
+        "Q-61"
       ],
       "related": []
     },
@@ -1245,8 +1245,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "Q-60",
-        "Q-57"
+        "Q-57",
+        "Q-60"
       ],
       "dependents": [],
       "related": []
@@ -1326,9 +1326,9 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "EXP-47",
+        "Q-57",
         "FN-64",
-        "Q-57"
+        "EXP-47"
       ],
       "dependents": [],
       "related": []
