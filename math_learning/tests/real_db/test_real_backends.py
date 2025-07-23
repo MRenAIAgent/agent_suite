@@ -19,11 +19,15 @@ import sys
 import traceback
 from typing import Dict, Any, List, Tuple
 
-# Add parent directory to path for imports
-sys.path.append('..')
+# Add project root to path for imports
+# From math_learning/tests/real_db/test_real_backends.py
+# Go up 4 levels: real_db -> tests -> math_learning -> agent_suite
+import os
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(project_root)
 
-from config.rag_config import get_real_backends_config, create_configured_rag_service
-from learning_graph.user_model import LearningGraph
+from math_learning.config.rag_config import get_real_backends_config, create_configured_rag_service
+from math_learning.learning_graph.user_model import LearningGraph
 from agents.rag.models.knowledge import Entity, Relationship
 from agents.rag.models.context import ContextItem
 

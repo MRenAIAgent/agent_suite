@@ -16,8 +16,8 @@
       "prerequisites": [],
       "dependents": [
         "NS-03",
-        "NS-04",
-        "NS-02"
+        "NS-02",
+        "NS-04"
       ],
       "related": []
     },
@@ -98,8 +98,8 @@
         "NS-04"
       ],
       "dependents": [
-        "NS-11",
-        "NS-12"
+        "NS-12",
+        "NS-11"
       ],
       "related": []
     },
@@ -119,9 +119,9 @@
         "NS-02"
       ],
       "dependents": [
+        "AT-19",
         "NS-13",
-        "NS-07",
-        "AT-19"
+        "NS-07"
       ],
       "related": []
     },
@@ -282,8 +282,8 @@
         "NS-13"
       ],
       "dependents": [
-        "EXP-41",
-        "NS-16"
+        "NS-16",
+        "EXP-41"
       ],
       "related": []
     },
@@ -384,8 +384,8 @@
         "NS-06"
       ],
       "dependents": [
-        "AT-21",
-        "POL-50"
+        "POL-50",
+        "AT-21"
       ],
       "related": []
     },
@@ -405,8 +405,8 @@
         "AT-21"
       ],
       "dependents": [
-        "AT-23",
-        "AT-22"
+        "AT-22",
+        "AT-23"
       ],
       "related": []
     },
@@ -427,8 +427,8 @@
         "AT-18"
       ],
       "dependents": [
-        "AT-20",
-        "POL-49"
+        "POL-49",
+        "AT-20"
       ],
       "related": []
     },
@@ -449,8 +449,8 @@
         "AT-20"
       ],
       "dependents": [
-        "AT-24",
-        "LF-35"
+        "LF-35",
+        "AT-24"
       ],
       "related": []
     },
@@ -487,9 +487,9 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "AT-23",
         "NS-16",
-        "AT-22"
+        "AT-22",
+        "AT-23"
       ],
       "dependents": [
         "AT-25"
@@ -611,12 +611,12 @@
       "grade_level": "",
       "prerequisites": [
         "AT-28",
-        "AT-27",
-        "AT-29"
+        "AT-29",
+        "AT-27"
       ],
       "dependents": [
-        "LF-31",
-        "LF-32"
+        "LF-32",
+        "LF-31"
       ],
       "related": []
     },
@@ -636,11 +636,11 @@
         "LF-30"
       ],
       "dependents": [
-        "LF-37",
-        "LF-36",
         "FN-62",
-        "LF-33",
-        "LF-35"
+        "LF-36",
+        "LF-35",
+        "LF-37",
+        "LF-33"
       ],
       "related": []
     },
@@ -677,8 +677,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-31",
-        "LF-32"
+        "LF-32",
+        "LF-31"
       ],
       "dependents": [
         "LF-34"
@@ -716,8 +716,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-31",
-        "AT-22"
+        "AT-22",
+        "LF-31"
       ],
       "dependents": [],
       "related": []
@@ -758,8 +758,8 @@
         "LF-31"
       ],
       "dependents": [
-        "LF-38",
-        "LF-39"
+        "LF-39",
+        "LF-38"
       ],
       "related": []
     },
@@ -816,8 +816,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-38",
         "LF-39",
+        "LF-38",
         "LF-36"
       ],
       "dependents": [
@@ -841,11 +841,11 @@
         "NS-14"
       ],
       "dependents": [
-        "EXP-43",
-        "EXP-42",
         "FN-62",
+        "EXP-43",
+        "POL-50",
         "EXP-48",
-        "POL-50"
+        "EXP-42"
       ],
       "related": []
     },
@@ -902,8 +902,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "EXP-42",
-        "EXP-43"
+        "EXP-43",
+        "EXP-42"
       ],
       "dependents": [
         "EXP-45"
@@ -1021,8 +1021,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "EXP-41",
-        "AT-19"
+        "AT-19",
+        "EXP-41"
       ],
       "dependents": [
         "POL-51"
@@ -1062,8 +1062,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "NS-11",
-        "NS-12"
+        "NS-12",
+        "NS-11"
       ],
       "dependents": [
         "POL-53"
@@ -1166,8 +1166,8 @@
         "POL-54"
       ],
       "dependents": [
-        "FN-65",
-        "Q-61"
+        "Q-61",
+        "FN-65"
       ],
       "related": []
     },
@@ -1184,8 +1184,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "POL-56",
-        "POL-49"
+        "POL-49",
+        "POL-56"
       ],
       "dependents": [
         "Q-59"
@@ -1264,8 +1264,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-31",
-        "EXP-41"
+        "EXP-41",
+        "LF-31"
       ],
       "dependents": [
         "FN-63"
@@ -1285,8 +1285,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-40",
-        "FN-62"
+        "FN-62",
+        "LF-40"
       ],
       "dependents": [
         "FN-64"
@@ -1326,8 +1326,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "FN-64",
         "EXP-47",
+        "FN-64",
         "Q-57"
       ],
       "dependents": [],
@@ -1487,6 +1487,12 @@
     {
       "source": "NS-02",
       "target": "NS-06",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "NS-02",
+      "target": "AT-17",
       "type": "prerequisite",
       "strength": 0.8
     },

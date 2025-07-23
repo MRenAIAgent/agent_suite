@@ -22,11 +22,17 @@ help: ## Show this help message
 	@echo "$(BLUE)Agent Suite - Available Commands$(NC)"
 	@echo ""
 	@echo "$(GREEN)Testing Commands:$(NC)"
-	@echo "  make test          - Run all tests (agents + math_learning)"
-	@echo "  make test-agents   - Run agent framework tests only"
-	@echo "  make test-math     - Run math learning tests only"
-	@echo "  make test-all      - Run ALL tests including external dependencies"
-	@echo "  make coverage      - Run tests with coverage report"
+	@echo "  make test              - Run all tests (agents + math_learning)"
+	@echo "  make test-agents       - Run agent framework tests only"
+	@echo "  make test-math         - Run math learning tests only"
+	@echo "  make test-comprehensive - Run comprehensive test suite (storage, graph, memory, performance)"
+	@echo "  make test-storage      - Run storage backend tests"
+	@echo "  make test-graph        - Run graph operations tests"
+	@echo "  make test-memory       - Run memory management tests"
+	@echo "  make test-performance  - Run performance and scalability tests"
+	@echo "  make test-quick        - Run quick validation tests"
+	@echo "  make test-all          - Run ALL tests including external dependencies"
+	@echo "  make coverage          - Run tests with coverage report"
 	@echo ""
 	@echo "$(GREEN)Development Commands:$(NC)"
 	@echo "  make install       - Install production dependencies"
@@ -74,6 +80,36 @@ test-math-working: ## Run only the working math learning tests
 	@echo "$(BLUE)Running working math learning tests...$(NC)"
 	@cd math_learning && $(PYTHON) tests/run_working_tests.py
 	@echo "$(GREEN)Working math learning tests completed!$(NC)"
+
+test-comprehensive: ## Run comprehensive test suite with storage, graph, memory, and performance tests
+	@echo "$(BLUE)Running comprehensive test suite with all new tests...$(NC)"
+	@cd math_learning && $(PYTHON) tests/run_comprehensive_tests.py --save-report
+	@echo "$(GREEN)Comprehensive test suite completed!$(NC)"
+
+test-storage: ## Run storage backend tests
+	@echo "$(BLUE)Running storage backend tests...$(NC)"
+	@cd math_learning && $(PYTHON) tests/run_comprehensive_tests.py --suites storage
+	@echo "$(GREEN)Storage tests completed!$(NC)"
+
+test-graph: ## Run graph operations tests
+	@echo "$(BLUE)Running graph operations tests...$(NC)"
+	@cd math_learning && $(PYTHON) tests/run_comprehensive_tests.py --suites graph
+	@echo "$(GREEN)Graph tests completed!$(NC)"
+
+test-memory: ## Run memory management tests
+	@echo "$(BLUE)Running memory management tests...$(NC)"
+	@cd math_learning && $(PYTHON) tests/run_comprehensive_tests.py --suites memory
+	@echo "$(GREEN)Memory tests completed!$(NC)"
+
+test-performance: ## Run performance and scalability tests
+	@echo "$(BLUE)Running performance and scalability tests...$(NC)"
+	@cd math_learning && $(PYTHON) tests/run_comprehensive_tests.py --suites performance
+	@echo "$(GREEN)Performance tests completed!$(NC)"
+
+test-quick: ## Run quick validation tests
+	@echo "$(BLUE)Running quick validation tests...$(NC)"
+	@cd math_learning && $(PYTHON) tests/run_comprehensive_tests.py --quick
+	@echo "$(GREEN)Quick tests completed!$(NC)"
 
 test-all: test-agents test-math-all ## Run ALL tests including external dependencies
 	@echo "$(GREEN)All tests completed successfully!$(NC)"

@@ -17,8 +17,11 @@ import traceback
 from typing import Dict, List, Any
 import pytest
 
-# Add the parent directory to the path for imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to path for imports
+# From math_learning/tests/real_db/test_real_databases.py
+# Go up 4 levels: real_db -> tests -> math_learning -> agent_suite
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(project_root)
 
 from math_learning.config.rag_config import RagConfig, create_configured_rag_service
 from math_learning.learning_graph.user_model import LearningGraph
@@ -127,6 +130,7 @@ async def cleanup_test_data(config: RagConfig):
         print(f"  ⚠️  Failed to clean Neo4j: {e}")
 
 
+@pytest.mark.asyncio
 async def test_vector_storage_operations(rag_service):
     """Test Qdrant vector storage operations."""
     print("\n📊 Testing Qdrant Vector Storage Operations...")
@@ -233,6 +237,7 @@ async def test_vector_storage_operations(rag_service):
         return False
 
 
+@pytest.mark.asyncio
 async def test_graph_storage_operations(rag_service):
     """Test Neo4j graph storage operations."""
     print("\n🕸️  Testing Neo4j Graph Storage Operations...")
@@ -368,6 +373,7 @@ async def test_graph_storage_operations(rag_service):
         return False
 
 
+@pytest.mark.asyncio
 async def test_integrated_learning_scenario(rag_service):
     """Test integrated learning scenario using both vector and graph storage."""
     print("\n🎓 Testing Integrated Learning Scenario...")
@@ -497,6 +503,7 @@ async def test_integrated_learning_scenario(rag_service):
         return False
 
 
+@pytest.mark.asyncio
 async def test_performance_and_scalability(rag_service):
     """Test performance with larger datasets."""
     print("\n⚡ Testing Performance and Scalability...")
@@ -586,6 +593,19 @@ async def test_performance_and_scalability(rag_service):
         print(f"  ❌ Performance test failed: {e}")
         traceback.print_exc()
         return False
+
+
+@pytest.fixture(scope="session")
+async def rag_service():
+    """Fixture to provide RAG service with real databases."""
+    print("\n🔧 Setting up RAG service with real databases...")
+    config = get_real_databases_config()
+    service = await create_configured_rag_service(config)
+    
+    yield service
+    
+    print("\n🧹 Cleaning up RAG service...")
+    await service.close()
 
 
 @pytest.fixture(scope="session")

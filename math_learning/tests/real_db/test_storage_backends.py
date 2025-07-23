@@ -20,8 +20,11 @@ import uuid
 from typing import Dict, List, Any
 import numpy as np
 
-# Add the parent directory to the path for imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to path for imports
+# From math_learning/tests/real_db/test_storage_backends.py
+# Go up 4 levels: real_db -> tests -> math_learning -> agent_suite
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(project_root)
 
 from agents.rag.storage.graph.neo4j_storage import Neo4jGraphStorageAdaptor
 from agents.rag.storage.vector.qdrant_storage import QdrantStorageAdaptor

@@ -18,8 +18,11 @@ import json
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 
-# Add the parent directory to the path for imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to path for imports
+# From math_learning/tests/real_db/test_graphiti_neo4j_math_learning.py
+# Go up 4 levels: real_db -> tests -> math_learning -> agent_suite
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(project_root)
 
 from math_learning.scripts.utils.database_usage_checker import DatabaseUsageChecker
 
