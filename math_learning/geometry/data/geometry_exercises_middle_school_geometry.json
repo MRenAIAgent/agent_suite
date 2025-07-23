@@ -1,0 +1,389 @@
+{
+  "name": "Middle School Geometry Exercises (6-8)",
+  "description": "Intermediate geometry concepts building toward high school",
+  "total_exercises": 60,
+  "exercises": [
+    {
+      "id": "GEO-68-021",
+      "title": "Complementary Angles",
+      "problem": "Two angles are complementary. If one angle measures 35°, what is the measure of the other angle?",
+      "solution": "55°",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "complementary_angles",
+        "angle_relationships"
+      ],
+      "hints": [
+        "Complementary angles add to 90°",
+        "90° - 35° = ?"
+      ]
+    },
+    {
+      "id": "GEO-68-022",
+      "title": "Supplementary Angles",
+      "problem": "Two angles are supplementary. If one angle measures 120°, what is the measure of the other angle?",
+      "solution": "60°",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "supplementary_angles",
+        "angle_relationships"
+      ],
+      "hints": [
+        "Supplementary angles add to 180°",
+        "180° - 120° = ?"
+      ]
+    },
+    {
+      "id": "GEO-68-023",
+      "title": "Vertical Angles",
+      "problem": "Two lines intersect forming four angles. If one angle measures 75°, what do the other three angles measure?",
+      "solution": "75°, 105°, 105°",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "vertical_angles",
+        "linear_pairs",
+        "angle_relationships"
+      ],
+      "hints": [
+        "Vertical angles are equal",
+        "Adjacent angles are supplementary",
+        "180° - 75° = 105°"
+      ]
+    },
+    {
+      "id": "GEO-68-024",
+      "title": "Triangle Angle Sum",
+      "problem": "In triangle ABC, angle A = 60° and angle B = 50°. Find angle C.",
+      "solution": "70°",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "triangles",
+        "angle_sum",
+        "triangle_properties"
+      ],
+      "hints": [
+        "Sum of angles in a triangle = 180°",
+        "180° - 60° - 50° = ?"
+      ]
+    },
+    {
+      "id": "GEO-68-025",
+      "title": "Isosceles Triangle",
+      "problem": "In an isosceles triangle, the vertex angle is 40°. What are the measures of the base angles?",
+      "solution": "70° each",
+      "difficulty": 4,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "isosceles_triangles",
+        "base_angles",
+        "triangle_properties"
+      ],
+      "hints": [
+        "Base angles in isosceles triangle are equal",
+        "Sum must equal 180°",
+        "(180° - 40°) ÷ 2"
+      ]
+    },
+    {
+      "id": "GEO-68-026",
+      "title": "Triangle Classification by Sides",
+      "problem": "Classify a triangle with sides 5 cm, 5 cm, and 8 cm.",
+      "solution": "Isosceles triangle",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "classification",
+      "concepts": [
+        "triangle_classification",
+        "isosceles_triangles"
+      ],
+      "hints": [
+        "Check if any sides are equal",
+        "Two equal sides = isosceles"
+      ]
+    },
+    {
+      "id": "GEO-68-027",
+      "title": "Triangle Inequality",
+      "problem": "Can you form a triangle with sides 3, 4, and 8?",
+      "solution": "No, because 3 + 4 = 7 < 8",
+      "difficulty": 4,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "yes-no",
+      "concepts": [
+        "triangle_inequality",
+        "triangle_properties"
+      ],
+      "hints": [
+        "Sum of any two sides must be greater than the third",
+        "Check: 3 + 4 > 8?"
+      ]
+    },
+    {
+      "id": "GEO-68-028",
+      "title": "Parallelogram Properties",
+      "problem": "In parallelogram ABCD, if angle A = 70°, find the measures of the other three angles.",
+      "solution": "Angle B = 110°, Angle C = 70°, Angle D = 110°",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "parallelograms",
+        "angle_properties",
+        "quadrilaterals"
+      ],
+      "hints": [
+        "Opposite angles are equal",
+        "Consecutive angles are supplementary"
+      ]
+    },
+    {
+      "id": "GEO-68-029",
+      "title": "Rectangle vs Rhombus",
+      "problem": "What is the difference between a rectangle and a rhombus?",
+      "solution": "Rectangle has 4 right angles; Rhombus has 4 equal sides",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "comparison",
+      "concepts": [
+        "rectangles",
+        "rhombus",
+        "quadrilateral_properties"
+      ],
+      "hints": [
+        "Think about angles vs sides",
+        "What makes each special?"
+      ]
+    },
+    {
+      "id": "GEO-68-030",
+      "title": "Triangle Area",
+      "problem": "Find the area of a triangle with base 12 cm and height 8 cm.",
+      "solution": "48 square cm",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "area",
+        "triangles",
+        "base_height"
+      ],
+      "hints": [
+        "Area = ½ × base × height",
+        "½ × 12 × 8"
+      ]
+    },
+    {
+      "id": "GEO-68-031",
+      "title": "Parallelogram Area",
+      "problem": "Find the area of a parallelogram with base 10 cm and height 6 cm.",
+      "solution": "60 square cm",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "area",
+        "parallelograms"
+      ],
+      "hints": [
+        "Area = base × height",
+        "10 × 6 = ?"
+      ]
+    },
+    {
+      "id": "GEO-68-032",
+      "title": "Trapezoid Area",
+      "problem": "Find the area of a trapezoid with parallel sides 8 cm and 12 cm, and height 5 cm.",
+      "solution": "50 square cm",
+      "difficulty": 4,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "area",
+        "trapezoids"
+      ],
+      "hints": [
+        "Area = ½ × (sum of parallel sides) × height",
+        "½ × (8 + 12) × 5"
+      ]
+    },
+    {
+      "id": "GEO-68-033",
+      "title": "Circle Circumference",
+      "problem": "Find the circumference of a circle with radius 7 cm. (Use π ≈ 3.14)",
+      "solution": "43.96 cm",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "circles",
+        "circumference",
+        "pi"
+      ],
+      "hints": [
+        "Circumference = 2πr",
+        "2 × 3.14 × 7"
+      ]
+    },
+    {
+      "id": "GEO-68-034",
+      "title": "Circle Area",
+      "problem": "Find the area of a circle with diameter 10 cm. (Use π ≈ 3.14)",
+      "solution": "78.5 square cm",
+      "difficulty": 4,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "circles",
+        "area",
+        "pi",
+        "radius"
+      ],
+      "hints": [
+        "First find radius: diameter ÷ 2",
+        "Area = πr²",
+        "π × 5²"
+      ]
+    },
+    {
+      "id": "GEO-68-035",
+      "title": "Distance Formula",
+      "problem": "Find the distance between points (1, 2) and (4, 6).",
+      "solution": "5 units",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "coordinate_geometry",
+        "distance_formula",
+        "pythagorean_theorem"
+      ],
+      "hints": [
+        "Use distance formula: √[(x₂-x₁)² + (y₂-y₁)²]",
+        "√[(4-1)² + (6-2)²]",
+        "√[9 + 16] = √25"
+      ]
+    },
+    {
+      "id": "GEO-68-036",
+      "title": "Midpoint Formula",
+      "problem": "Find the midpoint of the line segment connecting (2, 3) and (8, 7).",
+      "solution": "(5, 5)",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "coordinate_geometry",
+        "midpoint_formula"
+      ],
+      "hints": [
+        "Midpoint = ((x₁+x₂)/2, (y₁+y₂)/2)",
+        "((2+8)/2, (3+7)/2)"
+      ]
+    },
+    {
+      "id": "GEO-68-037",
+      "title": "Pythagorean Theorem Basic",
+      "problem": "In a right triangle with legs 9 and 12, find the hypotenuse.",
+      "solution": "15",
+      "difficulty": 4,
+      "estimated_time": 5,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "pythagorean_theorem",
+        "right_triangles"
+      ],
+      "hints": [
+        "a² + b² = c²",
+        "9² + 12² = c²",
+        "81 + 144 = 225",
+        "√225 = 15"
+      ]
+    },
+    {
+      "id": "GEO-68-038",
+      "title": "Pythagorean Theorem Application",
+      "problem": "A ladder 13 feet long leans against a wall. The bottom is 5 feet from the wall. How high up the wall does it reach?",
+      "solution": "12 feet",
+      "difficulty": 4,
+      "estimated_time": 6,
+      "grade_level": "6-8",
+      "format_type": "word-problem",
+      "concepts": [
+        "pythagorean_theorem",
+        "real_world_applications"
+      ],
+      "hints": [
+        "Draw a right triangle",
+        "Ladder = hypotenuse = 13",
+        "Base = 5",
+        "Height = ?",
+        "5² + h² = 13²"
+      ]
+    },
+    {
+      "id": "GEO-68-039",
+      "title": "Translation",
+      "problem": "Point A(2, 3) is translated 4 units right and 2 units up. What are the new coordinates?",
+      "solution": "(6, 5)",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "transformations",
+        "translation",
+        "coordinate_geometry"
+      ],
+      "hints": [
+        "Add to x-coordinate for right",
+        "Add to y-coordinate for up",
+        "(2+4, 3+2)"
+      ]
+    },
+    {
+      "id": "GEO-68-040",
+      "title": "Reflection",
+      "problem": "Point B(3, -2) is reflected over the x-axis. What are the new coordinates?",
+      "solution": "(3, 2)",
+      "difficulty": 3,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "transformations",
+        "reflection",
+        "coordinate_geometry"
+      ],
+      "hints": [
+        "Reflection over x-axis changes sign of y-coordinate",
+        "x stays the same"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Requirements for Real Database Integration Tests
+# Install with: pip install -r requirements_test_real_dbs.txt
+
+# Qdrant vector database client
+qdrant-client>=1.7.0
+
+# Neo4j graph database driver
+neo4j>=5.15.0
+
+# Sentence transformers for embeddings (used in tests)
+sentence-transformers>=2.2.0
+
+# Additional dependencies that might be needed
+torch>=2.0.0  # Required by sentence-transformers
+transformers>=4.21.0  # Required by sentence-transformers
+numpy>=1.21.0  # Required by various ML libraries
+requests>=2.28.0  # For HTTP requests to databases
+
+# Optional: For better performance
+# faiss-cpu>=1.7.0  # Alternative vector search (if needed)
+# accelerate>=0.20.0  # For faster model loading 

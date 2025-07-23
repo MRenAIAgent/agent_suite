@@ -1,0 +1,224 @@
+{
+  "name": "Basic Geometry Exercises (K-8)",
+  "description": "Fundamental geometry concepts for elementary and middle school",
+  "exercises": [
+    {
+      "id": "GEO-K5-001",
+      "title": "Identify Basic Shapes",
+      "problem": "Name these shapes: □ △ ○ ◇",
+      "solution": "Square, Triangle, Circle, Diamond",
+      "difficulty": 1,
+      "estimated_time": 2,
+      "grade_level": "K-5",
+      "format_type": "multiple-choice",
+      "concepts": [
+        "basic_shapes",
+        "shape_recognition"
+      ],
+      "hints": [
+        "Look at the number of sides",
+        "Count the corners",
+        "Some shapes are curved"
+      ]
+    },
+    {
+      "id": "GEO-K5-002",
+      "title": "Count Sides and Vertices",
+      "problem": "How many sides and vertices does a pentagon have?",
+      "solution": "5 sides and 5 vertices",
+      "difficulty": 1,
+      "estimated_time": 2,
+      "grade_level": "K-5",
+      "format_type": "free-response",
+      "concepts": [
+        "polygons",
+        "vertices",
+        "sides"
+      ],
+      "hints": [
+        "Count each straight edge",
+        "Vertices are corners where sides meet"
+      ]
+    },
+    {
+      "id": "GEO-K5-003",
+      "title": "Identify Angle Types",
+      "problem": "Classify this angle as acute, right, or obtuse: An angle measuring 45°",
+      "solution": "Acute",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "K-5",
+      "format_type": "multiple-choice",
+      "concepts": [
+        "angles",
+        "angle_types"
+      ],
+      "hints": [
+        "Acute angles are less than 90°",
+        "Right angles are exactly 90°",
+        "Obtuse angles are greater than 90°"
+      ]
+    },
+    {
+      "id": "GEO-68-001",
+      "title": "Triangle Classification by Angles",
+      "problem": "A triangle has angles of 60°, 60°, and 60°. What type of triangle is this?",
+      "solution": "Equilateral triangle",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "multiple-choice",
+      "concepts": [
+        "triangles",
+        "triangle_classification",
+        "angles"
+      ],
+      "hints": [
+        "All angles are equal",
+        "Equilateral triangles have all equal angles",
+        "Each angle is 60°"
+      ]
+    },
+    {
+      "id": "GEO-68-002",
+      "title": "Triangle Classification by Sides",
+      "problem": "A triangle has sides of length 3 cm, 4 cm, and 5 cm. What type of triangle is this?",
+      "solution": "Scalene triangle",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "multiple-choice",
+      "concepts": [
+        "triangles",
+        "triangle_classification",
+        "sides"
+      ],
+      "hints": [
+        "All sides are different lengths",
+        "Scalene = all sides different",
+        "Check if any sides are equal"
+      ]
+    },
+    {
+      "id": "GEO-68-003",
+      "title": "Quadrilateral Properties",
+      "problem": "What makes a parallelogram special compared to other quadrilaterals?",
+      "solution": "Opposite sides are parallel and equal in length",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "free-response",
+      "concepts": [
+        "quadrilaterals",
+        "parallelograms",
+        "parallel_lines"
+      ],
+      "hints": [
+        "Look at opposite sides",
+        "Parallel means never intersecting",
+        "Equal length sides"
+      ]
+    },
+    {
+      "id": "GEO-68-004",
+      "title": "Rectangle Area",
+      "problem": "Find the area of a rectangle with length 8 cm and width 5 cm.",
+      "solution": "40 square cm",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "area",
+        "rectangles",
+        "multiplication"
+      ],
+      "hints": [
+        "Area = length × width",
+        "8 × 5 = ?",
+        "Don't forget the units"
+      ]
+    },
+    {
+      "id": "GEO-68-005",
+      "title": "Triangle Area",
+      "problem": "Find the area of a triangle with base 6 cm and height 4 cm.",
+      "solution": "12 square cm",
+      "difficulty": 3,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "area",
+        "triangles",
+        "base_height"
+      ],
+      "hints": [
+        "Area = ½ × base × height",
+        "½ × 6 × 4 = ?",
+        "Remember to multiply by ½"
+      ]
+    },
+    {
+      "id": "GEO-68-006",
+      "title": "Circle Area",
+      "problem": "Find the area of a circle with radius 3 cm. (Use π ≈ 3.14)",
+      "solution": "28.26 square cm",
+      "difficulty": 3,
+      "estimated_time": 5,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "area",
+        "circles",
+        "pi",
+        "radius"
+      ],
+      "hints": [
+        "Area = π × r²",
+        "r = 3, so r² = 9",
+        "π × 9 ≈ 3.14 × 9"
+      ]
+    },
+    {
+      "id": "GEO-68-007",
+      "title": "Coordinate Plotting",
+      "problem": "Plot the point (3, -2) on a coordinate plane. In which quadrant is it located?",
+      "solution": "Quadrant IV (fourth quadrant)",
+      "difficulty": 2,
+      "estimated_time": 3,
+      "grade_level": "6-8",
+      "format_type": "coordinate-plotting",
+      "concepts": [
+        "coordinates",
+        "quadrants",
+        "plotting"
+      ],
+      "hints": [
+        "First number is x-coordinate",
+        "Second number is y-coordinate",
+        "Positive x, negative y = Quadrant IV"
+      ]
+    },
+    {
+      "id": "GEO-68-008",
+      "title": "Pythagorean Theorem Basic",
+      "problem": "In a right triangle, if the legs are 3 and 4, what is the hypotenuse?",
+      "solution": "5",
+      "difficulty": 3,
+      "estimated_time": 5,
+      "grade_level": "6-8",
+      "format_type": "calculation",
+      "concepts": [
+        "pythagorean_theorem",
+        "right_triangles",
+        "hypotenuse"
+      ],
+      "hints": [
+        "a² + b² = c²",
+        "3² + 4² = ?",
+        "√(9 + 16) = √25 = 5"
+      ]
+    }
+  ]
+}

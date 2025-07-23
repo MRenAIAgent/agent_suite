@@ -72,7 +72,7 @@ class GraphRagAlgebraGraph:
         self._initialized = False
         
         # Verify that graph storage is available
-        if not self.rag_service.has_storage_adaptor(StorageType.GRAPH):
+        if StorageType.GRAPH not in self.rag_service.storage_adaptors:
             raise ValueError("RAG service must have graph storage configured")
     
     async def initialize(self) -> None:
@@ -94,7 +94,7 @@ class GraphRagAlgebraGraph:
         )
         
         # Store the knowledge graph
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
         await graph_storage.store_knowledge_graph(knowledge_graph)
         
         # Add all algebra concepts
@@ -129,20 +129,19 @@ class GraphRagAlgebraGraph:
             entity: The concept entity to add
         """
         # Store in graph storage (primary)
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
         await graph_storage.store_entity(entity)
         
         # Store in vector storage for semantic search (if available)
-        if self.rag_service.has_storage_adaptor(StorageType.VECTOR):
-            # Create a document for vector search
-            content = f"{entity.name}: {entity.properties.get('description', '')}"
-            await self.rag_service.store_knowledge(entity, content)
+        if StorageType.VECTOR in self.rag_service.storage_adaptors:
+            # Store the entity for vector search
+            await self.rag_service.store_knowledge(entity)
         
         # Store metadata in key-value storage (if available)
-        if self.rag_service.has_storage_adaptor(StorageType.KEY_VALUE):
-            kv_storage = self.rag_service.get_storage_adaptor(StorageType.KEY_VALUE)
+        if StorageType.KEY_VALUE in self.rag_service.storage_adaptors:
+            kv_storage = self.rag_service.storage_adaptors[StorageType.KEY_VALUE]
             await kv_storage.store(f"concept:{entity.id}", {
-                "name": entity.name,
+                "name": entity.properties.get('name', ''),
                 "category": entity.properties.get("category"),
                 "difficulty_level": entity.properties.get("difficulty_level"),
                 "grade_level": entity.properties.get("grade_level")
@@ -169,7 +168,7 @@ class GraphRagAlgebraGraph:
         )
         
         # Store in graph storage
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
         await graph_storage.store_relationship(relationship)
     
     async def get_concept(self, concept_id: str) -> Optional[Entity]:
@@ -182,8 +181,8 @@ class GraphRagAlgebraGraph:
         Returns:
             The concept entity or None if not found
         """
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
-        return await graph_storage.get_entity(concept_id)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
+        return await graph_storage.retrieve(concept_id)
     
     async def get_prerequisites(self, concept_id: str) -> List[Entity]:
         """
@@ -195,18 +194,26 @@ class GraphRagAlgebraGraph:
         Returns:
             List of prerequisite concept entities
         """
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
         
-        # Get incoming prerequisite relationships
-        relationships = await graph_storage.get_relationships(
-            target_id=concept_id,
-            relationship_type="prerequisite_for"
-        )
+        # Get incoming prerequisite relationships using memory storage indices
+        relationship_ids = []
+        # Get relationships by target (incoming to this concept)
+        if concept_id in graph_storage.relationships_by_target:
+            target_rels = graph_storage.relationships_by_target[concept_id]
+            # Filter by type
+            for rel_id in target_rels:
+                rel = graph_storage.relationships[rel_id]
+                if rel.type == "prerequisite_for":
+                    relationship_ids.append(rel_id)
+        
+        # Convert relationship IDs to relationship objects
+        relationships = [graph_storage.relationships[rel_id] for rel_id in relationship_ids]
         
         # Get the prerequisite entities
         prerequisites = []
         for rel in relationships:
-            prerequisite = await graph_storage.get_entity(rel.source_id)
+            prerequisite = await graph_storage.retrieve(rel.source_id)
             if prerequisite:
                 prerequisites.append(prerequisite)
         
@@ -222,18 +229,26 @@ class GraphRagAlgebraGraph:
         Returns:
             List of dependent concept entities
         """
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
         
-        # Get outgoing prerequisite relationships
-        relationships = await graph_storage.get_relationships(
-            source_id=concept_id,
-            relationship_type="prerequisite_for"
-        )
+        # Get outgoing prerequisite relationships using memory storage indices
+        relationship_ids = []
+        # Get relationships by source (outgoing from this concept)
+        if concept_id in graph_storage.relationships_by_source:
+            source_rels = graph_storage.relationships_by_source[concept_id]
+            # Filter by type
+            for rel_id in source_rels:
+                rel = graph_storage.relationships[rel_id]
+                if rel.type == "prerequisite_for":
+                    relationship_ids.append(rel_id)
+        
+        # Convert relationship IDs to relationship objects
+        relationships = [graph_storage.relationships[rel_id] for rel_id in relationship_ids]
         
         # Get the dependent entities
         dependents = []
         for rel in relationships:
-            dependent = await graph_storage.get_entity(rel.target_id)
+            dependent = await graph_storage.retrieve(rel.target_id)
             if dependent:
                 dependents.append(dependent)
         
@@ -250,19 +265,30 @@ class GraphRagAlgebraGraph:
         Returns:
             List of concepts in the learning path
         """
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
         
         # Use graph storage's path finding capabilities
-        path_ids = await graph_storage.find_path(
+        paths = await graph_storage.find_paths(
             start_concept_id,
             target_concept_id,
-            relationship_type="prerequisite_for"
+            max_depth=5  # Allow up to 5 steps in the learning path
         )
+        
+        # Get the first path (shortest) if any paths exist
+        if paths:
+            # Extract entity IDs from the first path (paths contain alternating entities and relationships)
+            path_ids = []
+            for item in paths[0]:
+                if hasattr(item, 'id') and hasattr(item, 'type') and not hasattr(item, 'source_id'):
+                    # It's an entity (not a relationship)
+                    path_ids.append(item.id)
+        else:
+            path_ids = []
         
         # Convert IDs to entities
         path = []
         for concept_id in path_ids:
-            concept = await graph_storage.get_entity(concept_id)
+            concept = await graph_storage.retrieve(concept_id)
             if concept:
                 path.append(concept)
         
@@ -279,34 +305,36 @@ class GraphRagAlgebraGraph:
         Returns:
             List of matching concept entities
         """
-        if not self.rag_service.has_storage_adaptor(StorageType.VECTOR):
+        if StorageType.VECTOR not in self.rag_service.storage_adaptors:
             # Fallback to graph-based search
             return await self._graph_based_search(query, limit)
         
-        # Use vector search for semantic matching
-        results = await self.rag_service.search_knowledge(query, limit=limit)
+        # Use vector search for semantic matching via storage adaptor
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
+        results = await graph_storage.search(query)
         
-        # Convert results to entities
+        # Convert results to entities and apply limit
         concepts = []
-        for result in results:
-            if hasattr(result, 'entity') and result.entity:
-                concepts.append(result.entity)
+        for result in results[:limit]:  # Apply limit here
+            if hasattr(result, 'id') and hasattr(result, 'type'):
+                concepts.append(result)
         
         return concepts
     
     async def _graph_based_search(self, query: str, limit: int) -> List[Entity]:
         """Fallback search using graph storage only."""
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
         
         # Get all entities and filter by name/description
-        all_entities = await graph_storage.get_all_entities()
+        all_entities = list(graph_storage.entities.values())
         
         query_lower = query.lower()
         matches = []
         
         for entity in all_entities:
             if entity.type == "algebra_concept":
-                name_match = query_lower in entity.name.lower()
+                # Check name match
+                name_match = query_lower in entity.properties.get('name', '').lower()
                 desc_match = query_lower in entity.properties.get("description", "").lower()
                 
                 if name_match or desc_match:
@@ -327,8 +355,8 @@ class GraphRagAlgebraGraph:
         Returns:
             List of concept entities in the category
         """
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
-        all_entities = await graph_storage.get_all_entities()
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
+        all_entities = list(graph_storage.entities.values())
         
         return [
             entity for entity in all_entities
@@ -347,8 +375,8 @@ class GraphRagAlgebraGraph:
         Returns:
             List of concept entities within the difficulty range
         """
-        graph_storage = self.rag_service.get_storage_adaptor(StorageType.GRAPH)
-        all_entities = await graph_storage.get_all_entities()
+        graph_storage = self.rag_service.storage_adaptors[StorageType.GRAPH]
+        all_entities = list(graph_storage.entities.values())
         
         return [
             entity for entity in all_entities

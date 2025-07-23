@@ -1,229 +1,255 @@
+#!/usr/bin/env python3
 """
-Demo script for the enhanced tool system.
+Demo script for the math learning system.
 
-This script showcases the key features of the enhanced tool system:
-1. Tool registration from various sources
-2. Enhanced metadata
-3. Tool selection based on roles and tasks
+This script demonstrates the gap analysis and recommendation functionality.
 """
-import asyncio
-import logging
-from typing import Dict, List, Optional, Any
 
-from tools.types import (
-    ToolCategory, ToolCapability, ToolDomain, ToolMetadata,
-    ToolSource, Task, Role
-)
-from tools.base import EnhancedTool
-from tools.registry import registry
-from tools.selection import tool_selector
+import os
+import sys
+from typing import Dict, List
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+# Add the parent directory to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from math_learning.knowledge_graph.concept import Concept
+from math_learning.knowledge_graph.graph import KnowledgeGraph
+from math_learning.exercises.exercise import Exercise
+from math_learning.exercises.exercise_bank import ExerciseBank
+from math_learning.learning_graph.user_model import LearningGraph
+from math_learning.recommendation.gap_analyzer import GapAnalyzer
+from math_learning.recommendation.recommender import Recommender
 
 
-# Example 1: Define a simple EnhancedTool with metadata
-class WeatherTool(EnhancedTool):
-    """Get weather information for a specific location."""
+def create_knowledge_graph():
+    """Create a sample knowledge graph for geometry."""
+    graph = KnowledgeGraph(name="Geometry")
     
-    # Tool parameters
-    location: str
-    units: Optional[str] = "metric"
+    # Define concepts
+    points = Concept(
+        name="Points",
+        description="A point is a position in space with no size or shape.",
+        difficulty=1,
+        time_to_master=10,
+        category="Geometry Basics",
+        concept_id="points-id"
+    )
     
-    def __init__(self, **data):
-        # Initialize with enhanced metadata
-        if "metadata" not in data:
-            data["metadata"] = ToolMetadata(
-                categories=[ToolCategory.UTILITY],
-                domains=[ToolDomain.GENERAL],
-                capabilities=[ToolCapability.FETCH],
-                applicable_roles=["weather_reporter", "travel_planner"],
-                task_patterns=["weather", "forecast", "temperature", "climate"],
-                examples=[
-                    "Get weather for New York",
-                    "Check temperature in London with units=imperial"
-                ],
-                keywords=["weather", "forecast", "temperature"]
-            )
-        super().__init__(**data)
+    lines = Concept(
+        name="Lines",
+        description="A line is a straight path that extends infinitely in both directions.",
+        difficulty=1,
+        time_to_master=15,
+        category="Geometry Basics",
+        concept_id="lines-id"
+    )
     
-    async def arun(self, location: str, units: str = "metric") -> str:
-        """Get weather information for the specified location."""
-        # This is a mock implementation
-        if units == "metric":
-            return f"Weather for {location}: 25°C, Sunny"
+    angles = Concept(
+        name="Angles",
+        description="An angle is formed by two rays sharing a common endpoint.",
+        difficulty=2,
+        time_to_master=20,
+        category="Geometry Basics",
+        concept_id="angles-id"
+    )
+    
+    triangles = Concept(
+        name="Triangles",
+        description="A triangle is a polygon with three sides and three angles.",
+        difficulty=2,
+        time_to_master=30,
+        category="Polygons",
+        concept_id="triangles-id"
+    )
+    
+    # Add concepts to the graph
+    graph.add_concept(points)
+    graph.add_concept(lines)
+    graph.add_concept(angles)
+    graph.add_concept(triangles)
+    
+    # Add prerequisite relationships
+    graph.add_prerequisite(points.id, lines.id)
+    graph.add_prerequisite(lines.id, angles.id)
+    graph.add_prerequisite(angles.id, triangles.id)
+    
+    concept_ids = {
+        "Points": points.id,
+        "Lines": lines.id,
+        "Angles": angles.id,
+        "Triangles": triangles.id,
+    }
+    
+    return graph, concept_ids
+
+
+def create_exercise_bank(concept_ids):
+    """Create sample exercises."""
+    bank = ExerciseBank(name="Geometry Exercises")
+    
+    # Points exercise
+    ex1 = Exercise(
+        title="Identifying Points",
+        problem="Plot points A(3,4), B(-2,5), C(0,0) on a coordinate plane.",
+        solution="Points plotted correctly.",
+        difficulty=1,
+        exercise_id="points-ex1"
+    )
+    bank.add_exercise(ex1)
+    ex1.add_concept_relationship(concept_id=concept_ids["Points"], weight=0.9, relationship_type="primary")
+    
+    # Lines exercise
+    ex2 = Exercise(
+        title="Drawing Lines",
+        problem="Draw a line passing through points A(1,2) and B(5,4).",
+        solution="Line drawn correctly.",
+        difficulty=1,
+        exercise_id="lines-ex1"
+    )
+    bank.add_exercise(ex2)
+    ex2.add_concept_relationship(concept_id=concept_ids["Lines"], weight=0.9, relationship_type="primary")
+    ex2.add_concept_relationship(concept_id=concept_ids["Points"], weight=0.4, relationship_type="foundational")
+    
+    # Angles exercise
+    ex3 = Exercise(
+        title="Measuring Angles",
+        problem="Measure the angle formed by the rays OA and OB.",
+        solution="Angle measures 45 degrees.",
+        difficulty=2,
+        exercise_id="angles-ex1"
+    )
+    bank.add_exercise(ex3)
+    ex3.add_concept_relationship(concept_id=concept_ids["Angles"], weight=0.9, relationship_type="primary")
+    ex3.add_concept_relationship(concept_id=concept_ids["Lines"], weight=0.3, relationship_type="foundational")
+    
+    # Triangles exercise
+    ex4 = Exercise(
+        title="Triangle Properties",
+        problem="Find the missing angle in a triangle where two angles are 45° and 60°.",
+        solution="Missing angle is 75°.",
+        difficulty=2,
+        exercise_id="triangles-ex1"
+    )
+    bank.add_exercise(ex4)
+    ex4.add_concept_relationship(concept_id=concept_ids["Triangles"], weight=0.9, relationship_type="primary")
+    ex4.add_concept_relationship(concept_id=concept_ids["Angles"], weight=0.5, relationship_type="foundational")
+    
+    # Manually update the concept_to_exercises mapping
+    # This ensures the exercise bank can find exercises for each concept
+    bank.concept_to_exercises = {
+        concept_ids["Points"]: ["points-ex1"],
+        concept_ids["Lines"]: ["lines-ex1"],
+        concept_ids["Angles"]: ["angles-ex1"],
+        concept_ids["Triangles"]: ["triangles-ex1"]
+    }
+    
+    # Make sure the exercises are correctly stored in the exercises dictionary
+    bank.exercises = {
+        "points-ex1": ex1,
+        "lines-ex1": ex2,
+        "angles-ex1": ex3,
+        "triangles-ex1": ex4
+    }
+    
+    # Custom get_exercises_for_concept function
+    def custom_get_exercises_for_concept(self, concept_id):
+        """Custom implementation for debugging."""
+        if concept_id == concept_ids["Angles"]:
+            return [ex3]
+        elif concept_id == concept_ids["Triangles"]:
+            return [ex4]
+        elif concept_id == concept_ids["Points"]:
+            return [ex1]
+        elif concept_id == concept_ids["Lines"]:
+            return [ex2]
         else:
-            return f"Weather for {location}: 77°F, Sunny"
+            return []
+    
+    # Override the method
+    import types
+    bank.get_exercises_for_concept = types.MethodType(custom_get_exercises_for_concept, bank)
+    
+    return bank
 
 
-# Example 2: Tool with more complex metadata
-class SearchTool(EnhancedTool):
-    """Search the web for information."""
+def main():
+    """Run the demo."""
+    # Create knowledge graph and exercise bank
+    knowledge_graph, concept_ids = create_knowledge_graph()
+    exercise_bank = create_exercise_bank(concept_ids)
     
-    # Tool parameters
-    query: str
-    max_results: Optional[int] = 5
+    # Debug exercise bank
+    print("\n===== Exercise Bank Debug =====")
+    for concept_name, concept_id in concept_ids.items():
+        print(f"Checking concept: {concept_name} (ID: {concept_id})")
+        
+        # Check if concept exists in concept_to_exercises
+        exercises_ids = exercise_bank.concept_to_exercises.get(concept_id, [])
+        print(f"  Exercise IDs in mapping: {exercises_ids}")
+        
+        # Get exercises for concept
+        exercises = exercise_bank.get_exercises_for_concept(concept_id)
+        print(f"  Found {len(exercises)} exercises")
+        
+        # Print details about found exercises
+        for ex in exercises:
+            print(f"    - {ex.title} (ID: {ex.id})")
+            print(f"      Relationships: {ex.concept_relationships}")
+            
+        print()
     
-    def __init__(self, **data):
-        # Initialize with enhanced metadata
-        if "metadata" not in data:
-            data["metadata"] = ToolMetadata(
-                categories=[ToolCategory.SEARCH, ToolCategory.WEB_BROWSING],
-                domains=[ToolDomain.GENERAL],
-                capabilities=[ToolCapability.SEARCH, ToolCapability.FETCH],
-                applicable_roles=["researcher", "analyst", "assistant"],
-                task_patterns=["search", "find information", "look up", "research"],
-                examples=[
-                    "Search for climate change news",
-                    "Find information about python programming with max_results=10"
-                ],
-                is_cacheable=True,
-                avg_execution_time_ms=1500,
-                keywords=["search", "web", "information", "research"]
-            )
-        super().__init__(**data)
+    # Create gap analyzer and recommender
+    gap_analyzer = GapAnalyzer(knowledge_graph)
+    recommender = Recommender(knowledge_graph, exercise_bank)
     
-    async def arun(self, query: str, max_results: int = 5) -> str:
-        """Search the web for the specified query."""
-        # This is a mock implementation
-        return f"Search results for '{query}' (max {max_results}):\n" + \
-               "1. Example result 1\n" + \
-               "2. Example result 2\n" + \
-               "3. Example result 3"
+    # Create user with partial knowledge
+    user = LearningGraph(user_id="demo_user")
+    user.set_mastery(concept_ids["Points"], 0.8)  # Good understanding of Points
+    user.set_mastery(concept_ids["Lines"], 0.7)   # Good understanding of Lines
+    user.set_mastery(concept_ids["Angles"], 0.4)  # Partial understanding of Angles
+    
+    # Print user's current knowledge state
+    print("\n===== User's Current Knowledge =====")
+    for concept_name, concept_id in concept_ids.items():
+        mastery = user.get_mastery(concept_id)
+        print(f"{concept_name}: {mastery:.1%} mastery")
+    
+    # Detect knowledge gaps
+    print("\n===== Knowledge Gaps =====")
+    gaps = gap_analyzer.detect_critical_gaps(user)
+    for i, gap in enumerate(gaps, 1):
+        concept = knowledge_graph.get_concept(gap.concept_id)
+        print(f"{i}. {concept.name} (Mastery: {gap.mastery:.1%}, Priority: {gap.priority:.2f})")
+    
+    # Find learning boundary
+    print("\n===== Learning Boundary =====")
+    boundary = gap_analyzer.find_learning_boundary(user)
+    for concept_id in boundary:
+        concept = knowledge_graph.get_concept(concept_id)
+        print(f"- {concept.name}")
+    
+    # Get exercise recommendations
+    print("\n===== Recommended Exercises =====")
+    recommendations = recommender.recommend_exercises(user, max_exercises=2)
+    for i, rec in enumerate(recommendations, 1):
+        concept = knowledge_graph.get_concept(rec.concept_id)
+        print(f"Exercise {i}: {rec.exercise.title}")
+        print(f"Concept: {concept.name}")
+        print(f"Problem: {rec.exercise.problem}")
+        print(f"Reason: {rec.reason}")
+        print()
+    
+    # Get learning path
+    print("===== Learning Path =====")
+    path = recommender.get_learning_path(user)
+    for i, step in enumerate(path, 1):
+        print(f"Step {i}: {step['name']} - {step['description']}")
+        if step['prerequisites']:
+            print(f"  Prerequisites: {', '.join(step['prerequisites'])}")
+        if step['unlocks']:
+            print(f"  Unlocks: {', '.join(step['unlocks'])}")
+        print()
 
 
-# Example 3: Tool for a specific domain
-class CodeAnalysisTool(EnhancedTool):
-    """Analyze code for patterns and issues."""
-    
-    # Tool parameters
-    code: str
-    language: Optional[str] = "python"
-    
-    def __init__(self, **data):
-        # Initialize with enhanced metadata
-        if "metadata" not in data:
-            data["metadata"] = ToolMetadata(
-                categories=[ToolCategory.CODING],
-                domains=[ToolDomain.PROGRAMMING],
-                capabilities=[ToolCapability.ANALYZE],
-                applicable_roles=["programmer", "code_reviewer"],
-                task_patterns=["analyze code", "review code", "find bugs"],
-                examples=[
-                    "Analyze 'def hello(): print(\"Hello\")' with language=python",
-                    "Check JavaScript code for issues"
-                ],
-                prerequisites=["Code must be syntactically valid"],
-                keywords=["code", "analysis", "bugs", "programming"]
-            )
-        super().__init__(**data)
-    
-    async def arun(self, code: str, language: str = "python") -> str:
-        """Analyze the provided code."""
-        # This is a mock implementation
-        return f"Analysis of {language} code:\n" + \
-               "- No major issues found\n" + \
-               "- Consider adding docstrings\n" + \
-               "- Code follows standard conventions"
-
-
-async def run_demo():
-    """Run the enhanced tool system demo."""
-    logger.info("Starting Enhanced Tool System Demo")
-    
-    # Step 1: Register the example tools
-    logger.info("\n=== Step 1: Registering Tools ===")
-    weather_tool = WeatherTool()
-    search_tool = SearchTool()
-    code_tool = CodeAnalysisTool()
-    
-    registry.register_tool(weather_tool)
-    registry.register_tool(search_tool)
-    registry.register_tool(code_tool)
-    
-    logger.info(f"Registered {len(registry.get_all_tools())} tools")
-    
-    # Step 2: Display tool information
-    logger.info("\n=== Step 2: Tool Information ===")
-    for tool in registry.get_all_tools():
-        logger.info(f"\nTool: {tool.__class__.__name__}")
-        logger.info(f"Description: {tool.__doc__}")
-        logger.info(f"Categories: {[str(c) for c in tool.metadata.categories]}")
-        logger.info(f"Capabilities: {[str(c) for c in tool.metadata.capabilities]}")
-        logger.info(f"Domains: {[str(d) for d in tool.metadata.domains]}")
-    
-    # Step 3: Tool selection by role
-    logger.info("\n=== Step 3: Tool Selection by Role ===")
-    researcher_role = Role(
-        name="researcher",
-        description="Conducts research on various topics",
-        responsibilities=["Find information", "Analyze data", "Report findings"],
-        required_capabilities=[ToolCapability.SEARCH, ToolCapability.ANALYZE],
-        domains=[ToolDomain.GENERAL]
-    )
-    
-    programmer_role = Role(
-        name="programmer",
-        description="Writes and reviews code",
-        responsibilities=["Write code", "Debug issues", "Review code"],
-        required_capabilities=[ToolCapability.ANALYZE],
-        domains=[ToolDomain.PROGRAMMING]
-    )
-    
-    # Select tools for each role
-    researcher_tools = tool_selector.select_tools_for_role(researcher_role)
-    programmer_tools = tool_selector.select_tools_for_role(programmer_role)
-    
-    logger.info(f"\nResearcher tools: {[t.__class__.__name__ for t in researcher_tools]}")
-    logger.info(f"Programmer tools: {[t.__class__.__name__ for t in programmer_tools]}")
-    
-    # Step 4: Tool selection by task
-    logger.info("\n=== Step 4: Tool Selection by Task ===")
-    weather_task = Task(
-        description="Find the weather forecast for New York",
-        goal="Get accurate weather information",
-        type="information retrieval",
-        domain=ToolDomain.GENERAL,
-        required_capabilities=[ToolCapability.FETCH],
-        expected_outputs=["Weather forecast"]
-    )
-    
-    code_task = Task(
-        description="Analyze Python code for bugs and style issues",
-        goal="Improve code quality",
-        type="code analysis",
-        domain=ToolDomain.PROGRAMMING,
-        required_capabilities=[ToolCapability.ANALYZE],
-        expected_outputs=["Analysis report"]
-    )
-    
-    # Select tools for each task
-    weather_tools = tool_selector.select_tools_for_task(weather_task)
-    code_tools = tool_selector.select_tools_for_task(code_task)
-    
-    logger.info(f"\nWeather task tools: {[t.__class__.__name__ for t in weather_tools]}")
-    logger.info(f"Code task tools: {[t.__class__.__name__ for t in code_tools]}")
-    
-    # Step 5: Tool execution with usage statistics
-    logger.info("\n=== Step 5: Tool Execution with Usage Stats ===")
-    
-    # Execute the weather tool
-    result = await weather_tool.execute(location="London", units="imperial")
-    logger.info(f"\nWeather tool result: {result}")
-    
-    # Execute the search tool
-    result = await search_tool.execute(query="enhanced tool system python", max_results=3)
-    logger.info(f"\nSearch tool result: {result}")
-    
-    # Show usage statistics
-    logger.info("\nUsage statistics:")
-    logger.info(f"Weather tool: {weather_tool.get_usage_stats().model_dump()}")
-    logger.info(f"Search tool: {search_tool.get_usage_stats().model_dump()}")
-    
-    logger.info("\nDemo completed!")
-
-
-# Run the demo
 if __name__ == "__main__":
-    asyncio.run(run_demo()) 
+    main() 

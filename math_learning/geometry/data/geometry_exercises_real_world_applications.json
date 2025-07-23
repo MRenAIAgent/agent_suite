@@ -1,0 +1,107 @@
+{
+  "name": "Real World Geometry Applications",
+  "description": "Practical geometry problems from architecture, engineering, and daily life",
+  "total_exercises": 25,
+  "exercises": [
+    {
+      "id": "GEO-RW-049",
+      "title": "Garden Design",
+      "problem": "A rectangular garden is 15 feet by 20 feet. If you want to put a fence around it, how much fencing do you need?",
+      "solution": "70 feet",
+      "difficulty": 2,
+      "estimated_time": 4,
+      "grade_level": "6-8",
+      "format_type": "word-problem",
+      "concepts": [
+        "perimeter",
+        "rectangles",
+        "real_world_applications"
+      ],
+      "hints": [
+        "Find the perimeter",
+        "2 × (length + width)",
+        "2 × (15 + 20)"
+      ]
+    },
+    {
+      "id": "GEO-RW-050",
+      "title": "Pizza Area",
+      "problem": "A large pizza has a diameter of 16 inches. What is its area? (Use π ≈ 3.14)",
+      "solution": "200.96 square inches",
+      "difficulty": 3,
+      "estimated_time": 5,
+      "grade_level": "6-8",
+      "format_type": "word-problem",
+      "concepts": [
+        "circles",
+        "area",
+        "real_world_applications"
+      ],
+      "hints": [
+        "Radius = diameter ÷ 2 = 8",
+        "Area = πr²",
+        "3.14 × 8²"
+      ]
+    },
+    {
+      "id": "GEO-RW-051",
+      "title": "Construction - Roof Angle",
+      "problem": "A roof rises 8 feet over a horizontal distance of 12 feet. What is the angle of the roof?",
+      "solution": "33.7°",
+      "difficulty": 5,
+      "estimated_time": 8,
+      "grade_level": "9-12",
+      "format_type": "word-problem",
+      "concepts": [
+        "trigonometry",
+        "right_triangles",
+        "real_world_applications"
+      ],
+      "hints": [
+        "Use tangent: tan(θ) = opposite/adjacent",
+        "tan(θ) = 8/12",
+        "θ = arctan(8/12)"
+      ]
+    },
+    {
+      "id": "GEO-RW-052",
+      "title": "Swimming Pool Volume",
+      "problem": "A cylindrical pool has a diameter of 24 feet and is 4 feet deep. How many cubic feet of water does it hold?",
+      "solution": "1809.56 cubic feet",
+      "difficulty": 4,
+      "estimated_time": 6,
+      "grade_level": "9-12",
+      "format_type": "word-problem",
+      "concepts": [
+        "cylinders",
+        "volume",
+        "real_world_applications"
+      ],
+      "hints": [
+        "Volume = πr²h",
+        "Radius = 12 feet",
+        "π × 12² × 4"
+      ]
+    },
+    {
+      "id": "GEO-RW-053",
+      "title": "Satellite Dish Angle",
+      "problem": "To receive a signal from a satellite 22,236 miles above the equator, at what angle should a dish be tilted if you're at 40° north latitude?",
+      "solution": "Approximately 50° above horizontal",
+      "difficulty": 5,
+      "estimated_time": 10,
+      "grade_level": "9-12",
+      "format_type": "word-problem",
+      "concepts": [
+        "trigonometry",
+        "real_world_applications",
+        "spherical_geometry"
+      ],
+      "hints": [
+        "This involves spherical trigonometry",
+        "Consider Earth's curvature",
+        "Elevation angle = 90° - latitude"
+      ]
+    }
+  ]
+}
