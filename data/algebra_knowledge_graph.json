@@ -15,9 +15,9 @@
       "grade_level": "",
       "prerequisites": [],
       "dependents": [
-        "NS-02",
         "NS-04",
-        "NS-03"
+        "NS-03",
+        "NS-02"
       ],
       "related": []
     },
@@ -37,6 +37,7 @@
         "NS-01"
       ],
       "dependents": [
+        "AT-17",
         "NS-06"
       ],
       "related": []
@@ -98,8 +99,8 @@
         "NS-03"
       ],
       "dependents": [
-        "NS-11",
-        "NS-12"
+        "NS-12",
+        "NS-11"
       ],
       "related": []
     },
@@ -119,9 +120,9 @@
         "NS-02"
       ],
       "dependents": [
+        "NS-13",
         "NS-07",
-        "AT-19",
-        "NS-13"
+        "AT-19"
       ],
       "related": []
     },
@@ -282,8 +283,8 @@
         "NS-13"
       ],
       "dependents": [
-        "EXP-41",
-        "NS-16"
+        "NS-16",
+        "EXP-41"
       ],
       "related": []
     },
@@ -303,8 +304,8 @@
         "NS-13"
       ],
       "dependents": [
-        "AT-22",
-        "AT-28"
+        "AT-28",
+        "AT-22"
       ],
       "related": []
     },
@@ -341,7 +342,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "NS-10"
+        "NS-10",
+        "NS-02"
       ],
       "dependents": [
         "AT-18"
@@ -405,8 +407,8 @@
         "AT-21"
       ],
       "dependents": [
-        "AT-22",
-        "AT-23"
+        "AT-23",
+        "AT-22"
       ],
       "related": []
     },
@@ -487,9 +489,9 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "AT-22",
         "NS-16",
-        "AT-23"
+        "AT-23",
+        "AT-22"
       ],
       "dependents": [
         "AT-25"
@@ -572,8 +574,8 @@
         "NS-15"
       ],
       "dependents": [
-        "AT-29",
-        "LF-30"
+        "LF-30",
+        "AT-29"
       ],
       "related": []
     },
@@ -610,13 +612,13 @@
       ],
       "grade_level": "",
       "prerequisites": [
+        "AT-27",
         "AT-28",
-        "AT-29",
-        "AT-27"
+        "AT-29"
       ],
       "dependents": [
-        "LF-31",
-        "LF-32"
+        "LF-32",
+        "LF-31"
       ],
       "related": []
     },
@@ -636,11 +638,11 @@
         "LF-30"
       ],
       "dependents": [
-        "LF-37",
-        "LF-33",
         "LF-36",
-        "FN-62",
-        "LF-35"
+        "LF-37",
+        "LF-35",
+        "LF-33",
+        "FN-62"
       ],
       "related": []
     },
@@ -677,8 +679,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-31",
-        "LF-32"
+        "LF-32",
+        "LF-31"
       ],
       "dependents": [
         "LF-34"
@@ -842,10 +844,10 @@
       ],
       "dependents": [
         "POL-50",
-        "EXP-43",
         "EXP-48",
-        "FN-62",
-        "EXP-42"
+        "EXP-43",
+        "EXP-42",
+        "FN-62"
       ],
       "related": []
     },
@@ -1062,8 +1064,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "NS-11",
-        "NS-12"
+        "NS-12",
+        "NS-11"
       ],
       "dependents": [
         "POL-53"
@@ -1166,8 +1168,8 @@
         "POL-54"
       ],
       "dependents": [
-        "FN-65",
-        "Q-61"
+        "Q-61",
+        "FN-65"
       ],
       "related": []
     },
@@ -1184,8 +1186,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "POL-56",
-        "POL-49"
+        "POL-49",
+        "POL-56"
       ],
       "dependents": [
         "Q-59"
@@ -1264,8 +1266,8 @@
       ],
       "grade_level": "",
       "prerequisites": [
-        "LF-31",
-        "EXP-41"
+        "EXP-41",
+        "LF-31"
       ],
       "dependents": [
         "FN-63"
@@ -1327,8 +1329,178 @@
       "grade_level": "",
       "prerequisites": [
         "Q-57",
-        "FN-64",
-        "EXP-47"
+        "EXP-47",
+        "FN-64"
+      ],
+      "dependents": [],
+      "related": []
+    },
+    {
+      "id": "variables_expressions",
+      "name": "Variables and Expressions",
+      "description": "Understanding variables as symbols for unknown quantities and writing algebraic expressions",
+      "difficulty": 1,
+      "time_to_master": 15,
+      "category": "foundation",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [],
+      "dependents": [
+        "order_operations"
+      ],
+      "related": []
+    },
+    {
+      "id": "order_operations",
+      "name": "Order of Operations",
+      "description": "Following PEMDAS/BODMAS rules to evaluate mathematical expressions correctly",
+      "difficulty": 2,
+      "time_to_master": 20,
+      "category": "foundation",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "variables_expressions"
+      ],
+      "dependents": [
+        "exponents",
+        "solving_equations"
+      ],
+      "related": []
+    },
+    {
+      "id": "solving_equations",
+      "name": "Solving Linear Equations",
+      "description": "Using inverse operations to solve one-step and multi-step linear equations",
+      "difficulty": 3,
+      "time_to_master": 30,
+      "category": "equations",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "order_operations"
+      ],
+      "dependents": [
+        "linear_equations"
+      ],
+      "related": []
+    },
+    {
+      "id": "exponents",
+      "name": "Exponents and Powers",
+      "description": "Understanding exponent rules and working with powers of numbers",
+      "difficulty": 3,
+      "time_to_master": 25,
+      "category": "operations",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "order_operations"
+      ],
+      "dependents": [
+        "polynomials"
+      ],
+      "related": []
+    },
+    {
+      "id": "linear_equations",
+      "name": "Linear Equations and Inequalities",
+      "description": "Solving complex linear equations and understanding inequality relationships",
+      "difficulty": 4,
+      "time_to_master": 40,
+      "category": "equations",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "solving_equations"
+      ],
+      "dependents": [
+        "linear_functions"
+      ],
+      "related": []
+    },
+    {
+      "id": "linear_functions",
+      "name": "Linear Functions and Graphing",
+      "description": "Understanding slope, y-intercept, and graphing linear functions",
+      "difficulty": 4,
+      "time_to_master": 45,
+      "category": "functions",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "linear_equations"
+      ],
+      "dependents": [
+        "quadratic_equations",
+        "quadratic_functions"
+      ],
+      "related": []
+    },
+    {
+      "id": "polynomials",
+      "name": "Polynomials",
+      "description": "Adding, subtracting, and multiplying polynomial expressions",
+      "difficulty": 4,
+      "time_to_master": 35,
+      "category": "expressions",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "exponents"
+      ],
+      "dependents": [
+        "factoring"
+      ],
+      "related": []
+    },
+    {
+      "id": "factoring",
+      "name": "Factoring",
+      "description": "Factoring polynomials including trinomials and difference of squares",
+      "difficulty": 5,
+      "time_to_master": 50,
+      "category": "techniques",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "polynomials"
+      ],
+      "dependents": [
+        "quadratic_equations"
+      ],
+      "related": []
+    },
+    {
+      "id": "quadratic_equations",
+      "name": "Quadratic Equations",
+      "description": "Solving quadratic equations using factoring, completing the square, and quadratic formula",
+      "difficulty": 5,
+      "time_to_master": 60,
+      "category": "equations",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "linear_functions",
+        "factoring"
+      ],
+      "dependents": [
+        "quadratic_functions"
+      ],
+      "related": []
+    },
+    {
+      "id": "quadratic_functions",
+      "name": "Quadratic Functions",
+      "description": "Graphing parabolas and understanding vertex form and transformations",
+      "difficulty": 5,
+      "time_to_master": 55,
+      "category": "functions",
+      "examples": [],
+      "grade_level": "",
+      "prerequisites": [
+        "linear_functions",
+        "quadratic_equations"
       ],
       "dependents": [],
       "related": []
@@ -1844,6 +2016,72 @@
       "target": "FN-65",
       "type": "prerequisite",
       "strength": 0.8
+    },
+    {
+      "source": "variables_expressions",
+      "target": "order_operations",
+      "type": "prerequisite",
+      "strength": 0.9
+    },
+    {
+      "source": "order_operations",
+      "target": "solving_equations",
+      "type": "prerequisite",
+      "strength": 0.95
+    },
+    {
+      "source": "order_operations",
+      "target": "exponents",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "source": "solving_equations",
+      "target": "linear_equations",
+      "type": "prerequisite",
+      "strength": 0.9
+    },
+    {
+      "source": "exponents",
+      "target": "polynomials",
+      "type": "prerequisite",
+      "strength": 0.9
+    },
+    {
+      "source": "linear_equations",
+      "target": "linear_functions",
+      "type": "prerequisite",
+      "strength": 0.85
+    },
+    {
+      "source": "linear_functions",
+      "target": "quadratic_equations",
+      "type": "prerequisite",
+      "strength": 0.7
+    },
+    {
+      "source": "linear_functions",
+      "target": "quadratic_functions",
+      "type": "prerequisite",
+      "strength": 0.6
+    },
+    {
+      "source": "polynomials",
+      "target": "factoring",
+      "type": "prerequisite",
+      "strength": 0.95
+    },
+    {
+      "source": "factoring",
+      "target": "quadratic_equations",
+      "type": "prerequisite",
+      "strength": 0.9
+    },
+    {
+      "source": "quadratic_equations",
+      "target": "quadratic_functions",
+      "type": "prerequisite",
+      "strength": 0.85
     }
   ]
 }
