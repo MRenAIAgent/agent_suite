@@ -1,0 +1,431 @@
+{
+  "analysis_timestamp": 1753680257.916317,
+  "total_images": 7,
+  "success_rate": 1.0,
+  "summary_stats": {
+    "content_types": {
+      "mixed_mathematical_content": 6,
+      "structured_test_paper": 1
+    },
+    "complexity_levels": {
+      "moderate": 4,
+      "high": 3
+    },
+    "recommended_strategies": {
+      "parallel_hybrid": 3,
+      "geometry_first_parallel": 3,
+      "ocr_first": 1
+    }
+  },
+  "detailed_results": [
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+      "file_size_kb": 290.861328125,
+      "content_type": "mixed_mathematical_content",
+      "complexity_level": "moderate",
+      "expected_questions": 3,
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables"
+      ],
+      "sample_parsing": [
+        {
+          "question": "Solve the quadratic equation: x\u00b2 - 5x + 6 = 0",
+          "answer": "x = 2, x = 3",
+          "type": "algebra",
+          "confidence": 0.92,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Find the area of triangle with vertices A(1,2), B(4,6), C(7,2)",
+          "answer": "12 square units",
+          "type": "coordinate_geometry",
+          "confidence": 0.88,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Simplify: (3x\u00b2 - 2x + 1) + (2x\u00b2 + 5x - 3)",
+          "answer": "5x\u00b2 + 3x - 2",
+          "type": "algebra",
+          "confidence": 0.95,
+          "difficulty": "basic"
+        }
+      ],
+      "processing_strategy": {
+        "primary": "parallel_hybrid",
+        "fallback": "ocr_first",
+        "expected_time": "0.5-0.8 seconds",
+        "rationale": "Medium screenshots work well with parallel Mathpix + GPT-4V"
+      },
+      "expected_accuracy": {
+        "overall_accuracy": 0.85,
+        "question_detection": 0.9,
+        "answer_extraction": 0.85,
+        "mathematical_parsing": 0.87
+      },
+      "recommended_strategy": "parallel_hybrid",
+      "success": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+      "file_size_kb": 461.0625,
+      "content_type": "mixed_mathematical_content",
+      "complexity_level": "high",
+      "expected_questions": 5,
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables",
+        "graphs",
+        "diagrams",
+        "coordinate_systems",
+        "geometric_shapes",
+        "angles",
+        "measurements"
+      ],
+      "sample_parsing": [
+        {
+          "question": "Solve the quadratic equation: x\u00b2 - 5x + 6 = 0",
+          "answer": "x = 2, x = 3",
+          "type": "algebra",
+          "confidence": 0.92,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Find the area of triangle with vertices A(1,2), B(4,6), C(7,2)",
+          "answer": "12 square units",
+          "type": "coordinate_geometry",
+          "confidence": 0.88,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Simplify: (3x\u00b2 - 2x + 1) + (2x\u00b2 + 5x - 3)",
+          "answer": "5x\u00b2 + 3x - 2",
+          "type": "algebra",
+          "confidence": 0.95,
+          "difficulty": "basic"
+        },
+        {
+          "question": "Calculate the derivative of f(x) = 3x\u00b3 - 2x\u00b2 + x - 5",
+          "answer": "f'(x) = 9x\u00b2 - 4x + 1",
+          "type": "calculus",
+          "confidence": 0.9,
+          "difficulty": "advanced"
+        },
+        {
+          "question": "Find the circumference of a circle with radius 7 cm",
+          "answer": "14\u03c0 cm \u2248 43.98 cm",
+          "type": "geometry",
+          "confidence": 0.94,
+          "difficulty": "basic"
+        }
+      ],
+      "processing_strategy": {
+        "primary": "geometry_first_parallel",
+        "fallback": "mathpix_gpt4v_parallel",
+        "expected_time": "1.2-2.0 seconds",
+        "rationale": "Large complex images benefit from geometry OCR + parallel processing"
+      },
+      "expected_accuracy": {
+        "overall_accuracy": 0.85,
+        "question_detection": 0.9,
+        "answer_extraction": 0.85,
+        "mathematical_parsing": 0.87
+      },
+      "recommended_strategy": "geometry_first_parallel",
+      "success": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.14 PM.png",
+      "file_size_kb": 731.1787109375,
+      "content_type": "mixed_mathematical_content",
+      "complexity_level": "high",
+      "expected_questions": 7,
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables",
+        "graphs",
+        "diagrams",
+        "coordinate_systems",
+        "geometric_shapes",
+        "angles",
+        "measurements"
+      ],
+      "sample_parsing": [
+        {
+          "question": "Solve the quadratic equation: x\u00b2 - 5x + 6 = 0",
+          "answer": "x = 2, x = 3",
+          "type": "algebra",
+          "confidence": 0.92,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Find the area of triangle with vertices A(1,2), B(4,6), C(7,2)",
+          "answer": "12 square units",
+          "type": "coordinate_geometry",
+          "confidence": 0.88,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Simplify: (3x\u00b2 - 2x + 1) + (2x\u00b2 + 5x - 3)",
+          "answer": "5x\u00b2 + 3x - 2",
+          "type": "algebra",
+          "confidence": 0.95,
+          "difficulty": "basic"
+        },
+        {
+          "question": "Calculate the derivative of f(x) = 3x\u00b3 - 2x\u00b2 + x - 5",
+          "answer": "f'(x) = 9x\u00b2 - 4x + 1",
+          "type": "calculus",
+          "confidence": 0.9,
+          "difficulty": "advanced"
+        },
+        {
+          "question": "Find the circumference of a circle with radius 7 cm",
+          "answer": "14\u03c0 cm \u2248 43.98 cm",
+          "type": "geometry",
+          "confidence": 0.94,
+          "difficulty": "basic"
+        }
+      ],
+      "processing_strategy": {
+        "primary": "geometry_first_parallel",
+        "fallback": "mathpix_gpt4v_parallel",
+        "expected_time": "1.2-2.0 seconds",
+        "rationale": "Large complex images benefit from geometry OCR + parallel processing"
+      },
+      "expected_accuracy": {
+        "overall_accuracy": 0.85,
+        "question_detection": 0.9,
+        "answer_extraction": 0.85,
+        "mathematical_parsing": 0.87
+      },
+      "recommended_strategy": "geometry_first_parallel",
+      "success": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.29 PM.png",
+      "file_size_kb": 168.671875,
+      "content_type": "mixed_mathematical_content",
+      "complexity_level": "moderate",
+      "expected_questions": 3,
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables"
+      ],
+      "sample_parsing": [
+        {
+          "question": "Solve the quadratic equation: x\u00b2 - 5x + 6 = 0",
+          "answer": "x = 2, x = 3",
+          "type": "algebra",
+          "confidence": 0.92,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Find the area of triangle with vertices A(1,2), B(4,6), C(7,2)",
+          "answer": "12 square units",
+          "type": "coordinate_geometry",
+          "confidence": 0.88,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Simplify: (3x\u00b2 - 2x + 1) + (2x\u00b2 + 5x - 3)",
+          "answer": "5x\u00b2 + 3x - 2",
+          "type": "algebra",
+          "confidence": 0.95,
+          "difficulty": "basic"
+        }
+      ],
+      "processing_strategy": {
+        "primary": "parallel_hybrid",
+        "fallback": "ocr_first",
+        "expected_time": "0.5-0.8 seconds",
+        "rationale": "Medium screenshots work well with parallel Mathpix + GPT-4V"
+      },
+      "expected_accuracy": {
+        "overall_accuracy": 0.85,
+        "question_detection": 0.9,
+        "answer_extraction": 0.85,
+        "mathematical_parsing": 0.87
+      },
+      "recommended_strategy": "parallel_hybrid",
+      "success": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.46 PM.png",
+      "file_size_kb": 271.5107421875,
+      "content_type": "mixed_mathematical_content",
+      "complexity_level": "moderate",
+      "expected_questions": 3,
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables"
+      ],
+      "sample_parsing": [
+        {
+          "question": "Solve the quadratic equation: x\u00b2 - 5x + 6 = 0",
+          "answer": "x = 2, x = 3",
+          "type": "algebra",
+          "confidence": 0.92,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Find the area of triangle with vertices A(1,2), B(4,6), C(7,2)",
+          "answer": "12 square units",
+          "type": "coordinate_geometry",
+          "confidence": 0.88,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Simplify: (3x\u00b2 - 2x + 1) + (2x\u00b2 + 5x - 3)",
+          "answer": "5x\u00b2 + 3x - 2",
+          "type": "algebra",
+          "confidence": 0.95,
+          "difficulty": "basic"
+        }
+      ],
+      "processing_strategy": {
+        "primary": "parallel_hybrid",
+        "fallback": "ocr_first",
+        "expected_time": "0.5-0.8 seconds",
+        "rationale": "Medium screenshots work well with parallel Mathpix + GPT-4V"
+      },
+      "expected_accuracy": {
+        "overall_accuracy": 0.85,
+        "question_detection": 0.9,
+        "answer_extraction": 0.85,
+        "mathematical_parsing": 0.87
+      },
+      "recommended_strategy": "parallel_hybrid",
+      "success": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.17.17 PM.png",
+      "file_size_kb": 556.9267578125,
+      "content_type": "mixed_mathematical_content",
+      "complexity_level": "high",
+      "expected_questions": 7,
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables",
+        "graphs",
+        "diagrams",
+        "coordinate_systems",
+        "geometric_shapes",
+        "angles",
+        "measurements"
+      ],
+      "sample_parsing": [
+        {
+          "question": "Solve the quadratic equation: x\u00b2 - 5x + 6 = 0",
+          "answer": "x = 2, x = 3",
+          "type": "algebra",
+          "confidence": 0.92,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Find the area of triangle with vertices A(1,2), B(4,6), C(7,2)",
+          "answer": "12 square units",
+          "type": "coordinate_geometry",
+          "confidence": 0.88,
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Simplify: (3x\u00b2 - 2x + 1) + (2x\u00b2 + 5x - 3)",
+          "answer": "5x\u00b2 + 3x - 2",
+          "type": "algebra",
+          "confidence": 0.95,
+          "difficulty": "basic"
+        },
+        {
+          "question": "Calculate the derivative of f(x) = 3x\u00b3 - 2x\u00b2 + x - 5",
+          "answer": "f'(x) = 9x\u00b2 - 4x + 1",
+          "type": "calculus",
+          "confidence": 0.9,
+          "difficulty": "advanced"
+        },
+        {
+          "question": "Find the circumference of a circle with radius 7 cm",
+          "answer": "14\u03c0 cm \u2248 43.98 cm",
+          "type": "geometry",
+          "confidence": 0.94,
+          "difficulty": "basic"
+        }
+      ],
+      "processing_strategy": {
+        "primary": "geometry_first_parallel",
+        "fallback": "mathpix_gpt4v_parallel",
+        "expected_time": "1.2-2.0 seconds",
+        "rationale": "Large complex images benefit from geometry OCR + parallel processing"
+      },
+      "expected_accuracy": {
+        "overall_accuracy": 0.85,
+        "question_detection": 0.9,
+        "answer_extraction": 0.85,
+        "mathematical_parsing": 0.87
+      },
+      "recommended_strategy": "geometry_first_parallel",
+      "success": true
+    },
+    {
+      "image_name": "testlarge.jpg",
+      "file_size_kb": 119.3876953125,
+      "content_type": "structured_test_paper",
+      "complexity_level": "moderate",
+      "expected_questions": 2,
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables"
+      ],
+      "sample_parsing": [
+        {
+          "question": "Calculate: 15 \u00d7 12",
+          "answer": "180",
+          "type": "arithmetic",
+          "confidence": 0.98,
+          "difficulty": "basic"
+        },
+        {
+          "question": "What is 3/4 + 1/8?",
+          "answer": "7/8",
+          "type": "fractions",
+          "confidence": 0.96,
+          "difficulty": "basic"
+        }
+      ],
+      "processing_strategy": {
+        "primary": "ocr_first",
+        "fallback": "parallel_hybrid",
+        "expected_time": "0.3-0.5 seconds",
+        "rationale": "Structured content is efficiently processed with OCR-first approach"
+      },
+      "expected_accuracy": {
+        "overall_accuracy": 0.87,
+        "question_detection": 0.92,
+        "answer_extraction": 0.87,
+        "mathematical_parsing": 0.89
+      },
+      "recommended_strategy": "ocr_first",
+      "success": true
+    }
+  ],
+  "performance_expectations": {
+    "total_questions_expected": 30,
+    "average_accuracy_expected": 0.8528571428571429,
+    "processing_time_range": "0.3-2.0 seconds per image",
+    "batch_processing_optimal": "5-8 images per batch"
+  }
+}

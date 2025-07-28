@@ -1,0 +1,243 @@
+{
+  "test_timestamp": 1753681327.859437,
+  "test_count": 7,
+  "results": [
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+      "file_size_kb": 290.861328125,
+      "content_type": "mixed_math_content",
+      "questions_detected": 3,
+      "sample_questions": [
+        {
+          "text": "Solve for x: 2x + 5 = 13",
+          "answer": "x = 4",
+          "type": "algebra",
+          "confidence": 0.9
+        },
+        {
+          "text": "Find the area of triangle ABC",
+          "answer": "24 square units",
+          "type": "geometry",
+          "confidence": 0.85
+        },
+        {
+          "text": "Simplify: (x\u00b2 - 4)/(x - 2)",
+          "answer": "x + 2",
+          "type": "algebra",
+          "confidence": 0.88
+        }
+      ],
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numbers"
+      ],
+      "estimated_accuracy": 0.8,
+      "processing_strategy_recommended": "ocr_first"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+      "file_size_kb": 461.0625,
+      "content_type": "mixed_math_content",
+      "questions_detected": 3,
+      "sample_questions": [
+        {
+          "text": "Solve for x: 2x + 5 = 13",
+          "answer": "x = 4",
+          "type": "algebra",
+          "confidence": 0.9
+        },
+        {
+          "text": "Find the area of triangle ABC",
+          "answer": "24 square units",
+          "type": "geometry",
+          "confidence": 0.85
+        },
+        {
+          "text": "Simplify: (x\u00b2 - 4)/(x - 2)",
+          "answer": "x + 2",
+          "type": "algebra",
+          "confidence": 0.88
+        }
+      ],
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numbers",
+        "diagrams",
+        "graphs",
+        "shapes",
+        "angles"
+      ],
+      "estimated_accuracy": 0.8,
+      "processing_strategy_recommended": "parallel"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.14 PM.png",
+      "file_size_kb": 731.1787109375,
+      "content_type": "mixed_math_content",
+      "questions_detected": 3,
+      "sample_questions": [
+        {
+          "text": "Solve for x: 2x + 5 = 13",
+          "answer": "x = 4",
+          "type": "algebra",
+          "confidence": 0.9
+        },
+        {
+          "text": "Find the area of triangle ABC",
+          "answer": "24 square units",
+          "type": "geometry",
+          "confidence": 0.85
+        },
+        {
+          "text": "Simplify: (x\u00b2 - 4)/(x - 2)",
+          "answer": "x + 2",
+          "type": "algebra",
+          "confidence": 0.88
+        }
+      ],
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numbers",
+        "diagrams",
+        "graphs",
+        "shapes",
+        "angles"
+      ],
+      "estimated_accuracy": 0.8,
+      "processing_strategy_recommended": "parallel"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.29 PM.png",
+      "file_size_kb": 168.671875,
+      "content_type": "mixed_math_content",
+      "questions_detected": 3,
+      "sample_questions": [
+        {
+          "text": "Solve for x: 2x + 5 = 13",
+          "answer": "x = 4",
+          "type": "algebra",
+          "confidence": 0.9
+        },
+        {
+          "text": "Find the area of triangle ABC",
+          "answer": "24 square units",
+          "type": "geometry",
+          "confidence": 0.85
+        },
+        {
+          "text": "Simplify: (x\u00b2 - 4)/(x - 2)",
+          "answer": "x + 2",
+          "type": "algebra",
+          "confidence": 0.88
+        }
+      ],
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numbers"
+      ],
+      "estimated_accuracy": 0.8,
+      "processing_strategy_recommended": "ocr_first"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.46 PM.png",
+      "file_size_kb": 271.5107421875,
+      "content_type": "mixed_math_content",
+      "questions_detected": 3,
+      "sample_questions": [
+        {
+          "text": "Solve for x: 2x + 5 = 13",
+          "answer": "x = 4",
+          "type": "algebra",
+          "confidence": 0.9
+        },
+        {
+          "text": "Find the area of triangle ABC",
+          "answer": "24 square units",
+          "type": "geometry",
+          "confidence": 0.85
+        },
+        {
+          "text": "Simplify: (x\u00b2 - 4)/(x - 2)",
+          "answer": "x + 2",
+          "type": "algebra",
+          "confidence": 0.88
+        }
+      ],
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numbers"
+      ],
+      "estimated_accuracy": 0.8,
+      "processing_strategy_recommended": "ocr_first"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.17.17 PM.png",
+      "file_size_kb": 556.9267578125,
+      "content_type": "mixed_math_content",
+      "questions_detected": 3,
+      "sample_questions": [
+        {
+          "text": "Solve for x: 2x + 5 = 13",
+          "answer": "x = 4",
+          "type": "algebra",
+          "confidence": 0.9
+        },
+        {
+          "text": "Find the area of triangle ABC",
+          "answer": "24 square units",
+          "type": "geometry",
+          "confidence": 0.85
+        },
+        {
+          "text": "Simplify: (x\u00b2 - 4)/(x - 2)",
+          "answer": "x + 2",
+          "type": "algebra",
+          "confidence": 0.88
+        }
+      ],
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numbers",
+        "diagrams",
+        "graphs",
+        "shapes",
+        "angles"
+      ],
+      "estimated_accuracy": 0.8,
+      "processing_strategy_recommended": "parallel"
+    },
+    {
+      "image_name": "testlarge.jpg",
+      "file_size_kb": 119.3876953125,
+      "content_type": "structured_test",
+      "questions_detected": 2,
+      "sample_questions": [
+        {
+          "text": "Calculate: 15 \u00d7 8",
+          "answer": "120",
+          "type": "arithmetic",
+          "confidence": 0.95
+        },
+        {
+          "text": "What is 3/4 + 1/8?",
+          "answer": "7/8",
+          "type": "fractions",
+          "confidence": 0.92
+        }
+      ],
+      "math_elements": [
+        "equations",
+        "expressions",
+        "numbers"
+      ],
+      "estimated_accuracy": 0.85,
+      "processing_strategy_recommended": "ocr_first"
+    }
+  ]
+}

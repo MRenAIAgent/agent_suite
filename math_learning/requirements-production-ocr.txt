@@ -1,0 +1,42 @@
+# Production OCR and Vision Dependencies
+# For Mathpix OCR + GPT-4 Vision Math Test Analysis
+
+# Core async HTTP client for API calls
+aiohttp>=3.8.0
+
+# OpenAI API for GPT-4 Vision
+openai>=1.0.0
+
+# Image processing (optional, for preprocessing)
+Pillow>=9.0.0
+
+# Additional dependencies for math processing
+sympy>=1.12
+numpy>=1.24.0
+
+# For base64 encoding/decoding (usually included in Python)
+# base64 - built-in
+
+# For JSON handling (usually included in Python) 
+# json - built-in
+
+# For async support (usually included in Python 3.7+)
+# asyncio - built-in
+
+# Development and testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+
+# Advanced Geometry OCR Dependencies
+transformers>=4.30.0  # For GOT-OCR2.0 and UniMERNet
+torch>=1.13.0  # PyTorch for model inference
+torchvision>=0.14.0  # Computer vision utilities
+
+# Optional: For enhanced mathematical text processing
+# regex>=2023.0.0  # More advanced regex support
+# python-dotenv>=1.0.0  # For .env file support
+
+# Note: Additional models will be downloaded automatically:
+# - GOT-OCR2.0: ~580M parameters (stepfun-ai/GOT-OCR2_0)
+# - UniMERNet: Various sizes (wanderkid/unimernet_base, unimernet_small, unimernet_tiny) 

@@ -1,0 +1,152 @@
+{
+  "comparison_timestamp": 1753677858.583637,
+  "strategy_stats": {
+    "geometry_first": {
+      "total_images": 2,
+      "successful_images": 0,
+      "success_rate": 0.0,
+      "avg_confidence": 0,
+      "avg_processing_time": 0,
+      "total_questions": 0,
+      "avg_questions_per_image": 0
+    },
+    "parallel": {
+      "total_images": 2,
+      "successful_images": 0,
+      "success_rate": 0.0,
+      "avg_confidence": 0,
+      "avg_processing_time": 0,
+      "total_questions": 0,
+      "avg_questions_per_image": 0
+    },
+    "ocr_first": {
+      "total_images": 2,
+      "successful_images": 0,
+      "success_rate": 0.0,
+      "avg_confidence": 0,
+      "avg_processing_time": 0,
+      "total_questions": 0,
+      "avg_questions_per_image": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "strategy": "geometry_first",
+      "images": [
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+          "file_size_kb": 290.861328125,
+          "success": false,
+          "processing_time_ms": 2784.1439247131348,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 3,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": true
+          },
+          "strategy_used": "geometry_first",
+          "geometry_info": {
+            "provider": "got_ocr2",
+            "detected_shapes": [],
+            "diagram_type": "failed",
+            "confidence": 0.0
+          }
+        },
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+          "file_size_kb": 461.0625,
+          "success": false,
+          "processing_time_ms": 1525.6948471069336,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 3,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": true
+          },
+          "strategy_used": "geometry_first",
+          "geometry_info": {
+            "provider": "got_ocr2",
+            "detected_shapes": [],
+            "diagram_type": "failed",
+            "confidence": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "parallel",
+      "images": [
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+          "file_size_kb": 290.861328125,
+          "success": false,
+          "processing_time_ms": 366.94908142089844,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "parallel"
+        },
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+          "file_size_kb": 461.0625,
+          "success": false,
+          "processing_time_ms": 394.86217498779297,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "parallel"
+        }
+      ]
+    },
+    {
+      "strategy": "ocr_first",
+      "images": [
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+          "file_size_kb": 290.861328125,
+          "success": false,
+          "processing_time_ms": 520.0998783111572,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "ocr_first"
+        },
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+          "file_size_kb": 461.0625,
+          "success": false,
+          "processing_time_ms": 443.4828758239746,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "ocr_first"
+        }
+      ]
+    }
+  ],
+  "best_strategy": "geometry_first"
+}

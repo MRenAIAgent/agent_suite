@@ -1,0 +1,17 @@
+{
+  "test_timestamp": 1753681348.618112,
+  "test_count": 1,
+  "results": [
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+      "total_processing_time_ms": 305.0839900970459,
+      "processing_status": "completed",
+      "overall_score": 0.0,
+      "total_questions": 0,
+      "correct_answers": 0,
+      "image_quality": 0.0,
+      "processing_confidence": 0.0,
+      "analysis_confidence": 0.0
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "test_timestamp": 1753681348.1447701,
+  "test_count": 3,
+  "results": [
+    {
+      "strategy": "geometry_first",
+      "images": [
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+          "file_size_kb": 290.861328125,
+          "success": false,
+          "processing_time_ms": 1594.637155532837,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 3,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": true
+          },
+          "strategy_used": "geometry_first"
+        },
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+          "file_size_kb": 461.0625,
+          "success": false,
+          "processing_time_ms": 1163.4020805358887,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 3,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": true
+          },
+          "strategy_used": "geometry_first"
+        }
+      ]
+    },
+    {
+      "strategy": "parallel",
+      "images": [
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+          "file_size_kb": 290.861328125,
+          "success": false,
+          "processing_time_ms": 330.7151794433594,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "parallel"
+        },
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+          "file_size_kb": 461.0625,
+          "success": false,
+          "processing_time_ms": 341.27092361450195,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "parallel"
+        }
+      ]
+    },
+    {
+      "strategy": "ocr_first",
+      "images": [
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+          "file_size_kb": 290.861328125,
+          "success": false,
+          "processing_time_ms": 488.50202560424805,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "ocr_first"
+        },
+        {
+          "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+          "file_size_kb": 461.0625,
+          "success": false,
+          "processing_time_ms": 483.98900032043457,
+          "confidence_score": 0.0,
+          "questions_found": 0,
+          "error_count": 2,
+          "components_used": {
+            "ocr": true,
+            "vision": true,
+            "geometry": false
+          },
+          "strategy_used": "ocr_first"
+        }
+      ]
+    }
+  ]
+}

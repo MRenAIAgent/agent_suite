@@ -1,0 +1,69 @@
+{
+  "test_timestamp": 1753682066.6058722,
+  "test_count": 7,
+  "results": [
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+      "file_size_kb": 290.861328125,
+      "content_type": "mixed_mathematical_content",
+      "expected_questions": 3,
+      "recommended_strategy": "parallel_hybrid",
+      "expected_accuracy": 0.87,
+      "processing_ready": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+      "file_size_kb": 461.0625,
+      "content_type": "mixed_mathematical_content",
+      "expected_questions": 5,
+      "recommended_strategy": "geometry_first_parallel",
+      "expected_accuracy": 0.87,
+      "processing_ready": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.14 PM.png",
+      "file_size_kb": 731.1787109375,
+      "content_type": "mixed_mathematical_content",
+      "expected_questions": 7,
+      "recommended_strategy": "geometry_first_parallel",
+      "expected_accuracy": 0.87,
+      "processing_ready": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.29 PM.png",
+      "file_size_kb": 168.671875,
+      "content_type": "mixed_mathematical_content",
+      "expected_questions": 3,
+      "recommended_strategy": "parallel_hybrid",
+      "expected_accuracy": 0.87,
+      "processing_ready": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.46 PM.png",
+      "file_size_kb": 271.5107421875,
+      "content_type": "mixed_mathematical_content",
+      "expected_questions": 3,
+      "recommended_strategy": "parallel_hybrid",
+      "expected_accuracy": 0.87,
+      "processing_ready": true
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.17.17 PM.png",
+      "file_size_kb": 556.9267578125,
+      "content_type": "mixed_mathematical_content",
+      "expected_questions": 7,
+      "recommended_strategy": "geometry_first_parallel",
+      "expected_accuracy": 0.87,
+      "processing_ready": true
+    },
+    {
+      "image_name": "testlarge.jpg",
+      "file_size_kb": 119.3876953125,
+      "content_type": "structured_test",
+      "expected_questions": 3,
+      "recommended_strategy": "parallel_hybrid",
+      "expected_accuracy": 0.87,
+      "processing_ready": true
+    }
+  ]
+}

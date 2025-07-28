@@ -1,0 +1,62 @@
+{
+  "test_timestamp": 1753682076.9845781,
+  "test_count": 7,
+  "results": [
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+      "image_type": "screenshot",
+      "success": false,
+      "confidence": 0.0,
+      "processing_time_ms": 1450.9367942810059,
+      "error": "All providers failed. Last error: Not implemented - placeholder"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+      "image_type": "screenshot",
+      "success": false,
+      "confidence": 0.0,
+      "processing_time_ms": 629.8408508300781,
+      "error": "All providers failed. Last error: Not implemented - placeholder"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.14 PM.png",
+      "image_type": "screenshot",
+      "success": false,
+      "confidence": 0.0,
+      "processing_time_ms": 619.2140579223633,
+      "error": "All providers failed. Last error: Not implemented - placeholder"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.29 PM.png",
+      "image_type": "screenshot",
+      "success": false,
+      "confidence": 0.0,
+      "processing_time_ms": 595.9339141845703,
+      "error": "All providers failed. Last error: Not implemented - placeholder"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.46 PM.png",
+      "image_type": "screenshot",
+      "success": false,
+      "confidence": 0.0,
+      "processing_time_ms": 624.2890357971191,
+      "error": "All providers failed. Last error: Not implemented - placeholder"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.17.17 PM.png",
+      "image_type": "screenshot",
+      "success": false,
+      "confidence": 0.0,
+      "processing_time_ms": 601.4149188995361,
+      "error": "All providers failed. Last error: Not implemented - placeholder"
+    },
+    {
+      "image_name": "testlarge.jpg",
+      "image_type": "mixed_test",
+      "success": false,
+      "confidence": 0.0,
+      "processing_time_ms": 612.3371124267578,
+      "error": "All providers failed. Last error: Not implemented - placeholder"
+    }
+  ]
+}

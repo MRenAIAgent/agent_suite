@@ -1,0 +1,147 @@
+{
+  "analysis_timestamp": 1753677753.129899,
+  "total_images": 7,
+  "success_rate": 1.0,
+  "summary_stats": {
+    "content_types": {
+      "screenshot_evening": 6,
+      "test_paper": 1
+    },
+    "complexity_levels": {
+      "complex": 3,
+      "very_complex": 2,
+      "moderate": 2
+    },
+    "ocr_strategies": {
+      "parallel_hybrid": 5,
+      "standard_ocr": 2
+    }
+  },
+  "detailed_results": [
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.02.59 PM.png",
+      "file_size_kb": 290.861328125,
+      "success": true,
+      "text_content": "Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.02.59 PM.png. ",
+      "mathematical_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables"
+      ],
+      "geometric_indicators": [],
+      "predicted_content_type": "screenshot_evening",
+      "complexity_level": "complex",
+      "recommended_ocr_strategy": "parallel_hybrid"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.02 PM.png",
+      "file_size_kb": 461.0625,
+      "success": true,
+      "text_content": "Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.02 PM.png. ",
+      "mathematical_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables",
+        "graphs",
+        "diagrams"
+      ],
+      "geometric_indicators": [
+        "shapes",
+        "diagrams",
+        "constructions"
+      ],
+      "predicted_content_type": "screenshot_evening",
+      "complexity_level": "complex",
+      "recommended_ocr_strategy": "parallel_hybrid"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.14 PM.png",
+      "file_size_kb": 731.1787109375,
+      "success": true,
+      "text_content": "Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.14 PM.png. ",
+      "mathematical_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables",
+        "graphs",
+        "diagrams"
+      ],
+      "geometric_indicators": [
+        "shapes",
+        "diagrams",
+        "constructions"
+      ],
+      "predicted_content_type": "screenshot_evening",
+      "complexity_level": "very_complex",
+      "recommended_ocr_strategy": "parallel_hybrid"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.29 PM.png",
+      "file_size_kb": 168.671875,
+      "success": true,
+      "text_content": "Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.29 PM.png. ",
+      "mathematical_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables"
+      ],
+      "geometric_indicators": [],
+      "predicted_content_type": "screenshot_evening",
+      "complexity_level": "moderate",
+      "recommended_ocr_strategy": "standard_ocr"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.08.46 PM.png",
+      "file_size_kb": 271.5107421875,
+      "success": true,
+      "text_content": "Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.08.46 PM.png. ",
+      "mathematical_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables"
+      ],
+      "geometric_indicators": [],
+      "predicted_content_type": "screenshot_evening",
+      "complexity_level": "complex",
+      "recommended_ocr_strategy": "parallel_hybrid"
+    },
+    {
+      "image_name": "Screenshot 2025-07-27 at 9.17.17 PM.png",
+      "file_size_kb": 556.9267578125,
+      "success": true,
+      "text_content": "Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. Simulated text content from Screenshot 2025-07-27 at 9.17.17 PM.png. ",
+      "mathematical_elements": [
+        "equations",
+        "expressions",
+        "numerical_values",
+        "variables",
+        "graphs",
+        "diagrams"
+      ],
+      "geometric_indicators": [
+        "shapes",
+        "diagrams",
+        "constructions"
+      ],
+      "predicted_content_type": "screenshot_evening",
+      "complexity_level": "very_complex",
+      "recommended_ocr_strategy": "parallel_hybrid"
+    },
+    {
+      "image_name": "testlarge.jpg",
+      "file_size_kb": 119.3876953125,
+      "success": true,
+      "text_content": "Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. Simulated text content from testlarge.jpg. ",
+      "mathematical_elements": [],
+      "geometric_indicators": [],
+      "predicted_content_type": "test_paper",
+      "complexity_level": "moderate",
+      "recommended_ocr_strategy": "standard_ocr"
+    }
+  ]
+}
