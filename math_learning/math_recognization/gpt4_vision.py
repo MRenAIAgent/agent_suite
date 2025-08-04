@@ -57,26 +57,22 @@ class VisionAnalysisResult:
 class GPT4VisionClient:
     """Client for GPT-4 Vision API integration."""
     
-    def __init__(self, api_key: str = None, model: str = "gpt-4-vision-preview"):
+    def __init__(self, api_key: str = None, model: str = "gpt-4o"):
         """
         Initialize GPT-4 Vision client.
         
         Args:
-            api_key: OpenAI API key (or from OPENAI_API_KEY env var)
-            model: GPT-4 Vision model to use
+            api_key: OpenAI API key (if not provided, uses OPENAI_API_KEY env var)
+            model: Model to use (gpt-4o supports vision capabilities)
         """
         if not OPENAI_AVAILABLE:
-            raise ImportError(
-                "OpenAI library not available. Install with: pip install openai"
-            )
+            raise ImportError("OpenAI library not available. Install with: pip install openai")
         
         self.api_key = api_key or os.getenv('OPENAI_API_KEY')
         if not self.api_key:
-            raise ValueError(
-                "OpenAI API key required. Set OPENAI_API_KEY environment variable "
-                "or pass as parameter."
-            )
+            raise ValueError("OpenAI API key is required")
         
+        # Use gpt-4o which supports vision (replaces deprecated gpt-4-vision-preview)
         self.model = model
         self.client = AsyncOpenAI(api_key=self.api_key)
     
