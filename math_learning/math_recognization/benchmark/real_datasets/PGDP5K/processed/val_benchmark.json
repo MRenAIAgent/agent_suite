@@ -1,0 +1,636 @@
+[
+  {
+    "id": "sample_021",
+    "image_path": "images/sample_021.jpg",
+    "width": 800,
+    "height": 600,
+    "geometric_primitives": {
+      "points": [
+        [
+          1,
+          400,
+          300
+        ]
+      ],
+      "lines": [],
+      "circles": [
+        [
+          1,
+          400,
+          300,
+          150
+        ]
+      ]
+    },
+    "symbols": [
+      [
+        1,
+        "center_point",
+        "text",
+        "O",
+        [
+          410,
+          290,
+          420,
+          300
+        ]
+      ]
+    ],
+    "relations": {
+      "geo2geo": [],
+      "sym2geo": []
+    },
+    "expected_shapes": [
+      "point",
+      "circle"
+    ],
+    "expected_text": "O",
+    "expected_coordinates": [
+      {
+        "x": 400,
+        "y": 300,
+        "type": "point"
+      },
+      {
+        "x": 400,
+        "y": 300,
+        "radius": 150,
+        "type": "circle_center"
+      }
+    ],
+    "difficulty": "easy",
+    "geometry_type": "circular"
+  },
+  {
+    "id": "sample_022",
+    "image_path": "images/sample_022.jpg",
+    "width": 800,
+    "height": 600,
+    "geometric_primitives": {
+      "points": [],
+      "lines": [
+        [
+          1,
+          200,
+          200,
+          600,
+          200
+        ],
+        [
+          2,
+          200,
+          400,
+          600,
+          400
+        ]
+      ],
+      "circles": []
+    },
+    "symbols": [
+      [
+        1,
+        "line_label",
+        "text",
+        "l₁",
+        [
+          380,
+          175,
+          400,
+          190
+        ]
+      ],
+      [
+        2,
+        "line_label",
+        "text",
+        "l₂",
+        [
+          380,
+          410,
+          400,
+          425
+        ]
+      ],
+      [
+        3,
+        "parallel_symbol",
+        "text",
+        "l₁ ∥ l₂",
+        [
+          430,
+          290,
+          480,
+          310
+        ]
+      ]
+    ],
+    "relations": {
+      "geo2geo": [],
+      "sym2geo": []
+    },
+    "expected_shapes": [
+      "line"
+    ],
+    "expected_text": "l₁ l₂ l₁ ∥ l₂",
+    "expected_coordinates": [
+      {
+        "x": 200,
+        "y": 200,
+        "type": "line_start"
+      },
+      {
+        "x": 600,
+        "y": 200,
+        "type": "line_end"
+      },
+      {
+        "x": 200,
+        "y": 400,
+        "type": "line_start"
+      },
+      {
+        "x": 600,
+        "y": 400,
+        "type": "line_end"
+      }
+    ],
+    "difficulty": "easy",
+    "geometry_type": "linear"
+  },
+  {
+    "id": "sample_023",
+    "image_path": "images/sample_023.jpg",
+    "width": 800,
+    "height": 600,
+    "geometric_primitives": {
+      "points": [
+        [
+          1,
+          200,
+          200
+        ],
+        [
+          2,
+          600,
+          200
+        ],
+        [
+          3,
+          600,
+          400
+        ],
+        [
+          4,
+          200,
+          400
+        ]
+      ],
+      "lines": [
+        [
+          1,
+          200,
+          200,
+          600,
+          200
+        ],
+        [
+          2,
+          600,
+          200,
+          600,
+          400
+        ],
+        [
+          3,
+          600,
+          400,
+          200,
+          400
+        ],
+        [
+          4,
+          200,
+          400,
+          200,
+          200
+        ]
+      ],
+      "circles": []
+    },
+    "symbols": [
+      [
+        1,
+        "vertex_label",
+        "text",
+        "A",
+        [
+          190,
+          180,
+          210,
+          200
+        ]
+      ],
+      [
+        2,
+        "vertex_label",
+        "text",
+        "B",
+        [
+          590,
+          180,
+          610,
+          200
+        ]
+      ],
+      [
+        3,
+        "vertex_label",
+        "text",
+        "C",
+        [
+          590,
+          380,
+          610,
+          400
+        ]
+      ],
+      [
+        4,
+        "vertex_label",
+        "text",
+        "D",
+        [
+          190,
+          380,
+          210,
+          400
+        ]
+      ]
+    ],
+    "relations": {
+      "geo2geo": [],
+      "sym2geo": []
+    },
+    "expected_shapes": [
+      "point",
+      "line"
+    ],
+    "expected_text": "A B C D",
+    "expected_coordinates": [
+      {
+        "x": 200,
+        "y": 200,
+        "type": "point"
+      },
+      {
+        "x": 600,
+        "y": 200,
+        "type": "point"
+      },
+      {
+        "x": 600,
+        "y": 400,
+        "type": "point"
+      },
+      {
+        "x": 200,
+        "y": 400,
+        "type": "point"
+      },
+      {
+        "x": 200,
+        "y": 200,
+        "type": "line_start"
+      },
+      {
+        "x": 600,
+        "y": 200,
+        "type": "line_end"
+      },
+      {
+        "x": 600,
+        "y": 200,
+        "type": "line_start"
+      },
+      {
+        "x": 600,
+        "y": 400,
+        "type": "line_end"
+      },
+      {
+        "x": 600,
+        "y": 400,
+        "type": "line_start"
+      },
+      {
+        "x": 200,
+        "y": 400,
+        "type": "line_end"
+      },
+      {
+        "x": 200,
+        "y": 400,
+        "type": "line_start"
+      },
+      {
+        "x": 200,
+        "y": 200,
+        "type": "line_end"
+      }
+    ],
+    "difficulty": "medium",
+    "geometry_type": "linear"
+  },
+  {
+    "id": "sample_024",
+    "image_path": "images/sample_024.jpg",
+    "width": 800,
+    "height": 600,
+    "geometric_primitives": {
+      "points": [
+        [
+          1,
+          533,
+          200
+        ],
+        [
+          2,
+          666,
+          400
+        ],
+        [
+          3,
+          400,
+          400
+        ]
+      ],
+      "lines": [
+        [
+          1,
+          533,
+          200,
+          666,
+          400
+        ],
+        [
+          2,
+          666,
+          400,
+          400,
+          400
+        ],
+        [
+          3,
+          400,
+          400,
+          533,
+          200
+        ]
+      ],
+      "circles": [
+        [
+          1,
+          266,
+          300,
+          50
+        ]
+      ]
+    },
+    "symbols": [
+      [
+        1,
+        "shape_label",
+        "text",
+        "Circle",
+        [
+          256,
+          230,
+          296,
+          250
+        ]
+      ],
+      [
+        2,
+        "shape_label",
+        "text",
+        "Triangle",
+        [
+          513,
+          180,
+          573,
+          200
+        ]
+      ]
+    ],
+    "relations": {
+      "geo2geo": [],
+      "sym2geo": []
+    },
+    "expected_shapes": [
+      "point",
+      "line",
+      "circle"
+    ],
+    "expected_text": "Circle Triangle",
+    "expected_coordinates": [
+      {
+        "x": 533,
+        "y": 200,
+        "type": "point"
+      },
+      {
+        "x": 666,
+        "y": 400,
+        "type": "point"
+      },
+      {
+        "x": 400,
+        "y": 400,
+        "type": "point"
+      },
+      {
+        "x": 533,
+        "y": 200,
+        "type": "line_start"
+      },
+      {
+        "x": 666,
+        "y": 400,
+        "type": "line_end"
+      },
+      {
+        "x": 666,
+        "y": 400,
+        "type": "line_start"
+      },
+      {
+        "x": 400,
+        "y": 400,
+        "type": "line_end"
+      },
+      {
+        "x": 400,
+        "y": 400,
+        "type": "line_start"
+      },
+      {
+        "x": 533,
+        "y": 200,
+        "type": "line_end"
+      },
+      {
+        "x": 266,
+        "y": 300,
+        "radius": 50,
+        "type": "circle_center"
+      }
+    ],
+    "difficulty": "medium",
+    "geometry_type": "mixed"
+  },
+  {
+    "id": "sample_025",
+    "image_path": "images/sample_025.jpg",
+    "width": 800,
+    "height": 600,
+    "geometric_primitives": {
+      "points": [
+        [
+          1,
+          266,
+          400
+        ],
+        [
+          2,
+          533,
+          400
+        ],
+        [
+          3,
+          400,
+          200
+        ]
+      ],
+      "lines": [
+        [
+          1,
+          266,
+          400,
+          533,
+          400
+        ],
+        [
+          2,
+          533,
+          400,
+          400,
+          200
+        ],
+        [
+          3,
+          400,
+          200,
+          266,
+          400
+        ]
+      ],
+      "circles": []
+    },
+    "symbols": [
+      [
+        1,
+        "vertex_label",
+        "text",
+        "A",
+        [
+          256,
+          380,
+          276,
+          400
+        ]
+      ],
+      [
+        2,
+        "vertex_label",
+        "text",
+        "B",
+        [
+          523,
+          380,
+          543,
+          400
+        ]
+      ],
+      [
+        3,
+        "vertex_label",
+        "text",
+        "C",
+        [
+          390,
+          180,
+          410,
+          200
+        ]
+      ]
+    ],
+    "relations": {
+      "geo2geo": [],
+      "sym2geo": []
+    },
+    "expected_shapes": [
+      "point",
+      "line"
+    ],
+    "expected_text": "A B C",
+    "expected_coordinates": [
+      {
+        "x": 266,
+        "y": 400,
+        "type": "point"
+      },
+      {
+        "x": 533,
+        "y": 400,
+        "type": "point"
+      },
+      {
+        "x": 400,
+        "y": 200,
+        "type": "point"
+      },
+      {
+        "x": 266,
+        "y": 400,
+        "type": "line_start"
+      },
+      {
+        "x": 533,
+        "y": 400,
+        "type": "line_end"
+      },
+      {
+        "x": 533,
+        "y": 400,
+        "type": "line_start"
+      },
+      {
+        "x": 400,
+        "y": 200,
+        "type": "line_end"
+      },
+      {
+        "x": 400,
+        "y": 200,
+        "type": "line_start"
+      },
+      {
+        "x": 266,
+        "y": 400,
+        "type": "line_end"
+      }
+    ],
+    "difficulty": "medium",
+    "geometry_type": "linear"
+  }
+]

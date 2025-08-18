@@ -1,0 +1,22 @@
+{
+  "created_date": "2025-07-28T20:05:55.575323",
+  "datasets_dir": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark/scripts/../datasets",
+  "available_datasets": {
+    "unimer": {
+      "dataset_id": "unimer",
+      "download_date": "2025-07-28T20:03:54.990755",
+      "source_info": {
+        "name": "UniMER-1M Mathematical Expression Recognition",
+        "description": "1M mathematical expressions with LaTeX ground truth",
+        "source": "github",
+        "url": "https://github.com/opendatalab/UniMERNet",
+        "size": "~2GB",
+        "format": "images + json",
+        "access": "public",
+        "download_method": "git_clone"
+      },
+      "local_path": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark/scripts/../datasets/unimer",
+      "status": "downloaded"
+    }
+  }
+}

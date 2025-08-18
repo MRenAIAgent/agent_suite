@@ -1,0 +1,136 @@
+{
+  "dataset_name": "unimer_production",
+  "system_name": "Math Test Analysis System",
+  "evaluation_date": "2025-07-28T20:12:02.852682",
+  "total_samples": 20,
+  "processing_time": 3.814697265625e-05,
+  "overall_accuracy": 0.8,
+  "summary": {
+    "metrics_evaluated": 1,
+    "total_samples": 20,
+    "processing_speed": "0.00s",
+    "metric_breakdown": {
+      "expression_recognition": 0.8
+    },
+    "samples_processed": 20,
+    "avg_processing_time": 1.9073486328125e-06
+  },
+  "metrics": [
+    {
+      "metric_name": "expression_recognition",
+      "score": 16,
+      "max_score": 20,
+      "accuracy": 0.8,
+      "details": {
+        "total_expressions": 20,
+        "correct_expressions": 16,
+        "character_accuracy": [
+          1.0,
+          0.8666666666666667,
+          1.0,
+          0.9375,
+          0.9361702127659575,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9523809523809523,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "semantic_accuracy": [
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "by_difficulty": {
+          "medium": [
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hard": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "easy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "by_domain": {
+          "calculus": [
+            1.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          "trigonometry": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "linear_algebra": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "analysis": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "algebra": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "avg_character_accuracy": 0.9846358915906789,
+        "avg_semantic_accuracy": 0.8
+      }
+    }
+  ]
+}

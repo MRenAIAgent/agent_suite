@@ -1,0 +1,135 @@
+[
+  {
+    "id": "mathverse_001",
+    "type": "multi_choice",
+    "subfield": "plane_geometry",
+    "problem": "In triangle ABC, if angle A = 45\u00b0 and angle B = 60\u00b0, what is angle C?",
+    "answer": "75\u00b0",
+    "expected_shapes": [
+      "triangle",
+      "angle"
+    ],
+    "expected_text": [
+      "angle A = 45\u00b0",
+      "angle B = 60\u00b0",
+      "angle C",
+      "triangle ABC",
+      "75\u00b0"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "mathverse_002",
+    "type": "free_form",
+    "subfield": "analytic_geometry",
+    "problem": "Find the slope of the line passing through points P(2, 3) and Q(6, 11).",
+    "answer": "2",
+    "expected_shapes": [
+      "coordinate_system",
+      "line"
+    ],
+    "expected_text": [
+      "P(2, 3)",
+      "Q(6, 11)",
+      "slope",
+      "slope = 2"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "mathverse_003",
+    "type": "multi_choice",
+    "subfield": "solid_geometry",
+    "problem": "A cube has side length 5 cm. What is its volume?",
+    "answer": "125 cm\u00b3",
+    "expected_shapes": [
+      "cube",
+      "3d_shape"
+    ],
+    "expected_text": [
+      "side length = 5",
+      "volume",
+      "125 cm\u00b3",
+      "cube"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "mathverse_004",
+    "type": "free_form",
+    "subfield": "algebra",
+    "problem": "Solve the quadratic equation x\u00b2 - 5x + 6 = 0.",
+    "answer": "x = 2 or x = 3",
+    "expected_shapes": [],
+    "expected_text": [
+      "x\u00b2 - 5x + 6 = 0",
+      "quadratic equation",
+      "x = 2",
+      "x = 3"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "mathverse_005",
+    "type": "multi_choice",
+    "subfield": "trigonometry",
+    "problem": "What is the value of sin(60\u00b0)?",
+    "answer": "\u221a3/2",
+    "expected_shapes": [
+      "angle"
+    ],
+    "expected_text": [
+      "sin(60\u00b0)",
+      "\u221a3/2",
+      "60\u00b0"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "mathverse_006",
+    "type": "free_form",
+    "subfield": "coordinate_geometry",
+    "problem": "Find the equation of a circle with center (2, -3) and radius 4.",
+    "answer": "(x-2)\u00b2 + (y+3)\u00b2 = 16",
+    "expected_shapes": [
+      "circle",
+      "coordinate_system"
+    ],
+    "expected_text": [
+      "center (2, -3)",
+      "radius = 4",
+      "(x-2)\u00b2 + (y+3)\u00b2 = 16"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "mathverse_007",
+    "type": "multi_choice",
+    "subfield": "probability",
+    "problem": "What is the probability of rolling a 6 on a fair six-sided die?",
+    "answer": "1/6",
+    "expected_shapes": [],
+    "expected_text": [
+      "probability",
+      "rolling a 6",
+      "six-sided die",
+      "1/6"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "mathverse_008",
+    "type": "free_form",
+    "subfield": "calculus",
+    "problem": "Find the integral of f(x) = 2x from 0 to 3.",
+    "answer": "9",
+    "expected_shapes": [],
+    "expected_text": [
+      "integral",
+      "f(x) = 2x",
+      "from 0 to 3",
+      "\u222b\u2080\u00b3 2x dx = 9"
+    ],
+    "difficulty": "hard"
+  }
+]

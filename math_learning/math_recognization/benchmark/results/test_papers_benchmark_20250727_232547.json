@@ -1,0 +1,85 @@
+{
+  "dataset_name": "test_papers",
+  "system_name": "Math Test Analysis System",
+  "evaluation_date": "2025-07-27T23:25:47.946756",
+  "total_samples": 14,
+  "processing_time": 0.0010638236999511719,
+  "overall_accuracy": 0.7857142857142857,
+  "summary": {
+    "metrics_evaluated": 2,
+    "total_samples": 14,
+    "processing_speed": "0.00s",
+    "metric_breakdown": {
+      "question_detection": 0.8571428571428571,
+      "answer_extraction": 0.7142857142857143
+    }
+  },
+  "metrics": [
+    {
+      "metric_name": "question_detection",
+      "score": 6,
+      "max_score": 7,
+      "accuracy": 0.8571428571428571,
+      "details": {
+        "total_papers": 3,
+        "questions_detected": 6,
+        "questions_missed": 1,
+        "false_positives": 0,
+        "precision": 1.0,
+        "recall": 0.8571428571428571,
+        "f1_score": 0.923076923076923,
+        "by_subject": {
+          "algebra": [
+            1.0
+          ],
+          "geometry": [
+            0.5
+          ],
+          "calculus": [
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "metric_name": "answer_extraction",
+      "score": 5,
+      "max_score": 7,
+      "accuracy": 0.7142857142857143,
+      "details": {
+        "total_answers": 7,
+        "correct_extractions": 5,
+        "by_answer_type": {
+          "algebraic": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "coordinate": [
+            1.0
+          ],
+          "numerical": [
+            0.0,
+            0.0
+          ]
+        },
+        "by_subject": {
+          "algebra": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "geometry": [
+            0.0,
+            0.0
+          ],
+          "calculus": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  ]
+}

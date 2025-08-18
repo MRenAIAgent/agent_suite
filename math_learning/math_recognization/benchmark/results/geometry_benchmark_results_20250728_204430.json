@@ -1,0 +1,762 @@
+{
+  "dataset_name": "Geometry Comprehensive Benchmark",
+  "system_name": "GOT-OCR2.0 + GPT-4 Vision (Pure)",
+  "evaluation_date": "2025-07-28T20:44:30.843784",
+  "total_samples": 40,
+  "processing_time_seconds": 7.587828159332275,
+  "overall_accuracy": 0.9175974025974025,
+  "shape_detection_accuracy": 1.0,
+  "coordinate_extraction_accuracy": 0.8125,
+  "text_recognition_accuracy": 0.8503246753246753,
+  "latex_accuracy": 0.0,
+  "geometry_type_results": {
+    "basic_shapes": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.9307540507160322,
+      "avg_processing_time": 181.79571628570557
+    },
+    "construction": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.5980840866393942,
+      "avg_processing_time": 181.4967691898346
+    },
+    "coordinate": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.8313193150587188,
+      "avg_processing_time": 218.73587369918823
+    },
+    "proof": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.31741641083457,
+      "avg_processing_time": 199.8562216758728
+    },
+    "mixed": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.7027824065028294,
+      "avg_processing_time": 166.5460467338562
+    }
+  },
+  "difficulty_results": {
+    "easy": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.9484685316506251,
+      "avg_processing_time": 206.53212070465088
+    },
+    "medium": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.8033566484049004,
+      "avg_processing_time": 195.06078958511353
+    },
+    "hard": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.4907411061974276,
+      "avg_processing_time": 179.7229290008545
+    }
+  },
+  "strategy_comparison": {
+    "geometry_first": {
+      "success_rate": 1.0,
+      "avg_confidence": 0.6761778309332687,
+      "avg_processing_time": 179.85198497772217
+    },
+    "geometry_only": {
+      "success_rate": 1.0,
+      "avg_confidence": 0.6759646769673494,
+      "avg_processing_time": 199.5202660560608
+    }
+  },
+  "individual_results": [
+    {
+      "test_case_id": "geo_001",
+      "strategy": "geometry_first",
+      "processing_time_ms": 174.30400848388672,
+      "success": true,
+      "extracted_text": "Find the area of the triangle with base 6 and height 4",
+      "detected_shapes": [
+        "triangle",
+        "point"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_002",
+      "strategy": "geometry_first",
+      "processing_time_ms": 178.69210243225098,
+      "success": true,
+      "extracted_text": "Calculate the circumference of a circle with radius 5",
+      "detected_shapes": [
+        "circle",
+        "line"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_003",
+      "strategy": "geometry_first",
+      "processing_time_ms": 106.35709762573242,
+      "success": true,
+      "extracted_text": "Determine the perimeter of the square with side length 8",
+      "detected_shapes": [
+        "square"
+      ],
+      "coordinates": {},
+      "confidence": 0.8632062296399363,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_004",
+      "strategy": "geometry_first",
+      "processing_time_ms": 218.24097633361816,
+      "success": true,
+      "extracted_text": "Find the area of the triangle with base 6 and height 4",
+      "detected_shapes": [
+        "rectangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_005",
+      "strategy": "geometry_first",
+      "processing_time_ms": 131.60967826843262,
+      "success": true,
+      "extracted_text": "Construct the angle bisector of angle ABC",
+      "detected_shapes": [
+        "angle_bisector",
+        "angle"
+      ],
+      "coordinates": {},
+      "confidence": 0.7920082397086855,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_006",
+      "strategy": "geometry_first",
+      "processing_time_ms": 247.80893325805664,
+      "success": true,
+      "extracted_text": "Draw a perpendicular from point P to line AB",
+      "detected_shapes": [
+        "perpendicular"
+      ],
+      "coordinates": {},
+      "confidence": 0.6545740866465392,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_007",
+      "strategy": "geometry_first",
+      "processing_time_ms": 107.20109939575195,
+      "success": true,
+      "extracted_text": "Inscribe a circl",
+      "detected_shapes": [
+        "parallel_lines"
+      ],
+      "coordinates": {},
+      "confidence": 0.396,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_008",
+      "strategy": "geometry_first",
+      "processing_time_ms": 144.90103721618652,
+      "success": true,
+      "extracted_text": "Construct the angle ",
+      "detected_shapes": [
+        "inscribed_circle"
+      ],
+      "coordinates": {},
+      "confidence": 0.3168,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_009",
+      "strategy": "geometry_first",
+      "processing_time_ms": 178.25007438659668,
+      "success": true,
+      "extracted_text": "Plot the point (3, -2) on the coordinate plane",
+      "detected_shapes": [
+        "point"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_010",
+      "strategy": "geometry_first",
+      "processing_time_ms": 195.0550079345703,
+      "success": true,
+      "extracted_text": "Find the equation of the line passing through (1, 2) and (3, 6)",
+      "detected_shapes": [
+        "line",
+        "point"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": -3
+          }
+        ]
+      },
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_011",
+      "strategy": "geometry_first",
+      "processing_time_ms": 183.26878547668457,
+      "success": true,
+      "extracted_text": "Graph the parabola y = x\u00b2 - 4x + 3",
+      "detected_shapes": [
+        "parabola"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 6
+          }
+        ]
+      },
+      "confidence": 0.7152955585332096,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_012",
+      "strategy": "geometry_first",
+      "processing_time_ms": 298.6738681793213,
+      "success": true,
+      "extracted_text": "Plot the point (3, -2) on the coordinate plane",
+      "detected_shapes": [
+        "coordinate_system"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_013",
+      "strategy": "geometry_first",
+      "processing_time_ms": 219.45786476135254,
+      "success": true,
+      "extracted_text": "Prove that the sum of ang",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.2464,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_014",
+      "strategy": "geometry_first",
+      "processing_time_ms": 285.2590084075928,
+      "success": true,
+      "extracted_text": "Show that opposite angles in a cyc",
+      "detected_shapes": [
+        "quadrilateral"
+      ],
+      "coordinates": {},
+      "confidence": 0.2464,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_015",
+      "strategy": "geometry_first",
+      "processing_time_ms": 121.38700485229492,
+      "success": true,
+      "extracted_text": "Prove the Pythagorean theo",
+      "detected_shapes": [
+        "circle"
+      ],
+      "coordinates": {},
+      "confidence": 0.2464,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_016",
+      "strategy": "geometry_first",
+      "processing_time_ms": 189.84508514404297,
+      "success": true,
+      "extracted_text": "Prove that the sum of angles in a triangle is 180\u00b0",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.5283142337017434,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_017",
+      "strategy": "geometry_first",
+      "processing_time_ms": 147.13811874389648,
+      "success": true,
+      "extracted_text": "In triangle ABC with vertices A(0,0), B(3,0), C(1.5,2.6), find the area and circumcenter",
+      "detected_shapes": [
+        "triangle",
+        "angle"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 1.5,
+            "y": 2.6
+          }
+        ]
+      },
+      "confidence": 0.7645291717125757,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_018",
+      "strategy": "geometry_first",
+      "processing_time_ms": 153.64909172058105,
+      "success": true,
+      "extracted_text": "A circle with center (2,3) and radius 4 intersects the line y = x + 1. Find intersection points",
+      "detected_shapes": [
+        "circle"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ]
+      },
+      "confidence": 0.6316977319269642,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_019",
+      "strategy": "geometry_first",
+      "processing_time_ms": 158.17809104919434,
+      "success": true,
+      "extracted_text": "In triangle ABC with vertices A(0,0), B(3,0), C(1.5,2.6), find the area and circumcenter",
+      "detected_shapes": [
+        "coordinate_system"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 1.5,
+            "y": 2.6
+          }
+        ]
+      },
+      "confidence": 0.820643601329985,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_020",
+      "strategy": "geometry_first",
+      "processing_time_ms": 157.7627658843994,
+      "success": true,
+      "extracted_text": "A circle with center (2,3) and radius 4 intersects the line y = x + 1. Find intersection points",
+      "detected_shapes": [
+        "angle",
+        "angle"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ]
+      },
+      "confidence": 0.6012877654657327,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_001",
+      "strategy": "geometry_only",
+      "processing_time_ms": 226.2747287750244,
+      "success": true,
+      "extracted_text": "Find the area of the triangle with base 6 and height 4",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_002",
+      "strategy": "geometry_only",
+      "processing_time_ms": 241.90998077392578,
+      "success": true,
+      "extracted_text": "Calculate the circumference of a circle with radius 5",
+      "detected_shapes": [
+        "circle"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_003",
+      "strategy": "geometry_only",
+      "processing_time_ms": 196.78878784179688,
+      "success": true,
+      "extracted_text": "Determine the perimeter of the square with side length 8",
+      "detected_shapes": [
+        "square",
+        "angle"
+      ],
+      "coordinates": {},
+      "confidence": 0.8828261760883223,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_004",
+      "strategy": "geometry_only",
+      "processing_time_ms": 111.79804801940918,
+      "success": true,
+      "extracted_text": "Find the area of the triangle with base 6 and height 4",
+      "detected_shapes": [
+        "rectangle",
+        "point"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_005",
+      "strategy": "geometry_only",
+      "processing_time_ms": 267.193078994751,
+      "success": true,
+      "extracted_text": "Construct the angle bisector of angle ABC",
+      "detected_shapes": [
+        "angle_bisector",
+        "point"
+      ],
+      "coordinates": {},
+      "confidence": 0.768747074382717,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_006",
+      "strategy": "geometry_only",
+      "processing_time_ms": 155.49015998840332,
+      "success": true,
+      "extracted_text": "Draw a perpendicular from point P to line AB",
+      "detected_shapes": [
+        "perpendicular"
+      ],
+      "coordinates": {},
+      "confidence": 0.7055824345868994,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_007",
+      "strategy": "geometry_only",
+      "processing_time_ms": 289.2880439758301,
+      "success": true,
+      "extracted_text": "Inscribe a circle in triangle XYZ",
+      "detected_shapes": [
+        "parallel_lines"
+      ],
+      "coordinates": {},
+      "confidence": 0.8449608577903127,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_008",
+      "strategy": "geometry_only",
+      "processing_time_ms": 108.48212242126465,
+      "success": true,
+      "extracted_text": "Construct the angle ",
+      "detected_shapes": [
+        "inscribed_circle"
+      ],
+      "coordinates": {},
+      "confidence": 0.30600000000000005,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_009",
+      "strategy": "geometry_only",
+      "processing_time_ms": 268.5742378234863,
+      "success": true,
+      "extracted_text": "Plot the point (3, -2) on the coordinate plane",
+      "detected_shapes": [
+        "point"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_010",
+      "strategy": "geometry_only",
+      "processing_time_ms": 291.2430763244629,
+      "success": true,
+      "extracted_text": "Find the equation of the line passing through (1, 2) and (3, 6)",
+      "detected_shapes": [
+        "line",
+        "line"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": -3
+          }
+        ]
+      },
+      "confidence": 0.8575107087315407,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_011",
+      "strategy": "geometry_only",
+      "processing_time_ms": 158.68091583251953,
+      "success": true,
+      "extracted_text": "Graph the parabol",
+      "detected_shapes": [
+        "parabola"
+      ],
+      "coordinates": {},
+      "confidence": 0.34,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_012",
+      "strategy": "geometry_only",
+      "processing_time_ms": 176.14102363586426,
+      "success": true,
+      "extracted_text": "Plot the point (3, -2) on the coordinate plane",
+      "detected_shapes": [
+        "coordinate_system"
+      ],
+      "coordinates": {},
+      "confidence": 0.9377482532050007,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_013",
+      "strategy": "geometry_only",
+      "processing_time_ms": 259.82213020324707,
+      "success": true,
+      "extracted_text": "Prove that the sum of ang",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.238,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_014",
+      "strategy": "geometry_only",
+      "processing_time_ms": 206.38203620910645,
+      "success": true,
+      "extracted_text": "Show that opposite angles in a cyclic quadrilateral are supplementary",
+      "detected_shapes": [
+        "quadrilateral"
+      ],
+      "coordinates": {},
+      "confidence": 0.5578170529748165,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_015",
+      "strategy": "geometry_only",
+      "processing_time_ms": 134.7978115081787,
+      "success": true,
+      "extracted_text": "Prove the Pythagorean theo",
+      "detected_shapes": [
+        "circle"
+      ],
+      "coordinates": {},
+      "confidence": 0.238,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_016",
+      "strategy": "geometry_only",
+      "processing_time_ms": 181.898832321167,
+      "success": true,
+      "extracted_text": "Prove that the sum of ang",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.238,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_017",
+      "strategy": "geometry_only",
+      "processing_time_ms": 127.36201286315918,
+      "success": true,
+      "extracted_text": "In triangle ABC with vertices A(0,0), B(3,0), C(1.5,2.6), find the area and circumcenter",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 1.5,
+            "y": 2.6
+          }
+        ]
+      },
+      "confidence": 0.77246242469694,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_018",
+      "strategy": "geometry_only",
+      "processing_time_ms": 217.90814399719238,
+      "success": true,
+      "extracted_text": "A circle with center (2,3) and radius 4 intersects the line y = x + 1. Find intersection points",
+      "detected_shapes": [
+        "circle"
+      ],
+      "coordinates": {},
+      "confidence": 0.5953124084683395,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_019",
+      "strategy": "geometry_only",
+      "processing_time_ms": 205.85918426513672,
+      "success": true,
+      "extracted_text": "In triangle ABC with vertices A(0,0), B(3,0), C(1.5,2.6), find the area and circumcenter",
+      "detected_shapes": [
+        "coordinate_system"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 1.5,
+            "y": 2.6
+          }
+        ]
+      },
+      "confidence": 0.7734177025060474,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_020",
+      "strategy": "geometry_only",
+      "processing_time_ms": 164.51096534729004,
+      "success": true,
+      "extracted_text": "A circle with center (2,3) and radius 4 intersects the line y = x + 1. Find intersection points",
+      "detected_shapes": [
+        "angle"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ]
+      },
+      "confidence": 0.6629084459160504,
+      "error": null
+    }
+  ],
+  "avg_processing_time_ms": 189.68612551689148,
+  "success_rate": 1.0,
+  "error_rate": 0.0
+}

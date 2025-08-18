@@ -1,0 +1,110 @@
+[
+  {
+    "id": "complex_001",
+    "type": "triangle_properties",
+    "description": "Find the area of triangle ABC with vertices at A(2,3), B(5,7), C(1,8)",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "triangle",
+      "coordinate_system"
+    ],
+    "expected_text": [
+      "A(2,3)",
+      "B(5,7)",
+      "C(1,8)",
+      "Area",
+      "triangle ABC"
+    ],
+    "solution_steps": [
+      "Use coordinate geometry",
+      "Apply shoelace formula",
+      "Calculate area"
+    ]
+  },
+  {
+    "id": "complex_002",
+    "type": "circle_geometry",
+    "description": "A circle with center O(3,4) and radius 5 intersects the line y = 2x + 1. Find intersection points.",
+    "difficulty": "hard",
+    "expected_shapes": [
+      "circle",
+      "line",
+      "coordinate_system"
+    ],
+    "expected_text": [
+      "O(3,4)",
+      "r=5",
+      "y=2x+1",
+      "intersection"
+    ],
+    "solution_steps": [
+      "Set up circle equation",
+      "Substitute line equation",
+      "Solve quadratic"
+    ]
+  },
+  {
+    "id": "complex_003",
+    "type": "polygon_analysis",
+    "description": "Regular hexagon ABCDEF with side length 6. Find the area and perimeter.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "hexagon",
+      "regular_polygon"
+    ],
+    "expected_text": [
+      "ABCDEF",
+      "side=6",
+      "regular hexagon",
+      "area",
+      "perimeter"
+    ],
+    "solution_steps": [
+      "Use regular polygon formulas",
+      "Calculate area",
+      "Calculate perimeter"
+    ]
+  },
+  {
+    "id": "complex_004",
+    "type": "3d_geometry",
+    "description": "A rectangular prism with dimensions 4\u00d76\u00d78. Find surface area and volume.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "rectangular_prism",
+      "3d_shape"
+    ],
+    "expected_text": [
+      "4\u00d76\u00d78",
+      "surface area",
+      "volume",
+      "rectangular prism"
+    ],
+    "solution_steps": [
+      "Calculate surface area",
+      "Calculate volume",
+      "Apply 3D formulas"
+    ]
+  },
+  {
+    "id": "complex_005",
+    "type": "angle_relationships",
+    "description": "In triangle PQR, angle P = 45\u00b0, angle Q = 60\u00b0. Find angle R and classify the triangle.",
+    "difficulty": "easy",
+    "expected_shapes": [
+      "triangle",
+      "angle_markings"
+    ],
+    "expected_text": [
+      "P=45\u00b0",
+      "Q=60\u00b0",
+      "angle R",
+      "triangle PQR"
+    ],
+    "solution_steps": [
+      "Use angle sum property",
+      "Calculate angle R",
+      "Classify triangle"
+    ]
+  }
+]

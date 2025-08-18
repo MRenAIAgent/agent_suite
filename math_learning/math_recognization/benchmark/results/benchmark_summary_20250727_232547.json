@@ -1,0 +1,29 @@
+{
+  "benchmark_date": "2025-07-27T23:25:47.950439",
+  "total_datasets": 3,
+  "total_time": 0.014726877212524414,
+  "results": {
+    "math_expressions": {
+      "dataset_name": "math_expressions",
+      "result_path": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark/scripts/../results/math_expressions_benchmark_20250727_232547.json",
+      "overall_accuracy": 0.8,
+      "processing_time": 0.0068967342376708984
+    },
+    "test_papers": {
+      "dataset_name": "test_papers",
+      "result_path": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark/scripts/../results/test_papers_benchmark_20250727_232547.json",
+      "overall_accuracy": 0.7857142857142857,
+      "processing_time": 0.0029680728912353516
+    },
+    "student_solutions": {
+      "dataset_name": "student_solutions",
+      "result_path": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark/scripts/../results/student_solutions_benchmark_20250727_232547.json",
+      "overall_accuracy": 0.8,
+      "processing_time": 0.0010099411010742188
+    }
+  },
+  "overall_summary": {
+    "avg_accuracy": 0.7952380952380952,
+    "total_processing_time": 0.010874748229980469
+  }
+}

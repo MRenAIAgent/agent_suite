@@ -1,0 +1,26 @@
+{
+  "dataset_name": "Complex Geometry Benchmark",
+  "description": "Much more challenging than simple shapes - includes coordinate geometry, 3D problems, polygon analysis",
+  "total_problems": 5,
+  "difficulty_levels": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "problem_types": [
+    "triangle_properties",
+    "circle_geometry",
+    "polygon_analysis",
+    "3d_geometry",
+    "angle_relationships"
+  ],
+  "expected_accuracy": {
+    "simple_ocr": "20-30%",
+    "gpt4_vision": "60-80%",
+    "combined_approach": "70-90%"
+  },
+  "complexity_vs_simple_shapes": {
+    "simple_shapes": "Basic circles, triangles, lines",
+    "complex_problems": "Coordinate geometry, 3D shapes, multi-step solutions"
+  }
+}

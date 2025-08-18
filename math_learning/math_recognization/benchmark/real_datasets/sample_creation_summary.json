@@ -1,0 +1,45 @@
+{
+  "creation_info": {
+    "date": "2025-08-03 16:09:16",
+    "timestamp": 1754262556,
+    "purpose": "Replace empty dataset placeholders with proper sample data"
+  },
+  "datasets_created": {
+    "MATH-Vision": {
+      "samples": 8,
+      "types": [
+        "Coordinate Geometry",
+        "Trigonometry",
+        "Algebra",
+        "Geometry",
+        "Statistics",
+        "Number Theory",
+        "Calculus"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ]
+    },
+    "MathVerse": {
+      "samples": 8,
+      "subfields": [
+        "analytic_geometry",
+        "coordinate_geometry",
+        "calculus",
+        "trigonometry",
+        "solid_geometry",
+        "plane_geometry",
+        "algebra",
+        "probability"
+      ],
+      "difficulties": [
+        "easy",
+        "hard",
+        "medium"
+      ]
+    }
+  },
+  "total_new_samples": 16
+}

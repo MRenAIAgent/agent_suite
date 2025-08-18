@@ -1,0 +1,53 @@
+{
+  "dataset_name": "student_solutions",
+  "system_name": "Math Test Analysis System",
+  "evaluation_date": "2025-07-27T23:25:47.949710",
+  "total_samples": 5,
+  "processing_time": 9.083747863769531e-05,
+  "overall_accuracy": 0.8,
+  "summary": {
+    "metrics_evaluated": 1,
+    "total_samples": 5,
+    "processing_speed": "0.00s",
+    "metric_breakdown": {
+      "error_analysis": 0.8
+    }
+  },
+  "metrics": [
+    {
+      "metric_name": "error_analysis",
+      "score": 4,
+      "max_score": 5,
+      "accuracy": 0.8,
+      "details": {
+        "total_solutions": 5,
+        "correct_classifications": 4,
+        "error_type_accuracy": {
+          "arithmetic": [
+            1.0
+          ],
+          "conceptual": [
+            1.0
+          ],
+          "procedural": [
+            0.0,
+            1.0
+          ]
+        },
+        "root_cause_accuracy": {
+          "arithmetic": [
+            1.0
+          ],
+          "conceptual": [
+            1.0
+          ],
+          "procedural": [
+            0.0,
+            1.0
+          ]
+        },
+        "confidence_correlation": []
+      }
+    }
+  ]
+}

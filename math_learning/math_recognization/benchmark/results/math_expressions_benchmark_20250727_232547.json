@@ -1,0 +1,70 @@
+{
+  "dataset_name": "math_expressions",
+  "system_name": "Math Test Analysis System",
+  "evaluation_date": "2025-07-27T23:25:47.942893",
+  "total_samples": 5,
+  "processing_time": 0.00513005256652832,
+  "overall_accuracy": 0.8,
+  "summary": {
+    "metrics_evaluated": 1,
+    "total_samples": 5,
+    "processing_speed": "0.01s",
+    "metric_breakdown": {
+      "expression_recognition": 0.8
+    }
+  },
+  "metrics": [
+    {
+      "metric_name": "expression_recognition",
+      "score": 4,
+      "max_score": 5,
+      "accuracy": 0.8,
+      "details": {
+        "total_expressions": 5,
+        "correct_expressions": 4,
+        "character_accuracy": [
+          1.0,
+          1.0,
+          0.8,
+          1.0,
+          1.0
+        ],
+        "semantic_accuracy": [
+          1.0,
+          1.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "by_difficulty": {
+          "medium": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hard": [
+            0.0
+          ]
+        },
+        "by_domain": {
+          "algebra": [
+            1.0,
+            1.0
+          ],
+          "calculus": [
+            0.0
+          ],
+          "trigonometry": [
+            1.0
+          ],
+          "linear_algebra": [
+            1.0
+          ]
+        },
+        "avg_character_accuracy": 0.96,
+        "avg_semantic_accuracy": 0.8
+      }
+    }
+  ]
+}

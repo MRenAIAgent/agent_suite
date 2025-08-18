@@ -1,0 +1,166 @@
+{
+  "dataset_info": {
+    "name": "Expanded Math Recognition Dataset",
+    "total_problems": 17,
+    "generated_date": "2025-08-03 16:06:56",
+    "purpose": "Address critical dataset gaps identified in benchmark analysis"
+  },
+  "problem_type_distribution": {
+    "triangle_properties": 3,
+    "circle_geometry": 3,
+    "coordinate_geometry": 3,
+    "polygon_analysis": 3,
+    "3d_geometry": 3,
+    "linear_equations": 1,
+    "quadratic_equations": 1
+  },
+  "difficulty_distribution": {
+    "easy": 6,
+    "medium": 9,
+    "hard": 2
+  },
+  "concept_coverage": {
+    "Pythagorean theorem": 2,
+    "triangle area": 1,
+    "right triangles": 1,
+    "isosceles triangles": 1,
+    "triangle height": 1,
+    "coordinate geometry": 6,
+    "distance formula": 2,
+    "shoelace formula": 1,
+    "circle area": 1,
+    "circumference": 1,
+    "pi": 1,
+    "circle equation": 1,
+    "standard form": 1,
+    "quadratic equations": 2,
+    "circle-line intersection": 1,
+    "midpoint formula": 1,
+    "slope": 1,
+    "point-slope form": 1,
+    "linear equations": 2,
+    "regular polygons": 2,
+    "hexagon area": 1,
+    "perimeter": 1,
+    "rectangle area": 1,
+    "square properties": 1,
+    "polygon angles": 1,
+    "interior angles": 1,
+    "3D geometry": 3,
+    "volume": 1,
+    "surface area": 1,
+    "cylinder volume": 1,
+    "cylinder surface area": 1,
+    "sphere volume": 1,
+    "sphere surface area": 1,
+    "algebraic manipulation": 1,
+    "factoring": 1,
+    "zero product property": 1
+  },
+  "sample_problems": [
+    {
+      "id": "expanded_tri_001",
+      "type": "triangle_properties",
+      "subtype": "right_triangle",
+      "description": "In right triangle ABC, if AB = 3 and BC = 4, find AC and the area.",
+      "difficulty": "easy",
+      "expected_shapes": [
+        "triangle",
+        "right_angle"
+      ],
+      "expected_text": [
+        "AB = 3",
+        "BC = 4",
+        "AC",
+        "area",
+        "right triangle ABC"
+      ],
+      "expected_coordinates": [],
+      "solution_steps": [
+        "Apply Pythagorean theorem: AC\u00b2 = AB\u00b2 + BC\u00b2",
+        "AC\u00b2 = 3\u00b2 + 4\u00b2 = 9 + 16 = 25",
+        "AC = 5",
+        "Area = (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 3 \u00d7 4 = 6"
+      ],
+      "mathematical_concepts": [
+        "Pythagorean theorem",
+        "triangle area",
+        "right triangles"
+      ],
+      "answer": "AC = 5, Area = 6"
+    },
+    {
+      "id": "expanded_tri_002",
+      "type": "triangle_properties",
+      "subtype": "isosceles_triangle",
+      "description": "Isosceles triangle DEF has DE = DF = 8 cm and base EF = 6 cm. Find the height and area.",
+      "difficulty": "medium",
+      "expected_shapes": [
+        "triangle",
+        "isosceles_triangle",
+        "height_line"
+      ],
+      "expected_text": [
+        "DE = 8",
+        "DF = 8",
+        "EF = 6",
+        "height",
+        "area",
+        "isosceles"
+      ],
+      "expected_coordinates": [],
+      "solution_steps": [
+        "Draw height from D to EF, creating two right triangles",
+        "Height bisects base: EG = GF = 3 cm",
+        "In right triangle DGE: DG\u00b2 + 3\u00b2 = 8\u00b2",
+        "DG\u00b2 = 64 - 9 = 55, so DG = \u221a55 \u2248 7.42 cm",
+        "Area = (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 6 \u00d7 \u221a55 = 3\u221a55 \u2248 22.25 cm\u00b2"
+      ],
+      "mathematical_concepts": [
+        "isosceles triangles",
+        "triangle height",
+        "Pythagorean theorem"
+      ],
+      "answer": "Height = \u221a55 \u2248 7.42 cm, Area = 3\u221a55 \u2248 22.25 cm\u00b2"
+    },
+    {
+      "id": "expanded_tri_003",
+      "type": "triangle_properties",
+      "subtype": "coordinate_triangle",
+      "description": "Triangle PQR has vertices P(1,2), Q(5,6), R(3,8). Find the perimeter and area.",
+      "difficulty": "hard",
+      "expected_shapes": [
+        "triangle",
+        "coordinate_system"
+      ],
+      "expected_text": [
+        "P(1,2)",
+        "Q(5,6)",
+        "R(3,8)",
+        "perimeter",
+        "area",
+        "triangle PQR"
+      ],
+      "expected_coordinates": [
+        "P(1,2)",
+        "Q(5,6)",
+        "R(3,8)"
+      ],
+      "solution_steps": [
+        "Calculate side lengths using distance formula",
+        "PQ = \u221a[(5-1)\u00b2 + (6-2)\u00b2] = \u221a[16 + 16] = \u221a32 = 4\u221a2",
+        "QR = \u221a[(3-5)\u00b2 + (8-6)\u00b2] = \u221a[4 + 4] = \u221a8 = 2\u221a2",
+        "PR = \u221a[(3-1)\u00b2 + (8-2)\u00b2] = \u221a[4 + 36] = \u221a40 = 2\u221a10",
+        "Perimeter = 4\u221a2 + 2\u221a2 + 2\u221a10 = 6\u221a2 + 2\u221a10",
+        "Area using shoelace formula = (1/2)|x\u2081(y\u2082-y\u2083) + x\u2082(y\u2083-y\u2081) + x\u2083(y\u2081-y\u2082)|",
+        "Area = (1/2)|1(6-8) + 5(8-2) + 3(2-6)| = (1/2)|(-2) + 30 + (-12)| = 8"
+      ],
+      "mathematical_concepts": [
+        "coordinate geometry",
+        "distance formula",
+        "shoelace formula"
+      ],
+      "answer": "Perimeter = 6\u221a2 + 2\u221a10 \u2248 14.8, Area = 8"
+    }
+  ]
+}

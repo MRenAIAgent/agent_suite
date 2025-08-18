@@ -1,0 +1,107 @@
+{
+  "name": "Sample Test Papers",
+  "description": "Sample test papers dataset for complete analysis benchmarking",
+  "version": "1.0",
+  "created_date": "2025-07-27T23:25:27.164517",
+  "total_papers": 3,
+  "subjects": [
+    "algebra",
+    "geometry",
+    "calculus"
+  ],
+  "grade_levels": [
+    "middle_school",
+    "high_school",
+    "college"
+  ],
+  "test_papers": [
+    {
+      "id": "paper_001",
+      "image_path": "test_papers/algebra_test_001.png",
+      "title": "Algebra Test - Quadratic Equations",
+      "grade_level": "high_school",
+      "subject": "algebra",
+      "total_questions": 3,
+      "ground_truth": {
+        "questions": [
+          {
+            "question_id": "q1",
+            "question_text": "Solve: x\u00b2 - 5x + 6 = 0",
+            "correct_answer": "x = 2, x = 3",
+            "answer_type": "algebraic",
+            "points": 10
+          },
+          {
+            "question_id": "q2",
+            "question_text": "Factor: x\u00b2 + 7x + 12",
+            "correct_answer": "(x + 3)(x + 4)",
+            "answer_type": "algebraic",
+            "points": 10
+          },
+          {
+            "question_id": "q3",
+            "question_text": "Find the vertex of y = x\u00b2 - 4x + 3",
+            "correct_answer": "(2, -1)",
+            "answer_type": "coordinate",
+            "points": 15
+          }
+        ],
+        "total_points": 35
+      }
+    },
+    {
+      "id": "paper_002",
+      "image_path": "test_papers/geometry_test_001.png",
+      "title": "Geometry Test - Area and Perimeter",
+      "grade_level": "middle_school",
+      "subject": "geometry",
+      "total_questions": 2,
+      "ground_truth": {
+        "questions": [
+          {
+            "question_id": "q1",
+            "question_text": "Find the area of a rectangle with length 8 cm and width 5 cm",
+            "correct_answer": "40 cm\u00b2",
+            "answer_type": "numerical",
+            "points": 10
+          },
+          {
+            "question_id": "q2",
+            "question_text": "Calculate the perimeter of a triangle with sides 3, 4, and 5 units",
+            "correct_answer": "12 units",
+            "answer_type": "numerical",
+            "points": 10
+          }
+        ],
+        "total_points": 20
+      }
+    },
+    {
+      "id": "paper_003",
+      "image_path": "test_papers/calculus_test_001.png",
+      "title": "Calculus Test - Derivatives",
+      "grade_level": "college",
+      "subject": "calculus",
+      "total_questions": 2,
+      "ground_truth": {
+        "questions": [
+          {
+            "question_id": "q1",
+            "question_text": "Find the derivative of f(x) = x\u00b3 + 2x\u00b2 - 5x + 1",
+            "correct_answer": "f'(x) = 3x\u00b2 + 4x - 5",
+            "answer_type": "algebraic",
+            "points": 15
+          },
+          {
+            "question_id": "q2",
+            "question_text": "Evaluate: d/dx[sin(x) + cos(x)]",
+            "correct_answer": "cos(x) - sin(x)",
+            "answer_type": "algebraic",
+            "points": 15
+          }
+        ],
+        "total_points": 30
+      }
+    }
+  ]
+}

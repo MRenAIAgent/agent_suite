@@ -1,0 +1,229 @@
+{
+  "dataset_name": "Geometry Comprehensive Benchmark",
+  "system_name": "GOT-OCR2.0 + GPT-4 Vision (Pure)",
+  "evaluation_date": "2025-07-28T20:44:11.956634",
+  "total_samples": 10,
+  "processing_time_seconds": 2.0291941165924072,
+  "overall_accuracy": 0.865,
+  "shape_detection_accuracy": 1.0,
+  "coordinate_extraction_accuracy": 0.5,
+  "text_recognition_accuracy": 0.8833333333333334,
+  "latex_accuracy": 0.0,
+  "geometry_type_results": {
+    "basic_shapes": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.95,
+      "avg_processing_time": 229.2952537536621
+    },
+    "construction": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.7880882321613892,
+      "avg_processing_time": 285.25638580322266
+    },
+    "coordinate": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.95,
+      "avg_processing_time": 217.31138229370117
+    },
+    "proof": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.2422,
+      "avg_processing_time": 162.727952003479
+    },
+    "mixed": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.7503351172717205,
+      "avg_processing_time": 119.94802951812744
+    }
+  },
+  "difficulty_results": {
+    "easy": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.95,
+      "avg_processing_time": 223.30331802368164
+    },
+    "medium": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.7692116747165549,
+      "avg_processing_time": 202.60220766067505
+    },
+    "hard": {
+      "accuracy": 2.0,
+      "avg_confidence": 0.2422,
+      "avg_processing_time": 162.727952003479
+    }
+  },
+  "strategy_comparison": {
+    "geometry_first": {
+      "success_rate": 1.0,
+      "avg_confidence": 0.746206696790187,
+      "avg_processing_time": 193.49112510681152
+    },
+    "geometry_only": {
+      "success_rate": 1.0,
+      "avg_confidence": 0.7260426429830569,
+      "avg_processing_time": 212.32447624206543
+    }
+  },
+  "individual_results": [
+    {
+      "test_case_id": "geo_001",
+      "strategy": "geometry_first",
+      "processing_time_ms": 250.0627040863037,
+      "success": true,
+      "extracted_text": "Find the area of the triangle with base 6 and height 4",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_002",
+      "strategy": "geometry_first",
+      "processing_time_ms": 291.79978370666504,
+      "success": true,
+      "extracted_text": "Construct the angle bisector of angle ABC",
+      "detected_shapes": [
+        "angle_bisector"
+      ],
+      "coordinates": {},
+      "confidence": 0.8108180862024685,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_003",
+      "strategy": "geometry_first",
+      "processing_time_ms": 177.13499069213867,
+      "success": true,
+      "extracted_text": "Plot the point (3, -2) on the coordinate plane",
+      "detected_shapes": [
+        "point"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_004",
+      "strategy": "geometry_first",
+      "processing_time_ms": 134.63592529296875,
+      "success": true,
+      "extracted_text": "Prove that the sum of ang",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.2464,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_005",
+      "strategy": "geometry_first",
+      "processing_time_ms": 113.82222175598145,
+      "success": true,
+      "extracted_text": "In triangle ABC with vertices A(0,0), B(3,0), C(1.5,2.6), find the area and circumcenter",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.7738153977484669,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_001",
+      "strategy": "geometry_only",
+      "processing_time_ms": 208.5278034210205,
+      "success": true,
+      "extracted_text": "Find the area of the triangle with base 6 and height 4",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_002",
+      "strategy": "geometry_only",
+      "processing_time_ms": 278.7129878997803,
+      "success": true,
+      "extracted_text": "Construct the angle bisector of angle ABC",
+      "detected_shapes": [
+        "angle_bisector"
+      ],
+      "coordinates": {},
+      "confidence": 0.7653583781203099,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_003",
+      "strategy": "geometry_only",
+      "processing_time_ms": 257.4877738952637,
+      "success": true,
+      "extracted_text": "Plot the point (3, -2) on the coordinate plane",
+      "detected_shapes": [
+        "point"
+      ],
+      "coordinates": {},
+      "confidence": 0.95,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_004",
+      "strategy": "geometry_only",
+      "processing_time_ms": 190.81997871398926,
+      "success": true,
+      "extracted_text": "Prove that the sum of ang",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {},
+      "confidence": 0.238,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_005",
+      "strategy": "geometry_only",
+      "processing_time_ms": 126.07383728027344,
+      "success": true,
+      "extracted_text": "In triangle ABC with vertices A(0,0), B(3,0), C(1.5,2.6), find the area and circumcenter",
+      "detected_shapes": [
+        "triangle"
+      ],
+      "coordinates": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 1.5,
+            "y": 2.6
+          }
+        ]
+      },
+      "confidence": 0.7268548367949743,
+      "error": null
+    }
+  ],
+  "avg_processing_time_ms": 202.90780067443848,
+  "success_rate": 1.0,
+  "error_rate": 0.0
+}

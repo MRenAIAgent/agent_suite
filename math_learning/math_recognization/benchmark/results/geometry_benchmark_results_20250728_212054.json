@@ -1,0 +1,123 @@
+{
+  "dataset_name": "Geometry Comprehensive Benchmark",
+  "system_name": "GOT-OCR2.0 + GPT-4 Vision (Pure)",
+  "evaluation_date": "2025-07-28T21:20:54.031270",
+  "total_samples": 5,
+  "processing_time_seconds": 21.733908891677856,
+  "overall_accuracy": 0.1,
+  "shape_detection_accuracy": 0.0,
+  "coordinate_extraction_accuracy": 0.0,
+  "text_recognition_accuracy": 0,
+  "latex_accuracy": 0.0,
+  "geometry_type_results": {
+    "basic_shapes": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 6775.533199310303
+    },
+    "construction": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 3797.689914703369
+    },
+    "coordinate": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 3667.7658557891846
+    },
+    "proof": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 3796.766996383667
+    },
+    "mixed": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 3696.033000946045
+    }
+  },
+  "difficulty_results": {
+    "easy": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 5221.649527549744
+    },
+    "medium": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 3746.861457824707
+    },
+    "hard": {
+      "accuracy": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 3796.766996383667
+    }
+  },
+  "strategy_comparison": {
+    "geometry_only": {
+      "success_rate": 1.0,
+      "avg_confidence": 0.0,
+      "avg_processing_time": 4346.757793426514
+    }
+  },
+  "individual_results": [
+    {
+      "test_case_id": "geo_001",
+      "strategy": "geometry_only",
+      "processing_time_ms": 6775.533199310303,
+      "success": true,
+      "extracted_text": "",
+      "detected_shapes": [],
+      "coordinates": {},
+      "confidence": 0.0,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_002",
+      "strategy": "geometry_only",
+      "processing_time_ms": 3797.689914703369,
+      "success": true,
+      "extracted_text": "",
+      "detected_shapes": [],
+      "coordinates": {},
+      "confidence": 0.0,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_003",
+      "strategy": "geometry_only",
+      "processing_time_ms": 3667.7658557891846,
+      "success": true,
+      "extracted_text": "",
+      "detected_shapes": [],
+      "coordinates": {},
+      "confidence": 0.0,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_004",
+      "strategy": "geometry_only",
+      "processing_time_ms": 3796.766996383667,
+      "success": true,
+      "extracted_text": "",
+      "detected_shapes": [],
+      "coordinates": {},
+      "confidence": 0.0,
+      "error": null
+    },
+    {
+      "test_case_id": "geo_005",
+      "strategy": "geometry_only",
+      "processing_time_ms": 3696.033000946045,
+      "success": true,
+      "extracted_text": "",
+      "detected_shapes": [],
+      "coordinates": {},
+      "confidence": 0.0,
+      "error": null
+    }
+  ],
+  "avg_processing_time_ms": 4346.757793426514,
+  "success_rate": 1.0,
+  "error_rate": 0.0
+}

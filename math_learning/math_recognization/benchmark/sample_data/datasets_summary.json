@@ -1,0 +1,18 @@
+{
+  "created_date": "2025-07-27T23:25:27.165572",
+  "total_datasets": 3,
+  "datasets": {
+    "math_expressions": {
+      "total_samples": 5,
+      "description": "Sample mathematical expressions dataset for OCR benchmarking"
+    },
+    "test_papers": {
+      "total_samples": 3,
+      "description": "Sample test papers dataset for complete analysis benchmarking"
+    },
+    "student_solutions": {
+      "total_samples": 5,
+      "description": "Sample student solutions with error analysis ground truth"
+    }
+  }
+}

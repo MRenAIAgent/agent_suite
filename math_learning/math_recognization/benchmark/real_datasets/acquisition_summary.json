@@ -1,0 +1,26 @@
+{
+  "acquisition_info": {
+    "date": "2025-08-03 16:08:24",
+    "timestamp": 1754262504,
+    "purpose": "Fix critical dataset gaps - acquire missing MATH-Vision and MathVerse"
+  },
+  "datasets_acquired": {
+    "MATH-Vision": {
+      "status": "failed",
+      "samples": 0,
+      "error": "Download or processing failed"
+    },
+    "MathVerse": {
+      "status": "failed",
+      "samples": 0,
+      "error": "Download or processing failed"
+    },
+    "UniMER": {
+      "status": "failed",
+      "samples": 0,
+      "error": "Download or processing failed"
+    }
+  },
+  "total_new_samples": 0,
+  "status": "completed"
+}

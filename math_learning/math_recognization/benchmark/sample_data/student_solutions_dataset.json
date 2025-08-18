@@ -1,0 +1,85 @@
+{
+  "name": "Sample Student Solutions",
+  "description": "Sample student solutions with error analysis ground truth",
+  "version": "1.0",
+  "created_date": "2025-07-27T23:25:27.164918",
+  "total_solutions": 5,
+  "error_types": [
+    "arithmetic",
+    "conceptual",
+    "procedural"
+  ],
+  "accuracy_rate": 0.2,
+  "solutions": [
+    {
+      "id": "solution_001",
+      "question": "Solve: x\u00b2 - 5x + 6 = 0",
+      "correct_answer": "x = 2, x = 3",
+      "student_answer": "x = 2, x = 4",
+      "is_correct": false,
+      "error_analysis": {
+        "error_type": "arithmetic",
+        "error_description": "Calculation error in factoring",
+        "root_cause": "Incorrect mental arithmetic: 2 \u00d7 4 \u2260 6",
+        "knowledge_gap": "factoring_quadratics",
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "solution_002",
+      "question": "Factor: x\u00b2 + 7x + 12",
+      "correct_answer": "(x + 3)(x + 4)",
+      "student_answer": "(x + 2)(x + 6)",
+      "is_correct": false,
+      "error_analysis": {
+        "error_type": "conceptual",
+        "error_description": "Incorrect factor pair selection",
+        "root_cause": "Student found factors of 12 but didn't verify sum equals 7",
+        "knowledge_gap": "factoring_verification",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "solution_003",
+      "question": "Find the area of a rectangle with length 8 cm and width 5 cm",
+      "correct_answer": "40 cm\u00b2",
+      "student_answer": "13 cm\u00b2",
+      "is_correct": false,
+      "error_analysis": {
+        "error_type": "procedural",
+        "error_description": "Used addition instead of multiplication",
+        "root_cause": "Confused area formula with perimeter formula",
+        "knowledge_gap": "area_vs_perimeter",
+        "confidence": 0.98
+      }
+    },
+    {
+      "id": "solution_004",
+      "question": "Calculate: 2/3 + 1/4",
+      "correct_answer": "11/12",
+      "student_answer": "3/7",
+      "is_correct": false,
+      "error_analysis": {
+        "error_type": "procedural",
+        "error_description": "Added numerators and denominators separately",
+        "root_cause": "Misunderstood fraction addition procedure",
+        "knowledge_gap": "fraction_operations",
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "solution_005",
+      "question": "Solve: 2x + 5 = 13",
+      "correct_answer": "x = 4",
+      "student_answer": "x = 4",
+      "is_correct": true,
+      "error_analysis": {
+        "error_type": null,
+        "error_description": null,
+        "root_cause": null,
+        "knowledge_gap": null,
+        "confidence": 1.0
+      }
+    }
+  ]
+}

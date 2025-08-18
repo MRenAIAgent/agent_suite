@@ -1,0 +1,45 @@
+{
+  "dataset_name": "PGDP5K",
+  "description": "Plane Geometry Diagram Parsing Dataset with 5,000 real images",
+  "total_samples": 5000,
+  "splits": {
+    "train": 3500,
+    "val": 500,
+    "test": 1000
+  },
+  "image_formats": [
+    "jpg",
+    "png"
+  ],
+  "annotation_format": "json",
+  "geometric_primitives": [
+    "point",
+    "line",
+    "circle"
+  ],
+  "symbol_types": 16,
+  "text_types": 6,
+  "difficulty_levels": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "geometry_types": [
+    "basic_shapes",
+    "linear",
+    "circular",
+    "mixed",
+    "point_geometry"
+  ],
+  "evaluation_metrics": [
+    "shape_detection_accuracy",
+    "text_recognition_accuracy",
+    "coordinate_extraction_accuracy",
+    "overall_parsing_accuracy"
+  ],
+  "baseline_performance": {
+    "expected_accuracy_range": "70-85%",
+    "previous_synthetic_accuracy": "10%",
+    "improvement_expected": "+60-75%"
+  }
+}

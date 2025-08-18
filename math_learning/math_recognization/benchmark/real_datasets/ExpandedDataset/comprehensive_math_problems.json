@@ -1,0 +1,546 @@
+[
+  {
+    "id": "expanded_tri_001",
+    "type": "triangle_properties",
+    "subtype": "right_triangle",
+    "description": "In right triangle ABC, if AB = 3 and BC = 4, find AC and the area.",
+    "difficulty": "easy",
+    "expected_shapes": [
+      "triangle",
+      "right_angle"
+    ],
+    "expected_text": [
+      "AB = 3",
+      "BC = 4",
+      "AC",
+      "area",
+      "right triangle ABC"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Apply Pythagorean theorem: AC\u00b2 = AB\u00b2 + BC\u00b2",
+      "AC\u00b2 = 3\u00b2 + 4\u00b2 = 9 + 16 = 25",
+      "AC = 5",
+      "Area = (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 3 \u00d7 4 = 6"
+    ],
+    "mathematical_concepts": [
+      "Pythagorean theorem",
+      "triangle area",
+      "right triangles"
+    ],
+    "answer": "AC = 5, Area = 6"
+  },
+  {
+    "id": "expanded_tri_002",
+    "type": "triangle_properties",
+    "subtype": "isosceles_triangle",
+    "description": "Isosceles triangle DEF has DE = DF = 8 cm and base EF = 6 cm. Find the height and area.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "triangle",
+      "isosceles_triangle",
+      "height_line"
+    ],
+    "expected_text": [
+      "DE = 8",
+      "DF = 8",
+      "EF = 6",
+      "height",
+      "area",
+      "isosceles"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Draw height from D to EF, creating two right triangles",
+      "Height bisects base: EG = GF = 3 cm",
+      "In right triangle DGE: DG\u00b2 + 3\u00b2 = 8\u00b2",
+      "DG\u00b2 = 64 - 9 = 55, so DG = \u221a55 \u2248 7.42 cm",
+      "Area = (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 6 \u00d7 \u221a55 = 3\u221a55 \u2248 22.25 cm\u00b2"
+    ],
+    "mathematical_concepts": [
+      "isosceles triangles",
+      "triangle height",
+      "Pythagorean theorem"
+    ],
+    "answer": "Height = \u221a55 \u2248 7.42 cm, Area = 3\u221a55 \u2248 22.25 cm\u00b2"
+  },
+  {
+    "id": "expanded_tri_003",
+    "type": "triangle_properties",
+    "subtype": "coordinate_triangle",
+    "description": "Triangle PQR has vertices P(1,2), Q(5,6), R(3,8). Find the perimeter and area.",
+    "difficulty": "hard",
+    "expected_shapes": [
+      "triangle",
+      "coordinate_system"
+    ],
+    "expected_text": [
+      "P(1,2)",
+      "Q(5,6)",
+      "R(3,8)",
+      "perimeter",
+      "area",
+      "triangle PQR"
+    ],
+    "expected_coordinates": [
+      "P(1,2)",
+      "Q(5,6)",
+      "R(3,8)"
+    ],
+    "solution_steps": [
+      "Calculate side lengths using distance formula",
+      "PQ = \u221a[(5-1)\u00b2 + (6-2)\u00b2] = \u221a[16 + 16] = \u221a32 = 4\u221a2",
+      "QR = \u221a[(3-5)\u00b2 + (8-6)\u00b2] = \u221a[4 + 4] = \u221a8 = 2\u221a2",
+      "PR = \u221a[(3-1)\u00b2 + (8-2)\u00b2] = \u221a[4 + 36] = \u221a40 = 2\u221a10",
+      "Perimeter = 4\u221a2 + 2\u221a2 + 2\u221a10 = 6\u221a2 + 2\u221a10",
+      "Area using shoelace formula = (1/2)|x\u2081(y\u2082-y\u2083) + x\u2082(y\u2083-y\u2081) + x\u2083(y\u2081-y\u2082)|",
+      "Area = (1/2)|1(6-8) + 5(8-2) + 3(2-6)| = (1/2)|(-2) + 30 + (-12)| = 8"
+    ],
+    "mathematical_concepts": [
+      "coordinate geometry",
+      "distance formula",
+      "shoelace formula"
+    ],
+    "answer": "Perimeter = 6\u221a2 + 2\u221a10 \u2248 14.8, Area = 8"
+  },
+  {
+    "id": "expanded_cir_001",
+    "type": "circle_geometry",
+    "subtype": "basic_circle",
+    "description": "A circle has radius 7 cm. Find its area and circumference.",
+    "difficulty": "easy",
+    "expected_shapes": [
+      "circle"
+    ],
+    "expected_text": [
+      "radius = 7",
+      "area",
+      "circumference",
+      "\u03c0"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Area = \u03c0r\u00b2 = \u03c0 \u00d7 7\u00b2 = 49\u03c0 cm\u00b2",
+      "Circumference = 2\u03c0r = 2\u03c0 \u00d7 7 = 14\u03c0 cm",
+      "Area \u2248 49 \u00d7 3.14159 \u2248 153.94 cm\u00b2",
+      "Circumference \u2248 14 \u00d7 3.14159 \u2248 43.98 cm"
+    ],
+    "mathematical_concepts": [
+      "circle area",
+      "circumference",
+      "pi"
+    ],
+    "answer": "Area = 49\u03c0 \u2248 153.94 cm\u00b2, Circumference = 14\u03c0 \u2248 43.98 cm"
+  },
+  {
+    "id": "expanded_cir_002",
+    "type": "circle_geometry",
+    "subtype": "circle_equation",
+    "description": "Find the equation of a circle with center C(3,-2) and radius 5.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "circle",
+      "coordinate_system"
+    ],
+    "expected_text": [
+      "C(3,-2)",
+      "radius = 5",
+      "equation",
+      "center"
+    ],
+    "expected_coordinates": [
+      "C(3,-2)"
+    ],
+    "solution_steps": [
+      "Standard form of circle: (x-h)\u00b2 + (y-k)\u00b2 = r\u00b2",
+      "Where (h,k) is center and r is radius",
+      "Substitute h=3, k=-2, r=5",
+      "(x-3)\u00b2 + (y-(-2))\u00b2 = 5\u00b2",
+      "(x-3)\u00b2 + (y+2)\u00b2 = 25"
+    ],
+    "mathematical_concepts": [
+      "circle equation",
+      "coordinate geometry",
+      "standard form"
+    ],
+    "answer": "(x-3)\u00b2 + (y+2)\u00b2 = 25"
+  },
+  {
+    "id": "expanded_cir_003",
+    "type": "circle_geometry",
+    "subtype": "circle_line_intersection",
+    "description": "Circle x\u00b2 + y\u00b2 = 25 intersects line y = 3x + 1. Find intersection points.",
+    "difficulty": "hard",
+    "expected_shapes": [
+      "circle",
+      "line",
+      "coordinate_system"
+    ],
+    "expected_text": [
+      "x\u00b2 + y\u00b2 = 25",
+      "y = 3x + 1",
+      "intersection",
+      "points"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Substitute y = 3x + 1 into circle equation",
+      "x\u00b2 + (3x + 1)\u00b2 = 25",
+      "x\u00b2 + 9x\u00b2 + 6x + 1 = 25",
+      "10x\u00b2 + 6x - 24 = 0",
+      "5x\u00b2 + 3x - 12 = 0",
+      "Using quadratic formula: x = (-3 \u00b1 \u221a(9 + 240))/10 = (-3 \u00b1 \u221a249)/10",
+      "x\u2081 = (-3 + \u221a249)/10 \u2248 1.28, x\u2082 = (-3 - \u221a249)/10 \u2248 -1.88",
+      "y\u2081 = 3(1.28) + 1 \u2248 4.84, y\u2082 = 3(-1.88) + 1 \u2248 -4.64"
+    ],
+    "mathematical_concepts": [
+      "quadratic equations",
+      "circle-line intersection",
+      "coordinate geometry"
+    ],
+    "answer": "Points: ((-3+\u221a249)/10, (3(-3+\u221a249)/10+1)) and ((-3-\u221a249)/10, (3(-3-\u221a249)/10+1))"
+  },
+  {
+    "id": "expanded_coord_001",
+    "type": "coordinate_geometry",
+    "subtype": "distance_formula",
+    "description": "Find the distance between points A(2,5) and B(-3,1).",
+    "difficulty": "easy",
+    "expected_shapes": [
+      "coordinate_system",
+      "line"
+    ],
+    "expected_text": [
+      "A(2,5)",
+      "B(-3,1)",
+      "distance"
+    ],
+    "expected_coordinates": [
+      "A(2,5)",
+      "B(-3,1)"
+    ],
+    "solution_steps": [
+      "Use distance formula: d = \u221a[(x\u2082-x\u2081)\u00b2 + (y\u2082-y\u2081)\u00b2]",
+      "d = \u221a[(-3-2)\u00b2 + (1-5)\u00b2]",
+      "d = \u221a[(-5)\u00b2 + (-4)\u00b2]",
+      "d = \u221a[25 + 16] = \u221a41 \u2248 6.40"
+    ],
+    "mathematical_concepts": [
+      "distance formula",
+      "coordinate geometry"
+    ],
+    "answer": "\u221a41 \u2248 6.40"
+  },
+  {
+    "id": "expanded_coord_002",
+    "type": "coordinate_geometry",
+    "subtype": "midpoint_formula",
+    "description": "Find the midpoint of line segment connecting M(4,7) and N(-2,3).",
+    "difficulty": "easy",
+    "expected_shapes": [
+      "coordinate_system",
+      "line",
+      "point"
+    ],
+    "expected_text": [
+      "M(4,7)",
+      "N(-2,3)",
+      "midpoint"
+    ],
+    "expected_coordinates": [
+      "M(4,7)",
+      "N(-2,3)"
+    ],
+    "solution_steps": [
+      "Use midpoint formula: ((x\u2081+x\u2082)/2, (y\u2081+y\u2082)/2)",
+      "Midpoint = ((4+(-2))/2, (7+3)/2)",
+      "Midpoint = (2/2, 10/2)",
+      "Midpoint = (1, 5)"
+    ],
+    "mathematical_concepts": [
+      "midpoint formula",
+      "coordinate geometry"
+    ],
+    "answer": "(1, 5)"
+  },
+  {
+    "id": "expanded_coord_003",
+    "type": "coordinate_geometry",
+    "subtype": "line_equation",
+    "description": "Find the slope and equation of line passing through P(1,3) and Q(5,11).",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "coordinate_system",
+      "line"
+    ],
+    "expected_text": [
+      "P(1,3)",
+      "Q(5,11)",
+      "slope",
+      "equation"
+    ],
+    "expected_coordinates": [
+      "P(1,3)",
+      "Q(5,11)"
+    ],
+    "solution_steps": [
+      "Calculate slope: m = (y\u2082-y\u2081)/(x\u2082-x\u2081)",
+      "m = (11-3)/(5-1) = 8/4 = 2",
+      "Use point-slope form: y - y\u2081 = m(x - x\u2081)",
+      "y - 3 = 2(x - 1)",
+      "y - 3 = 2x - 2",
+      "y = 2x + 1"
+    ],
+    "mathematical_concepts": [
+      "slope",
+      "point-slope form",
+      "linear equations"
+    ],
+    "answer": "Slope = 2, Equation: y = 2x + 1"
+  },
+  {
+    "id": "expanded_poly_001",
+    "type": "polygon_analysis",
+    "subtype": "regular_hexagon",
+    "description": "A regular hexagon has side length 6 cm. Find its perimeter and area.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "hexagon",
+      "regular_polygon"
+    ],
+    "expected_text": [
+      "regular hexagon",
+      "side = 6",
+      "perimeter",
+      "area"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Perimeter = 6 \u00d7 side length = 6 \u00d7 6 = 36 cm",
+      "Area of regular hexagon = (3\u221a3/2) \u00d7 s\u00b2",
+      "Area = (3\u221a3/2) \u00d7 6\u00b2 = (3\u221a3/2) \u00d7 36 = 54\u221a3",
+      "Area \u2248 54 \u00d7 1.732 \u2248 93.53 cm\u00b2"
+    ],
+    "mathematical_concepts": [
+      "regular polygons",
+      "hexagon area",
+      "perimeter"
+    ],
+    "answer": "Perimeter = 36 cm, Area = 54\u221a3 \u2248 93.53 cm\u00b2"
+  },
+  {
+    "id": "expanded_poly_002",
+    "type": "polygon_analysis",
+    "subtype": "rectangle_coordinates",
+    "description": "Rectangle ABCD has vertices A(1,2), B(7,2), C(7,8), D(1,8). Find area and perimeter.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "rectangle",
+      "coordinate_system"
+    ],
+    "expected_text": [
+      "A(1,2)",
+      "B(7,2)",
+      "C(7,8)",
+      "D(1,8)",
+      "area",
+      "perimeter",
+      "rectangle ABCD"
+    ],
+    "expected_coordinates": [
+      "A(1,2)",
+      "B(7,2)",
+      "C(7,8)",
+      "D(1,8)"
+    ],
+    "solution_steps": [
+      "Length = distance from A to B = 7 - 1 = 6",
+      "Width = distance from B to C = 8 - 2 = 6",
+      "Actually this is a square since length = width",
+      "Area = length \u00d7 width = 6 \u00d7 6 = 36",
+      "Perimeter = 2(length + width) = 2(6 + 6) = 24"
+    ],
+    "mathematical_concepts": [
+      "coordinate geometry",
+      "rectangle area",
+      "square properties"
+    ],
+    "answer": "Area = 36, Perimeter = 24"
+  },
+  {
+    "id": "expanded_poly_003",
+    "type": "polygon_analysis",
+    "subtype": "pentagon_angles",
+    "description": "Find the sum of interior angles and each interior angle of a regular pentagon.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "pentagon",
+      "regular_polygon"
+    ],
+    "expected_text": [
+      "regular pentagon",
+      "interior angles",
+      "sum"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Sum of interior angles = (n-2) \u00d7 180\u00b0",
+      "For pentagon, n = 5",
+      "Sum = (5-2) \u00d7 180\u00b0 = 3 \u00d7 180\u00b0 = 540\u00b0",
+      "Each interior angle of regular pentagon = 540\u00b0/5 = 108\u00b0"
+    ],
+    "mathematical_concepts": [
+      "polygon angles",
+      "regular polygons",
+      "interior angles"
+    ],
+    "answer": "Sum = 540\u00b0, Each angle = 108\u00b0"
+  },
+  {
+    "id": "expanded_3d_001",
+    "type": "3d_geometry",
+    "subtype": "rectangular_prism",
+    "description": "A rectangular prism has dimensions 5\u00d78\u00d712 cm. Find volume and surface area.",
+    "difficulty": "easy",
+    "expected_shapes": [
+      "rectangular_prism",
+      "3d_shape"
+    ],
+    "expected_text": [
+      "5\u00d78\u00d712",
+      "volume",
+      "surface area",
+      "rectangular prism"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Volume = length \u00d7 width \u00d7 height",
+      "Volume = 5 \u00d7 8 \u00d7 12 = 480 cm\u00b3",
+      "Surface area = 2(lw + lh + wh)",
+      "Surface area = 2(5\u00d78 + 5\u00d712 + 8\u00d712)",
+      "Surface area = 2(40 + 60 + 96) = 2(196) = 392 cm\u00b2"
+    ],
+    "mathematical_concepts": [
+      "3D geometry",
+      "volume",
+      "surface area"
+    ],
+    "answer": "Volume = 480 cm\u00b3, Surface area = 392 cm\u00b2"
+  },
+  {
+    "id": "expanded_3d_002",
+    "type": "3d_geometry",
+    "subtype": "cylinder",
+    "description": "A cylinder has radius 4 cm and height 10 cm. Find volume and surface area.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "cylinder",
+      "circle",
+      "3d_shape"
+    ],
+    "expected_text": [
+      "radius = 4",
+      "height = 10",
+      "volume",
+      "surface area",
+      "cylinder"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Volume = \u03c0r\u00b2h = \u03c0 \u00d7 4\u00b2 \u00d7 10 = 160\u03c0 cm\u00b3",
+      "Surface area = 2\u03c0r\u00b2 + 2\u03c0rh (two circles + curved surface)",
+      "Surface area = 2\u03c0(4\u00b2) + 2\u03c0(4)(10)",
+      "Surface area = 32\u03c0 + 80\u03c0 = 112\u03c0 cm\u00b2",
+      "Volume \u2248 160 \u00d7 3.14159 \u2248 502.65 cm\u00b3",
+      "Surface area \u2248 112 \u00d7 3.14159 \u2248 351.86 cm\u00b2"
+    ],
+    "mathematical_concepts": [
+      "cylinder volume",
+      "cylinder surface area",
+      "3D geometry"
+    ],
+    "answer": "Volume = 160\u03c0 \u2248 502.65 cm\u00b3, Surface area = 112\u03c0 \u2248 351.86 cm\u00b2"
+  },
+  {
+    "id": "expanded_3d_003",
+    "type": "3d_geometry",
+    "subtype": "sphere",
+    "description": "A sphere has radius 6 cm. Find its volume and surface area.",
+    "difficulty": "medium",
+    "expected_shapes": [
+      "sphere",
+      "3d_shape"
+    ],
+    "expected_text": [
+      "radius = 6",
+      "volume",
+      "surface area",
+      "sphere"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Volume = (4/3)\u03c0r\u00b3 = (4/3)\u03c0 \u00d7 6\u00b3 = (4/3)\u03c0 \u00d7 216 = 288\u03c0 cm\u00b3",
+      "Surface area = 4\u03c0r\u00b2 = 4\u03c0 \u00d7 6\u00b2 = 4\u03c0 \u00d7 36 = 144\u03c0 cm\u00b2",
+      "Volume \u2248 288 \u00d7 3.14159 \u2248 904.78 cm\u00b3",
+      "Surface area \u2248 144 \u00d7 3.14159 \u2248 452.39 cm\u00b2"
+    ],
+    "mathematical_concepts": [
+      "sphere volume",
+      "sphere surface area",
+      "3D geometry"
+    ],
+    "answer": "Volume = 288\u03c0 \u2248 904.78 cm\u00b3, Surface area = 144\u03c0 \u2248 452.39 cm\u00b2"
+  },
+  {
+    "id": "expanded_alg_001",
+    "type": "linear_equations",
+    "subtype": "one_variable",
+    "description": "Solve for x: 3x + 7 = 22",
+    "difficulty": "easy",
+    "expected_shapes": [],
+    "expected_text": [
+      "3x + 7 = 22",
+      "solve for x",
+      "x ="
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "3x + 7 = 22",
+      "Subtract 7 from both sides: 3x = 15",
+      "Divide by 3: x = 5",
+      "Check: 3(5) + 7 = 15 + 7 = 22 \u2713"
+    ],
+    "mathematical_concepts": [
+      "linear equations",
+      "algebraic manipulation"
+    ],
+    "answer": "x = 5"
+  },
+  {
+    "id": "expanded_alg_002",
+    "type": "quadratic_equations",
+    "subtype": "factoring",
+    "description": "Solve x\u00b2 - 5x + 6 = 0 by factoring.",
+    "difficulty": "medium",
+    "expected_shapes": [],
+    "expected_text": [
+      "x\u00b2 - 5x + 6 = 0",
+      "factoring",
+      "solve"
+    ],
+    "expected_coordinates": [],
+    "solution_steps": [
+      "Find two numbers that multiply to 6 and add to -5",
+      "The numbers are -2 and -3",
+      "Factor: (x - 2)(x - 3) = 0",
+      "Set each factor to zero: x - 2 = 0 or x - 3 = 0",
+      "Solutions: x = 2 or x = 3"
+    ],
+    "mathematical_concepts": [
+      "quadratic equations",
+      "factoring",
+      "zero product property"
+    ],
+    "answer": "x = 2 or x = 3"
+  }
+]
