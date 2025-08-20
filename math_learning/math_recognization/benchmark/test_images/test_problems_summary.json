@@ -1,0 +1,114 @@
+{
+  "generated_date": "2025-01-27",
+  "total_images": 14,
+  "categories": {
+    "Algebra": 5,
+    "Geometry": 5,
+    "Mixed Math": 4
+  },
+  "problems": [
+    {
+      "filename": "algebra_01_linear_equation.png",
+      "category": "Algebra",
+      "title": "Linear Equation",
+      "problem": "Solve for x:\n3x + 7 = 2x + 15",
+      "solution": "x = 8"
+    },
+    {
+      "filename": "algebra_02_quadratic_equation.png",
+      "category": "Algebra",
+      "title": "Quadratic Equation",
+      "problem": "Solve: x\u00b2 - 5x + 6 = 0",
+      "solution": "x = 2 or x = 3"
+    },
+    {
+      "filename": "algebra_03_system_of_equations.png",
+      "category": "Algebra",
+      "title": "System of Equations",
+      "problem": "Solve the system:\n2x + y = 7\nx - y = 2",
+      "solution": "x = 3, y = 1"
+    },
+    {
+      "filename": "algebra_04_polynomial_expression.png",
+      "category": "Algebra",
+      "title": "Polynomial Expression",
+      "problem": "Expand: (x + 3)(x - 2)",
+      "solution": "x\u00b2 + x - 6"
+    },
+    {
+      "filename": "algebra_05_fraction_equation.png",
+      "category": "Algebra",
+      "title": "Fraction Equation",
+      "problem": "Solve: (x + 1)/3 = (2x - 1)/4",
+      "solution": "x = 7"
+    },
+    {
+      "filename": "geometry_01_triangle_area.png",
+      "category": "Geometry",
+      "title": "Triangle Area",
+      "problem": "Find the area of triangle ABC\nwith base = 8 cm and height = 6 cm",
+      "solution": "Area = 24 cm\u00b2",
+      "shape": "triangle"
+    },
+    {
+      "filename": "geometry_02_circle_properties.png",
+      "category": "Geometry",
+      "title": "Circle Properties",
+      "problem": "A circle has radius r = 5 cm\nFind circumference and area",
+      "solution": "C = 10\u03c0 cm, A = 25\u03c0 cm\u00b2",
+      "shape": "circle"
+    },
+    {
+      "filename": "geometry_03_rectangle_perimeter.png",
+      "category": "Geometry",
+      "title": "Rectangle Perimeter",
+      "problem": "Rectangle with length = 12 cm\nand width = 8 cm. Find perimeter.",
+      "solution": "Perimeter = 40 cm",
+      "shape": "rectangle"
+    },
+    {
+      "filename": "geometry_04_right_triangle.png",
+      "category": "Geometry",
+      "title": "Right Triangle",
+      "problem": "Right triangle with legs a = 3, b = 4\nFind hypotenuse c using Pythagorean theorem",
+      "solution": "c = 5",
+      "shape": "right_triangle"
+    },
+    {
+      "filename": "geometry_05_coordinate_geometry.png",
+      "category": "Geometry",
+      "title": "Coordinate Geometry",
+      "problem": "Find distance between points\nA(2, 3) and B(6, 7)",
+      "solution": "Distance = 4\u221a2 \u2248 5.66",
+      "shape": "coordinate_plane"
+    },
+    {
+      "filename": "mixed_01_word_problem___algebra.png",
+      "category": "Mixed Math",
+      "title": "Word Problem - Algebra",
+      "problem": "Sarah has $50. She buys 3 books for $x each\nand has $14 left. Find the cost of each book.",
+      "solution": "3x + 14 = 50, so x = $12"
+    },
+    {
+      "filename": "mixed_02_calculus___derivative.png",
+      "category": "Mixed Math",
+      "title": "Calculus - Derivative",
+      "problem": "Find the derivative of f(x) = x\u00b3 + 2x\u00b2 - 5x + 1",
+      "solution": "f'(x) = 3x\u00b2 + 4x - 5"
+    },
+    {
+      "filename": "mixed_03_statistics___mean.png",
+      "category": "Mixed Math",
+      "title": "Statistics - Mean",
+      "problem": "Find the mean of: 12, 15, 18, 20, 25",
+      "solution": "Mean = 18"
+    },
+    {
+      "filename": "mixed_04_trigonometry.png",
+      "category": "Mixed Math",
+      "title": "Trigonometry",
+      "problem": "In a right triangle, if sin(\u03b8) = 3/5\nfind cos(\u03b8) and tan(\u03b8)",
+      "solution": "cos(\u03b8) = 4/5, tan(\u03b8) = 3/4"
+    }
+  ]
+}
