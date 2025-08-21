@@ -17,7 +17,7 @@ import json
 import time
 import re
 from pathlib import Path
-from typing import Dict, List, Any, Optional, Tuple
+from typing import Dict, List, Any
 from dataclasses import dataclass
 from datetime import datetime
 import difflib
@@ -47,6 +47,16 @@ class BenchmarkResult:
 
 class TextSimilarityMetrics:
     """Text similarity and accuracy metrics."""
+    
+    @staticmethod
+    def calculate_similarity(predicted: str, ground_truth: str) -> float:
+        """Calculate overall text similarity score."""
+        if not ground_truth:
+            return 1.0 if not predicted else 0.0
+        
+        # Use sequence matcher for similarity
+        similarity = difflib.SequenceMatcher(None, predicted.lower(), ground_truth.lower()).ratio()
+        return similarity
     
     @staticmethod
     def character_accuracy(predicted: str, ground_truth: str) -> float:
@@ -351,6 +361,7 @@ class BenchmarkEvaluator:
         self.question_metrics = QuestionDetectionMetrics()
         self.answer_metrics = AnswerExtractionMetrics()
         self.error_metrics = ErrorAnalysisMetrics()
+        self.text_similarity = TextSimilarityMetrics()
     
     def evaluate_complete_system(self, predictions: Dict[str, Any], ground_truth: Dict[str, Any], 
                                 dataset_name: str, system_name: str = "Math Test Analysis System") -> BenchmarkResult:
@@ -434,7 +445,7 @@ class BenchmarkEvaluator:
             ]
         }
         
-        with open(output_path, 'w') as f:
+        with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(result_dict, f, indent=2)
         
         print(f"📊 Benchmark results saved to: {output_path}")
@@ -456,4 +467,164 @@ class BenchmarkEvaluator:
         for metric in result.metrics:
             print(f"{metric.metric_name.replace('_', ' ').title()}: {metric.accuracy:.1%} ({metric.score}/{metric.max_score})")
         
-        print("="*60) 
+        print("="*60)
+    
+    def evaluate_real_ocr_results(self, ocr_results: List[Dict[str, Any]], 
+                                 dataset_name: str, system_name: str = "Real OCR System") -> BenchmarkResult:
+        """Evaluate real OCR results with ground truth comparison."""
+        start_time = time.time()
+        
+        metrics = []
+        successful_results = [r for r in ocr_results if r.get("success", False)]
+        total_samples = len(ocr_results)
+        
+        if not ocr_results:
+            return self._create_empty_result(dataset_name, system_name)
+        
+        # 1. Overall Success Rate
+        success_rate = len(successful_results) / total_samples
+        success_metric = EvaluationResult(
+            metric_name="OCR Success Rate",
+            score=len(successful_results),
+            max_score=total_samples,
+            accuracy=success_rate,
+            details={"successful": len(successful_results), "failed": total_samples - len(successful_results)}
+        )
+        metrics.append(success_metric)
+        
+        # 2. Text Extraction Accuracy (for successful results with ground truth)
+        text_accuracy_scores = []
+        shape_accuracy_scores = []
+        coordinate_accuracy_scores = []
+        
+        for result in successful_results:
+            ground_truth = result.get("ground_truth", {})
+            
+            # Text similarity
+            if ground_truth.get("text") and result.get("extracted_text"):
+                similarity = self.text_similarity.calculate_similarity(
+                    result["extracted_text"], ground_truth["text"]
+                )
+                text_accuracy_scores.append(similarity)
+            
+            # Shape detection accuracy
+            if ground_truth.get("shapes"):
+                detected_shapes = result.get("shapes_detected", [])
+                expected_shapes = ground_truth["shapes"]
+                
+                # Calculate intersection over union for shapes
+                if expected_shapes:
+                    detected_set = set(detected_shapes)
+                    expected_set = set(expected_shapes)
+                    intersection = len(detected_set & expected_set)
+                    union = len(detected_set | expected_set)
+                    shape_accuracy = intersection / union if union > 0 else 0
+                    shape_accuracy_scores.append(shape_accuracy)
+            
+            # Coordinate extraction accuracy
+            if ground_truth.get("coordinates"):
+                detected_coords = result.get("coordinates_extracted", [])
+                expected_coords = ground_truth["coordinates"]
+                
+                if expected_coords:
+                    # Simple coordinate matching (could be improved with tolerance)
+                    coord_matches = 0
+                    for expected_coord in expected_coords:
+                        if expected_coord in str(detected_coords):
+                            coord_matches += 1
+                    coord_accuracy = coord_matches / len(expected_coords)
+                    coordinate_accuracy_scores.append(coord_accuracy)
+        
+        # Add text accuracy metric
+        if text_accuracy_scores:
+            avg_text_accuracy = np.mean(text_accuracy_scores)
+            text_metric = EvaluationResult(
+                metric_name="Text Extraction Accuracy",
+                score=sum(text_accuracy_scores),
+                max_score=len(text_accuracy_scores),
+                accuracy=avg_text_accuracy,
+                details={"samples_evaluated": len(text_accuracy_scores), "scores": text_accuracy_scores}
+            )
+            metrics.append(text_metric)
+        
+        # Add shape detection metric
+        if shape_accuracy_scores:
+            avg_shape_accuracy = np.mean(shape_accuracy_scores)
+            shape_metric = EvaluationResult(
+                metric_name="Shape Detection Accuracy",
+                score=sum(shape_accuracy_scores),
+                max_score=len(shape_accuracy_scores),
+                accuracy=avg_shape_accuracy,
+                details={"samples_evaluated": len(shape_accuracy_scores), "scores": shape_accuracy_scores}
+            )
+            metrics.append(shape_metric)
+        
+        # Add coordinate extraction metric
+        if coordinate_accuracy_scores:
+            avg_coord_accuracy = np.mean(coordinate_accuracy_scores)
+            coord_metric = EvaluationResult(
+                metric_name="Coordinate Extraction Accuracy",
+                score=sum(coordinate_accuracy_scores),
+                max_score=len(coordinate_accuracy_scores),
+                accuracy=avg_coord_accuracy,
+                details={"samples_evaluated": len(coordinate_accuracy_scores), "scores": coordinate_accuracy_scores}
+            )
+            metrics.append(coord_metric)
+        
+        processing_time = time.time() - start_time
+        
+        # Calculate overall accuracy
+        if metrics:
+            total_score = sum(m.score for m in metrics)
+            max_total_score = sum(m.max_score for m in metrics)
+            overall_accuracy = total_score / max_total_score if max_total_score > 0 else 0
+        else:
+            overall_accuracy = 0
+        
+        # Processing performance
+        processing_times = [r.get("processing_time", 0) for r in ocr_results if r.get("processing_time")]
+        avg_processing_time = np.mean(processing_times) if processing_times else 0
+        
+        # Confidence analysis
+        confidence_scores = [r.get("confidence", 0) for r in successful_results if r.get("confidence")]
+        avg_confidence = np.mean(confidence_scores) if confidence_scores else 0
+        
+        # Create comprehensive summary
+        summary = {
+            "total_samples": total_samples,
+            "successful_samples": len(successful_results),
+            "success_rate": success_rate,
+            "overall_accuracy": overall_accuracy,
+            "avg_processing_time": avg_processing_time,
+            "avg_confidence": avg_confidence,
+            "metrics_evaluated": len(metrics),
+            "detailed_metrics": {
+                "text_accuracy": np.mean(text_accuracy_scores) if text_accuracy_scores else 0,
+                "shape_accuracy": np.mean(shape_accuracy_scores) if shape_accuracy_scores else 0,
+                "coordinate_accuracy": np.mean(coordinate_accuracy_scores) if coordinate_accuracy_scores else 0
+            }
+        }
+        
+        return BenchmarkResult(
+            dataset_name=dataset_name,
+            system_name=system_name,
+            evaluation_date=datetime.now().isoformat(),
+            total_samples=total_samples,
+            processing_time=processing_time,
+            metrics=metrics,
+            overall_accuracy=overall_accuracy,
+            summary=summary
+        )
+    
+    def _create_empty_result(self, dataset_name: str, system_name: str) -> BenchmarkResult:
+        """Create empty result for cases with no data."""
+        return BenchmarkResult(
+            dataset_name=dataset_name,
+            system_name=system_name,
+            evaluation_date=datetime.now().isoformat(),
+            total_samples=0,
+            processing_time=0.0,
+            metrics=[],
+            overall_accuracy=0.0,
+            summary={"error": "No data to evaluate"}
+        ) 

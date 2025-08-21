@@ -1,0 +1,183 @@
+{
+  "session_id": "comprehensive_parallel_1755749658",
+  "config_name": "comprehensive_parallel",
+  "config": {
+    "name": "Comprehensive Parallel",
+    "description": "Multiple OCR models running in parallel for maximum accuracy",
+    "primary_ocr": {
+      "provider": "mathpix",
+      "model_name": "mathpix-standard",
+      "api_key_env": "MATHPIX_APP_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "formats": [
+          "text",
+          "latex_simplified"
+        ],
+        "include_asciimath": true,
+        "include_table_html": true
+      }
+    },
+    "fallback_ocr": {
+      "provider": "gpt4_vision",
+      "model_name": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "processing_strategy": "parallel",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score",
+      "cost_efficiency"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-20T21:14:18.286286",
+  "end_time": "2025-08-20T21:14:18.286406",
+  "results": [
+    {
+      "dataset_name": "math_expressions",
+      "system_name": "Comprehensive Parallel (parallel)",
+      "evaluation_date": "2025-08-20T21:14:18.286318",
+      "total_samples": 17,
+      "processing_time": 1.5974044799804688e-05,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 17,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 17
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 17,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    },
+    {
+      "dataset_name": "geometry",
+      "system_name": "Comprehensive Parallel (parallel)",
+      "evaluation_date": "2025-08-20T21:14:18.286354",
+      "total_samples": 17,
+      "processing_time": 1.4066696166992188e-05,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 17,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 17
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 17,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    },
+    {
+      "dataset_name": "test_papers",
+      "system_name": "Comprehensive Parallel (parallel)",
+      "evaluation_date": "2025-08-20T21:14:18.286402",
+      "total_samples": 17,
+      "processing_time": 1.430511474609375e-05,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 17,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 17
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 17,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "comprehensive_parallel_1755749658",
+    "configuration": "comprehensive_parallel",
+    "duration_seconds": 0.00012,
+    "total_samples_processed": 51,
+    "overall_accuracy": 0.0,
+    "total_processing_time": 4.4345855712890625e-05,
+    "average_metrics": {
+      "OCR Success Rate": 0.0
+    },
+    "datasets_evaluated": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "primary_ocr_provider": "mathpix",
+    "processing_strategy": "parallel",
+    "timestamp": "2025-08-20T21:14:18.286286"
+  }
+}

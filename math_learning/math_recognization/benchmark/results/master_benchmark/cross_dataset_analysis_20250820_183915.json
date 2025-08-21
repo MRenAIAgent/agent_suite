@@ -1,0 +1,275 @@
+{
+  "analysis_summary": {
+    "total_datasets": 3,
+    "total_configurations": 4,
+    "analysis_date": "2025-08-20T18:39:15.069530",
+    "datasets_analyzed": [
+      "PGDP5K",
+      "Custom_Images",
+      "Expanded_Dataset"
+    ]
+  },
+  "dataset_characteristics": {
+    "PGDP5K": {
+      "total_samples": 300,
+      "problem_types": [],
+      "difficulty_levels": [],
+      "dataset_focus": {
+        "primary_focus": "Geometric diagrams",
+        "sample_size": "Large (5000)",
+        "complexity": "Real-world",
+        "strengths": [
+          "Shape detection",
+          "Coordinate extraction",
+          "Geometric reasoning"
+        ],
+        "challenges": [
+          "Image quality variation",
+          "Complex constructions"
+        ]
+      }
+    },
+    "Custom_Images": {
+      "total_samples": 0,
+      "problem_types": [],
+      "difficulty_levels": [],
+      "dataset_focus": {
+        "primary_focus": "Mixed math problems",
+        "sample_size": "Small (14)",
+        "complexity": "Clean generated",
+        "strengths": [
+          "Known ground truth",
+          "Diverse problem types",
+          "High quality"
+        ],
+        "challenges": [
+          "Limited sample size",
+          "Generated vs real-world"
+        ]
+      }
+    },
+    "Expanded_Dataset": {
+      "total_samples": 0,
+      "problem_types": [
+        "triangle_properties",
+        "circle_geometry",
+        "coordinate_geometry",
+        "polygon_analysis",
+        "3d_geometry",
+        "linear_equations",
+        "quadratic_equations"
+      ],
+      "difficulty_levels": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "dataset_focus": {
+        "primary_focus": "Comprehensive math",
+        "sample_size": "Medium (17)",
+        "complexity": "Educational",
+        "strengths": [
+          "Detailed solutions",
+          "Concept coverage",
+          "Difficulty progression"
+        ],
+        "challenges": [
+          "Limited scale",
+          "Specific problem types"
+        ]
+      }
+    }
+  },
+  "configuration_performance": {
+    "mathpix_gpt4v_hybrid": {
+      "PGDP5K": {
+        "accuracy": 0.3333333333333333,
+        "processing_time": 0.006299018859863281,
+        "rank": 3
+      }
+    },
+    "gpt4v_only": {
+      "PGDP5K": {
+        "accuracy": 0.3333333333333333,
+        "processing_time": 0.00273895263671875,
+        "rank": 3
+      }
+    },
+    "comprehensive_parallel": {
+      "PGDP5K": {
+        "accuracy": 0.3333333333333333,
+        "processing_time": 0.0036547183990478516,
+        "rank": 3
+      }
+    },
+    "geometry_specialist": {
+      "PGDP5K": {
+        "accuracy": 0.0,
+        "processing_time": 0.0018341541290283203,
+        "rank": 4
+      }
+    }
+  },
+  "overall_rankings": {
+    "ranking_method": "weighted_accuracy (PGDP5K weighted 3x)",
+    "rankings": [
+      [
+        "mathpix_gpt4v_hybrid",
+        {
+          "weighted_accuracy": 0.3333333333333333,
+          "avg_processing_time": 0.006299018859863281,
+          "datasets_tested": 1,
+          "performance_by_dataset": {
+            "PGDP5K": {
+              "accuracy": 0.3333333333333333,
+              "processing_time": 0.006299018859863281,
+              "rank": 3
+            }
+          }
+        }
+      ],
+      [
+        "gpt4v_only",
+        {
+          "weighted_accuracy": 0.3333333333333333,
+          "avg_processing_time": 0.00273895263671875,
+          "datasets_tested": 1,
+          "performance_by_dataset": {
+            "PGDP5K": {
+              "accuracy": 0.3333333333333333,
+              "processing_time": 0.00273895263671875,
+              "rank": 3
+            }
+          }
+        }
+      ],
+      [
+        "comprehensive_parallel",
+        {
+          "weighted_accuracy": 0.3333333333333333,
+          "avg_processing_time": 0.0036547183990478516,
+          "datasets_tested": 1,
+          "performance_by_dataset": {
+            "PGDP5K": {
+              "accuracy": 0.3333333333333333,
+              "processing_time": 0.0036547183990478516,
+              "rank": 3
+            }
+          }
+        }
+      ],
+      [
+        "geometry_specialist",
+        {
+          "weighted_accuracy": 0.0,
+          "avg_processing_time": 0.0018341541290283203,
+          "datasets_tested": 1,
+          "performance_by_dataset": {
+            "PGDP5K": {
+              "accuracy": 0.0,
+              "processing_time": 0.0018341541290283203,
+              "rank": 4
+            }
+          }
+        }
+      ]
+    ],
+    "top_configuration": [
+      "mathpix_gpt4v_hybrid",
+      {
+        "weighted_accuracy": 0.3333333333333333,
+        "avg_processing_time": 0.006299018859863281,
+        "datasets_tested": 1,
+        "performance_by_dataset": {
+          "PGDP5K": {
+            "accuracy": 0.3333333333333333,
+            "processing_time": 0.006299018859863281,
+            "rank": 3
+          }
+        }
+      }
+    ]
+  },
+  "cross_dataset_insights": {
+    "configuration_strengths": {
+      "mathpix_gpt4v_hybrid": {
+        "strengths": [],
+        "best_datasets": [],
+        "avg_accuracy": 0.3333333333333333
+      },
+      "gpt4v_only": {
+        "strengths": [],
+        "best_datasets": [],
+        "avg_accuracy": 0.3333333333333333
+      },
+      "comprehensive_parallel": {
+        "strengths": [],
+        "best_datasets": [],
+        "avg_accuracy": 0.3333333333333333
+      },
+      "geometry_specialist": {
+        "strengths": [],
+        "best_datasets": [],
+        "avg_accuracy": 0.0
+      }
+    },
+    "dataset_difficulty": {
+      "PGDP5K": {
+        "average_accuracy": 0.25,
+        "difficulty_rating": "Very Hard",
+        "characteristics": {
+          "total_samples": 300,
+          "problem_types": [],
+          "difficulty_levels": [],
+          "dataset_focus": {
+            "primary_focus": "Geometric diagrams",
+            "sample_size": "Large (5000)",
+            "complexity": "Real-world",
+            "strengths": [
+              "Shape detection",
+              "Coordinate extraction",
+              "Geometric reasoning"
+            ],
+            "challenges": [
+              "Image quality variation",
+              "Complex constructions"
+            ]
+          }
+        }
+      }
+    },
+    "performance_patterns": {},
+    "optimization_opportunities": []
+  },
+  "recommendations": {
+    "overall_best": {
+      "configuration": "mathpix_gpt4v_hybrid",
+      "weighted_accuracy": 0.3333333333333333,
+      "reason": "Best overall performance across all datasets"
+    },
+    "use_case_specific": {
+      "geometry_problems": {
+        "recommended": "geometry_specialist",
+        "reason": "Optimized for geometric shape detection and coordinate extraction",
+        "expected_accuracy": "80-95%"
+      },
+      "algebra_problems": {
+        "recommended": "math_expression_expert",
+        "reason": "Specialized for mathematical expressions and equations",
+        "expected_accuracy": "85-95%"
+      },
+      "mixed_problems": {
+        "recommended": "mathpix_gpt4v_hybrid",
+        "reason": "Balanced performance across different problem types",
+        "expected_accuracy": "75-85%"
+      },
+      "research_maximum_accuracy": {
+        "recommended": "comprehensive_parallel",
+        "reason": "Multiple models for maximum accuracy",
+        "expected_accuracy": "80-90%"
+      }
+    },
+    "performance_optimization": [],
+    "dataset_specific": {}
+  }
+}

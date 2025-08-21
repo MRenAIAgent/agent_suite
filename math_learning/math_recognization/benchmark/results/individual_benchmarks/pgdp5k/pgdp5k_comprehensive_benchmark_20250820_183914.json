@@ -1,0 +1,399 @@
+{
+  "benchmark_summary": {
+    "dataset": "PGDP5K",
+    "total_configurations_tested": 4,
+    "samples_per_config": 300,
+    "benchmark_date": "2025-08-20T18:39:14.736648"
+  },
+  "performance_overview": {
+    "best_configuration": {
+      "name": "mathpix_gpt4v_hybrid",
+      "accuracy": 0.3333333333333333,
+      "processing_time": 0.006299018859863281
+    },
+    "average_accuracy": 0.25,
+    "average_processing_time": 0.0036317110061645508
+  },
+  "geometry_analysis": {
+    "geometry_specialist": {
+      "overall_accuracy": 0.0,
+      "processing_time": 0.0018341541290283203,
+      "geometry_performance": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    },
+    "mathpix_gpt4v_hybrid": {
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.006299018859863281,
+      "geometry_performance": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    },
+    "gpt4v_only": {
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.00273895263671875,
+      "geometry_performance": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    },
+    "comprehensive_parallel": {
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.0036547183990478516,
+      "geometry_performance": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    }
+  },
+  "configuration_ranking": [
+    {
+      "config_name": "mathpix_gpt4v_hybrid",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.719599",
+      "session_id": "mathpix_gpt4v_hybrid_1755740354",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.006299018859863281,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "math_expressions",
+          "accuracy": 1.0,
+          "samples_processed": 300,
+          "processing_time": 0.0038919448852539062,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0014679431915283203,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "test_papers",
+          "accuracy": 0,
+          "samples_processed": 0,
+          "processing_time": 0.0009391307830810547,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "gpt4v_only",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.724681",
+      "session_id": "gpt4v_only_1755740354",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.00273895263671875,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "math_expressions",
+          "accuracy": 1.0,
+          "samples_processed": 300,
+          "processing_time": 0.001171112060546875,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0007519721984863281,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "test_papers",
+          "accuracy": 0,
+          "samples_processed": 0,
+          "processing_time": 0.0008158683776855469,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "comprehensive_parallel",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.736234",
+      "session_id": "comprehensive_parallel_1755740354",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.0036547183990478516,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "math_expressions",
+          "accuracy": 1.0,
+          "samples_processed": 300,
+          "processing_time": 0.0011336803436279297,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0007081031799316406,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "test_papers",
+          "accuracy": 0,
+          "samples_processed": 0,
+          "processing_time": 0.0018129348754882812,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "geometry_specialist",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.709905",
+      "session_id": "geometry_specialist_1755740354",
+      "overall_accuracy": 0.0,
+      "processing_time": 0.0018341541290283203,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0018341541290283203,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "detailed_results": [
+    {
+      "config_name": "geometry_specialist",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.709905",
+      "session_id": "geometry_specialist_1755740354",
+      "overall_accuracy": 0.0,
+      "processing_time": 0.0018341541290283203,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0018341541290283203,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "mathpix_gpt4v_hybrid",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.719599",
+      "session_id": "mathpix_gpt4v_hybrid_1755740354",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.006299018859863281,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "math_expressions",
+          "accuracy": 1.0,
+          "samples_processed": 300,
+          "processing_time": 0.0038919448852539062,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0014679431915283203,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "test_papers",
+          "accuracy": 0,
+          "samples_processed": 0,
+          "processing_time": 0.0009391307830810547,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "gpt4v_only",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.724681",
+      "session_id": "gpt4v_only_1755740354",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.00273895263671875,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "math_expressions",
+          "accuracy": 1.0,
+          "samples_processed": 300,
+          "processing_time": 0.001171112060546875,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0007519721984863281,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "test_papers",
+          "accuracy": 0,
+          "samples_processed": 0,
+          "processing_time": 0.0008158683776855469,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "comprehensive_parallel",
+      "dataset": "PGDP5K",
+      "total_samples": 300,
+      "timestamp": "2025-08-20T18:39:14.736234",
+      "session_id": "comprehensive_parallel_1755740354",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.0036547183990478516,
+      "detailed_metrics": {},
+      "dataset_results": [
+        {
+          "dataset_type": "math_expressions",
+          "accuracy": 1.0,
+          "samples_processed": 300,
+          "processing_time": 0.0011336803436279297,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "geometry",
+          "accuracy": 0.0,
+          "samples_processed": 300,
+          "processing_time": 0.0007081031799316406,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        },
+        {
+          "dataset_type": "test_papers",
+          "accuracy": 0,
+          "samples_processed": 0,
+          "processing_time": 0.0018129348754882812,
+          "metrics": {
+            "shape_detection_accuracy": 0.0,
+            "text_recognition_accuracy": 0.0,
+            "coordinate_extraction_accuracy": 0.0,
+            "overall_parsing_accuracy": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

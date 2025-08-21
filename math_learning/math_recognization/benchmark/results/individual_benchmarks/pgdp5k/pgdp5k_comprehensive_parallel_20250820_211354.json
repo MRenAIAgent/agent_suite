@@ -1,0 +1,48 @@
+{
+  "config_name": "comprehensive_parallel",
+  "dataset": "PGDP5K",
+  "total_samples": 300,
+  "timestamp": "2025-08-20T21:13:54.633651",
+  "session_id": "comprehensive_parallel_1755749634",
+  "overall_accuracy": 0.0,
+  "processing_time": 0.0011911392211914062,
+  "detailed_metrics": {},
+  "dataset_results": [
+    {
+      "dataset_type": "math_expressions",
+      "accuracy": 0.0,
+      "samples_processed": 300,
+      "processing_time": 0.0005228519439697266,
+      "metrics": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    },
+    {
+      "dataset_type": "geometry",
+      "accuracy": 0.0,
+      "samples_processed": 300,
+      "processing_time": 0.0004520416259765625,
+      "metrics": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    },
+    {
+      "dataset_type": "test_papers",
+      "accuracy": 0.0,
+      "samples_processed": 300,
+      "processing_time": 0.0002162456512451172,
+      "metrics": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    }
+  ]
+}

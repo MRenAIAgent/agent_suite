@@ -1,0 +1,46 @@
+{
+  "session_id": "gpt4v_only_1755749950",
+  "config_name": "gpt4v_only",
+  "config": {
+    "name": "GPT-4 Vision Only",
+    "description": "Pure GPT-4 Vision processing for comprehensive analysis",
+    "primary_ocr": {
+      "provider": "gpt4_vision",
+      "model_name": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "fallback_ocr": null,
+    "processing_strategy": "vision_only",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-20T21:19:10.551813",
+  "end_time": "2025-08-20T21:19:10.553484",
+  "results": [],
+  "summary": {
+    "error": "No results available"
+  }
+}

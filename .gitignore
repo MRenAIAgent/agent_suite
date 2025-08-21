@@ -53,3 +53,5 @@ dmypy.json
 # Local development specific
 *.db
 *.sqlite3
+
+CLAUDE.md

@@ -1,0 +1,206 @@
+{
+  "config_name": "math_expression_expert",
+  "dataset": "ExpandedDataset",
+  "total_samples": 17,
+  "timestamp": "2025-08-20T18:39:15.031398",
+  "session_id": "math_expression_expert_1755740355",
+  "overall_accuracy": 1.0,
+  "processing_time": 0.00012493133544921875,
+  "detailed_metrics": {},
+  "problem_type_analysis": {
+    "triangle_properties": {
+      "total_problems": 3,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "difficulty_breakdown": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 1
+      },
+      "key_concepts": [
+        "Pythagorean theorem",
+        "triangle area",
+        "isosceles triangles"
+      ]
+    },
+    "circle_geometry": {
+      "total_problems": 3,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "difficulty_breakdown": {
+        "easy": 2,
+        "medium": 1,
+        "hard": 0
+      },
+      "key_concepts": [
+        "circle area",
+        "circumference",
+        "pi",
+        "circle equation"
+      ]
+    },
+    "coordinate_geometry": {
+      "total_problems": 3,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "difficulty_breakdown": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 1
+      },
+      "key_concepts": [
+        "distance formula",
+        "coordinate geometry",
+        "midpoint formula"
+      ]
+    },
+    "polygon_analysis": {
+      "total_problems": 3,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "difficulty_breakdown": {
+        "easy": 1,
+        "medium": 2,
+        "hard": 0
+      },
+      "key_concepts": [
+        "polygon angles",
+        "interior angles",
+        "perimeter",
+        "area"
+      ]
+    },
+    "3d_geometry": {
+      "total_problems": 3,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "difficulty_breakdown": {
+        "easy": 1,
+        "medium": 2,
+        "hard": 0
+      },
+      "key_concepts": [
+        "volume",
+        "surface area",
+        "cylinder",
+        "sphere"
+      ]
+    },
+    "linear_equations": {
+      "total_problems": 1,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "difficulty_breakdown": {
+        "easy": 1,
+        "medium": 0,
+        "hard": 0
+      },
+      "key_concepts": [
+        "algebraic manipulation",
+        "solving equations"
+      ]
+    },
+    "quadratic_equations": {
+      "total_problems": 1,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "difficulty_breakdown": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      },
+      "key_concepts": [
+        "factoring",
+        "zero product property",
+        "quadratic formula"
+      ]
+    }
+  },
+  "difficulty_analysis": {
+    "easy": {
+      "total_problems": 6,
+      "expected_accuracy": "85-95%",
+      "key_challenges": [
+        "Basic calculations",
+        "Single-step problems",
+        "Clear diagrams"
+      ]
+    },
+    "medium": {
+      "total_problems": 9,
+      "expected_accuracy": "70-85%",
+      "key_challenges": [
+        "Multi-step solutions",
+        "Coordinate calculations",
+        "Formula application"
+      ]
+    },
+    "hard": {
+      "total_problems": 2,
+      "expected_accuracy": "50-70%",
+      "key_challenges": [
+        "Complex geometry",
+        "Multiple concepts",
+        "Coordinate system integration"
+      ]
+    }
+  },
+  "concept_coverage": {
+    "geometry_basics": {
+      "total_concept_instances": 7,
+      "concepts_covered": {
+        "triangle area": 1,
+        "right triangles": 1,
+        "isosceles triangles": 1,
+        "circle area": 1,
+        "circumference": 1,
+        "rectangle area": 1,
+        "perimeter": 1
+      },
+      "coverage_percentage": 100.0
+    },
+    "coordinate_geometry": {
+      "total_concept_instances": 11,
+      "concepts_covered": {
+        "coordinate geometry": 6,
+        "distance formula": 2,
+        "midpoint formula": 1,
+        "slope": 1,
+        "point-slope form": 1
+      },
+      "coverage_percentage": 100.0
+    },
+    "advanced_geometry": {
+      "total_concept_instances": 8,
+      "concepts_covered": {
+        "shoelace formula": 1,
+        "polygon angles": 1,
+        "interior angles": 1,
+        "3D geometry": 3,
+        "volume": 1,
+        "surface area": 1
+      },
+      "coverage_percentage": 100.0
+    },
+    "algebra": {
+      "total_concept_instances": 7,
+      "concepts_covered": {
+        "linear equations": 2,
+        "quadratic equations": 2,
+        "algebraic manipulation": 1,
+        "factoring": 1,
+        "zero product property": 1
+      },
+      "coverage_percentage": 100.0
+    },
+    "trigonometry_calculus": {
+      "total_concept_instances": 3,
+      "concepts_covered": {
+        "pi": 1,
+        "circle equation": 1,
+        "standard form": 1
+      },
+      "coverage_percentage": 100.0
+    }
+  }
+}

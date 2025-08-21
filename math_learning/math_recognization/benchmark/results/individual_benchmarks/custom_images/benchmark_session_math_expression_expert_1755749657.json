@@ -1,0 +1,111 @@
+{
+  "session_id": "math_expression_expert_1755749657",
+  "config_name": "math_expression_expert",
+  "config": {
+    "name": "Math Expression Expert",
+    "description": "UniMERNet specialized for mathematical expressions",
+    "primary_ocr": {
+      "provider": "unimernet",
+      "model_name": "unimernet",
+      "api_key_env": null,
+      "model_path": "wanderkid/unimernet",
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "precision": "fp16",
+        "batch_size": 1
+      }
+    },
+    "fallback_ocr": {
+      "provider": "mathpix",
+      "model_name": "mathpix-standard",
+      "api_key_env": "MATHPIX_APP_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "formats": [
+          "text",
+          "latex_simplified"
+        ],
+        "include_asciimath": true,
+        "include_table_html": true
+      }
+    },
+    "processing_strategy": "ocr_first",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "equations",
+      "formulas"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-20T21:14:17.539748",
+  "end_time": "2025-08-20T21:14:17.541937",
+  "results": [
+    {
+      "dataset_name": "math_expressions",
+      "system_name": "Math Expression Expert (ocr_first)",
+      "evaluation_date": "2025-08-20T21:14:17.539855",
+      "total_samples": 14,
+      "processing_time": 3.0994415283203125e-05,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 14,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 14
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 14,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "math_expression_expert_1755749657",
+    "configuration": "math_expression_expert",
+    "duration_seconds": 0.002189,
+    "total_samples_processed": 14,
+    "overall_accuracy": 0.0,
+    "total_processing_time": 3.0994415283203125e-05,
+    "average_metrics": {
+      "OCR Success Rate": 0.0
+    },
+    "datasets_evaluated": [
+      "math_expressions"
+    ],
+    "primary_ocr_provider": "unimernet",
+    "processing_strategy": "ocr_first",
+    "timestamp": "2025-08-20T21:14:17.539748"
+  }
+}

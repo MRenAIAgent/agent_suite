@@ -1,0 +1,2193 @@
+{
+  "master_benchmark_summary": {
+    "total_benchmarks": 3,
+    "successful_benchmarks": 3,
+    "failed_benchmarks": 0,
+    "total_runtime_seconds": 0.7099249362945557,
+    "timestamp": "2025-08-20T21:14:18.333608"
+  },
+  "individual_results": {
+    "PGDP5K": {
+      "benchmark_name": "PGDP5K",
+      "status": "success",
+      "results_file": "results/individual_benchmarks/pgdp5k/pgdp5k_comprehensive_benchmark_20250820_211417.json",
+      "results": {
+        "benchmark_summary": {
+          "dataset": "PGDP5K",
+          "total_configurations_tested": 4,
+          "samples_per_config": 300,
+          "benchmark_date": "2025-08-20T21:14:17.822801"
+        },
+        "performance_overview": {
+          "best_configuration": {
+            "name": "geometry_specialist",
+            "accuracy": 0.0,
+            "processing_time": 0.0005331039428710938
+          },
+          "average_accuracy": 0.0,
+          "average_processing_time": 0.001102447509765625
+        },
+        "geometry_analysis": {
+          "geometry_specialist": {
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0005331039428710938,
+            "geometry_performance": {
+              "shape_detection_accuracy": 0.0,
+              "text_recognition_accuracy": 0.0,
+              "coordinate_extraction_accuracy": 0.0,
+              "overall_parsing_accuracy": 0.0
+            }
+          },
+          "mathpix_gpt4v_hybrid": {
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0016028881072998047,
+            "geometry_performance": {
+              "shape_detection_accuracy": 0.0,
+              "text_recognition_accuracy": 0.0,
+              "coordinate_extraction_accuracy": 0.0,
+              "overall_parsing_accuracy": 0.0
+            }
+          },
+          "gpt4v_only": {
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0005867481231689453,
+            "geometry_performance": {
+              "shape_detection_accuracy": 0.0,
+              "text_recognition_accuracy": 0.0,
+              "coordinate_extraction_accuracy": 0.0,
+              "overall_parsing_accuracy": 0.0
+            }
+          },
+          "comprehensive_parallel": {
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0016870498657226562,
+            "geometry_performance": {
+              "shape_detection_accuracy": 0.0,
+              "text_recognition_accuracy": 0.0,
+              "coordinate_extraction_accuracy": 0.0,
+              "overall_parsing_accuracy": 0.0
+            }
+          }
+        },
+        "configuration_ranking": [
+          {
+            "config_name": "geometry_specialist",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.807654",
+            "session_id": "geometry_specialist_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0005331039428710938,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0005159378051757812,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "diagrams",
+                "accuracy": 0.0,
+                "samples_processed": 0,
+                "processing_time": 1.0967254638671875e-05,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "constructions",
+                "accuracy": 0.0,
+                "samples_processed": 0,
+                "processing_time": 6.198883056640625e-06,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          },
+          {
+            "config_name": "mathpix_gpt4v_hybrid",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.812767",
+            "session_id": "mathpix_gpt4v_hybrid_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0016028881072998047,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "math_expressions",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.000408172607421875,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0004487037658691406,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "test_papers",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0007460117340087891,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          },
+          {
+            "config_name": "gpt4v_only",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.817088",
+            "session_id": "gpt4v_only_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0005867481231689453,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "math_expressions",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0001919269561767578,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.00019502639770507812,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "test_papers",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.00019979476928710938,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          },
+          {
+            "config_name": "comprehensive_parallel",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.822504",
+            "session_id": "comprehensive_parallel_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0016870498657226562,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "math_expressions",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0007197856903076172,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0004889965057373047,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "test_papers",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0004782676696777344,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          }
+        ],
+        "detailed_results": [
+          {
+            "config_name": "geometry_specialist",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.807654",
+            "session_id": "geometry_specialist_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0005331039428710938,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0005159378051757812,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "diagrams",
+                "accuracy": 0.0,
+                "samples_processed": 0,
+                "processing_time": 1.0967254638671875e-05,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "constructions",
+                "accuracy": 0.0,
+                "samples_processed": 0,
+                "processing_time": 6.198883056640625e-06,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          },
+          {
+            "config_name": "mathpix_gpt4v_hybrid",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.812767",
+            "session_id": "mathpix_gpt4v_hybrid_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0016028881072998047,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "math_expressions",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.000408172607421875,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0004487037658691406,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "test_papers",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0007460117340087891,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          },
+          {
+            "config_name": "gpt4v_only",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.817088",
+            "session_id": "gpt4v_only_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0005867481231689453,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "math_expressions",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0001919269561767578,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.00019502639770507812,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "test_papers",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.00019979476928710938,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          },
+          {
+            "config_name": "comprehensive_parallel",
+            "dataset": "PGDP5K",
+            "total_samples": 300,
+            "timestamp": "2025-08-20T21:14:17.822504",
+            "session_id": "comprehensive_parallel_1755749657",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.0016870498657226562,
+            "detailed_metrics": {},
+            "dataset_results": [
+              {
+                "dataset_type": "math_expressions",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0007197856903076172,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "geometry",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0004889965057373047,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              },
+              {
+                "dataset_type": "test_papers",
+                "accuracy": 0.0,
+                "samples_processed": 300,
+                "processing_time": 0.0004782676696777344,
+                "metrics": {
+                  "shape_detection_accuracy": 0.0,
+                  "text_recognition_accuracy": 0.0,
+                  "coordinate_extraction_accuracy": 0.0,
+                  "overall_parsing_accuracy": 0.0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "stdout": "\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\ud83d\ude80 PGDP5K COMPREHENSIVE BENCHMARK\n============================================================\n\ud83d\udcca Dataset: PGDP5K\n\ud83d\udcc1 Path: ./real_datasets/PGDP5K\n\ud83d\udd22 Samples per config: 300\n\u2699\ufe0f  Configurations: 4\n============================================================\n\n================================================================================\n\ud83d\udcca PGDP5K BENCHMARK METRICS EXPLANATION\n================================================================================\n\n\ud83c\udfaf PRIMARY METRICS:\n\u2022 Overall Accuracy: Percentage of problems correctly solved end-to-end\n\u2022 Processing Time: Average time per image in seconds\n\u2022 Samples Processed: Number of geometry diagrams analyzed\n\n\ud83d\udcd0 GEOMETRY-SPECIFIC METRICS:\n\u2022 Shape Detection Accuracy: % of geometric shapes correctly identified\n  - Points, lines, circles, triangles, rectangles, polygons\n\u2022 Text Recognition Accuracy: % of mathematical text correctly read\n  - Numbers, variables, equations, labels, measurements\n\u2022 Coordinate Extraction Accuracy: % of coordinate points correctly parsed\n  - (x,y) coordinates, grid positions, axis values\n\u2022 Overall Parsing Accuracy: Combined geometric and textual understanding\n\n\ud83c\udfc6 CONFIGURATION COMPARISON:\n\u2022 geometry_specialist: GOT-OCR2.0 optimized for geometric diagrams\n\u2022 mathpix_gpt4v_hybrid: Industry standard with Mathpix + GPT-4V fallback\n\u2022 gpt4v_only: Pure GPT-4 Vision for comprehensive analysis\n\u2022 comprehensive_parallel: Multiple OCR models running in parallel\n\n\ud83d\udcc8 EXPECTED PERFORMANCE RANGES:\n\u2022 Shape Detection: 70-95% (depends on diagram complexity)\n\u2022 Text Recognition: 80-95% (mathematical notation challenges)\n\u2022 Coordinate Extraction: 60-85% (precision-dependent)\n\u2022 Overall Accuracy: 70-85% (PGDP5K is challenging real-world data)\n\n\ud83c\udfa8 DATASET CHARACTERISTICS:\n\u2022 5,000 real plane geometry diagrams from educational materials\n\u2022 16 different symbol types, 6 text categories\n\u2022 Difficulty levels: Easy (basic shapes) \u2192 Hard (complex constructions)\n\u2022 Real-world noise: Scanning artifacts, varying image quality\n================================================================================\n\n\ud83d\ude80 Starting PGDP5K Benchmark: geometry_specialist\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\u26a0\ufe0f  Configuration warnings:\n   - Model path stepfun-ai/GOT-OCR2_0 - verify accessibility\n\n\ud83d\ude80 Starting Benchmark Session: geometry_specialist_1755749657\n\ud83d\udccb Configuration: Geometry OCR Specialist\n\ud83d\udcdd Description: GOT-OCR2.0 optimized for geometric content\n\ud83d\udd27 Strategy: geometry_first\n\ud83c\udfaf Primary OCR: got_ocr2\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\n\ud83d\udcca Evaluating dataset type: diagrams\n\n\ud83d\udcca Results for diagrams:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 0\n\n\ud83d\udcca Evaluating dataset type: constructions\n\n\ud83d\udcca Results for constructions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 0\n\ud83d\udcbe Results saved to: results/individual_benchmarks/pgdp5k/benchmark_session_geometry_specialist_1755749657.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: geometry_specialist_1755749657\n\u2699\ufe0f  Configuration: geometry_specialist\n\ud83d\udd27 Primary OCR: got_ocr2\n\ud83d\udcca Strategy: geometry_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 300\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 geometry\n   \u2705 diagrams\n   \u2705 constructions\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/pgdp5k/pgdp5k_geometry_specialist_20250820_211417.json\n\n\ud83d\ude80 Starting PGDP5K Benchmark: mathpix_gpt4v_hybrid\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: mathpix_gpt4v_hybrid_1755749657\n\ud83d\udccb Configuration: Mathpix + GPT-4V Hybrid\n\ud83d\udcdd Description: Industry standard: Mathpix OCR with GPT-4 Vision fallback\n\ud83d\udd27 Strategy: ocr_first\n\ud83c\udfaf Primary OCR: mathpix\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/pgdp5k/benchmark_session_mathpix_gpt4v_hybrid_1755749657.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: mathpix_gpt4v_hybrid_1755749657\n\u2699\ufe0f  Configuration: mathpix_gpt4v_hybrid\n\ud83d\udd27 Primary OCR: mathpix\n\ud83d\udcca Strategy: ocr_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 900\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/pgdp5k/pgdp5k_mathpix_gpt4v_hybrid_20250820_211417.json\n\n\ud83d\ude80 Starting PGDP5K Benchmark: gpt4v_only\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: gpt4v_only_1755749657\n\ud83d\udccb Configuration: GPT-4 Vision Only\n\ud83d\udcdd Description: Pure GPT-4 Vision processing for comprehensive analysis\n\ud83d\udd27 Strategy: vision_only\n\ud83c\udfaf Primary OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/pgdp5k/benchmark_session_gpt4v_only_1755749657.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: gpt4v_only_1755749657\n\u2699\ufe0f  Configuration: gpt4v_only\n\ud83d\udd27 Primary OCR: gpt4_vision\n\ud83d\udcca Strategy: vision_only\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 900\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/pgdp5k/pgdp5k_gpt4v_only_20250820_211417.json\n\n\ud83d\ude80 Starting PGDP5K Benchmark: comprehensive_parallel\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: comprehensive_parallel_1755749657\n\ud83d\udccb Configuration: Comprehensive Parallel\n\ud83d\udcdd Description: Multiple OCR models running in parallel for maximum accuracy\n\ud83d\udd27 Strategy: parallel\n\ud83c\udfaf Primary OCR: mathpix\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 300\n   OCR Success Rate: 0.0% (0.0/300.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/pgdp5k/benchmark_session_comprehensive_parallel_1755749657.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: comprehensive_parallel_1755749657\n\u2699\ufe0f  Configuration: comprehensive_parallel\n\ud83d\udd27 Primary OCR: mathpix\n\ud83d\udcca Strategy: parallel\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 900\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/pgdp5k/pgdp5k_comprehensive_parallel_20250820_211417.json\n\ud83d\udcca Results saved: results/individual_benchmarks/pgdp5k/pgdp5k_comprehensive_benchmark_20250820_211417.json\n\n\ud83c\udf89 PGDP5K BENCHMARK COMPLETE!\n============================================================\n\ud83c\udfc6 Best Configuration: geometry_specialist\n\ud83d\udcc8 Best Accuracy: 0.0%\n\u26a1 Processing Time: 0.00s\n\n\ud83d\udcca Average Accuracy: 0.0%\n\u23f1\ufe0f  Average Processing Time: 0.00s\n\n\ud83c\udfc5 Configuration Ranking:\n   1. geometry_specialist: 0.0%\n   2. mathpix_gpt4v_hybrid: 0.0%\n   3. gpt4v_only: 0.0%\n   4. comprehensive_parallel: 0.0%\n\n\ud83d\udcc1 Results saved to: results/individual_benchmarks/pgdp5k\n",
+      "timestamp": "2025-08-20T21:14:17.864729"
+    },
+    "Custom_Images": {
+      "benchmark_name": "Custom_Images",
+      "status": "success",
+      "results_file": "results/individual_benchmarks/custom_images/custom_images_comprehensive_benchmark_20250820_211418.json",
+      "results": {
+        "benchmark_summary": {
+          "dataset": "Custom Test Images",
+          "total_configurations_tested": 4,
+          "total_problems": 14,
+          "problem_categories": [
+            "Algebra",
+            "Geometry",
+            "Mixed Math"
+          ],
+          "benchmark_date": "2025-08-20T21:14:18.064582"
+        },
+        "performance_overview": {
+          "best_overall_configuration": {
+            "name": "gpt4v_only",
+            "accuracy": 0.0,
+            "processing_time": 0.00012302398681640625
+          },
+          "category_insights": {
+            "algebra": {
+              "best_config": "gpt4v_only",
+              "expected_accuracy": "90-100%",
+              "key_challenges": [
+                "Complex expressions",
+                "Multi-step equations"
+              ],
+              "recommendations": [
+                "gpt4v_only",
+                "math_expression_expert"
+              ]
+            },
+            "geometry": {
+              "best_config": "geometry_specialist",
+              "expected_accuracy": "70-90%",
+              "key_challenges": [
+                "Shape recognition",
+                "Coordinate extraction"
+              ],
+              "recommendations": [
+                "geometry_specialist",
+                "mathpix_gpt4v_hybrid"
+              ]
+            },
+            "mixed_math": {
+              "best_config": "mathpix_gpt4v_hybrid",
+              "expected_accuracy": "75-85%",
+              "key_challenges": [
+                "Diverse problem types",
+                "Context understanding"
+              ],
+              "recommendations": [
+                "mathpix_gpt4v_hybrid",
+                "comprehensive_parallel"
+              ]
+            }
+          }
+        },
+        "configuration_analysis": {
+          "gpt4v_only": {
+            "overall_accuracy": 0.0,
+            "processing_time": 0.00012302398681640625,
+            "strengths": [
+              "Excellent text recognition",
+              "Strong algebra performance",
+              "Fast processing"
+            ],
+            "best_for": [
+              "Algebra problems",
+              "Text-heavy math",
+              "Quick analysis"
+            ]
+          },
+          "math_expression_expert": {
+            "overall_accuracy": 0.0,
+            "processing_time": 3.600120544433594e-05,
+            "strengths": [
+              "LaTeX output",
+              "Mathematical notation",
+              "Expression parsing"
+            ],
+            "best_for": [
+              "Complex equations",
+              "LaTeX generation",
+              "Mathematical expressions"
+            ]
+          },
+          "geometry_specialist": {
+            "overall_accuracy": 0.0,
+            "processing_time": 3.790855407714844e-05,
+            "strengths": [
+              "Shape detection",
+              "Geometric diagrams",
+              "Coordinate extraction"
+            ],
+            "best_for": [
+              "Geometric diagrams",
+              "Shape analysis",
+              "Construction problems"
+            ]
+          },
+          "mathpix_gpt4v_hybrid": {
+            "overall_accuracy": 0.0,
+            "processing_time": 0.00011014938354492188,
+            "strengths": [
+              "Balanced performance",
+              "Industry standard",
+              "Reliable fallback"
+            ],
+            "best_for": [
+              "Mixed problems",
+              "Production use",
+              "Balanced accuracy"
+            ]
+          }
+        },
+        "detailed_results": [
+          {
+            "config_name": "gpt4v_only",
+            "dataset": "Custom Test Images",
+            "total_samples": 14,
+            "timestamp": "2025-08-20T21:14:18.057022",
+            "session_id": "gpt4v_only_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.00012302398681640625,
+            "detailed_metrics": {},
+            "category_performance": {
+              "Algebra": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Quadratic Equation",
+                  "Polynomial Expression",
+                  "Fraction Equation",
+                  "System of Equations",
+                  "Linear Equation"
+                ]
+              },
+              "Geometry": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Right Triangle",
+                  "Triangle Area",
+                  "Rectangle Perimeter",
+                  "Coordinate Geometry",
+                  "Circle Properties"
+                ]
+              },
+              "Mixed Math": {
+                "total_problems": 4,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Calculus - Derivative",
+                  "Trigonometry",
+                  "Statistics - Mean",
+                  "Word Problem - Algebra"
+                ]
+              }
+            },
+            "problem_type_analysis": {
+              "algebra_problems": {
+                "linear_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "quadratic_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "system_of_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "polynomial_expressions": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "fraction_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "geometry_problems": {
+                "triangle_area": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "circle_properties": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "rectangle_perimeter": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "right_triangle": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "coordinate_geometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "mixed_problems": {
+                "word_problems": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "calculus": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "statistics": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "trigonometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              }
+            }
+          },
+          {
+            "config_name": "math_expression_expert",
+            "dataset": "Custom Test Images",
+            "total_samples": 14,
+            "timestamp": "2025-08-20T21:14:18.059840",
+            "session_id": "math_expression_expert_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 3.600120544433594e-05,
+            "detailed_metrics": {},
+            "category_performance": {
+              "Algebra": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Quadratic Equation",
+                  "Polynomial Expression",
+                  "Fraction Equation",
+                  "System of Equations",
+                  "Linear Equation"
+                ]
+              },
+              "Geometry": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Right Triangle",
+                  "Triangle Area",
+                  "Rectangle Perimeter",
+                  "Coordinate Geometry",
+                  "Circle Properties"
+                ]
+              },
+              "Mixed Math": {
+                "total_problems": 4,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Calculus - Derivative",
+                  "Trigonometry",
+                  "Statistics - Mean",
+                  "Word Problem - Algebra"
+                ]
+              }
+            },
+            "problem_type_analysis": {
+              "algebra_problems": {
+                "linear_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "quadratic_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "system_of_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "polynomial_expressions": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "fraction_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "geometry_problems": {
+                "triangle_area": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "circle_properties": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "rectangle_perimeter": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "right_triangle": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "coordinate_geometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "mixed_problems": {
+                "word_problems": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "calculus": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "statistics": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "trigonometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              }
+            }
+          },
+          {
+            "config_name": "geometry_specialist",
+            "dataset": "Custom Test Images",
+            "total_samples": 14,
+            "timestamp": "2025-08-20T21:14:18.062740",
+            "session_id": "geometry_specialist_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 3.790855407714844e-05,
+            "detailed_metrics": {},
+            "category_performance": {
+              "Algebra": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Quadratic Equation",
+                  "Polynomial Expression",
+                  "Fraction Equation",
+                  "System of Equations",
+                  "Linear Equation"
+                ]
+              },
+              "Geometry": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Right Triangle",
+                  "Triangle Area",
+                  "Rectangle Perimeter",
+                  "Coordinate Geometry",
+                  "Circle Properties"
+                ]
+              },
+              "Mixed Math": {
+                "total_problems": 4,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Calculus - Derivative",
+                  "Trigonometry",
+                  "Statistics - Mean",
+                  "Word Problem - Algebra"
+                ]
+              }
+            },
+            "problem_type_analysis": {
+              "algebra_problems": {
+                "linear_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "quadratic_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "system_of_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "polynomial_expressions": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "fraction_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "geometry_problems": {
+                "triangle_area": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "circle_properties": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "rectangle_perimeter": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "right_triangle": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "coordinate_geometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "mixed_problems": {
+                "word_problems": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "calculus": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "statistics": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "trigonometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              }
+            }
+          },
+          {
+            "config_name": "mathpix_gpt4v_hybrid",
+            "dataset": "Custom Test Images",
+            "total_samples": 14,
+            "timestamp": "2025-08-20T21:14:18.064278",
+            "session_id": "mathpix_gpt4v_hybrid_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 0.00011014938354492188,
+            "detailed_metrics": {},
+            "category_performance": {
+              "Algebra": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Quadratic Equation",
+                  "Polynomial Expression",
+                  "Fraction Equation",
+                  "System of Equations",
+                  "Linear Equation"
+                ]
+              },
+              "Geometry": {
+                "total_problems": 5,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Right Triangle",
+                  "Triangle Area",
+                  "Rectangle Perimeter",
+                  "Coordinate Geometry",
+                  "Circle Properties"
+                ]
+              },
+              "Mixed Math": {
+                "total_problems": 4,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "problem_types": [
+                  "Calculus - Derivative",
+                  "Trigonometry",
+                  "Statistics - Mean",
+                  "Word Problem - Algebra"
+                ]
+              }
+            },
+            "problem_type_analysis": {
+              "algebra_problems": {
+                "linear_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "quadratic_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "system_of_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "polynomial_expressions": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "fraction_equations": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "geometry_problems": {
+                "triangle_area": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "circle_properties": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "rectangle_perimeter": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "right_triangle": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "coordinate_geometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              },
+              "mixed_problems": {
+                "word_problems": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "calculus": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "statistics": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                },
+                "trigonometry": {
+                  "accuracy": 0.0,
+                  "samples": 1
+                }
+              }
+            }
+          }
+        ]
+      },
+      "stdout": "\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\ud83d\ude80 CUSTOM TEST IMAGES COMPREHENSIVE BENCHMARK\n============================================================\n\ud83d\udcca Dataset: Custom Test Images\n\ud83d\udcc1 Path: ./test_images\n\ud83d\udd22 Total Problems: 14\n\ud83d\udcda Categories: ['Algebra', 'Geometry', 'Mixed Math']\n\u2699\ufe0f  Configurations: 4\n============================================================\n\n================================================================================\n\ud83d\udcca CUSTOM TEST IMAGES BENCHMARK METRICS EXPLANATION\n================================================================================\n\n\ud83c\udfaf PRIMARY METRICS:\n\u2022 Overall Accuracy: % of math problems correctly solved\n\u2022 Processing Time: Average time per image in seconds\n\u2022 Category Performance: Accuracy breakdown by problem type\n\n\ud83d\udcda PROBLEM CATEGORIES:\n\u2022 Algebra (5 problems): Linear equations, quadratics, systems, polynomials\n\u2022 Geometry (5 problems): Area, perimeter, triangles, circles, coordinates\n\u2022 Mixed Math (4 problems): Word problems, calculus, statistics, trigonometry\n\n\ud83d\udd0d DETAILED METRICS:\n\u2022 Expression Recognition: % of mathematical expressions correctly parsed\n\u2022 Question Detection: % of problem statements correctly identified\n\u2022 Answer Extraction: % of solutions correctly determined\n\u2022 Error Analysis: % of solution steps correctly understood\n\n\ud83c\udfc6 CONFIGURATION COMPARISON:\n\u2022 gpt4v_only: Best for algebra, excellent text recognition\n\u2022 math_expression_expert: Best for complex mathematical expressions\n\u2022 geometry_specialist: Best for geometric problems with shapes\n\u2022 mathpix_gpt4v_hybrid: Balanced performance across all types\n\n\ud83d\udcc8 EXPECTED PERFORMANCE:\n\u2022 Algebra Problems: 90-100% (text-based, well-formatted)\n\u2022 Geometry Problems: 70-90% (requires shape recognition)\n\u2022 Mixed Problems: 75-85% (diverse complexity)\n\u2022 Overall Average: 80-95% (clean, generated images)\n\n\ud83c\udfa8 DATASET ADVANTAGES:\n\u2022 Known ground truth for all problems\n\u2022 Clean, high-quality generated images\n\u2022 Diverse problem types and difficulty levels\n\u2022 Perfect for configuration comparison and validation\n================================================================================\n\n\ud83d\ude80 Starting Custom Images Benchmark: gpt4v_only\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: gpt4v_only_1755749658\n\ud83d\udccb Configuration: GPT-4 Vision Only\n\ud83d\udcdd Description: Pure GPT-4 Vision processing for comprehensive analysis\n\ud83d\udd27 Strategy: vision_only\n\ud83c\udfaf Primary OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/custom_images/benchmark_session_gpt4v_only_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: gpt4v_only_1755749658\n\u2699\ufe0f  Configuration: gpt4v_only\n\ud83d\udd27 Primary OCR: gpt4_vision\n\ud83d\udcca Strategy: vision_only\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 42\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/custom_images/custom_images_gpt4v_only_20250820_211418.json\n\n\ud83d\ude80 Starting Custom Images Benchmark: math_expression_expert\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\u26a0\ufe0f  Configuration warnings:\n   - Fallback OCR env var MATHPIX_APP_KEY not set\n   - Model path wanderkid/unimernet - verify accessibility\n\n\ud83d\ude80 Starting Benchmark Session: math_expression_expert_1755749658\n\ud83d\udccb Configuration: Math Expression Expert\n\ud83d\udcdd Description: UniMERNet specialized for mathematical expressions\n\ud83d\udd27 Strategy: ocr_first\n\ud83c\udfaf Primary OCR: unimernet\n\ud83d\udd04 Fallback OCR: mathpix\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\n\ud83d\udcca Evaluating dataset type: equations\n\u274c Error evaluating equations: 'BenchmarkConfig' object has no attribute 'ocr_providers'\n\n\ud83d\udcca Evaluating dataset type: formulas\n\u274c Error evaluating formulas: 'BenchmarkConfig' object has no attribute 'ocr_providers'\n\ud83d\udcbe Results saved to: results/individual_benchmarks/custom_images/benchmark_session_math_expression_expert_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: math_expression_expert_1755749658\n\u2699\ufe0f  Configuration: math_expression_expert\n\ud83d\udd27 Primary OCR: unimernet\n\ud83d\udcca Strategy: ocr_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 14\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/custom_images/custom_images_math_expression_expert_20250820_211418.json\n\n\ud83d\ude80 Starting Custom Images Benchmark: geometry_specialist\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\u26a0\ufe0f  Configuration warnings:\n   - Model path stepfun-ai/GOT-OCR2_0 - verify accessibility\n\n\ud83d\ude80 Starting Benchmark Session: geometry_specialist_1755749658\n\ud83d\udccb Configuration: Geometry OCR Specialist\n\ud83d\udcdd Description: GOT-OCR2.0 optimized for geometric content\n\ud83d\udd27 Strategy: geometry_first\n\ud83c\udfaf Primary OCR: got_ocr2\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\n\ud83d\udcca Evaluating dataset type: diagrams\n\u274c Error evaluating diagrams: 'BenchmarkConfig' object has no attribute 'ocr_providers'\n\n\ud83d\udcca Evaluating dataset type: constructions\n\u274c Error evaluating constructions: 'BenchmarkConfig' object has no attribute 'ocr_providers'\n\ud83d\udcbe Results saved to: results/individual_benchmarks/custom_images/benchmark_session_geometry_specialist_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: geometry_specialist_1755749658\n\u2699\ufe0f  Configuration: geometry_specialist\n\ud83d\udd27 Primary OCR: got_ocr2\n\ud83d\udcca Strategy: geometry_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 14\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 geometry\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/custom_images/custom_images_geometry_specialist_20250820_211418.json\n\n\ud83d\ude80 Starting Custom Images Benchmark: mathpix_gpt4v_hybrid\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: mathpix_gpt4v_hybrid_1755749658\n\ud83d\udccb Configuration: Mathpix + GPT-4V Hybrid\n\ud83d\udcdd Description: Industry standard: Mathpix OCR with GPT-4 Vision fallback\n\ud83d\udd27 Strategy: ocr_first\n\ud83c\udfaf Primary OCR: mathpix\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 14\n   OCR Success Rate: 0.0% (0.0/14.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/custom_images/benchmark_session_mathpix_gpt4v_hybrid_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: mathpix_gpt4v_hybrid_1755749658\n\u2699\ufe0f  Configuration: mathpix_gpt4v_hybrid\n\ud83d\udd27 Primary OCR: mathpix\n\ud83d\udcca Strategy: ocr_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 42\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/custom_images/custom_images_mathpix_gpt4v_hybrid_20250820_211418.json\n\ud83d\udcca Results saved: results/individual_benchmarks/custom_images/custom_images_comprehensive_benchmark_20250820_211418.json\n\n\ud83c\udf89 CUSTOM IMAGES BENCHMARK COMPLETE!\n============================================================\n\ud83c\udfc6 Best Overall: gpt4v_only\n\ud83d\udcc8 Best Accuracy: 0.0%\n\u26a1 Processing Time: 0.00s\n\n\ud83d\udcda Category Recommendations:\n\u2022 Algebra: gpt4v_only (90-100%)\n\u2022 Geometry: geometry_specialist (70-90%)\n\u2022 Mixed_Math: mathpix_gpt4v_hybrid (75-85%)\n\n\ud83d\udcc1 Results saved to: results/individual_benchmarks/custom_images\n",
+      "timestamp": "2025-08-20T21:14:18.117401"
+    },
+    "Expanded_Dataset": {
+      "benchmark_name": "Expanded_Dataset",
+      "status": "success",
+      "results_file": "results/individual_benchmarks/expanded_dataset/expanded_dataset_comprehensive_benchmark_20250820_211418.json",
+      "results": {
+        "benchmark_summary": {
+          "dataset": "ExpandedDataset",
+          "total_configurations_tested": 5,
+          "total_problems": 17,
+          "problem_types": [
+            "triangle_properties",
+            "circle_geometry",
+            "coordinate_geometry",
+            "polygon_analysis",
+            "3d_geometry",
+            "linear_equations",
+            "quadratic_equations"
+          ],
+          "difficulty_levels": [
+            "easy",
+            "medium",
+            "hard"
+          ],
+          "total_concepts": 36,
+          "benchmark_date": "2025-08-20T21:14:18.287398"
+        },
+        "performance_overview": {
+          "best_configuration": {
+            "name": "mathpix_gpt4v_hybrid",
+            "accuracy": 0.0,
+            "processing_time": 5.8650970458984375e-05
+          },
+          "performance_insights": {
+            "geometry_performance": {
+              "best_config": "geometry_specialist",
+              "expected_accuracy": "80-95%",
+              "key_strengths": [
+                "Shape recognition",
+                "Coordinate extraction",
+                "Geometric reasoning"
+              ]
+            },
+            "algebra_performance": {
+              "best_config": "math_expression_expert",
+              "expected_accuracy": "85-95%",
+              "key_strengths": [
+                "Equation solving",
+                "Algebraic manipulation",
+                "Expression parsing"
+              ]
+            },
+            "mixed_performance": {
+              "best_config": "mathpix_gpt4v_hybrid",
+              "expected_accuracy": "75-85%",
+              "key_strengths": [
+                "Balanced approach",
+                "Reliable fallback",
+                "Comprehensive coverage"
+              ]
+            }
+          }
+        },
+        "dataset_analysis": {
+          "problem_type_distribution": {
+            "triangle_properties": 3,
+            "circle_geometry": 3,
+            "coordinate_geometry": 3,
+            "polygon_analysis": 3,
+            "3d_geometry": 3,
+            "linear_equations": 1,
+            "quadratic_equations": 1
+          },
+          "difficulty_distribution": {
+            "easy": 6,
+            "medium": 9,
+            "hard": 2
+          },
+          "concept_coverage_summary": {
+            "total_concepts": 36,
+            "most_covered_concepts": [
+              [
+                "coordinate geometry",
+                6
+              ],
+              [
+                "3D geometry",
+                3
+              ],
+              [
+                "Pythagorean theorem",
+                2
+              ],
+              [
+                "distance formula",
+                2
+              ],
+              [
+                "quadratic equations",
+                2
+              ],
+              [
+                "linear equations",
+                2
+              ],
+              [
+                "regular polygons",
+                2
+              ],
+              [
+                "triangle area",
+                1
+              ],
+              [
+                "right triangles",
+                1
+              ],
+              [
+                "isosceles triangles",
+                1
+              ]
+            ]
+          }
+        },
+        "detailed_results": [
+          {
+            "config_name": "mathpix_gpt4v_hybrid",
+            "dataset": "ExpandedDataset",
+            "total_samples": 17,
+            "timestamp": "2025-08-20T21:14:18.283981",
+            "session_id": "mathpix_gpt4v_hybrid_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 5.8650970458984375e-05,
+            "detailed_metrics": {},
+            "problem_type_analysis": {
+              "triangle_properties": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "Pythagorean theorem",
+                  "triangle area",
+                  "isosceles triangles"
+                ]
+              },
+              "circle_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 2,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "circle area",
+                  "circumference",
+                  "pi",
+                  "circle equation"
+                ]
+              },
+              "coordinate_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "distance formula",
+                  "coordinate geometry",
+                  "midpoint formula"
+                ]
+              },
+              "polygon_analysis": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "polygon angles",
+                  "interior angles",
+                  "perimeter",
+                  "area"
+                ]
+              },
+              "3d_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "volume",
+                  "surface area",
+                  "cylinder",
+                  "sphere"
+                ]
+              },
+              "linear_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 0,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "algebraic manipulation",
+                  "solving equations"
+                ]
+              },
+              "quadratic_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 0,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "factoring",
+                  "zero product property",
+                  "quadratic formula"
+                ]
+              }
+            },
+            "difficulty_analysis": {
+              "easy": {
+                "total_problems": 6,
+                "expected_accuracy": "85-95%",
+                "key_challenges": [
+                  "Basic calculations",
+                  "Single-step problems",
+                  "Clear diagrams"
+                ]
+              },
+              "medium": {
+                "total_problems": 9,
+                "expected_accuracy": "70-85%",
+                "key_challenges": [
+                  "Multi-step solutions",
+                  "Coordinate calculations",
+                  "Formula application"
+                ]
+              },
+              "hard": {
+                "total_problems": 2,
+                "expected_accuracy": "50-70%",
+                "key_challenges": [
+                  "Complex geometry",
+                  "Multiple concepts",
+                  "Coordinate system integration"
+                ]
+              }
+            },
+            "concept_coverage": {
+              "geometry_basics": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "triangle area": 1,
+                  "right triangles": 1,
+                  "isosceles triangles": 1,
+                  "circle area": 1,
+                  "circumference": 1,
+                  "rectangle area": 1,
+                  "perimeter": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "coordinate_geometry": {
+                "total_concept_instances": 11,
+                "concepts_covered": {
+                  "coordinate geometry": 6,
+                  "distance formula": 2,
+                  "midpoint formula": 1,
+                  "slope": 1,
+                  "point-slope form": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "advanced_geometry": {
+                "total_concept_instances": 8,
+                "concepts_covered": {
+                  "shoelace formula": 1,
+                  "polygon angles": 1,
+                  "interior angles": 1,
+                  "3D geometry": 3,
+                  "volume": 1,
+                  "surface area": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "algebra": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "linear equations": 2,
+                  "quadratic equations": 2,
+                  "algebraic manipulation": 1,
+                  "factoring": 1,
+                  "zero product property": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "trigonometry_calculus": {
+                "total_concept_instances": 3,
+                "concepts_covered": {
+                  "pi": 1,
+                  "circle equation": 1,
+                  "standard form": 1
+                },
+                "coverage_percentage": 100.0
+              }
+            }
+          },
+          {
+            "config_name": "geometry_specialist",
+            "dataset": "ExpandedDataset",
+            "total_samples": 17,
+            "timestamp": "2025-08-20T21:14:18.285239",
+            "session_id": "geometry_specialist_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 2.2172927856445312e-05,
+            "detailed_metrics": {},
+            "problem_type_analysis": {
+              "triangle_properties": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "Pythagorean theorem",
+                  "triangle area",
+                  "isosceles triangles"
+                ]
+              },
+              "circle_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 2,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "circle area",
+                  "circumference",
+                  "pi",
+                  "circle equation"
+                ]
+              },
+              "coordinate_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "distance formula",
+                  "coordinate geometry",
+                  "midpoint formula"
+                ]
+              },
+              "polygon_analysis": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "polygon angles",
+                  "interior angles",
+                  "perimeter",
+                  "area"
+                ]
+              },
+              "3d_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "volume",
+                  "surface area",
+                  "cylinder",
+                  "sphere"
+                ]
+              },
+              "linear_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 0,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "algebraic manipulation",
+                  "solving equations"
+                ]
+              },
+              "quadratic_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 0,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "factoring",
+                  "zero product property",
+                  "quadratic formula"
+                ]
+              }
+            },
+            "difficulty_analysis": {
+              "easy": {
+                "total_problems": 6,
+                "expected_accuracy": "85-95%",
+                "key_challenges": [
+                  "Basic calculations",
+                  "Single-step problems",
+                  "Clear diagrams"
+                ]
+              },
+              "medium": {
+                "total_problems": 9,
+                "expected_accuracy": "70-85%",
+                "key_challenges": [
+                  "Multi-step solutions",
+                  "Coordinate calculations",
+                  "Formula application"
+                ]
+              },
+              "hard": {
+                "total_problems": 2,
+                "expected_accuracy": "50-70%",
+                "key_challenges": [
+                  "Complex geometry",
+                  "Multiple concepts",
+                  "Coordinate system integration"
+                ]
+              }
+            },
+            "concept_coverage": {
+              "geometry_basics": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "triangle area": 1,
+                  "right triangles": 1,
+                  "isosceles triangles": 1,
+                  "circle area": 1,
+                  "circumference": 1,
+                  "rectangle area": 1,
+                  "perimeter": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "coordinate_geometry": {
+                "total_concept_instances": 11,
+                "concepts_covered": {
+                  "coordinate geometry": 6,
+                  "distance formula": 2,
+                  "midpoint formula": 1,
+                  "slope": 1,
+                  "point-slope form": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "advanced_geometry": {
+                "total_concept_instances": 8,
+                "concepts_covered": {
+                  "shoelace formula": 1,
+                  "polygon angles": 1,
+                  "interior angles": 1,
+                  "3D geometry": 3,
+                  "volume": 1,
+                  "surface area": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "algebra": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "linear equations": 2,
+                  "quadratic equations": 2,
+                  "algebraic manipulation": 1,
+                  "factoring": 1,
+                  "zero product property": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "trigonometry_calculus": {
+                "total_concept_instances": 3,
+                "concepts_covered": {
+                  "pi": 1,
+                  "circle equation": 1,
+                  "standard form": 1
+                },
+                "coverage_percentage": 100.0
+              }
+            }
+          },
+          {
+            "config_name": "math_expression_expert",
+            "dataset": "ExpandedDataset",
+            "total_samples": 17,
+            "timestamp": "2025-08-20T21:14:18.286044",
+            "session_id": "math_expression_expert_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 2.1219253540039062e-05,
+            "detailed_metrics": {},
+            "problem_type_analysis": {
+              "triangle_properties": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "Pythagorean theorem",
+                  "triangle area",
+                  "isosceles triangles"
+                ]
+              },
+              "circle_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 2,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "circle area",
+                  "circumference",
+                  "pi",
+                  "circle equation"
+                ]
+              },
+              "coordinate_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "distance formula",
+                  "coordinate geometry",
+                  "midpoint formula"
+                ]
+              },
+              "polygon_analysis": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "polygon angles",
+                  "interior angles",
+                  "perimeter",
+                  "area"
+                ]
+              },
+              "3d_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "volume",
+                  "surface area",
+                  "cylinder",
+                  "sphere"
+                ]
+              },
+              "linear_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 0,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "algebraic manipulation",
+                  "solving equations"
+                ]
+              },
+              "quadratic_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 0,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "factoring",
+                  "zero product property",
+                  "quadratic formula"
+                ]
+              }
+            },
+            "difficulty_analysis": {
+              "easy": {
+                "total_problems": 6,
+                "expected_accuracy": "85-95%",
+                "key_challenges": [
+                  "Basic calculations",
+                  "Single-step problems",
+                  "Clear diagrams"
+                ]
+              },
+              "medium": {
+                "total_problems": 9,
+                "expected_accuracy": "70-85%",
+                "key_challenges": [
+                  "Multi-step solutions",
+                  "Coordinate calculations",
+                  "Formula application"
+                ]
+              },
+              "hard": {
+                "total_problems": 2,
+                "expected_accuracy": "50-70%",
+                "key_challenges": [
+                  "Complex geometry",
+                  "Multiple concepts",
+                  "Coordinate system integration"
+                ]
+              }
+            },
+            "concept_coverage": {
+              "geometry_basics": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "triangle area": 1,
+                  "right triangles": 1,
+                  "isosceles triangles": 1,
+                  "circle area": 1,
+                  "circumference": 1,
+                  "rectangle area": 1,
+                  "perimeter": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "coordinate_geometry": {
+                "total_concept_instances": 11,
+                "concepts_covered": {
+                  "coordinate geometry": 6,
+                  "distance formula": 2,
+                  "midpoint formula": 1,
+                  "slope": 1,
+                  "point-slope form": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "advanced_geometry": {
+                "total_concept_instances": 8,
+                "concepts_covered": {
+                  "shoelace formula": 1,
+                  "polygon angles": 1,
+                  "interior angles": 1,
+                  "3D geometry": 3,
+                  "volume": 1,
+                  "surface area": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "algebra": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "linear equations": 2,
+                  "quadratic equations": 2,
+                  "algebraic manipulation": 1,
+                  "factoring": 1,
+                  "zero product property": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "trigonometry_calculus": {
+                "total_concept_instances": 3,
+                "concepts_covered": {
+                  "pi": 1,
+                  "circle equation": 1,
+                  "standard form": 1
+                },
+                "coverage_percentage": 100.0
+              }
+            }
+          },
+          {
+            "config_name": "comprehensive_parallel",
+            "dataset": "ExpandedDataset",
+            "total_samples": 17,
+            "timestamp": "2025-08-20T21:14:18.286648",
+            "session_id": "comprehensive_parallel_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 4.4345855712890625e-05,
+            "detailed_metrics": {},
+            "problem_type_analysis": {
+              "triangle_properties": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "Pythagorean theorem",
+                  "triangle area",
+                  "isosceles triangles"
+                ]
+              },
+              "circle_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 2,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "circle area",
+                  "circumference",
+                  "pi",
+                  "circle equation"
+                ]
+              },
+              "coordinate_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "distance formula",
+                  "coordinate geometry",
+                  "midpoint formula"
+                ]
+              },
+              "polygon_analysis": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "polygon angles",
+                  "interior angles",
+                  "perimeter",
+                  "area"
+                ]
+              },
+              "3d_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "volume",
+                  "surface area",
+                  "cylinder",
+                  "sphere"
+                ]
+              },
+              "linear_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 0,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "algebraic manipulation",
+                  "solving equations"
+                ]
+              },
+              "quadratic_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 0,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "factoring",
+                  "zero product property",
+                  "quadratic formula"
+                ]
+              }
+            },
+            "difficulty_analysis": {
+              "easy": {
+                "total_problems": 6,
+                "expected_accuracy": "85-95%",
+                "key_challenges": [
+                  "Basic calculations",
+                  "Single-step problems",
+                  "Clear diagrams"
+                ]
+              },
+              "medium": {
+                "total_problems": 9,
+                "expected_accuracy": "70-85%",
+                "key_challenges": [
+                  "Multi-step solutions",
+                  "Coordinate calculations",
+                  "Formula application"
+                ]
+              },
+              "hard": {
+                "total_problems": 2,
+                "expected_accuracy": "50-70%",
+                "key_challenges": [
+                  "Complex geometry",
+                  "Multiple concepts",
+                  "Coordinate system integration"
+                ]
+              }
+            },
+            "concept_coverage": {
+              "geometry_basics": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "triangle area": 1,
+                  "right triangles": 1,
+                  "isosceles triangles": 1,
+                  "circle area": 1,
+                  "circumference": 1,
+                  "rectangle area": 1,
+                  "perimeter": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "coordinate_geometry": {
+                "total_concept_instances": 11,
+                "concepts_covered": {
+                  "coordinate geometry": 6,
+                  "distance formula": 2,
+                  "midpoint formula": 1,
+                  "slope": 1,
+                  "point-slope form": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "advanced_geometry": {
+                "total_concept_instances": 8,
+                "concepts_covered": {
+                  "shoelace formula": 1,
+                  "polygon angles": 1,
+                  "interior angles": 1,
+                  "3D geometry": 3,
+                  "volume": 1,
+                  "surface area": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "algebra": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "linear equations": 2,
+                  "quadratic equations": 2,
+                  "algebraic manipulation": 1,
+                  "factoring": 1,
+                  "zero product property": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "trigonometry_calculus": {
+                "total_concept_instances": 3,
+                "concepts_covered": {
+                  "pi": 1,
+                  "circle equation": 1,
+                  "standard form": 1
+                },
+                "coverage_percentage": 100.0
+              }
+            }
+          },
+          {
+            "config_name": "gpt4v_only",
+            "dataset": "ExpandedDataset",
+            "total_samples": 17,
+            "timestamp": "2025-08-20T21:14:18.287202",
+            "session_id": "gpt4v_only_1755749658",
+            "overall_accuracy": 0.0,
+            "processing_time": 4.2438507080078125e-05,
+            "detailed_metrics": {},
+            "problem_type_analysis": {
+              "triangle_properties": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "Pythagorean theorem",
+                  "triangle area",
+                  "isosceles triangles"
+                ]
+              },
+              "circle_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 2,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "circle area",
+                  "circumference",
+                  "pi",
+                  "circle equation"
+                ]
+              },
+              "coordinate_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 1,
+                  "hard": 1
+                },
+                "key_concepts": [
+                  "distance formula",
+                  "coordinate geometry",
+                  "midpoint formula"
+                ]
+              },
+              "polygon_analysis": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "polygon angles",
+                  "interior angles",
+                  "perimeter",
+                  "area"
+                ]
+              },
+              "3d_geometry": {
+                "total_problems": 3,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 2,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "volume",
+                  "surface area",
+                  "cylinder",
+                  "sphere"
+                ]
+              },
+              "linear_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 1,
+                  "medium": 0,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "algebraic manipulation",
+                  "solving equations"
+                ]
+              },
+              "quadratic_equations": {
+                "total_problems": 1,
+                "accuracy": 0.0,
+                "avg_processing_time": 0.0,
+                "difficulty_breakdown": {
+                  "easy": 0,
+                  "medium": 1,
+                  "hard": 0
+                },
+                "key_concepts": [
+                  "factoring",
+                  "zero product property",
+                  "quadratic formula"
+                ]
+              }
+            },
+            "difficulty_analysis": {
+              "easy": {
+                "total_problems": 6,
+                "expected_accuracy": "85-95%",
+                "key_challenges": [
+                  "Basic calculations",
+                  "Single-step problems",
+                  "Clear diagrams"
+                ]
+              },
+              "medium": {
+                "total_problems": 9,
+                "expected_accuracy": "70-85%",
+                "key_challenges": [
+                  "Multi-step solutions",
+                  "Coordinate calculations",
+                  "Formula application"
+                ]
+              },
+              "hard": {
+                "total_problems": 2,
+                "expected_accuracy": "50-70%",
+                "key_challenges": [
+                  "Complex geometry",
+                  "Multiple concepts",
+                  "Coordinate system integration"
+                ]
+              }
+            },
+            "concept_coverage": {
+              "geometry_basics": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "triangle area": 1,
+                  "right triangles": 1,
+                  "isosceles triangles": 1,
+                  "circle area": 1,
+                  "circumference": 1,
+                  "rectangle area": 1,
+                  "perimeter": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "coordinate_geometry": {
+                "total_concept_instances": 11,
+                "concepts_covered": {
+                  "coordinate geometry": 6,
+                  "distance formula": 2,
+                  "midpoint formula": 1,
+                  "slope": 1,
+                  "point-slope form": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "advanced_geometry": {
+                "total_concept_instances": 8,
+                "concepts_covered": {
+                  "shoelace formula": 1,
+                  "polygon angles": 1,
+                  "interior angles": 1,
+                  "3D geometry": 3,
+                  "volume": 1,
+                  "surface area": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "algebra": {
+                "total_concept_instances": 7,
+                "concepts_covered": {
+                  "linear equations": 2,
+                  "quadratic equations": 2,
+                  "algebraic manipulation": 1,
+                  "factoring": 1,
+                  "zero product property": 1
+                },
+                "coverage_percentage": 100.0
+              },
+              "trigonometry_calculus": {
+                "total_concept_instances": 3,
+                "concepts_covered": {
+                  "pi": 1,
+                  "circle equation": 1,
+                  "standard form": 1
+                },
+                "coverage_percentage": 100.0
+              }
+            }
+          }
+        ]
+      },
+      "stdout": "\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\ud83d\ude80 EXPANDED DATASET COMPREHENSIVE BENCHMARK\n============================================================\n\ud83d\udcca Dataset: ExpandedDataset\n\ud83d\udcc1 Path: ./real_datasets/ExpandedDataset\n\ud83d\udd22 Total Problems: 17\n\ud83d\udcda Problem Types: 7\n\ud83c\udfaf Difficulty Levels: 3\n\ud83e\udde0 Concepts Covered: 36\n\u2699\ufe0f  Configurations: 5\n============================================================\n\n================================================================================\n\ud83d\udcca EXPANDED DATASET BENCHMARK METRICS EXPLANATION\n================================================================================\n\n\ud83c\udfaf PRIMARY METRICS:\n\u2022 Overall Accuracy: % of comprehensive math problems correctly solved\n\u2022 Processing Time: Average time per problem in seconds\n\u2022 Problem Type Performance: Accuracy by mathematical domain\n\n\ud83d\udcda PROBLEM CATEGORIES (17 total problems):\n\u2022 Triangle Properties (3): Right triangles, isosceles, coordinate triangles\n\u2022 Circle Geometry (3): Area, circumference, equations\n\u2022 Coordinate Geometry (3): Distance, midpoint, coordinate calculations\n\u2022 Polygon Analysis (3): Regular polygons, angles, area calculations\n\u2022 3D Geometry (3): Volume, surface area, cylinders, spheres\n\u2022 Linear Equations (1): Basic algebraic problem solving\n\u2022 Quadratic Equations (1): Factoring and solving\n\n\ud83d\udcca DIFFICULTY LEVELS:\n\u2022 Easy (6 problems): Basic calculations, single-step solutions\n\u2022 Medium (9 problems): Multi-step solutions, formula application\n\u2022 Hard (2 problems): Complex geometry, multiple concept integration\n\n\ud83d\udd0d DETAILED METRICS:\n\u2022 Concept Coverage: 50+ mathematical concepts evaluated\n\u2022 Shape Recognition: Geometric shape identification accuracy\n\u2022 Coordinate Extraction: Mathematical coordinate parsing\n\u2022 Solution Steps: Multi-step problem solving capability\n\u2022 Mathematical Reasoning: Conceptual understanding assessment\n\n\ud83c\udfc6 CONFIGURATION COMPARISON:\n\u2022 mathpix_gpt4v_hybrid: Best overall balance for mixed problems\n\u2022 geometry_specialist: Best for geometric and coordinate problems\n\u2022 math_expression_expert: Best for algebraic equations\n\u2022 comprehensive_parallel: Maximum accuracy across all types\n\u2022 gpt4v_only: Pure vision approach for comparison\n\n\ud83d\udcc8 EXPECTED PERFORMANCE:\n\u2022 Geometry Problems: 80-95% (specialized geometric reasoning)\n\u2022 Algebra Problems: 85-95% (equation solving, expressions)\n\u2022 Coordinate Problems: 75-90% (coordinate system understanding)\n\u2022 3D Problems: 70-85% (spatial reasoning challenges)\n\u2022 Overall Average: 75-90% (comprehensive mathematical coverage)\n\n\ud83c\udfa8 DATASET ADVANTAGES:\n\u2022 Comprehensive problem coverage across mathematical domains\n\u2022 Detailed ground truth with step-by-step solutions\n\u2022 50+ mathematical concepts with difficulty progression\n\u2022 Real educational problem complexity and variety\n================================================================================\n\n\ud83d\ude80 Starting ExpandedDataset Benchmark: mathpix_gpt4v_hybrid\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: mathpix_gpt4v_hybrid_1755749658\n\ud83d\udccb Configuration: Mathpix + GPT-4V Hybrid\n\ud83d\udcdd Description: Industry standard: Mathpix OCR with GPT-4 Vision fallback\n\ud83d\udd27 Strategy: ocr_first\n\ud83c\udfaf Primary OCR: mathpix\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/expanded_dataset/benchmark_session_mathpix_gpt4v_hybrid_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: mathpix_gpt4v_hybrid_1755749658\n\u2699\ufe0f  Configuration: mathpix_gpt4v_hybrid\n\ud83d\udd27 Primary OCR: mathpix\n\ud83d\udcca Strategy: ocr_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 51\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/expanded_dataset/expanded_dataset_mathpix_gpt4v_hybrid_20250820_211418.json\n\n\ud83d\ude80 Starting ExpandedDataset Benchmark: geometry_specialist\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\u26a0\ufe0f  Configuration warnings:\n   - Model path stepfun-ai/GOT-OCR2_0 - verify accessibility\n\n\ud83d\ude80 Starting Benchmark Session: geometry_specialist_1755749658\n\ud83d\udccb Configuration: Geometry OCR Specialist\n\ud83d\udcdd Description: GOT-OCR2.0 optimized for geometric content\n\ud83d\udd27 Strategy: geometry_first\n\ud83c\udfaf Primary OCR: got_ocr2\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: diagrams\n\n\ud83d\udcca Results for diagrams:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 0\n\n\ud83d\udcca Evaluating dataset type: constructions\n\n\ud83d\udcca Results for constructions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 0\n\ud83d\udcbe Results saved to: results/individual_benchmarks/expanded_dataset/benchmark_session_geometry_specialist_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: geometry_specialist_1755749658\n\u2699\ufe0f  Configuration: geometry_specialist\n\ud83d\udd27 Primary OCR: got_ocr2\n\ud83d\udcca Strategy: geometry_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 17\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 geometry\n   \u2705 diagrams\n   \u2705 constructions\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/expanded_dataset/expanded_dataset_geometry_specialist_20250820_211418.json\n\n\ud83d\ude80 Starting ExpandedDataset Benchmark: math_expression_expert\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\u26a0\ufe0f  Configuration warnings:\n   - Fallback OCR env var MATHPIX_APP_KEY not set\n   - Model path wanderkid/unimernet - verify accessibility\n\n\ud83d\ude80 Starting Benchmark Session: math_expression_expert_1755749658\n\ud83d\udccb Configuration: Math Expression Expert\n\ud83d\udcdd Description: UniMERNet specialized for mathematical expressions\n\ud83d\udd27 Strategy: ocr_first\n\ud83c\udfaf Primary OCR: unimernet\n\ud83d\udd04 Fallback OCR: mathpix\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: equations\n\n\ud83d\udcca Results for equations:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 0\n\n\ud83d\udcca Evaluating dataset type: formulas\n\n\ud83d\udcca Results for formulas:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 0\n\ud83d\udcbe Results saved to: results/individual_benchmarks/expanded_dataset/benchmark_session_math_expression_expert_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: math_expression_expert_1755749658\n\u2699\ufe0f  Configuration: math_expression_expert\n\ud83d\udd27 Primary OCR: unimernet\n\ud83d\udcca Strategy: ocr_first\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 17\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 equations\n   \u2705 formulas\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/expanded_dataset/expanded_dataset_math_expression_expert_20250820_211418.json\n\n\ud83d\ude80 Starting ExpandedDataset Benchmark: comprehensive_parallel\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: comprehensive_parallel_1755749658\n\ud83d\udccb Configuration: Comprehensive Parallel\n\ud83d\udcdd Description: Multiple OCR models running in parallel for maximum accuracy\n\ud83d\udd27 Strategy: parallel\n\ud83c\udfaf Primary OCR: mathpix\n\ud83d\udd04 Fallback OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/expanded_dataset/benchmark_session_comprehensive_parallel_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: comprehensive_parallel_1755749658\n\u2699\ufe0f  Configuration: comprehensive_parallel\n\ud83d\udd27 Primary OCR: mathpix\n\ud83d\udcca Strategy: parallel\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 51\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/expanded_dataset/expanded_dataset_comprehensive_parallel_20250820_211418.json\n\n\ud83d\ude80 Starting ExpandedDataset Benchmark: gpt4v_only\n============================================================\n\u26a0\ufe0f  Warning: Missing API keys: MATHPIX_APP_ID, MATHPIX_APP_KEY\n   Some OCR providers will not be available\n\u26a0\ufe0f  Warning: Could not load some modules: No module named 'math_learning'\n\n\ud83d\ude80 Starting Benchmark Session: gpt4v_only_1755749658\n\ud83d\udccb Configuration: GPT-4 Vision Only\n\ud83d\udcdd Description: Pure GPT-4 Vision processing for comprehensive analysis\n\ud83d\udd27 Strategy: vision_only\n\ud83c\udfaf Primary OCR: gpt4_vision\n============================================================\n\n\ud83d\udcca Evaluating dataset type: math_expressions\n\n\ud83d\udcca Results for math_expressions:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: geometry\n\n\ud83d\udcca Results for geometry:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\n\ud83d\udcca Evaluating dataset type: test_papers\n\n\ud83d\udcca Results for test_papers:\n   Overall Accuracy: 0.0%\n   Processing Time: 0.00s\n   Total Samples: 17\n   OCR Success Rate: 0.0% (0.0/17.0)\n\ud83d\udcbe Results saved to: results/individual_benchmarks/expanded_dataset/benchmark_session_gpt4v_only_1755749658.json\n\n================================================================================\n\ud83c\udfaf BENCHMARK SESSION SUMMARY\n================================================================================\n\ud83d\udccb Session ID: gpt4v_only_1755749658\n\u2699\ufe0f  Configuration: gpt4v_only\n\ud83d\udd27 Primary OCR: gpt4_vision\n\ud83d\udcca Strategy: vision_only\n\u23f1\ufe0f  Duration: 0.0s\n\ud83d\udcc8 Overall Accuracy: 0.0%\n\ud83d\udcca Total Samples: 51\n\u23f1\ufe0f  Processing Time: 0.00s\n\n\ud83d\udcca DETAILED METRICS:\n   OCR Success Rate: 0.0%\n\n\ud83d\udcc1 DATASETS EVALUATED:\n   \u2705 math_expressions\n   \u2705 geometry\n   \u2705 test_papers\n\n================================================================================\n\ud83d\udcca Results saved: results/individual_benchmarks/expanded_dataset/expanded_dataset_gpt4v_only_20250820_211418.json\n\ud83d\udcca Results saved: results/individual_benchmarks/expanded_dataset/expanded_dataset_comprehensive_benchmark_20250820_211418.json\n\n\ud83c\udf89 EXPANDED DATASET BENCHMARK COMPLETE!\n============================================================\n\ud83c\udfc6 Best Configuration: mathpix_gpt4v_hybrid\n\ud83d\udcc8 Best Accuracy: 0.0%\n\u26a1 Processing Time: 0.00s\n\n\ud83d\udcca Dataset Coverage:\n\u2022 Problem Types: 7\n\u2022 Difficulty Levels: 3\n\u2022 Mathematical Concepts: 36\n\n\ud83c\udfaf Performance Insights:\n\u2022 Geometry Performance: geometry_specialist (80-95%)\n\u2022 Algebra Performance: math_expression_expert (85-95%)\n\u2022 Mixed Performance: mathpix_gpt4v_hybrid (75-85%)\n\n\ud83d\udcc1 Results saved to: results/individual_benchmarks/expanded_dataset\n",
+      "timestamp": "2025-08-20T21:14:18.333520"
+    }
+  }
+}

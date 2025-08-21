@@ -1,0 +1,68 @@
+{
+  "dataset_name": "Sample Test Data",
+  "description": "Small sample dataset for API testing",
+  "total_problems": 3,
+  "problems": [
+    {
+      "id": "sample_1",
+      "type": "algebra",
+      "image_path": "sample_1.png",
+      "question": "Solve for x: 2x + 5 = 13",
+      "ground_truth_answer": "x = 4",
+      "ground_truth_text": "2x + 5 = 13, x = 4",
+      "difficulty": "easy",
+      "expected_shapes": [],
+      "expected_text": [
+        "2x",
+        "+",
+        "5",
+        "=",
+        "13",
+        "x",
+        "4"
+      ],
+      "confidence_threshold": 0.8
+    },
+    {
+      "id": "sample_2",
+      "type": "geometry",
+      "image_path": "sample_2.png",
+      "question": "Find the area of a triangle with base 6 and height 4",
+      "ground_truth_answer": "12",
+      "ground_truth_text": "Area = (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 6 \u00d7 4 = 12",
+      "difficulty": "easy",
+      "expected_shapes": [
+        "triangle"
+      ],
+      "expected_text": [
+        "Area",
+        "base",
+        "height",
+        "6",
+        "4",
+        "12"
+      ],
+      "confidence_threshold": 0.7
+    },
+    {
+      "id": "sample_3",
+      "type": "mixed",
+      "image_path": "sample_3.png",
+      "question": "Calculate: \u222b(2x + 1)dx",
+      "ground_truth_answer": "x\u00b2 + x + C",
+      "ground_truth_text": "\u222b(2x + 1)dx = x\u00b2 + x + C",
+      "difficulty": "medium",
+      "expected_shapes": [],
+      "expected_text": [
+        "\u222b",
+        "2x",
+        "+",
+        "1",
+        "dx",
+        "x\u00b2",
+        "C"
+      ],
+      "confidence_threshold": 0.6
+    }
+  ]
+}

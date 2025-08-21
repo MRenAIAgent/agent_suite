@@ -1,0 +1,374 @@
+{
+  "session_id": "gpt4v_only_1755740355",
+  "config_name": "gpt4v_only",
+  "config": {
+    "name": "GPT-4 Vision Only",
+    "description": "Pure GPT-4 Vision processing for comprehensive analysis",
+    "primary_ocr": {
+      "provider": "gpt4_vision",
+      "model_name": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "fallback_ocr": null,
+    "processing_strategy": "vision_only",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-20T18:39:15.032615",
+  "end_time": "2025-08-20T18:39:15.032909",
+  "results": [
+    {
+      "dataset_name": "math_expressions",
+      "system_name": "GPT-4 Vision Only (vision_only)",
+      "evaluation_date": "2025-08-20T18:39:15.032715",
+      "total_samples": 17,
+      "processing_time": 8.58306884765625e-05,
+      "metrics": [
+        {
+          "metric_name": "expression_recognition",
+          "score": 17,
+          "max_score": 17,
+          "accuracy": 1.0,
+          "details": {
+            "total_expressions": 17,
+            "correct_expressions": 17,
+            "character_accuracy": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "semantic_accuracy": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "by_difficulty": {
+              "unknown": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            "by_domain": {
+              "unknown": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            "avg_character_accuracy": 1.0,
+            "avg_semantic_accuracy": 1.0
+          }
+        },
+        {
+          "metric_name": "question_detection",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        },
+        {
+          "metric_name": "answer_extraction",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        },
+        {
+          "metric_name": "error_analysis",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        }
+      ],
+      "overall_accuracy": 1.0,
+      "summary": {
+        "metrics_evaluated": 4,
+        "total_samples": 17,
+        "processing_speed": "0.00s",
+        "metric_breakdown": {
+          "expression_recognition": 1.0,
+          "question_detection": 0,
+          "answer_extraction": 0,
+          "error_analysis": 0
+        }
+      }
+    },
+    {
+      "dataset_name": "geometry",
+      "system_name": "GPT-4 Vision Only (vision_only)",
+      "evaluation_date": "2025-08-20T18:39:15.032802",
+      "total_samples": 17,
+      "processing_time": 6.389617919921875e-05,
+      "metrics": [
+        {
+          "metric_name": "expression_recognition",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        },
+        {
+          "metric_name": "question_detection",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        },
+        {
+          "metric_name": "answer_extraction",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        },
+        {
+          "metric_name": "error_analysis",
+          "score": 0,
+          "max_score": 17,
+          "accuracy": 0.0,
+          "details": {
+            "total_solutions": 17,
+            "correct_classifications": 0,
+            "error_type_accuracy": {
+              "none": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            "root_cause_accuracy": {},
+            "confidence_correlation": []
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "metrics_evaluated": 4,
+        "total_samples": 17,
+        "processing_speed": "0.00s",
+        "metric_breakdown": {
+          "expression_recognition": 0,
+          "question_detection": 0,
+          "answer_extraction": 0,
+          "error_analysis": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "test_papers",
+      "system_name": "GPT-4 Vision Only (vision_only)",
+      "evaluation_date": "2025-08-20T18:39:15.032902",
+      "total_samples": 0,
+      "processing_time": 6.079673767089844e-05,
+      "metrics": [
+        {
+          "metric_name": "expression_recognition",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        },
+        {
+          "metric_name": "question_detection",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "total_papers": 17,
+            "questions_detected": 0,
+            "questions_missed": 0,
+            "false_positives": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1_score": 0,
+            "by_subject": {
+              "unknown": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        {
+          "metric_name": "answer_extraction",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "total_answers": 0,
+            "correct_extractions": 0,
+            "by_answer_type": {},
+            "by_subject": {}
+          }
+        },
+        {
+          "metric_name": "error_analysis",
+          "score": 0,
+          "max_score": 0,
+          "accuracy": 0,
+          "details": {
+            "error": "No ground truth data"
+          }
+        }
+      ],
+      "overall_accuracy": 0,
+      "summary": {
+        "metrics_evaluated": 4,
+        "total_samples": 0,
+        "processing_speed": "0.00s",
+        "metric_breakdown": {
+          "expression_recognition": 0,
+          "question_detection": 0,
+          "answer_extraction": 0,
+          "error_analysis": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "gpt4v_only_1755740355",
+    "configuration": "gpt4v_only",
+    "duration_seconds": 0.000294,
+    "total_samples_processed": 34,
+    "overall_accuracy": 0.3333333333333333,
+    "total_processing_time": 0.0002105236053466797,
+    "average_metrics": {
+      "expression_recognition": 0.3333333333333333,
+      "question_detection": 0.0,
+      "answer_extraction": 0.0,
+      "error_analysis": 0.0
+    },
+    "datasets_evaluated": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "primary_ocr_provider": "gpt4_vision",
+    "processing_strategy": "vision_only",
+    "timestamp": "2025-08-20T18:39:15.032615"
+  }
+}

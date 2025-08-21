@@ -1,0 +1,95 @@
+{
+  "session_id": "gpt4v_only_1755751274",
+  "config_name": "gpt4v_only",
+  "config": {
+    "name": "GPT-4 Vision Only",
+    "description": "Pure GPT-4 Vision processing for comprehensive analysis",
+    "primary_ocr": {
+      "provider": "gpt4_vision",
+      "model_name": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "fallback_ocr": null,
+    "processing_strategy": "vision_only",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-20T21:41:14.221366",
+  "end_time": "2025-08-20T21:41:16.865453",
+  "results": [
+    {
+      "dataset_name": "custom_dataset",
+      "system_name": "GPT-4 Vision Only (vision_only)",
+      "evaluation_date": "2025-08-20T21:41:16.865312",
+      "total_samples": 14,
+      "processing_time": 2.6432278156280518,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 14,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 14
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 14,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0.1884199721472604,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "gpt4v_only_1755751274",
+    "configuration": "gpt4v_only",
+    "duration_seconds": 2.644087,
+    "total_samples_processed": 14,
+    "overall_accuracy": 0.0,
+    "total_processing_time": 2.6432278156280518,
+    "average_metrics": {
+      "OCR Success Rate": 0.0
+    },
+    "datasets_evaluated": [
+      "custom_dataset"
+    ],
+    "primary_ocr_provider": "gpt4_vision",
+    "processing_strategy": "vision_only",
+    "timestamp": "2025-08-20T21:41:14.221366"
+  }
+}

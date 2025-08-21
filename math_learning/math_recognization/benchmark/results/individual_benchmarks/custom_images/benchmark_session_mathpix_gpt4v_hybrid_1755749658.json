@@ -1,0 +1,182 @@
+{
+  "session_id": "mathpix_gpt4v_hybrid_1755749658",
+  "config_name": "mathpix_gpt4v_hybrid",
+  "config": {
+    "name": "Mathpix + GPT-4V Hybrid",
+    "description": "Industry standard: Mathpix OCR with GPT-4 Vision fallback",
+    "primary_ocr": {
+      "provider": "mathpix",
+      "model_name": "mathpix-standard",
+      "api_key_env": "MATHPIX_APP_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "formats": [
+          "text",
+          "latex_simplified"
+        ],
+        "include_asciimath": true,
+        "include_table_html": true
+      }
+    },
+    "fallback_ocr": {
+      "provider": "gpt4_vision",
+      "model_name": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "processing_strategy": "ocr_first",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-20T21:14:18.063466",
+  "end_time": "2025-08-20T21:14:18.063748",
+  "results": [
+    {
+      "dataset_name": "math_expressions",
+      "system_name": "Mathpix + GPT-4V Hybrid (ocr_first)",
+      "evaluation_date": "2025-08-20T21:14:18.063550",
+      "total_samples": 14,
+      "processing_time": 4.1961669921875e-05,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 14,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 14
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 14,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    },
+    {
+      "dataset_name": "geometry",
+      "system_name": "Mathpix + GPT-4V Hybrid (ocr_first)",
+      "evaluation_date": "2025-08-20T21:14:18.063648",
+      "total_samples": 14,
+      "processing_time": 3.910064697265625e-05,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 14,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 14
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 14,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    },
+    {
+      "dataset_name": "test_papers",
+      "system_name": "Mathpix + GPT-4V Hybrid (ocr_first)",
+      "evaluation_date": "2025-08-20T21:14:18.063738",
+      "total_samples": 14,
+      "processing_time": 2.9087066650390625e-05,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 0,
+          "max_score": 14,
+          "accuracy": 0.0,
+          "details": {
+            "successful": 0,
+            "failed": 14
+          }
+        }
+      ],
+      "overall_accuracy": 0.0,
+      "summary": {
+        "total_samples": 14,
+        "successful_samples": 0,
+        "success_rate": 0.0,
+        "overall_accuracy": 0.0,
+        "avg_processing_time": 0,
+        "avg_confidence": 0,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "mathpix_gpt4v_hybrid_1755749658",
+    "configuration": "mathpix_gpt4v_hybrid",
+    "duration_seconds": 0.000282,
+    "total_samples_processed": 42,
+    "overall_accuracy": 0.0,
+    "total_processing_time": 0.00011014938354492188,
+    "average_metrics": {
+      "OCR Success Rate": 0.0
+    },
+    "datasets_evaluated": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "primary_ocr_provider": "mathpix",
+    "processing_strategy": "ocr_first",
+    "timestamp": "2025-08-20T21:14:18.063466"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "session_id": "gpt-5_1755795658",
+  "config_name": "gpt-5",
+  "config": {
+    "name": "GPT-5 Vision Only",
+    "description": "Pure GPT-5 Vision processing for comprehensive analysis",
+    "primary_ocr": {
+      "provider": "gpt5_vision",
+      "model_name": "gpt-5",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_completion_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "fallback_ocr": null,
+    "processing_strategy": "vision_only",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-21T10:00:58.043835",
+  "end_time": "2025-08-21T10:05:33.508930",
+  "results": [
+    {
+      "dataset_name": "custom_dataset",
+      "system_name": "GPT-5 Vision Only (vision_only)",
+      "evaluation_date": "2025-08-21T10:05:33.508712",
+      "total_samples": 14,
+      "processing_time": 275.46340012550354,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 13,
+          "max_score": 14,
+          "accuracy": 0.9285714285714286,
+          "details": {
+            "successful": 13,
+            "failed": 1
+          }
+        },
+        {
+          "metric_name": "Text Extraction Accuracy",
+          "score": 0.2658820103117101,
+          "max_score": 4,
+          "accuracy": 0.06647050257792753,
+          "details": {
+            "samples_evaluated": 4,
+            "scores": [
+              0.0453125,
+              0.054441260744985676,
+              0.038128249566724434,
+              0.128
+            ]
+          }
+        }
+      ],
+      "overall_accuracy": 0.7369934450173172,
+      "summary": {
+        "total_samples": 14,
+        "successful_samples": 13,
+        "success_rate": 0.9285714285714286,
+        "overall_accuracy": 0.7369934450173172,
+        "avg_processing_time": 19.67466185774122,
+        "avg_confidence": 0.8499999999999999,
+        "metrics_evaluated": 2,
+        "detailed_metrics": {
+          "text_accuracy": 0.06647050257792753,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "gpt-5_1755795658",
+    "configuration": "gpt-5",
+    "duration_seconds": 275.465095,
+    "total_samples_processed": 14,
+    "overall_accuracy": 0.7369934450173172,
+    "total_processing_time": 275.46340012550354,
+    "average_metrics": {
+      "OCR Success Rate": 0.9285714285714286,
+      "Text Extraction Accuracy": 0.06647050257792753
+    },
+    "datasets_evaluated": [
+      "custom_dataset"
+    ],
+    "primary_ocr_provider": "gpt5_vision",
+    "processing_strategy": "vision_only",
+    "timestamp": "2025-08-21T10:00:58.043835"
+  }
+}

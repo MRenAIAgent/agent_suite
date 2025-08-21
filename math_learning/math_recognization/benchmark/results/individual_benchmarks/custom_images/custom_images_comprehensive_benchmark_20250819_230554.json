@@ -1,0 +1,562 @@
+{
+  "benchmark_summary": {
+    "dataset": "Custom Test Images",
+    "total_configurations_tested": 4,
+    "total_problems": 14,
+    "problem_categories": [
+      "Algebra",
+      "Geometry",
+      "Mixed Math"
+    ],
+    "benchmark_date": "2025-08-19T23:05:54.482935"
+  },
+  "performance_overview": {
+    "best_overall_configuration": {
+      "name": "math_expression_expert",
+      "accuracy": 1.0,
+      "processing_time": 9.012222290039062e-05
+    },
+    "category_insights": {
+      "algebra": {
+        "best_config": "math_expression_expert",
+        "expected_accuracy": "90-100%",
+        "key_challenges": [
+          "Complex expressions",
+          "Multi-step equations"
+        ],
+        "recommendations": [
+          "gpt4v_only",
+          "math_expression_expert"
+        ]
+      },
+      "geometry": {
+        "best_config": "geometry_specialist",
+        "expected_accuracy": "70-90%",
+        "key_challenges": [
+          "Shape recognition",
+          "Coordinate extraction"
+        ],
+        "recommendations": [
+          "geometry_specialist",
+          "mathpix_gpt4v_hybrid"
+        ]
+      },
+      "mixed_math": {
+        "best_config": "mathpix_gpt4v_hybrid",
+        "expected_accuracy": "75-85%",
+        "key_challenges": [
+          "Diverse problem types",
+          "Context understanding"
+        ],
+        "recommendations": [
+          "mathpix_gpt4v_hybrid",
+          "comprehensive_parallel"
+        ]
+      }
+    }
+  },
+  "configuration_analysis": {
+    "gpt4v_only": {
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.0006310939788818359,
+      "strengths": [
+        "Excellent text recognition",
+        "Strong algebra performance",
+        "Fast processing"
+      ],
+      "best_for": [
+        "Algebra problems",
+        "Text-heavy math",
+        "Quick analysis"
+      ]
+    },
+    "math_expression_expert": {
+      "overall_accuracy": 1.0,
+      "processing_time": 9.012222290039062e-05,
+      "strengths": [
+        "LaTeX output",
+        "Mathematical notation",
+        "Expression parsing"
+      ],
+      "best_for": [
+        "Complex equations",
+        "LaTeX generation",
+        "Mathematical expressions"
+      ]
+    },
+    "geometry_specialist": {
+      "overall_accuracy": 0.0,
+      "processing_time": 5.0067901611328125e-05,
+      "strengths": [
+        "Shape detection",
+        "Geometric diagrams",
+        "Coordinate extraction"
+      ],
+      "best_for": [
+        "Geometric diagrams",
+        "Shape analysis",
+        "Construction problems"
+      ]
+    },
+    "mathpix_gpt4v_hybrid": {
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.00030350685119628906,
+      "strengths": [
+        "Balanced performance",
+        "Industry standard",
+        "Reliable fallback"
+      ],
+      "best_for": [
+        "Mixed problems",
+        "Production use",
+        "Balanced accuracy"
+      ]
+    }
+  },
+  "detailed_results": [
+    {
+      "config_name": "gpt4v_only",
+      "dataset": "Custom Test Images",
+      "total_samples": 14,
+      "timestamp": "2025-08-19T23:05:54.473682",
+      "session_id": "gpt4v_only_1755669954",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.0006310939788818359,
+      "detailed_metrics": {},
+      "category_performance": {
+        "Algebra": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Polynomial Expression",
+            "System of Equations",
+            "Fraction Equation",
+            "Linear Equation",
+            "Quadratic Equation"
+          ]
+        },
+        "Geometry": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Circle Properties",
+            "Rectangle Perimeter",
+            "Right Triangle",
+            "Triangle Area",
+            "Coordinate Geometry"
+          ]
+        },
+        "Mixed Math": {
+          "total_problems": 4,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Word Problem - Algebra",
+            "Statistics - Mean",
+            "Calculus - Derivative",
+            "Trigonometry"
+          ]
+        }
+      },
+      "problem_type_analysis": {
+        "algebra_problems": {
+          "linear_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "quadratic_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "system_of_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "polynomial_expressions": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "fraction_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "geometry_problems": {
+          "triangle_area": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "circle_properties": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "rectangle_perimeter": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "right_triangle": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "coordinate_geometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "mixed_problems": {
+          "word_problems": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "calculus": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "statistics": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "trigonometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        }
+      }
+    },
+    {
+      "config_name": "math_expression_expert",
+      "dataset": "Custom Test Images",
+      "total_samples": 14,
+      "timestamp": "2025-08-19T23:05:54.474434",
+      "session_id": "math_expression_expert_1755669954",
+      "overall_accuracy": 1.0,
+      "processing_time": 9.012222290039062e-05,
+      "detailed_metrics": {},
+      "category_performance": {
+        "Algebra": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Polynomial Expression",
+            "System of Equations",
+            "Fraction Equation",
+            "Linear Equation",
+            "Quadratic Equation"
+          ]
+        },
+        "Geometry": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Circle Properties",
+            "Rectangle Perimeter",
+            "Right Triangle",
+            "Triangle Area",
+            "Coordinate Geometry"
+          ]
+        },
+        "Mixed Math": {
+          "total_problems": 4,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Word Problem - Algebra",
+            "Statistics - Mean",
+            "Calculus - Derivative",
+            "Trigonometry"
+          ]
+        }
+      },
+      "problem_type_analysis": {
+        "algebra_problems": {
+          "linear_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "quadratic_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "system_of_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "polynomial_expressions": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "fraction_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "geometry_problems": {
+          "triangle_area": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "circle_properties": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "rectangle_perimeter": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "right_triangle": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "coordinate_geometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "mixed_problems": {
+          "word_problems": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "calculus": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "statistics": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "trigonometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        }
+      }
+    },
+    {
+      "config_name": "geometry_specialist",
+      "dataset": "Custom Test Images",
+      "total_samples": 14,
+      "timestamp": "2025-08-19T23:05:54.475072",
+      "session_id": "geometry_specialist_1755669954",
+      "overall_accuracy": 0.0,
+      "processing_time": 5.0067901611328125e-05,
+      "detailed_metrics": {},
+      "category_performance": {
+        "Algebra": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Polynomial Expression",
+            "System of Equations",
+            "Fraction Equation",
+            "Linear Equation",
+            "Quadratic Equation"
+          ]
+        },
+        "Geometry": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Circle Properties",
+            "Rectangle Perimeter",
+            "Right Triangle",
+            "Triangle Area",
+            "Coordinate Geometry"
+          ]
+        },
+        "Mixed Math": {
+          "total_problems": 4,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Word Problem - Algebra",
+            "Statistics - Mean",
+            "Calculus - Derivative",
+            "Trigonometry"
+          ]
+        }
+      },
+      "problem_type_analysis": {
+        "algebra_problems": {
+          "linear_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "quadratic_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "system_of_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "polynomial_expressions": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "fraction_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "geometry_problems": {
+          "triangle_area": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "circle_properties": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "rectangle_perimeter": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "right_triangle": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "coordinate_geometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "mixed_problems": {
+          "word_problems": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "calculus": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "statistics": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "trigonometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        }
+      }
+    },
+    {
+      "config_name": "mathpix_gpt4v_hybrid",
+      "dataset": "Custom Test Images",
+      "total_samples": 14,
+      "timestamp": "2025-08-19T23:05:54.482332",
+      "session_id": "mathpix_gpt4v_hybrid_1755669954",
+      "overall_accuracy": 0.3333333333333333,
+      "processing_time": 0.00030350685119628906,
+      "detailed_metrics": {},
+      "category_performance": {
+        "Algebra": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Polynomial Expression",
+            "System of Equations",
+            "Fraction Equation",
+            "Linear Equation",
+            "Quadratic Equation"
+          ]
+        },
+        "Geometry": {
+          "total_problems": 5,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Circle Properties",
+            "Rectangle Perimeter",
+            "Right Triangle",
+            "Triangle Area",
+            "Coordinate Geometry"
+          ]
+        },
+        "Mixed Math": {
+          "total_problems": 4,
+          "accuracy": 0.0,
+          "avg_processing_time": 0.0,
+          "problem_types": [
+            "Word Problem - Algebra",
+            "Statistics - Mean",
+            "Calculus - Derivative",
+            "Trigonometry"
+          ]
+        }
+      },
+      "problem_type_analysis": {
+        "algebra_problems": {
+          "linear_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "quadratic_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "system_of_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "polynomial_expressions": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "fraction_equations": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "geometry_problems": {
+          "triangle_area": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "circle_properties": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "rectangle_perimeter": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "right_triangle": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "coordinate_geometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        },
+        "mixed_problems": {
+          "word_problems": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "calculus": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "statistics": {
+            "accuracy": 0.0,
+            "samples": 1
+          },
+          "trigonometry": {
+            "accuracy": 0.0,
+            "samples": 1
+          }
+        }
+      }
+    }
+  ]
+}

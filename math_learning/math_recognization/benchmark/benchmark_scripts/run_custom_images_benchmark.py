@@ -40,10 +40,10 @@ class CustomImagesBenchmarkRunner:
         
         # Configurations optimized for different problem types
         self.configs_to_test = [
-            "gpt4v_only",              # Best for algebra
+            "gpt-5",                   # Best for algebra (GPT-5)
             "math_expression_expert",   # Best for expressions
             "geometry_specialist",      # Best for geometry
-            "mathpix_gpt4v_hybrid"     # Industry standard
+            "mathpix_gpt5_hybrid"      # Industry standard
         ]
     
     def load_problem_metadata(self):
@@ -342,8 +342,115 @@ class CustomImagesBenchmarkRunner:
 
 async def main():
     """Main function to run Custom Images benchmark."""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Run Custom Images Benchmark')
+    parser.add_argument('--config', type=str, 
+                       help='Specific configuration to run (e.g., gpt4v_only, mathpix_gpt4v_hybrid, geometry_specialist, math_expression_expert)')
+    parser.add_argument('--list-configs', action='store_true',
+                       help='List available configurations')
+    parser.add_argument('--test-mode', action='store_true',
+                       help='Run in test mode with mock successful OCR results (for testing without real API keys)')
+    
+    args = parser.parse_args()
+    
     benchmark = CustomImagesBenchmarkRunner()
-    await benchmark.run_full_benchmark()
+    
+    # Enable test mode if requested
+    if args.test_mode:
+        print("🧪 RUNNING IN TEST MODE - Using mock successful OCR results")
+        print("   This bypasses real API calls for testing purposes")
+        print("=" * 60)
+        
+        # Create mock OCR processor
+        class MockOCRProcessor:
+            def validate_credentials(self):
+                print("✅ Mock API credentials validated")
+            
+            async def process_problem_with_config(self, image_path: str, config_name: str, problem_data: dict = None) -> dict:
+                """Mock OCR processing that returns successful results."""
+                import asyncio
+                from pathlib import Path
+                
+                print(f"   🔍 Mock processing {Path(image_path).name} with {config_name}")
+                
+                # Simulate processing time
+                await asyncio.sleep(0.05)
+                
+                # Extract expected answer from ground truth
+                expected_answer = problem_data.get("ground_truth_answer", "x = 5")
+                expected_text = problem_data.get("ground_truth_text", "Solve for x")
+                
+                # Return mock successful result that matches ground truth
+                return {
+                    "success": True,
+                    "extracted_text": expected_text + f", {expected_answer}",
+                    "confidence": 0.92,
+                    "processing_time": 0.05,
+                    "provider": config_name,
+                    "error": "",
+                    "shapes_detected": problem_data.get("expected_shapes", []),
+                    "coordinates_extracted": problem_data.get("coordinates_expected", []),
+                    "text_recognized": expected_text.split() + expected_answer.split(),
+                    "ground_truth": {
+                        "answer": expected_answer,
+                        "text": expected_text,
+                        "shapes": problem_data.get("expected_shapes", []),
+                        "coordinates": problem_data.get("coordinates_expected", []),
+                        "difficulty": problem_data.get("difficulty", "medium")
+                    }
+                }
+        
+        # Replace the real OCR processor with mock
+        from improved_benchmark_runner import ImprovedBenchmarkRunner
+        original_init = ImprovedBenchmarkRunner.__init__
+        
+        def mock_init(self, output_dir=None):
+            original_init(self, output_dir)
+            self.real_ocr_processor = MockOCRProcessor()
+        
+        ImprovedBenchmarkRunner.__init__ = mock_init
+    
+    if args.list_configs:
+        print("Available configurations:")
+        for config in benchmark.configs_to_test:
+            print(f"  - {config}")
+        return
+    
+    if args.config:
+        if args.config not in benchmark.configs_to_test:
+            print(f"❌ Error: '{args.config}' is not a valid configuration.")
+            print("Available configurations:")
+            for config in benchmark.configs_to_test:
+                print(f"  - {config}")
+            return
+        
+        # Run only the specified configuration
+        print(f"🚀 Running Custom Images Benchmark with configuration: {args.config}")
+        print("=" * 60)
+        
+        result = await benchmark.run_benchmark(args.config)
+        
+        # Save individual result
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        individual_file = f"custom_images_{args.config}_{timestamp}.json"
+        benchmark.save_results(result, individual_file)
+        
+        # Print summary for single config
+        print(f"\n🎉 BENCHMARK COMPLETE - {args.config.upper()}")
+        print("=" * 60)
+        if "error" not in result:
+            print(f"📊 Overall Accuracy: {result.get('overall_accuracy', 0):.1%}")
+            print(f"⏱️  Processing Time: {result.get('processing_time', 0):.2f}s")
+            print(f"📋 Total Samples: {result.get('total_samples', 0)}")
+        else:
+            print(f"❌ Error: {result['error']}")
+        print(f"📁 Results saved to: {benchmark.output_dir / individual_file}")
+    else:
+        # Run full benchmark with all configurations
+        await benchmark.run_full_benchmark()
 
 if __name__ == "__main__":
     asyncio.run(main())
+

@@ -1,0 +1,111 @@
+{
+  "config_name": "math_expression_expert",
+  "dataset": "Custom Test Images",
+  "total_samples": 14,
+  "timestamp": "2025-08-20T18:39:14.886359",
+  "session_id": "math_expression_expert_1755740354",
+  "overall_accuracy": 1.0,
+  "processing_time": 8.606910705566406e-05,
+  "detailed_metrics": {},
+  "category_performance": {
+    "Algebra": {
+      "total_problems": 5,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "problem_types": [
+        "System of Equations",
+        "Quadratic Equation",
+        "Linear Equation",
+        "Polynomial Expression",
+        "Fraction Equation"
+      ]
+    },
+    "Geometry": {
+      "total_problems": 5,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "problem_types": [
+        "Coordinate Geometry",
+        "Right Triangle",
+        "Rectangle Perimeter",
+        "Circle Properties",
+        "Triangle Area"
+      ]
+    },
+    "Mixed Math": {
+      "total_problems": 4,
+      "accuracy": 0.0,
+      "avg_processing_time": 0.0,
+      "problem_types": [
+        "Word Problem - Algebra",
+        "Calculus - Derivative",
+        "Statistics - Mean",
+        "Trigonometry"
+      ]
+    }
+  },
+  "problem_type_analysis": {
+    "algebra_problems": {
+      "linear_equations": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "quadratic_equations": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "system_of_equations": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "polynomial_expressions": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "fraction_equations": {
+        "accuracy": 0.0,
+        "samples": 1
+      }
+    },
+    "geometry_problems": {
+      "triangle_area": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "circle_properties": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "rectangle_perimeter": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "right_triangle": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "coordinate_geometry": {
+        "accuracy": 0.0,
+        "samples": 1
+      }
+    },
+    "mixed_problems": {
+      "word_problems": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "calculus": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "statistics": {
+        "accuracy": 0.0,
+        "samples": 1
+      },
+      "trigonometry": {
+        "accuracy": 0.0,
+        "samples": 1
+      }
+    }
+  }
+}

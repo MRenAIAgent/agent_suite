@@ -1,0 +1,24 @@
+{
+  "config_name": "geometry_specialist",
+  "dataset": "PGDP5K",
+  "total_samples": 300,
+  "timestamp": "2025-08-20T18:39:14.709905",
+  "session_id": "geometry_specialist_1755740354",
+  "overall_accuracy": 0.0,
+  "processing_time": 0.0018341541290283203,
+  "detailed_metrics": {},
+  "dataset_results": [
+    {
+      "dataset_type": "geometry",
+      "accuracy": 0.0,
+      "samples_processed": 300,
+      "processing_time": 0.0018341541290283203,
+      "metrics": {
+        "shape_detection_accuracy": 0.0,
+        "text_recognition_accuracy": 0.0,
+        "coordinate_extraction_accuracy": 0.0,
+        "overall_parsing_accuracy": 0.0
+      }
+    }
+  ]
+}

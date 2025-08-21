@@ -1,288 +1,286 @@
-# 🚀 Math Recognition Benchmark System
+# 🧮 Math OCR Benchmark Suite
 
-## 📋 Overview
+A comprehensive benchmarking system for testing OCR solutions on mathematical content. This suite provides easy-to-use tools for evaluating different OCR approaches across multiple datasets with detailed performance analytics.
 
-This directory contains a comprehensive benchmarking system for evaluating mathematical expression recognition and OCR capabilities. After cleanup, the system provides a streamlined, professional approach to benchmarking with multiple OCR providers and evaluation metrics.
-
-## ⭐ Primary Benchmark Tool
-
-### `improved_benchmark_runner.py` - Main Benchmark Script
-
-The **primary and recommended** tool for all benchmarking activities.
-
-**Features:**
-- ✅ OCR configuration system integration
-- ✅ Multiple dataset support (ComplexGeometry, PGDP5K, ExpandedDataset, MATH-Vision, MathVerse)
-- ✅ Session management with detailed logging
-- ✅ Comprehensive evaluation metrics
-- ✅ Result export and analysis
-- ✅ Command-line interface
-- ✅ Async processing for performance
-- ✅ Error handling and diagnostics
-- ✅ Configuration validation
-
-**Usage:**
+## 🚀 Quick Start
 
 ```bash
-# List available configurations
-python3 improved_benchmark_runner.py --list-configs
+# See what datasets are available
+python run_benchmark.py --list-datasets
 
-# Validate a configuration
-python3 improved_benchmark_runner.py --validate gpt4v_only
+# See what OCR solutions are available  
+python run_benchmark.py --list-solutions
 
-# Run benchmark with specific configuration
-python3 improved_benchmark_runner.py --config gpt4v_only --samples 10
+# Get recommendations for best combinations
+python run_benchmark.py --recommendations
 
-# Compare multiple configurations
-python3 improved_benchmark_runner.py --compare gpt4v_only geometry_specialist
+# Run a quick test with GPT-5 on custom images
+python run_benchmark.py -d custom_images -s gpt-5
 
-# Run with custom dataset
-python3 improved_benchmark_runner.py --config mathpix_gpt4v_hybrid --dataset /path/to/dataset --samples 50
-```
-
-**Available Configurations:**
-- `mathpix_gpt4v_hybrid`: Industry standard with Mathpix OCR + GPT-4 Vision fallback
-- `gpt4v_only`: Pure GPT-4 Vision processing
-- `geometry_specialist`: GOT-OCR2.0 optimized for geometric content
-- `math_expression_expert`: UniMERNet specialized for mathematical expressions
-- `comprehensive_parallel`: Multiple OCR models in parallel
-- `cost_optimized`: Open source models prioritizing cost efficiency
-
-## 🛠️ Supporting Tools
-
-### Configuration & Setup
-- **`setup_benchmark.py`** - Interactive setup and configuration utility
-- **`ocr_config.py`** - OCR configuration management system
-
-### Dataset Management
-- **`scripts/dataset_expander.py`** - Dataset generation and expansion tool
-- **`scripts/create_sample_datasets.py`** - Sample data creation utility
-- **`scripts/acquire_missing_datasets.py`** - Dataset acquisition tool
-- **`scripts/dataset_downloader.py`** - Download benchmark datasets
-
-### Diagnostics & Analysis
-- **`scripts/ocr_provider_diagnostic.py`** - OCR provider testing and validation
-- **`scripts/accuracy_improvement_plan.py`** - Performance analysis and improvement planning
-- **`scripts/evaluation_metrics.py`** - Metrics calculation library
-- **`scripts/diagnose_results.py`** - Result analysis and diagnostics
-
-### Data Download & Preparation
-- **`scripts/download_pgdp5k.py`** - Download PGDP5K dataset
-- **`scripts/create_sample_pgdp5k.py`** - Create PGDP5K samples
-- **`scripts/verify_results.py`** - Manual verification tool for results
-
-## 📊 Results & Output
-
-### Results Directory Structure
-```
-results/
-├── geometry_benchmark_results_YYYYMMDD_HHMMSS.json
-├── math_expressions_benchmark_YYYYMMDD_HHMMSS.json
-├── student_solutions_benchmark_YYYYMMDD_HHMMSS.json
-└── benchmark_summary_YYYYMMDD_HHMMSS.json
-```
-
-### Result Format
-Each benchmark run produces:
-- **Detailed JSON results** with per-sample analysis
-- **Summary statistics** with overall accuracy metrics
-- **Processing time measurements**
-- **Error analysis and diagnostics**
-- **Configuration metadata**
-
-## 🏗️ Directory Structure
-
-```
-benchmark/
-├── README.md                          # This file
-├── improved_benchmark_runner.py       # ⭐ PRIMARY BENCHMARK TOOL
-├── setup_benchmark.py                 # Setup utility
-├── ocr_config.py                      # Configuration system
-├── BENCHMARK_CLEANUP_PLAN.md          # Cleanup documentation
-├── CLEANUP_COMPLETION_SUMMARY.md      # Cleanup completion summary
-├── SCRIPTS_CLEANUP_SUMMARY.md         # Scripts cleanup summary
-├── configs/                           # Configuration files
-├── datasets/                          # Test datasets
-├── real_datasets/                     # Production datasets (PGDP5K, etc.)
-├── results/                           # Benchmark results
-├── sample_data/                       # Sample test data
-├── docs/                              # Documentation
-├── reports/                           # Analysis reports
-└── scripts/                           # Supporting utilities
-    ├── dataset_expander.py            # Generate diverse problems
-    ├── create_sample_datasets.py      # Create sample data
-    ├── acquire_missing_datasets.py    # Download missing datasets
-    ├── ocr_provider_diagnostic.py     # OCR provider testing
-    ├── accuracy_improvement_plan.py   # Performance analysis
-    ├── evaluation_metrics.py          # Metrics library
-    ├── download_pgdp5k.py             # PGDP5K downloader
-    ├── create_sample_pgdp5k.py        # PGDP5K samples
-    ├── dataset_downloader.py          # General downloader
-    ├── diagnose_results.py            # Result analysis
-    └── verify_results.py              # Manual verification
+# Run comprehensive test with hybrid solution
+python run_benchmark.py -d pgdp5k -s mathpix_gpt5_hybrid
 ```
 
 ## 📊 Available Datasets
 
-### **Sample Datasets (Ready to Use)**
-- **Sample Data**: 13 samples across 3 categories (math expressions, test papers, student solutions)
-- **ComplexGeometry**: 5 challenging geometry problems with ground truth
-- **ExpandedDataset**: 17 comprehensive math problems across multiple topics
+| Dataset | Samples | Content Type | Difficulty | Best For |
+|---------|---------|--------------|------------|----------|
+| **custom_images** | 14 | Mixed math problems | Varied | Quick testing & validation |
+| **pgdp5k** | 5000+ | Academic documents | Academic | Comprehensive evaluation |
+| **expanded_dataset** | 300+ | Complex expressions | Challenging | Stress testing |
 
-### **Production Datasets (Large Scale)**
-- **PGDP5K**: 5,000 real plane geometry diagrams (requires download)
-- **MATH-Vision & MathVerse**: Research datasets (acquisition via scripts)
+### Dataset Details
 
-## 🔧 Requirements
+#### 🗂️ Custom Images (`custom_images`)
+- **Content**: Hand-crafted algebra, geometry, calculus, and statistics problems
+- **Format**: PNG images with ground truth
+- **Use Case**: Quick validation and testing new solutions
+- **Location**: `./test_images/`
 
-### **Environment Setup**
-- Python 3.8+
-- API keys in `.env` file (OPENAI_API_KEY, MATHPIX_APP_KEY, etc.)
-- Dependencies: `pip install -r requirements.txt` (if available)
+#### 📚 PGDP5K (`pgdp5k`) 
+- **Content**: Large-scale mathematical documents and expressions
+- **Format**: Academic paper excerpts with formulas
+- **Use Case**: Comprehensive evaluation at scale
+- **Location**: `./datasets/pgdp5k/`
 
-### **Optional Dependencies**
-- `python-dotenv` - For .env file loading (recommended)
-- `PIL/Pillow` - For image processing
-- `datasets` - For Hugging Face dataset downloads
+#### 📐 Expanded Dataset (`expanded_dataset`)
+- **Content**: Diverse mathematical content including complex expressions
+- **Format**: Mixed format with challenging edge cases
+- **Use Case**: Stress testing and edge case evaluation
+- **Location**: `./datasets/expanded/`
 
-## 🚀 Quick Start
+## 🤖 Available OCR Solutions
 
-1. **Setup Environment:**
-   ```bash
-   python3 setup_benchmark.py
-   ```
+### 🤖 AI Vision Models
+| Solution | Primary OCR | Speed | Cost | Best For |
+|----------|-------------|-------|------|----------|
+| **gpt-5** | GPT-5 Vision | Fast | Medium | General math problems, mixed content |
 
-2. **Configure API Keys:**
-   ```bash
-   # Create .env file with your API keys
-   echo "OPENAI_API_KEY=your_key_here" > .env
-   echo "MATHPIX_APP_KEY=your_key_here" >> .env
-   ```
+### 🔄 Hybrid Solutions  
+| Solution | Primary OCR | Fallback | Speed | Cost | Best For |
+|----------|-------------|----------|-------|------|----------|
+| **mathpix_gpt5_hybrid** | Mathpix | GPT-5 | Medium | Medium | Production use, reliable results |
 
-3. **List Available Configurations:**
-   ```bash
-   python3 improved_benchmark_runner.py --list-configs
-   ```
+### 🔺 Specialized OCR
+| Solution | Primary OCR | Fallback | Speed | Cost | Best For |
+|----------|-------------|----------|-------|------|----------|
+| **geometry_specialist** | GOT-OCR2.0 | GPT-5 | Slow | Low | Geometric diagrams, coordinate extraction |
 
-4. **Validate Configuration:**
-   ```bash
-   python3 improved_benchmark_runner.py --validate gpt4v_only
-   ```
+### 📐 Math Specialists
+| Solution | Primary OCR | Fallback | Speed | Cost | Best For |
+|----------|-------------|----------|-------|------|----------|
+| **math_expression_expert** | UniMERNet | Mathpix | Slow | Low | Complex mathematical expressions |
 
-5. **Run Quick Test:**
-   ```bash
-   python3 improved_benchmark_runner.py --config gpt4v_only --samples 5
-   ```
+### 🔧 Advanced Solutions
+| Solution | Description | Best For |
+|----------|-------------|----------|
+| **comprehensive_parallel** | Multiple OCR models in parallel | Maximum accuracy, research |
+| **cost_optimized** | Open source models only | Budget-conscious applications |
 
-6. **Full Benchmark:**
-   ```bash
-   python3 improved_benchmark_runner.py --config mathpix_gpt4v_hybrid --samples 100
-   ```
+## 💡 Recommended Combinations
 
-## 📈 Performance Metrics
-
-The benchmark system evaluates:
-- **Overall Accuracy**: General recognition performance
-- **Shape Detection**: Geometric shape identification
-- **Coordinate Extraction**: Mathematical coordinate parsing
-- **Text Recognition**: General text OCR accuracy
-- **LaTeX Accuracy**: Mathematical expression formatting
-- **Processing Time**: Performance measurements
-- **Confidence Scores**: Model confidence analysis
-
-### **Expected Performance Ranges**
-
-| Configuration | Sample Data | Complex Geometry | PGDP5K Dataset |
-|---------------|-------------|------------------|----------------|
-| `gpt4v_only` | 70-85% | 60-80% | 70-85% |
-| `mathpix_gpt4v_hybrid` | 75-90% | 70-90% | 75-90% |
-| `geometry_specialist` | 65-80% | 80-95% | 85-95% |
-| `math_expression_expert` | 80-95% | 50-70% | 60-75% |
-| `cost_optimized` | 50-70% | 40-60% | 50-70% |
-
-*Note: Actual performance varies based on problem complexity and image quality.*
-
-## 🔧 Configuration Management
-
-The system uses a centralized configuration approach:
-- **OCR Provider Settings**: API keys, endpoints, parameters
-- **Processing Strategies**: Different approaches for different content types
-- **Evaluation Metrics**: Customizable success criteria
-- **Dataset Configurations**: Different test scenarios
-
-## 📝 Recent Cleanup (Completed)
-
-✅ **Major Cleanup Completed:**
-- **Removed 29 duplicate/outdated files** from benchmark and scripts directories
-- **Fixed environment variable loading** (.env file support added)
-- **Eliminated script redundancies** (removed duplicate download scripts)
-- **Cleaned cache and temporary files** (__pycache__, verification images)
-
-✅ **Key Improvements:**
-- Single source of truth for benchmarking (`improved_benchmark_runner.py`)
-- All scripts now serve distinct, non-overlapping purposes
-- Environment variables properly loaded from `.env` file
-- Clean directory structure with comprehensive documentation
-- Reduced maintenance burden and improved clarity
-
-✅ **Documentation Added:**
-- `CLEANUP_COMPLETION_SUMMARY.md` - Complete cleanup documentation
-- `SCRIPTS_CLEANUP_SUMMARY.md` - Scripts directory cleanup details
-
-## 🔧 Troubleshooting
-
-### **Common Issues**
-
-**"No module named 'math_learning'" Warning:**
-- This is a harmless import warning and doesn't affect functionality
-- The benchmark system works correctly despite this warning
-
-**"Environment variable OPENAI_API_KEY not set":**
-- Ensure your `.env` file is in the benchmark directory
-- Check that the API key is correctly formatted: `OPENAI_API_KEY=sk-...`
-- Verify the `.env` file has no extra spaces or quotes
-
-**"No data available for dataset_type":**
-- Run dataset download scripts: `python3 scripts/download_pgdp5k.py`
-- Use sample data for testing: `--dataset ./sample_data`
-- Check that dataset paths are correct
-
-### **Diagnostic Tools**
+### For Quick Testing
 ```bash
-# Test OCR providers individually
-python3 scripts/ocr_provider_diagnostic.py
-
-# Analyze benchmark results
-python3 scripts/diagnose_results.py
-
-# Verify results manually
-python3 scripts/verify_results.py
+# Best balance of speed and accuracy
+python run_benchmark.py -d custom_images -s gpt-5
+# Expected: 75-85% accuracy in 3-5 minutes
 ```
 
-## 📞 Support
-
-For issues or questions:
-1. **Configuration Issues**: Use `--validate` to check setup
-2. **API Problems**: Run `scripts/ocr_provider_diagnostic.py`
-3. **Dataset Issues**: Check logs in the results directory
-4. **Performance Analysis**: Use `scripts/accuracy_improvement_plan.py`
-5. **Documentation**: Refer to cleanup summaries and setup guides
-
-### **Useful Commands**
+### For Geometric Content
 ```bash
-# Quick health check
-python3 improved_benchmark_runner.py --list-configs
-python3 improved_benchmark_runner.py --validate gpt4v_only
-
-# Download datasets
-python3 scripts/download_pgdp5k.py
-python3 scripts/acquire_missing_datasets.py
-
-# Create sample data for testing
-python3 scripts/create_sample_datasets.py
-python3 scripts/create_sample_pgdp5k.py
+# Specialized for shapes and diagrams
+python run_benchmark.py -d custom_images -s geometry_specialist  
+# Expected: 85-95% accuracy in 4-6 minutes
 ```
+
+### For Production Use
+```bash
+# Reliable hybrid approach
+python run_benchmark.py -d pgdp5k -s mathpix_gpt5_hybrid
+# Expected: 80-90% accuracy in 2-4 hours
+```
+
+### For Maximum Accuracy
+```bash
+# Comprehensive parallel processing
+python run_benchmark.py -d expanded_dataset -s comprehensive_parallel
+# Expected: 85-95% accuracy in 30-60 minutes
+```
+
+## 📋 Command Reference
+
+### Information Commands
+```bash
+# List all available datasets with details
+python run_benchmark.py --list-datasets
+
+# List all available OCR solutions with details
+python run_benchmark.py --list-solutions
+
+# Show recommended dataset-solution combinations
+python run_benchmark.py --recommendations
+```
+
+### Benchmark Commands
+```bash
+# Basic benchmark run
+python run_benchmark.py -d <dataset> -s <solution>
+
+# Limit number of samples (useful for testing)
+python run_benchmark.py -d <dataset> -s <solution> --max-samples 10
+
+# Run on all datasets (use with caution - can take hours)
+python run_benchmark.py -d all -s <solution>
+
+# Don't save results to file
+python run_benchmark.py -d <dataset> -s <solution> --no-save
+```
+
+### Examples
+```bash
+# Quick test with 5 samples
+python run_benchmark.py -d custom_images -s gpt-5 --max-samples 5
+
+# Full evaluation of geometry specialist
+python run_benchmark.py -d custom_images -s geometry_specialist
+
+# Test GPT-5 on all available datasets (limited samples)
+python run_benchmark.py -d all -s gpt-5 --max-samples 3
+```
+
+## 📊 Understanding Results
+
+### Metrics Explained
+
+- **Overall Accuracy**: Percentage of correctly processed problems
+- **OCR Success Rate**: Percentage of images successfully processed (no errors)
+- **Text Extraction Accuracy**: Accuracy of extracting mathematical text
+- **Processing Time**: Total time taken for processing
+- **Avg Time/Sample**: Average processing time per image
+
+### Sample Output
+```
+🎯 BENCHMARK RESULTS SUMMARY
+============================================================
+🤖 Solution: GPT-5 Vision Only
+⏱️  Total Time: 229.0s
+📊 Overall Accuracy: 79.5%
+📈 Total Samples: 14
+⚡ Avg Time/Sample: 16.36s
+
+📊 DATASET BREAKDOWN:
+----------------------------------------
+
+🗂️  Custom Test Images
+   Samples: 14
+   Accuracy: 79.5%
+   Time: 229.0s
+```
+
+## 🔧 Setup Requirements
+
+### API Keys Required
+Create a `.env` file in the benchmark directory:
+```bash
+# Required for GPT-5 and hybrid solutions
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Optional for Mathpix hybrid solutions  
+MATHPIX_APP_ID=your_mathpix_app_id_here
+MATHPIX_API_KEY=your_mathpix_api_key_here
+```
+
+### Python Dependencies
+```bash
+pip install aiohttp python-dotenv pillow
+```
+
+### Dataset Setup
+- **custom_images**: Included in repository (`./test_images/`)
+- **pgdp5k**: Download separately (see dataset documentation)
+- **expanded_dataset**: Generate using provided scripts
+
+## 📁 Results Storage
+
+Results are automatically saved to:
+```
+./results/unified_benchmarks/benchmark_<dataset>_<solution>_<timestamp>.json
+```
+
+Each result file contains:
+- Solution configuration details
+- Dataset information  
+- Performance metrics
+- Processing times
+- Session IDs for traceability
+
+## 🛠️ Advanced Usage
+
+### Custom Dataset Integration
+To add a new dataset, modify the `datasets` dictionary in `run_benchmark.py`:
+
+```python
+"my_dataset": {
+    "name": "My Custom Dataset",
+    "description": "Description of the dataset",
+    "path": "./path/to/dataset",
+    "samples": "number_of_samples",
+    "types": ["content_types"],
+    "difficulty": "difficulty_level", 
+    "best_for": "recommended_use_case"
+}
+```
+
+### Custom OCR Solution
+To add a new OCR solution, add it to `ocr_config.py` and it will automatically appear in the benchmark suite.
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+**"Dataset not found" Error**
+- Ensure dataset path exists
+- Check if you need to download/generate the dataset first
+
+**API Key Errors**
+- Verify `.env` file is in the correct location
+- Check API key format and validity
+- Ensure sufficient API quota
+
+**Low Accuracy Results**
+- Check if ground truth data is properly formatted
+- Verify image quality and resolution
+- Consider using hybrid solutions for better accuracy
+
+**Slow Performance**
+- Use `--max-samples` to limit test size
+- Choose faster solutions (e.g., `gpt-5` over `geometry_specialist`)
+- Ensure good network connectivity for API calls
+
+### Getting Help
+- Use `--help` for command-line help
+- Check the `./logs/` directory for detailed error logs
+- Review saved results in `./results/` for debugging
+
+## 📈 Performance Expectations
+
+| Solution | Speed | Accuracy | Cost | Use Case |
+|----------|-------|----------|------|----------|
+| gpt-5 | ⚡⚡⚡ | 📊📊📊📊 | 💰💰💰 | General purpose |
+| mathpix_gpt5_hybrid | ⚡⚡ | 📊📊📊📊📊 | 💰💰 | Production |
+| geometry_specialist | ⚡ | 📊📊📊📊📊 | 💰 | Geometric content |
+| math_expression_expert | ⚡ | 📊📊📊📊 | 💰 | Complex expressions |
+
+## 🎯 Best Practices
+
+1. **Start Small**: Use `custom_images` with `--max-samples 5` for initial testing
+2. **Choose Right Solution**: Match OCR solution to your content type
+3. **Monitor Costs**: Be aware of API usage, especially with large datasets
+4. **Save Results**: Keep benchmark results for comparison and analysis
+5. **Use Recommendations**: Follow the built-in recommendations for best results
 
 ---
 
-**Ready to benchmark! 🚀** 
+**Happy Benchmarking! 🚀**
+
+For issues or questions, check the troubleshooting section or review the saved logs in `./logs/`.
