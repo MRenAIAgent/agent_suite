@@ -144,3 +144,4 @@ Each test creates a detailed JSON summary with:
 
 **The test images provide a perfect way to evaluate and compare OCR configurations for math problem recognition! 🎯**
 
+

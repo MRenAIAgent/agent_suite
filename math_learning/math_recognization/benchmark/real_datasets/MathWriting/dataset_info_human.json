@@ -1,0 +1,15 @@
+{
+  "name": "MathWriting-human",
+  "source": "Hugging Face",
+  "url": "https://huggingface.co/datasets/deepcopy/MathWriting-human",
+  "subset": "human",
+  "splits": [
+    "train",
+    "test",
+    "val"
+  ],
+  "total_samples": 253182,
+  "description": "Large-scale handwritten mathematical expression dataset",
+  "format": "Image + LaTeX pairs",
+  "download_date": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark"
+}

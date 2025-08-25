@@ -1,0 +1,95 @@
+{
+  "session_id": "gpt-5_1756058837",
+  "config_name": "gpt-5",
+  "config": {
+    "name": "GPT-5 Vision Only",
+    "description": "Pure GPT-5 Vision processing for comprehensive analysis",
+    "primary_ocr": {
+      "provider": "gpt5_vision",
+      "model_name": "gpt-5",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_completion_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "fallback_ocr": null,
+    "processing_strategy": "vision_only",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-24T11:07:17.272259",
+  "end_time": "2025-08-24T11:08:49.883577",
+  "results": [
+    {
+      "dataset_name": "custom_dataset",
+      "system_name": "GPT-5 Vision Only (vision_only)",
+      "evaluation_date": "2025-08-24T11:08:49.882924",
+      "total_samples": 5,
+      "processing_time": 92.60969805717468,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 5,
+          "max_score": 5,
+          "accuracy": 1.0,
+          "details": {
+            "successful": 5,
+            "failed": 0
+          }
+        }
+      ],
+      "overall_accuracy": 1.0,
+      "summary": {
+        "total_samples": 5,
+        "successful_samples": 5,
+        "success_rate": 1.0,
+        "overall_accuracy": 1.0,
+        "avg_processing_time": 18.51988368034363,
+        "avg_confidence": 0.85,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "gpt-5_1756058837",
+    "configuration": "gpt-5",
+    "duration_seconds": 92.611318,
+    "total_samples_processed": 5,
+    "overall_accuracy": 1.0,
+    "total_processing_time": 92.60969805717468,
+    "average_metrics": {
+      "OCR Success Rate": 1.0
+    },
+    "datasets_evaluated": [
+      "custom_dataset"
+    ],
+    "primary_ocr_provider": "gpt5_vision",
+    "processing_strategy": "vision_only",
+    "timestamp": "2025-08-24T11:07:17.272259"
+  }
+}

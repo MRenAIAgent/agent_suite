@@ -1,0 +1,112 @@
+{
+  "session_id": "mathpix_gpt5_hybrid_1756080011",
+  "config_name": "mathpix_gpt5_hybrid",
+  "config": {
+    "name": "Mathpix + GPT-5 Hybrid",
+    "description": "Industry standard: Mathpix OCR with GPT-5 Vision fallback",
+    "primary_ocr": {
+      "provider": "mathpix",
+      "model_name": "mathpix-standard",
+      "api_key_env": "MATHPIX_APP_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "formats": [
+          "text",
+          "latex_simplified"
+        ],
+        "include_asciimath": true,
+        "include_table_html": true
+      }
+    },
+    "fallback_ocr": {
+      "provider": "gpt5_vision",
+      "model_name": "gpt-5",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_completion_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "processing_strategy": "ocr_first",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-24T17:00:11.651681",
+  "end_time": "2025-08-24T17:01:14.205836",
+  "results": [
+    {
+      "dataset_name": "custom_dataset",
+      "system_name": "Mathpix + GPT-5 Hybrid (ocr_first)",
+      "evaluation_date": "2025-08-24T17:01:14.205686",
+      "total_samples": 10,
+      "processing_time": 62.5534188747406,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 10,
+          "max_score": 10,
+          "accuracy": 1.0,
+          "details": {
+            "successful": 10,
+            "failed": 0
+          }
+        }
+      ],
+      "overall_accuracy": 1.0,
+      "summary": {
+        "total_samples": 10,
+        "successful_samples": 10,
+        "success_rate": 1.0,
+        "overall_accuracy": 1.0,
+        "avg_processing_time": 6.104291296005249,
+        "avg_confidence": 0.9261444854736329,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "mathpix_gpt5_hybrid_1756080011",
+    "configuration": "mathpix_gpt5_hybrid",
+    "duration_seconds": 62.554155,
+    "total_samples_processed": 10,
+    "overall_accuracy": 1.0,
+    "total_processing_time": 62.5534188747406,
+    "average_metrics": {
+      "OCR Success Rate": 1.0
+    },
+    "datasets_evaluated": [
+      "custom_dataset"
+    ],
+    "primary_ocr_provider": "mathpix",
+    "processing_strategy": "ocr_first",
+    "timestamp": "2025-08-24T17:00:11.651681"
+  }
+}

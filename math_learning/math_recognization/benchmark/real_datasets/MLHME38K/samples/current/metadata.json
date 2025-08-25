@@ -1,0 +1,48 @@
+{
+  "name": "MLHME-38K Demo Sample",
+  "size": 6,
+  "source": "Demo dataset simulating MLHME-38K multi-line expressions",
+  "content_type": "multiline_handwritten_math",
+  "ground_truth": "latex_multiline_expressions",
+  "description": "Demo dataset with multi-line mathematical expressions representing homework-like problems",
+  "focus": "multiline_expressions",
+  "difficulty": "K-12 to University",
+  "problems": [
+    {
+      "id": "multiline_001",
+      "type": "linear_equation_solving",
+      "steps": 4,
+      "topic": "algebra"
+    },
+    {
+      "id": "multiline_002", 
+      "type": "geometry_area_calculation",
+      "steps": 4,
+      "topic": "geometry"
+    },
+    {
+      "id": "multiline_003",
+      "type": "quadratic_factoring",
+      "steps": 4,
+      "topic": "algebra"
+    },
+    {
+      "id": "multiline_004",
+      "type": "system_of_equations",
+      "steps": 5,
+      "topic": "algebra"
+    },
+    {
+      "id": "multiline_005",
+      "type": "circle_equation",
+      "steps": 3,
+      "topic": "geometry"
+    },
+    {
+      "id": "multiline_006",
+      "type": "polynomial_derivative",
+      "steps": 3,
+      "topic": "calculus"
+    }
+  ]
+}

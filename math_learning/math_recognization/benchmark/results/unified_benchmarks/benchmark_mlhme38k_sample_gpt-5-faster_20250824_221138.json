@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "gpt-5-faster",
+    "solution_details": {
+      "name": "GPT-5 Vision Faster",
+      "description": "Ultra-optimized GPT-5 Vision for maximum speed (500 tokens, auto detail)",
+      "category": "\ud83e\udd16 AI Vision Models",
+      "primary_ocr": "gpt5_vision",
+      "fallback_ocr": null,
+      "strategy": "vision_only",
+      "speed": "Fast",
+      "cost": "Medium",
+      "best_for": "General math problems, mixed content"
+    },
+    "timestamp": "2025-08-24T22:11:38.521599",
+    "total_time": 114.78335094451904
+  },
+  "datasets": {
+    "mlhme38k_sample": {
+      "name": "MLHME-38K Multi-line Sample",
+      "samples_processed": 6,
+      "accuracy": 100.0,
+      "processing_time": 114.78059101104736,
+      "session_id": "gpt-5-faster_1756098583"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 6,
+    "weighted_accuracy": 100.0,
+    "total_processing_time": 114.78059101104736,
+    "avg_time_per_sample": 19.13009850184123
+  }
+}

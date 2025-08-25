@@ -118,6 +118,28 @@ class OCRConfigManager:
                 }
             ),
             
+            "gpt5_vision_fast": OCRModelConfig(
+                provider=OCRProvider.GPT5_VISION,
+                model_name="gpt-5",
+                api_key_env="OPENAI_API_KEY",
+                custom_params={
+                    "max_completion_tokens": 1000,  # Reduced for speed
+                    "temperature": 0.0,             # More deterministic
+                    "detail": "low"                 # Faster processing
+                }
+            ),
+            
+            "gpt5_vision_faster": OCRModelConfig(
+                provider=OCRProvider.GPT5_VISION,
+                model_name="gpt-5",
+                api_key_env="OPENAI_API_KEY",
+                custom_params={
+                    "max_completion_tokens": 500,   # Ultra reduced for max speed
+                    "temperature": 0.0,             # Deterministic
+                    "detail": "auto"                # Automatic detail level
+                }
+            ),
+            
             "got_ocr2": OCRModelConfig(
                 provider=OCRProvider.GOT_OCR2,
                 model_name="stepfun-ai/GOT-OCR2_0",
@@ -167,6 +189,36 @@ class OCRConfigManager:
                 description="Pure GPT-5 Vision processing for comprehensive analysis",
                 primary_ocr=self.ocr_models["gpt5_vision"],
                 processing_strategy=ProcessingStrategy.VISION_ONLY
+            ),
+            
+            "gpt-5-fast": BenchmarkConfig(
+                name="GPT-5 Vision Fast",
+                description="Optimized GPT-5 Vision for speed with reduced detail processing",
+                primary_ocr=self.ocr_models["gpt5_vision_fast"],
+                processing_strategy=ProcessingStrategy.VISION_ONLY,
+                evaluation_metrics=[
+                    "ocr_accuracy", "processing_time"
+                ]
+            ),
+            
+            "gpt-5-faster": BenchmarkConfig(
+                name="GPT-5 Vision Faster",
+                description="Ultra-optimized GPT-5 Vision for maximum speed (500 tokens, auto detail)",
+                primary_ocr=self.ocr_models["gpt5_vision_faster"],
+                processing_strategy=ProcessingStrategy.VISION_ONLY,
+                evaluation_metrics=[
+                    "ocr_accuracy", "processing_time"
+                ]
+            ),
+            
+            "lightning_fast": BenchmarkConfig(
+                name="Lightning Fast OCR",
+                description="Ultra-fast OCR using GOT-OCR2.0 only for maximum speed",
+                primary_ocr=self.ocr_models["got_ocr2"],
+                processing_strategy=ProcessingStrategy.GEOMETRY_FIRST,
+                evaluation_metrics=[
+                    "ocr_accuracy", "processing_time"
+                ]
             ),
             
             "geometry_specialist": BenchmarkConfig(

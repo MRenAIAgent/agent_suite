@@ -1,0 +1,119 @@
+{
+  "session_id": "cost_optimized_1756016344",
+  "config_name": "cost_optimized",
+  "config": {
+    "name": "Cost Optimized",
+    "description": "Open source models prioritizing cost efficiency",
+    "primary_ocr": {
+      "provider": "got_ocr2",
+      "model_name": "stepfun-ai/GOT-OCR2_0",
+      "api_key_env": null,
+      "model_path": "stepfun-ai/GOT-OCR2_0",
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "ocr_type": "format",
+        "trust_remote_code": true
+      }
+    },
+    "fallback_ocr": {
+      "provider": "unimernet",
+      "model_name": "unimernet",
+      "api_key_env": null,
+      "model_path": "wanderkid/unimernet",
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "precision": "fp16",
+        "batch_size": 1
+      }
+    },
+    "processing_strategy": "geometry_first",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "processing_time",
+      "cost_efficiency"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-23T23:19:04.400047",
+  "end_time": "2025-08-23T23:23:26.575395",
+  "results": [
+    {
+      "dataset_name": "custom_dataset",
+      "system_name": "Cost Optimized (geometry_first)",
+      "evaluation_date": "2025-08-23T23:23:26.575154",
+      "total_samples": 14,
+      "processing_time": 262.1743860244751,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 14,
+          "max_score": 14,
+          "accuracy": 1.0,
+          "details": {
+            "successful": 14,
+            "failed": 0
+          }
+        },
+        {
+          "metric_name": "Text Extraction Accuracy",
+          "score": 0.0966708596331764,
+          "max_score": 2,
+          "accuracy": 0.0483354298165882,
+          "details": {
+            "samples_evaluated": 2,
+            "scores": [
+              0.060988433228180865,
+              0.03568242640499554
+            ]
+          }
+        }
+      ],
+      "overall_accuracy": 0.8810419287270735,
+      "summary": {
+        "total_samples": 14,
+        "successful_samples": 14,
+        "success_rate": 1.0,
+        "overall_accuracy": 0.8810419287270735,
+        "avg_processing_time": 18.724866815975734,
+        "avg_confidence": 0.8499999999999999,
+        "metrics_evaluated": 2,
+        "detailed_metrics": {
+          "text_accuracy": 0.0483354298165882,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "cost_optimized_1756016344",
+    "configuration": "cost_optimized",
+    "duration_seconds": 262.175348,
+    "total_samples_processed": 14,
+    "overall_accuracy": 0.8810419287270735,
+    "total_processing_time": 262.1743860244751,
+    "average_metrics": {
+      "OCR Success Rate": 1.0,
+      "Text Extraction Accuracy": 0.0483354298165882
+    },
+    "datasets_evaluated": [
+      "custom_dataset"
+    ],
+    "primary_ocr_provider": "got_ocr2",
+    "processing_strategy": "geometry_first",
+    "timestamp": "2025-08-23T23:19:04.400047"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "math_expression_expert",
+    "solution_details": {
+      "name": "Math Expression Expert",
+      "description": "UniMERNet specialized for mathematical expressions",
+      "category": "\ud83d\udcd0 Math Specialists",
+      "primary_ocr": "unimernet",
+      "fallback_ocr": "mathpix",
+      "strategy": "ocr_first",
+      "speed": "Slow",
+      "cost": "Low",
+      "best_for": "Complex mathematical expressions"
+    },
+    "timestamp": "2025-08-23T23:17:46.730108",
+    "total_time": 0.0019421577453613281
+  },
+  "datasets": {
+    "custom_images": {
+      "name": "Custom Test Images",
+      "samples_processed": 14,
+      "accuracy": 0.0,
+      "processing_time": 0.0003769397735595703,
+      "session_id": "math_expression_expert_1756016266"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 14,
+    "weighted_accuracy": 0.0,
+    "total_processing_time": 0.0003769397735595703,
+    "avg_time_per_sample": 2.692426953996931e-05
+  }
+}

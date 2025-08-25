@@ -1,0 +1,7 @@
+Dataset,Solution,Accuracy (%),Samples,Time (s),Time/Sample (s),Status
+custom_images,mathpix_gpt5_hybrid,0.0,0,0.0,0.00,Failed
+custom_images,gpt-5,75.1,14,287.3,20.52,Success
+custom_images,geometry_specialist,83.4,14,230.3,16.45,Success
+custom_images,math_expression_expert,0.0,0,0.0,0.00,Failed
+custom_images,comprehensive_parallel,0.0,0,0.0,0.00,Failed
+custom_images,cost_optimized,0.0,0,0.0,0.00,Failed

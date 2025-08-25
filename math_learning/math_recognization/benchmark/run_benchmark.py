@@ -33,8 +33,8 @@ try:
 except ImportError:
     print("⚠️  Warning: python-dotenv not installed.")
 
-from improved_benchmark_runner import ImprovedBenchmarkRunner
-from ocr_config import get_config_manager
+from scripts.improved_benchmark_runner import ImprovedBenchmarkRunner
+from scripts.ocr_config import get_config_manager
 
 class UnifiedBenchmarkRunner:
     """
@@ -65,20 +65,47 @@ class UnifiedBenchmarkRunner:
             "pgdp5k": {
                 "name": "PGDP5K Dataset", 
                 "description": "Large-scale mathematical document dataset",
-                "path": "./datasets/pgdp5k",
-                "samples": "5000+",
+                "path": "./real_datasets/PGDP5K/images",
+                "samples": "30",
                 "types": ["equations", "formulas", "expressions"],
                 "difficulty": "academic",
                 "best_for": "Comprehensive evaluation"
             },
-            "expanded_dataset": {
-                "name": "Expanded Mixed Dataset",
-                "description": "Extended collection with diverse math content",
-                "path": "./datasets/expanded",
-                "samples": "300+",
-                "types": ["mixed_content", "complex_expressions"],
-                "difficulty": "challenging",
-                "best_for": "Stress testing"
+            "complex_geometry": {
+                "name": "Complex Geometry Dataset",
+                "description": "Specialized geometric problems and diagrams",
+                "path": "./real_datasets/ComplexGeometry/images",
+                "samples": 5,
+                "types": ["geometry", "diagrams", "coordinate_systems"],
+                "difficulty": "advanced",
+                "best_for": "Geometry-focused evaluation"
+            },
+            "hme100k_sample": {
+                "name": "HME100K Sample",
+                "description": "Random sample from HME100K handwritten math expressions",
+                "path": "./real_datasets/HME100K/samples/current/images",
+                "samples": "Variable (50-100 typical)",
+                "types": ["handwritten_math", "expressions", "equations"],
+                "difficulty": "K-12",
+                "best_for": "Real handwritten math evaluation with LaTeX ground truth"
+            },
+            "mlhme38k_sample": {
+                "name": "MLHME-38K Multi-line Sample",
+                "description": "Multi-line handwritten mathematical expressions (homework-like problems)",
+                "path": "./real_datasets/MLHME38K/samples/current/images",
+                "samples": "Variable (50-200 typical)",
+                "types": ["multiline_math", "homework_problems", "complex_expressions"],
+                "difficulty": "K-12 to University",
+                "best_for": "Real homework-like multi-line math problems with LaTeX ground truth"
+            },
+            "mathwriting_sample": {
+                "name": "MathWriting Human Sample",
+                "description": "Large-scale human-written handwritten mathematical expressions",
+                "path": "./real_datasets/MathWriting/samples/current/current/images",
+                "samples": "Variable (50-1000 typical)",
+                "types": ["handwritten_math", "diverse_expressions", "real_handwriting"],
+                "difficulty": "Elementary to University",
+                "best_for": "Largest available handwritten math dataset with LaTeX ground truth"
             }
         }
         
@@ -201,7 +228,7 @@ class UnifiedBenchmarkRunner:
                 "dataset": "custom_images",
                 "solution": "gpt-5", 
                 "reason": "Fast testing with high accuracy for mixed content",
-                "expected_accuracy": "75-85%",
+                "expected_accuracy": "75-95%",
                 "time_estimate": "3-5 minutes"
             },
             {
@@ -213,17 +240,17 @@ class UnifiedBenchmarkRunner:
             },
             {
                 "dataset": "pgdp5k",
-                "solution": "mathpix_gpt5_hybrid",
-                "reason": "Reliable for large-scale academic content",
-                "expected_accuracy": "80-90%",
-                "time_estimate": "2-4 hours"
+                "solution": "gpt-5",
+                "reason": "Reliable for academic mathematical content",
+                "expected_accuracy": "90-100%",
+                "time_estimate": "8-12 minutes"
             },
             {
-                "dataset": "expanded_dataset",
-                "solution": "comprehensive_parallel",
-                "reason": "Maximum accuracy for challenging content",
+                "dataset": "complex_geometry",
+                "solution": "geometry_specialist",
+                "reason": "Specialized for geometric diagrams and coordinate systems",
                 "expected_accuracy": "85-95%",
-                "time_estimate": "30-60 minutes"
+                "time_estimate": "2-3 minutes"
             }
         ]
         
@@ -241,7 +268,9 @@ class UnifiedBenchmarkRunner:
                           dataset: str, 
                           solution: str, 
                           max_samples: Optional[int] = None,
-                          save_results: bool = True) -> Dict[str, Any]:
+                          save_results: bool = True,
+                          comprehensive: bool = False,
+                          comparison_table: bool = False) -> Dict[str, Any]:
         """
         🚀 Run benchmark on specified dataset with specified solution.
         
@@ -255,12 +284,22 @@ class UnifiedBenchmarkRunner:
             Dictionary containing benchmark results
         """
         
+        # Handle comprehensive mode
+        if comprehensive or (dataset == "all" and solution == "all"):
+            return await self._run_comprehensive_benchmark(max_samples, save_results, comparison_table)
+        
         # Validate inputs
         if dataset not in self.datasets and dataset != "all":
             raise ValueError(f"Unknown dataset '{dataset}'. Use --list-datasets to see options.")
         
-        if solution not in self.solutions:
+        if solution not in self.solutions and solution != "all":
             raise ValueError(f"Unknown solution '{solution}'. Use --list-solutions to see options.")
+        
+        # Handle "all" for single parameter
+        if solution == "all":
+            return await self._run_all_solutions_single_dataset(dataset, max_samples, save_results, comparison_table)
+        elif dataset == "all":
+            return await self._run_single_solution_all_datasets(solution, max_samples, save_results, comparison_table)
         
         print(f"\n🚀 STARTING BENCHMARK")
         print("=" * 50)
@@ -302,6 +341,363 @@ class UnifiedBenchmarkRunner:
         self._display_results(summary)
         
         return summary
+    
+    async def _run_comprehensive_benchmark(self, max_samples: Optional[int], save_results: bool, comparison_table: bool) -> Dict[str, Any]:
+        """Run all datasets with all solutions."""
+        print(f"\n🚀 COMPREHENSIVE BENCHMARK")
+        print("=" * 60)
+        print(f"📊 Datasets: {len(self.datasets)} ({', '.join(self.datasets.keys())})")
+        print(f"🤖 Solutions: {len(self.solutions)} ({', '.join(self.solutions.keys())})")
+        print(f"🔢 Total Combinations: {len(self.datasets) * len(self.solutions)}")
+        if max_samples:
+            print(f"📝 Max Samples per Dataset: {max_samples}")
+        print("=" * 60)
+        
+        all_results = {}
+        combination_count = 0
+        total_combinations = len(self.datasets) * len(self.solutions)
+        
+        for dataset_id in self.datasets.keys():
+            all_results[dataset_id] = {}
+            for solution_id in self.solutions.keys():
+                combination_count += 1
+                print(f"\n🎯 Combination {combination_count}/{total_combinations}: {dataset_id} + {solution_id}")
+                
+                try:
+                    result = await self.run_benchmark(dataset_id, solution_id, max_samples, save_results, False, False)
+                    all_results[dataset_id][solution_id] = result
+                    accuracy = result.get('overall_metrics', {}).get('weighted_accuracy', 0)
+                    print(f"✅ Completed: {accuracy:.1f}% accuracy")
+                except Exception as e:
+                    print(f"❌ Failed: {str(e)}")
+                    all_results[dataset_id][solution_id] = {"error": str(e), "success": False}
+        
+        # Generate comprehensive summary
+        comprehensive_summary = self._generate_comprehensive_summary(all_results)
+        
+        if comparison_table:
+            self._generate_comparison_table(comprehensive_summary)
+        
+        self._display_comprehensive_summary(comprehensive_summary)
+        
+        return comprehensive_summary
+    
+    async def _run_all_solutions_single_dataset(self, dataset: str, max_samples: Optional[int], save_results: bool, comparison_table: bool) -> Dict[str, Any]:
+        """Run single dataset with all solutions."""
+        print(f"\n🚀 TESTING ALL SOLUTIONS ON {dataset.upper()}")
+        print("=" * 60)
+        
+        results = {}
+        for i, solution_id in enumerate(self.solutions.keys(), 1):
+            print(f"\n🎯 Solution {i}/{len(self.solutions)}: {solution_id}")
+            try:
+                result = await self.run_benchmark(dataset, solution_id, max_samples, save_results, False, False)
+                results[solution_id] = result
+                accuracy = result.get('overall_metrics', {}).get('weighted_accuracy', 0)
+                print(f"✅ Completed: {accuracy:.1f}% accuracy")
+            except Exception as e:
+                print(f"❌ Failed: {str(e)}")
+                results[solution_id] = {"error": str(e), "success": False}
+        
+        summary = self._generate_multi_solution_summary(dataset, results)
+        
+        if comparison_table:
+            self._generate_comparison_table(summary)
+        
+        self._display_multi_solution_summary(summary)
+        
+        return summary
+    
+    async def _run_single_solution_all_datasets(self, solution: str, max_samples: Optional[int], save_results: bool, comparison_table: bool) -> Dict[str, Any]:
+        """Run single solution on all datasets."""
+        print(f"\n🚀 TESTING {solution.upper()} ON ALL DATASETS")
+        print("=" * 60)
+        
+        results = {}
+        for i, dataset_id in enumerate(self.datasets.keys(), 1):
+            print(f"\n🎯 Dataset {i}/{len(self.datasets)}: {dataset_id}")
+            try:
+                result = await self.run_benchmark(dataset_id, solution, max_samples, save_results, False, False)
+                results[dataset_id] = result
+                accuracy = result.get('overall_metrics', {}).get('weighted_accuracy', 0)
+                print(f"✅ Completed: {accuracy:.1f}% accuracy")
+            except Exception as e:
+                print(f"❌ Failed: {str(e)}")
+                results[dataset_id] = {"error": str(e), "success": False}
+        
+        summary = self._generate_multi_dataset_summary(solution, results)
+        
+        if comparison_table:
+            self._generate_comparison_table(summary)
+        
+        self._display_multi_dataset_summary(summary)
+        
+        return summary
+    
+    def _generate_comprehensive_summary(self, all_results: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
+        """Generate comprehensive summary for all combinations."""
+        try:
+            from tabulate import tabulate
+        except ImportError:
+            print("⚠️  Warning: tabulate not available. Install with: pip install tabulate")
+            tabulate = None
+        
+        summary = {
+            "type": "comprehensive",
+            "results_matrix": all_results,
+            "rankings": {"by_accuracy": [], "by_speed": []},
+            "recommendations": {}
+        }
+        
+        # Calculate rankings
+        solution_stats = {}
+        for dataset_id, solutions in all_results.items():
+            for solution_id, result in solutions.items():
+                if solution_id not in solution_stats:
+                    solution_stats[solution_id] = {"accuracies": [], "times": [], "samples": []}
+                
+                if result.get("success", True) and "overall_metrics" in result:
+                    metrics = result["overall_metrics"]
+                    solution_stats[solution_id]["accuracies"].append(metrics.get("weighted_accuracy", 0))
+                    solution_stats[solution_id]["times"].append(metrics.get("total_processing_time", 0))
+                    solution_stats[solution_id]["samples"].append(metrics.get("total_samples", 0))
+        
+        # Rank by accuracy
+        accuracy_ranking = []
+        for solution_id, stats in solution_stats.items():
+            if stats["accuracies"]:
+                avg_accuracy = sum(stats["accuracies"]) / len(stats["accuracies"])
+                accuracy_ranking.append({"solution": solution_id, "avg_accuracy": avg_accuracy})
+        
+        summary["rankings"]["by_accuracy"] = sorted(accuracy_ranking, key=lambda x: x["avg_accuracy"], reverse=True)
+        
+        # Rank by speed
+        speed_ranking = []
+        for solution_id, stats in solution_stats.items():
+            if stats["times"] and stats["samples"]:
+                total_samples = sum(stats["samples"])
+                total_time = sum(stats["times"])
+                if total_time > 0:
+                    speed = total_samples / total_time
+                    speed_ranking.append({"solution": solution_id, "samples_per_second": speed})
+        
+        summary["rankings"]["by_speed"] = sorted(speed_ranking, key=lambda x: x["samples_per_second"], reverse=True)
+        
+        # Generate recommendations
+        if summary["rankings"]["by_accuracy"]:
+            summary["recommendations"]["most_accurate"] = summary["rankings"]["by_accuracy"][0]["solution"]
+        if summary["rankings"]["by_speed"]:
+            summary["recommendations"]["fastest"] = summary["rankings"]["by_speed"][0]["solution"]
+        
+        return summary
+    
+    def _generate_multi_solution_summary(self, dataset: str, results: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate summary for multiple solutions on single dataset."""
+        summary = {
+            "type": "multi_solution",
+            "dataset": dataset,
+            "results": results,
+            "rankings": []
+        }
+        
+        # Rank solutions by accuracy
+        rankings = []
+        for solution_id, result in results.items():
+            if result.get("success", True) and "overall_metrics" in result:
+                accuracy = result["overall_metrics"].get("weighted_accuracy", 0)
+                time = result["overall_metrics"].get("total_processing_time", 0)
+                rankings.append({
+                    "solution": solution_id,
+                    "accuracy": accuracy,
+                    "time": time
+                })
+        
+        summary["rankings"] = sorted(rankings, key=lambda x: x["accuracy"], reverse=True)
+        return summary
+    
+    def _generate_multi_dataset_summary(self, solution: str, results: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate summary for single solution on multiple datasets."""
+        summary = {
+            "type": "multi_dataset", 
+            "solution": solution,
+            "results": results,
+            "rankings": []
+        }
+        
+        # Rank datasets by accuracy
+        rankings = []
+        for dataset_id, result in results.items():
+            if result.get("success", True) and "overall_metrics" in result:
+                accuracy = result["overall_metrics"].get("weighted_accuracy", 0)
+                time = result["overall_metrics"].get("total_processing_time", 0)
+                rankings.append({
+                    "dataset": dataset_id,
+                    "accuracy": accuracy,
+                    "time": time
+                })
+        
+        summary["rankings"] = sorted(rankings, key=lambda x: x["accuracy"], reverse=True)
+        return summary
+    
+    def _generate_comparison_table(self, summary: Dict[str, Any]):
+        """Generate CSV and HTML comparison tables."""
+        try:
+            import pandas as pd
+        except ImportError:
+            print("⚠️  Warning: pandas not available for CSV generation. Install with: pip install pandas")
+            return
+        
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        results_dir = Path("./results/comparison_tables")
+        results_dir.mkdir(parents=True, exist_ok=True)
+        
+        if summary["type"] == "comprehensive":
+            # Create comprehensive comparison table
+            rows = []
+            for dataset_id, solutions in summary["results_matrix"].items():
+                for solution_id, result in solutions.items():
+                    if result.get("success", True) and "overall_metrics" in result:
+                        metrics = result["overall_metrics"]
+                        rows.append({
+                            "Dataset": dataset_id,
+                            "Solution": solution_id,
+                            "Accuracy (%)": f"{metrics.get('weighted_accuracy', 0):.1f}",
+                            "Samples": metrics.get('total_samples', 0),
+                            "Time (s)": f"{metrics.get('total_processing_time', 0):.1f}",
+                            "Time/Sample (s)": f"{metrics.get('avg_time_per_sample', 0):.2f}",
+                            "Status": "Success"
+                        })
+                    else:
+                        rows.append({
+                            "Dataset": dataset_id,
+                            "Solution": solution_id,
+                            "Accuracy (%)": "0.0",
+                            "Samples": 0,
+                            "Time (s)": "0.0", 
+                            "Time/Sample (s)": "0.00",
+                            "Status": "Failed"
+                        })
+            
+            df = pd.DataFrame(rows)
+            csv_file = results_dir / f"comprehensive_comparison_{timestamp}.csv"
+            df.to_csv(csv_file, index=False)
+            print(f"\n📊 Comparison table saved: {csv_file}")
+    
+    def _display_comprehensive_summary(self, summary: Dict[str, Any]):
+        """Display comprehensive benchmark summary."""
+        try:
+            from tabulate import tabulate
+        except ImportError:
+            tabulate = None
+        
+        print(f"\n🎯 COMPREHENSIVE BENCHMARK RESULTS")
+        print("=" * 80)
+        
+        if tabulate:
+            # Create results matrix table
+            headers = ["Dataset", "Solution", "Accuracy (%)", "Samples", "Time (s)", "Status"]
+            rows = []
+            
+            for dataset_id, solutions in summary["results_matrix"].items():
+                for solution_id, result in solutions.items():
+                    if result.get("success", True) and "overall_metrics" in result:
+                        metrics = result["overall_metrics"]
+                        rows.append([
+                            dataset_id,
+                            solution_id,
+                            f"{metrics.get('weighted_accuracy', 0):.1f}",
+                            metrics.get('total_samples', 0),
+                            f"{metrics.get('total_processing_time', 0):.1f}",
+                            "✅ Success"
+                        ])
+                    else:
+                        rows.append([
+                            dataset_id,
+                            solution_id,
+                            "0.0",
+                            0,
+                            "0.0",
+                            "❌ Failed"
+                        ])
+            
+            print(tabulate(rows, headers=headers, tablefmt="grid"))
+        
+        # Display rankings
+        if summary["rankings"]["by_accuracy"]:
+            print(f"\n🏆 TOP SOLUTIONS BY ACCURACY")
+            print("-" * 40)
+            for i, rank in enumerate(summary["rankings"]["by_accuracy"][:5], 1):
+                print(f"{i}. {rank['solution']}: {rank['avg_accuracy']:.1f}%")
+        
+        if summary["rankings"]["by_speed"]:
+            print(f"\n⚡ TOP SOLUTIONS BY SPEED")
+            print("-" * 40)
+            for i, rank in enumerate(summary["rankings"]["by_speed"][:5], 1):
+                print(f"{i}. {rank['solution']}: {rank['samples_per_second']:.2f} samples/sec")
+        
+        # Display recommendations
+        recs = summary.get("recommendations", {})
+        if recs:
+            print(f"\n💡 RECOMMENDATIONS")
+            print("-" * 40)
+            if recs.get("most_accurate"):
+                print(f"🎯 Most Accurate: {recs['most_accurate']}")
+            if recs.get("fastest"):
+                print(f"⚡ Fastest: {recs['fastest']}")
+    
+    def _display_multi_solution_summary(self, summary: Dict[str, Any]):
+        """Display multi-solution summary."""
+        try:
+            from tabulate import tabulate
+        except ImportError:
+            tabulate = None
+        
+        print(f"\n🎯 SOLUTION COMPARISON FOR {summary['dataset'].upper()}")
+        print("=" * 60)
+        
+        if tabulate and summary["rankings"]:
+            headers = ["Rank", "Solution", "Accuracy (%)", "Time (s)"]
+            rows = []
+            for i, rank in enumerate(summary["rankings"], 1):
+                rows.append([
+                    i,
+                    rank["solution"],
+                    f"{rank['accuracy']:.1f}",
+                    f"{rank['time']:.1f}"
+                ])
+            
+            print(tabulate(rows, headers=headers, tablefmt="grid"))
+        
+        if summary["rankings"]:
+            best = summary["rankings"][0]
+            print(f"\n🏆 Best Solution: {best['solution']} ({best['accuracy']:.1f}% accuracy)")
+    
+    def _display_multi_dataset_summary(self, summary: Dict[str, Any]):
+        """Display multi-dataset summary."""
+        try:
+            from tabulate import tabulate
+        except ImportError:
+            tabulate = None
+        
+        print(f"\n🎯 DATASET PERFORMANCE FOR {summary['solution'].upper()}")
+        print("=" * 60)
+        
+        if tabulate and summary["rankings"]:
+            headers = ["Rank", "Dataset", "Accuracy (%)", "Time (s)"]
+            rows = []
+            for i, rank in enumerate(summary["rankings"], 1):
+                rows.append([
+                    i,
+                    rank["dataset"],
+                    f"{rank['accuracy']:.1f}",
+                    f"{rank['time']:.1f}"
+                ])
+            
+            print(tabulate(rows, headers=headers, tablefmt="grid"))
+        
+        if summary["rankings"]:
+            best = summary["rankings"][0]
+            print(f"\n🏆 Best Dataset Performance: {best['dataset']} ({best['accuracy']:.1f}% accuracy)")
     
     async def _run_single_benchmark(self, dataset: str, solution: str, max_samples: Optional[int]) -> Dict[str, Any]:
         """Run benchmark on a single dataset."""
@@ -347,11 +743,17 @@ class UnifiedBenchmarkRunner:
             
             if session and hasattr(session, 'results'):
                 # Handle both dict and list results formats
-                if isinstance(session.results, dict) and session.results:
+                if isinstance(session.results, list) and session.results:
+                    # session.results is a list containing BenchmarkResult objects
+                    result_obj = session.results[0]  # Get first (and typically only) result
+                    accuracy = getattr(result_obj, 'overall_accuracy', 0) * 100  # Convert to percentage
+                    samples = getattr(result_obj, 'total_samples', 0)
+                    processing_time = getattr(result_obj, 'processing_time', 0)
+                elif isinstance(session.results, dict) and session.results:
                     dataset_results = list(session.results.values())[0]
                     if dataset_results and len(dataset_results) > 0:
                         sample_result = dataset_results[0]
-                        accuracy = sample_result.get('overall_accuracy', 0)
+                        accuracy = sample_result.get('overall_accuracy', 0) * 100  # Convert to percentage
                         samples = len(dataset_results)
                         processing_time = sample_result.get('processing_time', 0)
                     else:
@@ -360,7 +762,7 @@ class UnifiedBenchmarkRunner:
                         processing_time = 0
                 elif hasattr(session, 'session_id'):
                     # Fallback: extract from session attributes if available
-                    accuracy = getattr(session, 'overall_accuracy', 0)
+                    accuracy = getattr(session, 'overall_accuracy', 0) * 100  # Convert to percentage
                     samples = getattr(session, 'total_samples', 0)
                     processing_time = getattr(session, 'processing_time', 0)
                 else:
@@ -439,9 +841,12 @@ Examples:
   python run_benchmark.py --list-datasets                    # Show available datasets
   python run_benchmark.py --list-solutions                   # Show available OCR solutions  
   python run_benchmark.py --recommendations                  # Show recommended combinations
-  python run_benchmark.py -d custom_images -s gpt-5         # Quick test with GPT-5
-  python run_benchmark.py -d pgdp5k -s mathpix_gpt5_hybrid  # Production test
-  python run_benchmark.py -d all -s gpt-5 --max-samples 10  # Test all datasets (limited)
+  python run_benchmark.py -d custom_images -s gpt-5         # Single dataset + solution
+  python run_benchmark.py -d all -s gpt-5 --max-samples 10  # Single solution on all datasets
+  python run_benchmark.py -d custom_images -s all           # All solutions on single dataset
+  python run_benchmark.py --comprehensive                    # All datasets + all solutions
+  python run_benchmark.py --comprehensive --quick            # Comprehensive (quick mode)
+  python run_benchmark.py --comprehensive --comparison-table # With CSV comparison table
         """
     )
     
@@ -457,11 +862,17 @@ Examples:
     parser.add_argument('-d', '--dataset', type=str,
                        help='Dataset to benchmark (use --list-datasets to see options, or "all")')
     parser.add_argument('-s', '--solution', type=str,
-                       help='OCR solution to test (use --list-solutions to see options)')
+                       help='OCR solution to test (use --list-solutions to see options, or "all")')
     parser.add_argument('--max-samples', type=int,
                        help='Limit number of samples to process (optional)')
     parser.add_argument('--no-save', action='store_true',
                        help='Do not save results to file')
+    parser.add_argument('--comprehensive', action='store_true',
+                       help='Run comprehensive benchmark (all datasets with all solutions)')
+    parser.add_argument('--comparison-table', action='store_true',
+                       help='Generate comparison table (CSV/HTML) from results')
+    parser.add_argument('--quick', action='store_true',
+                       help='Quick mode: limit samples for faster execution')
     
     args = parser.parse_args()
     
@@ -481,18 +892,45 @@ Examples:
         return
     
     # Handle benchmark commands
+    if args.comprehensive:
+        # Run comprehensive benchmark (all datasets with all solutions)
+        try:
+            max_samples = args.max_samples
+            if args.quick and max_samples is None:
+                max_samples = 3  # Quick mode: limit to 3 samples
+            
+            asyncio.run(runner.run_benchmark(
+                dataset="all",
+                solution="all", 
+                max_samples=max_samples,
+                save_results=not args.no_save,
+                comprehensive=True,
+                comparison_table=args.comparison_table
+            ))
+        except Exception as e:
+            print(f"❌ Comprehensive benchmark failed: {e}")
+            sys.exit(1)
+        return
+    
     if not args.dataset or not args.solution:
         print("❌ Error: Both --dataset and --solution are required for benchmarking")
-        print("Use --help for usage information")
+        print("Use --help for usage information or --comprehensive for all combinations")
         return
     
     try:
+        # Set max samples for quick mode
+        max_samples = args.max_samples
+        if args.quick and max_samples is None:
+            max_samples = 3  # Quick mode: limit to 3 samples
+        
         # Run the benchmark
         asyncio.run(runner.run_benchmark(
             dataset=args.dataset,
             solution=args.solution,
-            max_samples=args.max_samples,
-            save_results=not args.no_save
+            max_samples=max_samples,
+            save_results=not args.no_save,
+            comprehensive=False,
+            comparison_table=args.comparison_table
         ))
         
     except Exception as e:

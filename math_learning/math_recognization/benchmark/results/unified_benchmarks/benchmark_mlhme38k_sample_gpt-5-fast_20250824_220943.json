@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "gpt-5-fast",
+    "solution_details": {
+      "name": "GPT-5 Vision Fast",
+      "description": "Optimized GPT-5 Vision for speed with reduced detail processing",
+      "category": "\ud83e\udd16 AI Vision Models",
+      "primary_ocr": "gpt5_vision",
+      "fallback_ocr": null,
+      "strategy": "vision_only",
+      "speed": "Fast",
+      "cost": "Medium",
+      "best_for": "General math problems, mixed content"
+    },
+    "timestamp": "2025-08-24T22:09:43.737209",
+    "total_time": 119.9787130355835
+  },
+  "datasets": {
+    "mlhme38k_sample": {
+      "name": "MLHME-38K Multi-line Sample",
+      "samples_processed": 6,
+      "accuracy": 100.0,
+      "processing_time": 119.97463989257812,
+      "session_id": "gpt-5-fast_1756098463"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 6,
+    "weighted_accuracy": 100.0,
+    "total_processing_time": 119.97463989257812,
+    "avg_time_per_sample": 19.995773315429688
+  }
+}

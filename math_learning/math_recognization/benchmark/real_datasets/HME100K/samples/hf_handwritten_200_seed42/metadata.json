@@ -1,0 +1,9 @@
+{
+  "name": "hf_handwritten_200_seed42",
+  "size": 200,
+  "source": "Hugging Face HME100k-400",
+  "seed": 42,
+  "created": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark",
+  "content_type": "handwritten_math_expressions",
+  "ground_truth": "latex_labels"
+}

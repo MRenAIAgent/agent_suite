@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "gpt-5",
+    "solution_details": {
+      "name": "GPT-5 Vision Only",
+      "description": "Pure GPT-5 Vision processing for comprehensive analysis",
+      "category": "\ud83e\udd16 AI Vision Models",
+      "primary_ocr": "gpt5_vision",
+      "fallback_ocr": null,
+      "strategy": "vision_only",
+      "speed": "Fast",
+      "cost": "Medium",
+      "best_for": "General math problems, mixed content"
+    },
+    "timestamp": "2025-08-24T15:48:00.133627",
+    "total_time": 1892.310977935791
+  },
+  "datasets": {
+    "hme100k_sample": {
+      "name": "HME100K Sample",
+      "samples_processed": 200,
+      "accuracy": 51.5,
+      "processing_time": 1892.3040010929108,
+      "session_id": "gpt-5_1756073787"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 200,
+    "weighted_accuracy": 51.5,
+    "total_processing_time": 1892.3040010929108,
+    "avg_time_per_sample": 9.461520005464553
+  }
+}

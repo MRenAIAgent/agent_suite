@@ -1,0 +1,16 @@
+{
+  "name": "HME100K",
+  "description": "Handwritten Mathematical Expression 100K Dataset",
+  "source": "https://github.com/Phymond/HME100K",
+  "downloaded": "2025-08-24T11:06:54.839896",
+  "structure": {
+    "train_images": "train/ directory",
+    "test_images": "test/ directory",
+    "train_labels": "train_labels.txt",
+    "test_labels": "test_labels.txt"
+  },
+  "format": {
+    "images": "PNG files",
+    "labels": "LaTeX expressions in text files"
+  }
+}

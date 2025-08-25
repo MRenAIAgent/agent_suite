@@ -1,0 +1,204 @@
+{
+  "benchmark_info": {
+    "start_time": "2025-08-23T22:54:01.508130",
+    "end_time": "2025-08-23T23:02:39.087168",
+    "total_duration": 517.5790379047394,
+    "datasets_tested": [
+      "custom_images"
+    ],
+    "solutions_tested": [
+      "mathpix_gpt5_hybrid",
+      "gpt-5",
+      "geometry_specialist",
+      "math_expression_expert",
+      "comprehensive_parallel",
+      "cost_optimized"
+    ],
+    "total_combinations": 2
+  },
+  "results_matrix": {
+    "custom_images": {
+      "gpt-5": {
+        "success": true,
+        "overall_accuracy": 75.14999120330546,
+        "total_samples": 14,
+        "processing_time": 287.27386689186096,
+        "avg_time_per_sample": 20.519561920847213,
+        "solution_details": {
+          "name": "GPT-5 Vision Only",
+          "description": "Pure GPT-5 Vision processing for comprehensive analysis",
+          "category": "\ud83e\udd16 AI Vision Models",
+          "primary_ocr": "gpt5_vision",
+          "fallback_ocr": null,
+          "strategy": "vision_only",
+          "speed": "Fast",
+          "cost": "Medium",
+          "best_for": "General math problems, mixed content"
+        },
+        "timestamp": "2025-08-23T22:58:48.785192",
+        "raw_result": {
+          "benchmark_info": {
+            "solution": "gpt-5",
+            "solution_details": {
+              "name": "GPT-5 Vision Only",
+              "description": "Pure GPT-5 Vision processing for comprehensive analysis",
+              "category": "\ud83e\udd16 AI Vision Models",
+              "primary_ocr": "gpt5_vision",
+              "fallback_ocr": null,
+              "strategy": "vision_only",
+              "speed": "Fast",
+              "cost": "Medium",
+              "best_for": "General math problems, mixed content"
+            },
+            "timestamp": "2025-08-23T22:58:48.785192",
+            "total_time": 287.2770400047302
+          },
+          "datasets": {
+            "custom_images": {
+              "name": "Custom Test Images",
+              "samples_processed": 14,
+              "accuracy": 75.14999120330546,
+              "processing_time": 287.27386689186096,
+              "session_id": "gpt-5_1756014841"
+            }
+          },
+          "overall_metrics": {
+            "total_samples": 14,
+            "weighted_accuracy": 75.14999120330546,
+            "total_processing_time": 287.27386689186096,
+            "avg_time_per_sample": 20.519561920847213
+          }
+        }
+      },
+      "geometry_specialist": {
+        "success": true,
+        "overall_accuracy": 83.37474989967423,
+        "total_samples": 14,
+        "processing_time": 230.29281616210938,
+        "avg_time_per_sample": 16.449486868722097,
+        "solution_details": {
+          "name": "Geometry OCR Specialist",
+          "description": "GOT-OCR2.0 optimized for geometric content",
+          "category": "\ud83d\udd3a Specialized OCR",
+          "primary_ocr": "got_ocr2",
+          "fallback_ocr": "gpt5_vision",
+          "strategy": "geometry_first",
+          "speed": "Slow",
+          "cost": "Low",
+          "best_for": "Geometric diagrams, coordinate extraction"
+        },
+        "timestamp": "2025-08-23T23:02:39.086694",
+        "raw_result": {
+          "benchmark_info": {
+            "solution": "geometry_specialist",
+            "solution_details": {
+              "name": "Geometry OCR Specialist",
+              "description": "GOT-OCR2.0 optimized for geometric content",
+              "category": "\ud83d\udd3a Specialized OCR",
+              "primary_ocr": "got_ocr2",
+              "fallback_ocr": "gpt5_vision",
+              "strategy": "geometry_first",
+              "speed": "Slow",
+              "cost": "Low",
+              "best_for": "Geometric diagrams, coordinate extraction"
+            },
+            "timestamp": "2025-08-23T23:02:39.086694",
+            "total_time": 230.30066990852356
+          },
+          "datasets": {
+            "custom_images": {
+              "name": "Custom Test Images",
+              "samples_processed": 14,
+              "accuracy": 83.37474989967423,
+              "processing_time": 230.29281616210938,
+              "session_id": "geometry_specialist_1756015128"
+            }
+          },
+          "overall_metrics": {
+            "total_samples": 14,
+            "weighted_accuracy": 83.37474989967423,
+            "total_processing_time": 230.29281616210938,
+            "avg_time_per_sample": 16.449486868722097
+          }
+        }
+      }
+    }
+  },
+  "performance_summary": {
+    "by_dataset": {
+      "custom_images": {
+        "best_accuracy": 83.37474989967423,
+        "worst_accuracy": 75.14999120330546,
+        "avg_accuracy": 79.26237055148985,
+        "fastest_time": 230.29281616210938,
+        "slowest_time": 287.27386689186096,
+        "avg_time": 258.78334152698517,
+        "total_samples": 14,
+        "successful_solutions": 2
+      }
+    },
+    "by_solution": {
+      "gpt-5": {
+        "avg_accuracy": 75.14999120330546,
+        "total_time": 287.27386689186096,
+        "total_samples": 14,
+        "datasets_tested": 1,
+        "consistency": 1.0
+      },
+      "geometry_specialist": {
+        "avg_accuracy": 83.37474989967423,
+        "total_time": 230.29281616210938,
+        "total_samples": 14,
+        "datasets_tested": 1,
+        "consistency": 1.0
+      }
+    },
+    "overall_stats": {}
+  },
+  "rankings": {
+    "by_accuracy": [
+      {
+        "solution": "geometry_specialist",
+        "avg_accuracy": 83.37474989967423,
+        "datasets_tested": 1
+      },
+      {
+        "solution": "gpt-5",
+        "avg_accuracy": 75.14999120330546,
+        "datasets_tested": 1
+      }
+    ],
+    "by_speed": [
+      {
+        "solution": "geometry_specialist",
+        "samples_per_second": 0.06079216987014054,
+        "total_time": 230.29281616210938
+      },
+      {
+        "solution": "gpt-5",
+        "samples_per_second": 0.048733983886080544,
+        "total_time": 287.27386689186096
+      }
+    ],
+    "by_consistency": [
+      {
+        "solution": "gpt-5",
+        "consistency": 1.0,
+        "avg_accuracy": 75.14999120330546
+      },
+      {
+        "solution": "geometry_specialist",
+        "consistency": 1.0,
+        "avg_accuracy": 83.37474989967423
+      }
+    ],
+    "by_overall_score": []
+  },
+  "recommendations": {
+    "best_overall": "geometry_specialist",
+    "fastest": "geometry_specialist",
+    "most_accurate": "geometry_specialist",
+    "most_consistent": "gpt-5",
+    "by_use_case": {}
+  }
+}

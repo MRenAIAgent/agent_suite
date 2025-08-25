@@ -1,0 +1,92 @@
+{
+  "session_id": "gpt-5-fast_1756098463",
+  "config_name": "gpt-5-fast",
+  "config": {
+    "name": "GPT-5 Vision Fast",
+    "description": "Optimized GPT-5 Vision for speed with reduced detail processing",
+    "primary_ocr": {
+      "provider": "gpt5_vision",
+      "model_name": "gpt-5",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_completion_tokens": 1000,
+        "temperature": 0.0,
+        "detail": "low"
+      }
+    },
+    "fallback_ocr": null,
+    "processing_strategy": "vision_only",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "processing_time"
+    ],
+    "dataset_types": [
+      "math_expressions",
+      "geometry",
+      "test_papers"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-24T22:07:43.758720",
+  "end_time": "2025-08-24T22:09:43.735135",
+  "results": [
+    {
+      "dataset_name": "custom_dataset",
+      "system_name": "GPT-5 Vision Fast (vision_only)",
+      "evaluation_date": "2025-08-24T22:09:43.734961",
+      "total_samples": 6,
+      "processing_time": 119.97463989257812,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 6,
+          "max_score": 6,
+          "accuracy": 1.0,
+          "details": {
+            "successful": 6,
+            "failed": 0
+          }
+        }
+      ],
+      "overall_accuracy": 1.0,
+      "summary": {
+        "total_samples": 6,
+        "successful_samples": 6,
+        "success_rate": 1.0,
+        "overall_accuracy": 1.0,
+        "avg_processing_time": 19.99438206354777,
+        "avg_confidence": 0.85,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "gpt-5-fast_1756098463",
+    "configuration": "gpt-5-fast",
+    "duration_seconds": 119.976415,
+    "total_samples_processed": 6,
+    "overall_accuracy": 1.0,
+    "total_processing_time": 119.97463989257812,
+    "average_metrics": {
+      "OCR Success Rate": 1.0
+    },
+    "datasets_evaluated": [
+      "custom_dataset"
+    ],
+    "primary_ocr_provider": "gpt5_vision",
+    "processing_strategy": "vision_only",
+    "timestamp": "2025-08-24T22:07:43.758720"
+  }
+}

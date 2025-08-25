@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "lightning_fast",
+    "solution_details": {
+      "name": "Lightning Fast OCR",
+      "description": "Ultra-fast OCR using GOT-OCR2.0 only for maximum speed",
+      "category": "\ud83d\udd3a Specialized OCR",
+      "primary_ocr": "got_ocr2",
+      "fallback_ocr": null,
+      "strategy": "geometry_first",
+      "speed": "Slow",
+      "cost": "Low",
+      "best_for": "Specialized use cases"
+    },
+    "timestamp": "2025-08-24T22:13:27.808246",
+    "total_time": 109.28521609306335
+  },
+  "datasets": {
+    "mlhme38k_sample": {
+      "name": "MLHME-38K Multi-line Sample",
+      "samples_processed": 6,
+      "accuracy": 100.0,
+      "processing_time": 109.28215312957764,
+      "session_id": "lightning_fast_1756098698"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 6,
+    "weighted_accuracy": 100.0,
+    "total_processing_time": 109.28215312957764,
+    "avg_time_per_sample": 18.21369218826294
+  }
+}

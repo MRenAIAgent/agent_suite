@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "comprehensive_parallel",
+    "solution_details": {
+      "name": "Comprehensive Parallel",
+      "description": "Multiple OCR models running in parallel for maximum accuracy",
+      "category": "\ud83d\udd27 Other Solutions",
+      "primary_ocr": "mathpix",
+      "fallback_ocr": "gpt5_vision",
+      "strategy": "parallel",
+      "speed": "Unknown",
+      "cost": "Unknown",
+      "best_for": "Maximum accuracy, research"
+    },
+    "timestamp": "2025-08-24T17:20:26.285344",
+    "total_time": 59.24229311943054
+  },
+  "datasets": {
+    "hme100k_sample": {
+      "name": "HME100K Sample",
+      "samples_processed": 10,
+      "accuracy": 100.0,
+      "processing_time": 59.24100184440613,
+      "session_id": "comprehensive_parallel_1756081167"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 10,
+    "weighted_accuracy": 100.0,
+    "total_processing_time": 59.24100184440613,
+    "avg_time_per_sample": 5.924100184440613
+  }
+}

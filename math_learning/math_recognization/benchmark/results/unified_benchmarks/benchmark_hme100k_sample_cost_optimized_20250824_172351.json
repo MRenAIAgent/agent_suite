@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "cost_optimized",
+    "solution_details": {
+      "name": "Cost Optimized",
+      "description": "Open source models prioritizing cost efficiency",
+      "category": "\ud83d\udd3a Specialized OCR",
+      "primary_ocr": "got_ocr2",
+      "fallback_ocr": "unimernet",
+      "strategy": "geometry_first",
+      "speed": "Slow",
+      "cost": "Low",
+      "best_for": "Budget-conscious applications"
+    },
+    "timestamp": "2025-08-24T17:23:51.331511",
+    "total_time": 205.04582023620605
+  },
+  "datasets": {
+    "hme100k_sample": {
+      "name": "HME100K Sample",
+      "samples_processed": 10,
+      "accuracy": 100.0,
+      "processing_time": 205.04212307929993,
+      "session_id": "cost_optimized_1756081226"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 10,
+    "weighted_accuracy": 100.0,
+    "total_processing_time": 205.04212307929993,
+    "avg_time_per_sample": 20.504212307929993
+  }
+}

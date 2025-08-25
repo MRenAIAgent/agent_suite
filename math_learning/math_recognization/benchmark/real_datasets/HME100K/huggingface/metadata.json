@@ -1,0 +1,8 @@
+{
+  "source": "Hugging Face - VLM-Perception/HME100k-400",
+  "total_samples": 400,
+  "content_type": "handwritten_math_expressions",
+  "ground_truth": "latex_labels",
+  "download_date": "/Users/minren/code/agent_suite/math_learning/math_recognization/benchmark",
+  "url": "https://huggingface.co/datasets/VLM-Perception/HME100k-400"
+}

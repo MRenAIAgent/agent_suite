@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "mathpix_gpt5_hybrid",
+    "solution_details": {
+      "name": "Mathpix + GPT-5 Hybrid",
+      "description": "Industry standard: Mathpix OCR with GPT-5 Vision fallback",
+      "category": "\ud83d\udd04 Hybrid Solutions",
+      "primary_ocr": "mathpix",
+      "fallback_ocr": "gpt5_vision",
+      "strategy": "ocr_first",
+      "speed": "Medium",
+      "cost": "Medium",
+      "best_for": "Production use, reliable results"
+    },
+    "timestamp": "2025-08-23T23:08:28.350846",
+    "total_time": 71.38849687576294
+  },
+  "datasets": {
+    "custom_images": {
+      "name": "Custom Test Images",
+      "samples_processed": 14,
+      "accuracy": 73.71821706065023,
+      "processing_time": 71.38469195365906,
+      "session_id": "mathpix_gpt5_hybrid_1756015636"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 14,
+    "weighted_accuracy": 73.71821706065023,
+    "total_processing_time": 71.38469195365906,
+    "avg_time_per_sample": 5.098906568118504
+  }
+}

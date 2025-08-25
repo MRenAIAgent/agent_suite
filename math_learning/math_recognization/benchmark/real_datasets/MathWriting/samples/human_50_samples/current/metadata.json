@@ -1,0 +1,10 @@
+{
+  "name": "MathWriting Human Sample",
+  "size": 50,
+  "source": "MathWriting-human",
+  "sample_method": "random",
+  "content_type": "human_handwritten_math",
+  "ground_truth": "latex_expressions",
+  "description": "Random sample of 50 expressions from MathWriting-human",
+  "focus": "handwritten_expressions"
+}

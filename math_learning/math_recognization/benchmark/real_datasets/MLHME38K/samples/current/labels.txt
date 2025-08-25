@@ -1,0 +1,6 @@
+multiline_001.png	\begin{align} 3x + 5 &= 14 \\ 3x &= 14 - 5 \\ 3x &= 9 \\ x &= 3 \end{align}
+multiline_002.png	\begin{align} \text{Area of triangle} &= \frac{1}{2} \times \text{base} \times \text{height} \\ A &= \frac{1}{2} \times 8 \times 6 \\ A &= \frac{1}{2} \times 48 \\ A &= 24 \text{ square units} \end{align}
+multiline_003.png	\begin{align} x^2 - 4x + 3 &= 0 \\ (x - 1)(x - 3) &= 0 \\ x - 1 = 0 \quad &\text{or} \quad x - 3 = 0 \\ x = 1 \quad &\text{or} \quad x = 3 \end{align}
+multiline_004.png	\begin{align} 2x + y &= 7 \\ x - y &= 2 \\ \hline 3x &= 9 \\ x &= 3 \\ y &= 7 - 2(3) = 1 \end{align}
+multiline_005.png	\begin{align} \text{Circle equation:} \quad &(x - h)^2 + (y - k)^2 = r^2 \\ \text{Center: } (2, 3) \quad &\text{Radius: } 5 \\ (x - 2)^2 + (y - 3)^2 &= 25 \end{align}
+multiline_006.png	\begin{align} P(x) &= 2x^3 - 5x^2 + 3x - 1 \\ P'(x) &= 6x^2 - 10x + 3 \\ P'(x) = 0 \quad &\Rightarrow \quad 6x^2 - 10x + 3 = 0 \end{align}

@@ -1,0 +1,2 @@
+demo_009.png	3x + 4y = 12
+demo_010.png	\sin(30°) = \frac{1}{2}

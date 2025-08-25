@@ -1,0 +1,10 @@
+{
+  "sample_name": "sample_8_train_seed42",
+  "original_split": "train",
+  "requested_size": 8,
+  "actual_size": 8,
+  "seed": 42,
+  "created": "2025-08-24T11:24:47.556026",
+  "images_dir": "samples/sample_8_train_seed42/images",
+  "labels_file": "samples/sample_8_train_seed42/labels.txt"
+}

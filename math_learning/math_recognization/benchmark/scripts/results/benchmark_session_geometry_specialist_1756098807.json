@@ -1,0 +1,108 @@
+{
+  "session_id": "geometry_specialist_1756098807",
+  "config_name": "geometry_specialist",
+  "config": {
+    "name": "Geometry OCR Specialist",
+    "description": "GOT-OCR2.0 optimized for geometric content",
+    "primary_ocr": {
+      "provider": "got_ocr2",
+      "model_name": "stepfun-ai/GOT-OCR2_0",
+      "api_key_env": null,
+      "model_path": "stepfun-ai/GOT-OCR2_0",
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "ocr_type": "format",
+        "trust_remote_code": true
+      }
+    },
+    "fallback_ocr": {
+      "provider": "gpt5_vision",
+      "model_name": "gpt-5",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_path": null,
+      "device": "auto",
+      "max_retries": 3,
+      "timeout_seconds": 30,
+      "confidence_threshold": 0.5,
+      "custom_params": {
+        "max_completion_tokens": 4000,
+        "temperature": 0.1,
+        "detail": "high"
+      }
+    },
+    "processing_strategy": "geometry_first",
+    "evaluation_metrics": [
+      "ocr_accuracy",
+      "question_detection",
+      "answer_extraction",
+      "processing_time",
+      "confidence_score"
+    ],
+    "dataset_types": [
+      "geometry",
+      "diagrams",
+      "constructions"
+    ],
+    "max_samples": null,
+    "parallel_processing": true,
+    "save_intermediate_results": true
+  },
+  "start_time": "2025-08-24T22:13:27.808673",
+  "end_time": "2025-08-24T22:15:16.618998",
+  "results": [
+    {
+      "dataset_name": "custom_dataset",
+      "system_name": "Geometry OCR Specialist (geometry_first)",
+      "evaluation_date": "2025-08-24T22:15:16.618766",
+      "total_samples": 6,
+      "processing_time": 108.80933094024658,
+      "metrics": [
+        {
+          "metric_name": "OCR Success Rate",
+          "score": 6,
+          "max_score": 6,
+          "accuracy": 1.0,
+          "details": {
+            "successful": 6,
+            "failed": 0
+          }
+        }
+      ],
+      "overall_accuracy": 1.0,
+      "summary": {
+        "total_samples": 6,
+        "successful_samples": 6,
+        "success_rate": 1.0,
+        "overall_accuracy": 1.0,
+        "avg_processing_time": 18.133470217386883,
+        "avg_confidence": 0.85,
+        "metrics_evaluated": 1,
+        "detailed_metrics": {
+          "text_accuracy": 0,
+          "shape_accuracy": 0,
+          "coordinate_accuracy": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "session_id": "geometry_specialist_1756098807",
+    "configuration": "geometry_specialist",
+    "duration_seconds": 108.810325,
+    "total_samples_processed": 6,
+    "overall_accuracy": 1.0,
+    "total_processing_time": 108.80933094024658,
+    "average_metrics": {
+      "OCR Success Rate": 1.0
+    },
+    "datasets_evaluated": [
+      "custom_dataset"
+    ],
+    "primary_ocr_provider": "got_ocr2",
+    "processing_strategy": "geometry_first",
+    "timestamp": "2025-08-24T22:13:27.808673"
+  }
+}

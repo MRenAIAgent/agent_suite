@@ -1,0 +1,50 @@
+mathwriting_human_0001.png	m\frac{du}{dt}=X-mg\gamma
+mathwriting_human_0002.png	(\begin{matrix}2\\ 4\end{matrix})
+mathwriting_human_0003.png	{1^{10}}^{\frac{500}{8}-234}
+mathwriting_human_0004.png	{(u^{\rho})}^{n}
+mathwriting_human_0005.png	(\frac{5}{\sqrt{7}})^{4}\cdot\frac{3}{56}
+mathwriting_human_0006.png	\chi_{mn}=\sum_{i}a_{mi}a_{ni}^{*}
+mathwriting_human_0007.png	b=\sqrt{c^{2}-a^{2}}
+mathwriting_human_0008.png	dA=\frac{1}{2}\cdot r\cdot rd\theta
+mathwriting_human_0009.png	\int_{\Omega}fw=0
+mathwriting_human_0010.png	\frac{dN}{dE}
+mathwriting_human_0011.png	(\begin{matrix}c_{i}\\ i\end{matrix})
+mathwriting_human_0012.png	{(w^{j})}^{1}
+mathwriting_human_0013.png	4\sqrt[4]{q}
+mathwriting_human_0014.png	e^{78^{78^{78^{722}}}}
+mathwriting_human_0015.png	l_{(l_{\psi})}
+mathwriting_human_0016.png	\frac{\partial}{\partial z}f(\overline{z},z)
+mathwriting_human_0017.png	MPS=\frac{dS}{dY}
+mathwriting_human_0018.png	\sqrt{g}
+mathwriting_human_0019.png	FDR(z)=\frac{p_{0}F_{0}(z)}{F(z)}
+mathwriting_human_0020.png	\frac{dR}{R}=\alpha dT
+mathwriting_human_0021.png	b_{12}-a_{12}=
+mathwriting_human_0022.png	g_{3}\approx\tau_{3}-\frac{1}{6}\frac{\mu}{{r_{2}}^{3}}{\tau_{3}}^{3}
+mathwriting_human_0023.png	{1^{10}}^{\frac{500}{8}-234}
+mathwriting_human_0024.png	\frac{dy}{y}=0.85dt
+mathwriting_human_0025.png	\sum_{i=0}^{k}(\begin{matrix}n\\ i\end{matrix})=O(n^{k})
+mathwriting_human_0026.png	(\begin{matrix}10\\ 2\end{matrix})=45
+mathwriting_human_0027.png	(P(X),\subseteq)
+mathwriting_human_0028.png	\frac{470^{10}}{7+9^{5}}
+mathwriting_human_0029.png	[b]\in[R]^{n}
+mathwriting_human_0030.png	(\frac{10}{164}+7)^{\frac{10}{451}-\sqrt{21}}
+mathwriting_human_0031.png	\int^{c\in C}F(c,c)
+mathwriting_human_0032.png	\int_{\gamma}f(z)dz=0
+mathwriting_human_0033.png	\hat{g}
+mathwriting_human_0034.png	\int_{a}^{b}f(x)d_{h}x
+mathwriting_human_0035.png	\frac{dy}{dx}=\frac{x}{y}
+mathwriting_human_0036.png	\tilde{e}
+mathwriting_human_0037.png	-\sqrt{a_{i}x+b_{i}}
+mathwriting_human_0038.png	\frac{4}{3}
+mathwriting_human_0039.png	s_{2}(x)=\frac{1}{4}x^{2}
+mathwriting_human_0040.png	[\begin{matrix}1&\frac{1}{sC}\\ 0&1\end{matrix}]
+mathwriting_human_0041.png	(\begin{matrix}k\\ 2\end{matrix})
+mathwriting_human_0042.png	(\frac{\sigma^{2}}{\mu})
+mathwriting_human_0043.png	\epsilon_{0}=\phi^{\phi^{\phi^{-^{-^{-}}}}}
+mathwriting_human_0044.png	sr\{\begin{matrix}4\\ 3\end{matrix}\}
+mathwriting_human_0045.png	t\notin\gamma
+mathwriting_human_0046.png	C=\frac{u^{\prime}\Delta t}{h}<1
+mathwriting_human_0047.png	(z^{-1})
+mathwriting_human_0048.png	a=d(\mu^{2}\nu)^{\frac{1}{3}}
+mathwriting_human_0049.png	2(\sqrt{xy}-\frac{x+y}{2})
+mathwriting_human_0050.png	\frac{1}{2}=0.5

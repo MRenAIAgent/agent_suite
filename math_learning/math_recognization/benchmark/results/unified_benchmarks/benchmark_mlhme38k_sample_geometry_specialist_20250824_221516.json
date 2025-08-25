@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "solution": "geometry_specialist",
+    "solution_details": {
+      "name": "Geometry OCR Specialist",
+      "description": "GOT-OCR2.0 optimized for geometric content",
+      "category": "\ud83d\udd3a Specialized OCR",
+      "primary_ocr": "got_ocr2",
+      "fallback_ocr": "gpt5_vision",
+      "strategy": "geometry_first",
+      "speed": "Slow",
+      "cost": "Low",
+      "best_for": "Geometric diagrams, coordinate extraction"
+    },
+    "timestamp": "2025-08-24T22:15:16.620430",
+    "total_time": 108.81182384490967
+  },
+  "datasets": {
+    "mlhme38k_sample": {
+      "name": "MLHME-38K Multi-line Sample",
+      "samples_processed": 6,
+      "accuracy": 100.0,
+      "processing_time": 108.80933094024658,
+      "session_id": "geometry_specialist_1756098807"
+    }
+  },
+  "overall_metrics": {
+    "total_samples": 6,
+    "weighted_accuracy": 100.0,
+    "total_processing_time": 108.80933094024658,
+    "avg_time_per_sample": 18.134888490041096
+  }
+}
