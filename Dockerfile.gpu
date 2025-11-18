@@ -1,0 +1,106 @@
+# Multi-stage Dockerfile for Math Learning Application with NVIDIA GPU Support
+# Optimized for RTX 6000
+
+# Stage 1: Base image with CUDA support
+FROM nvidia/cuda:12.2.0-cudnn8-runtime-ubuntu22.04 as base
+
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    CUDA_HOME=/usr/local/cuda \
+    PATH=/usr/local/cuda/bin:$PATH \
+    LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.10 \
+    python3-pip \
+    python3-dev \
+    build-essential \
+    git \
+    curl \
+    wget \
+    ca-certificates \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create application directory
+WORKDIR /app
+
+# Stage 2: Dependencies installation
+FROM base as dependencies
+
+# Copy requirements files
+COPY math_learning/requirements.txt /app/requirements.txt
+COPY math_learning/requirements-dev.txt /app/requirements-dev.txt 2>/dev/null || true
+COPY math_learning/requirements-image.txt /app/requirements-image.txt 2>/dev/null || true
+
+# Upgrade pip and install wheel
+RUN pip3 install --upgrade pip setuptools wheel
+
+# Install PyTorch with CUDA support (CUDA 12.1 compatible)
+RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# Install core Python dependencies
+RUN pip3 install -r requirements.txt
+
+# Install optional image processing dependencies
+RUN pip3 install -r requirements-image.txt 2>/dev/null || true
+
+# Install GPU-accelerated packages
+RUN pip3 install \
+    sentence-transformers \
+    transformers \
+    accelerate \
+    bitsandbytes \
+    faiss-gpu \
+    cupy-cuda12x
+
+# Stage 3: Application
+FROM base as application
+
+# Copy installed packages from dependencies stage
+COPY --from=dependencies /usr/local/lib/python3.10/dist-packages /usr/local/lib/python3.10/dist-packages
+COPY --from=dependencies /usr/local/bin /usr/local/bin
+
+# Copy application code
+COPY math_learning/ /app/math_learning/
+COPY setup.py /app/ 2>/dev/null || true
+COPY README.md /app/ 2>/dev/null || true
+
+# Set working directory to math_learning
+WORKDIR /app/math_learning
+
+# Create necessary directories
+RUN mkdir -p /app/math_learning/data \
+    /app/math_learning/logs \
+    /app/math_learning/models \
+    /app/math_learning/cache
+
+# Set environment variables for GPU optimization
+ENV CUDA_VISIBLE_DEVICES=0 \
+    TORCH_CUDA_ARCH_LIST="8.9" \
+    PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:512 \
+    TRANSFORMERS_CACHE=/app/math_learning/cache \
+    HF_HOME=/app/math_learning/cache \
+    SENTENCE_TRANSFORMERS_HOME=/app/math_learning/cache
+
+# Create a non-root user
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
+
+# Switch to non-root user
+USER appuser
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD python3 -c "import torch; assert torch.cuda.is_available()" || exit 1
+
+# Expose default port for API
+EXPOSE 8000
+
+# Default command (can be overridden in docker-compose)
+CMD ["python3", "apps/chat/math_chat_api.py"]
