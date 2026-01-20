@@ -1,7 +1,7 @@
 # Context Management in AI Agent SDKs: A Comprehensive Research Report
 
 **Research Date:** January 2026
-**Scope:** Claude SDK (Anthropic), Google ADK, and LangChain
+**Scope:** Claude SDK (Anthropic), Google ADK, LangChain, and Manus
 
 ---
 
@@ -11,21 +11,24 @@
 2. [Claude SDK Context Management](#2-claude-sdk-context-management)
 3. [Google ADK Context Management](#3-google-adk-context-management)
 4. [LangChain Context Management](#4-langchain-context-management)
-5. [Comparative Analysis](#5-comparative-analysis)
-6. [Recommendations](#6-recommendations)
-7. [Conclusion](#7-conclusion)
+5. [Manus Context Management](#5-manus-context-management)
+6. [Comparative Analysis](#6-comparative-analysis)
+7. [Recommendations](#7-recommendations)
+8. [Conclusion](#8-conclusion)
+9. [Appendices](#appendices)
 
 ---
 
 ## 1. Executive Summary
 
-Context management is fundamental to building effective AI agents and conversational applications. This report analyzes three leading frameworks for managing conversation context, memory, and state:
+Context management is fundamental to building effective AI agents and conversational applications. This report analyzes four leading frameworks for managing conversation context, memory, and state:
 
 | Framework | Philosophy | Key Strength |
 |-----------|------------|--------------|
 | **Claude SDK** | Stateless API with explicit context passing | Token-aware context editing, memory tools |
 | **Google ADK** | Hierarchical context with built-in session management | Rich state scoping, multi-agent patterns |
 | **LangChain** | Pluggable memory abstractions with extensive integrations | Flexibility, large ecosystem |
+| **Manus** | KV-cache optimized with file system as extended memory | Production efficiency, context engineering |
 
 ---
 
@@ -108,7 +111,40 @@ async def multi_turn_conversation():
             print_response(message)
 ```
 
-### 2.3 Key Features
+### 2.3 Content Block Types
+
+Claude supports multiple content block types for complex multi-modal interactions:
+
+| Block Type | Direction | Description |
+|------------|-----------|-------------|
+| `text` | Input/Output | Plain text content |
+| `image` | Input | Base64 or URL image data |
+| `tool_use` | Output | Tool invocation by Claude |
+| `tool_result` | Input | Results returned to Claude |
+| `thinking` | Output | Extended thinking blocks (Claude 4+) |
+| `document` | Input | PDF documents (base64) |
+
+#### Tool Use Content Block
+```json
+{
+    "type": "tool_use",
+    "id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+    "name": "get_stock_price",
+    "input": {"ticker": "^GSPC"}
+}
+```
+
+#### Tool Result Content Block
+```json
+{
+    "type": "tool_result",
+    "tool_use_id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+    "content": "259.75 USD",
+    "is_error": false
+}
+```
+
+### 2.4 Key Features
 
 #### Token Counting API
 
@@ -153,6 +189,25 @@ response = client.beta.messages.create(
 - `clear_tool_uses_20250919` - Clears old tool results chronologically
 - `clear_thinking_20251015` - Clears extended thinking blocks
 
+**Processing Logic:**
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Context Edit Processing                       │
+├─────────────────────────────────────────────────────────────────┤
+│  1. Calculate current input_tokens                              │
+│  2. FOR each edit rule:                                         │
+│     a. Check if trigger.value < current_tokens                  │
+│     b. If triggered:                                            │
+│        - Identify clearable content (chronologically oldest)    │
+│        - Exclude tools in exclude_tools list                    │
+│        - Calculate tokens to clear (>= clear_at_least.value)    │
+│        - Preserve keep.value most recent items                  │
+│        - Replace cleared content with placeholder text          │
+│  3. Invalidate any cached prompt prefixes                       │
+│  4. Send modified context to model                              │
+└─────────────────────────────────────────────────────────────────┘
+```
+
 #### Memory Tool (Beta)
 
 Persistent file-based memory system:
@@ -189,10 +244,144 @@ class LocalFilesystemMemoryTool(BetaAbstractMemoryTool):
         self.memory_root = Path(base_path) / "memories"
         self.memory_root.mkdir(parents=True, exist_ok=True)
 
-    # Implement: view(), create(), str_replace(), insert(), delete(), rename()
+    def view(self, path: str, view_range: list[int] | None = None) -> dict:
+        full_path = self.memory_root / path.lstrip("/")
+        if full_path.is_dir():
+            entries = [{"name": item.name, "type": "directory" if item.is_dir() else "file"}
+                      for item in full_path.iterdir()]
+            return {"type": "directory", "path": path, "entries": entries}
+        elif full_path.is_file():
+            lines = full_path.read_text().splitlines()
+            if view_range:
+                lines = lines[view_range[0]-1:view_range[1]]
+            return {"type": "file", "path": path, "content": "\n".join(lines)}
+
+    # Implement: create(), str_replace(), insert(), delete(), rename()
 ```
 
-#### Subagents for Context Isolation
+### 2.5 Streaming Implementation
+
+Claude uses Server-Sent Events (SSE) for streaming:
+
+```
+event: message_start
+data: {"type":"message_start","message":{...}}
+
+event: content_block_start
+data: {"type":"content_block_start","index":0,"content_block":{"type":"text","text":""}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":0,"delta":{"type":"text_delta","text":"Hello"}}
+
+event: content_block_stop
+data: {"type":"content_block_stop","index":0}
+
+event: message_stop
+data: {"type":"message_stop"}
+```
+
+**Delta Accumulation Algorithm:**
+```python
+def accumulate_delta(acc: dict, delta: dict) -> dict:
+    """Recursively merge delta into accumulated state."""
+    for key, delta_value in delta.items():
+        if key not in acc:
+            acc[key] = delta_value
+        elif key in ("index", "type"):
+            acc[key] = delta_value  # Replace, don't accumulate
+        elif isinstance(acc[key], str) and isinstance(delta_value, str):
+            acc[key] += delta_value  # String concatenation
+        elif isinstance(acc[key], dict) and isinstance(delta_value, dict):
+            acc[key] = accumulate_delta(acc[key], delta_value)  # Recursive
+    return acc
+```
+
+### 2.6 Tool Use Protocol
+
+**Tool Schema Format (JSON Schema):**
+```python
+tool_definition = {
+    "name": "get_weather",  # a-z, A-Z, 0-9, _, - (max 64 chars)
+    "description": "Get current weather for a location",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "location": {"type": "string", "description": "City and state"},
+            "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]}
+        },
+        "required": ["location"]
+    }
+}
+```
+
+**Tool Choice Parameters:**
+| Tool Choice | Behavior |
+|------------|----------|
+| `{"type": "auto"}` | Claude decides whether to use tools (default) |
+| `{"type": "any"}` | Must use one of the provided tools |
+| `{"type": "tool", "name": "X"}` | Must use specific tool X |
+| `{"type": "none"}` | Cannot use any tools |
+
+**Parallel Tool Calls:**
+```python
+# Disable parallel tool use
+response = client.messages.create(
+    tools=tools,
+    tool_choice={"type": "auto", "disable_parallel_tool_use": True},
+    messages=messages
+)
+```
+
+### 2.7 Extended Thinking
+
+```python
+response = client.messages.create(
+    model="claude-sonnet-4-5-20250929",
+    max_tokens=16000,
+    thinking={"type": "enabled", "budget_tokens": 10000},
+    messages=messages
+)
+```
+
+| Budget Range | Recommendation |
+|--------------|----------------|
+| 1,024 - 4,096 | Simple reasoning tasks |
+| 4,096 - 16,384 | Moderate complexity |
+| 16,384 - 32,768 | Complex analysis |
+| > 32,768 | Use batch processing |
+
+**Streaming with Thinking (required when max_tokens > 21,333):**
+```python
+with client.messages.stream(
+    model="claude-sonnet-4-5-20250929",
+    max_tokens=25000,
+    thinking={"type": "enabled", "budget_tokens": 15000},
+    messages=messages
+) as stream:
+    for event in stream:
+        if event.type == "content_block_delta":
+            if event.delta.type == "thinking_delta":
+                print(event.delta.thinking, end="")
+            elif event.delta.type == "text_delta":
+                print(event.delta.text, end="")
+```
+
+### 2.8 Multi-modal Context
+
+#### Image Token Cost
+| Image Size | Approximate Tokens |
+|------------|-------------------|
+| Up to 1568px (long edge) | ~1,600 tokens |
+| Larger images | Auto-scaled down |
+
+#### PDF Constraints
+| Constraint | Limit |
+|------------|-------|
+| Max file size | 32 MB |
+| Max pages | 100 per request |
+| Token cost | 1,500 - 3,000 per page |
+
+### 2.9 Subagents for Context Isolation
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -209,7 +398,7 @@ class LocalFilesystemMemoryTool(BetaAbstractMemoryTool):
    (isolated)   (isolated)   (isolated)
 ```
 
-### 2.4 Context Window Specifications
+### 2.10 Context Window Specifications
 
 | Model | Standard Context | Extended Context |
 |-------|------------------|------------------|
@@ -217,7 +406,7 @@ class LocalFilesystemMemoryTool(BetaAbstractMemoryTool):
 | Claude Sonnet 4.5 | 200K tokens | 1M tokens |
 | Claude Opus 4.5 | 200K tokens | - |
 
-### 2.5 Performance Impact
+### 2.11 Performance Impact
 
 | Feature Combination | Improvement |
 |---------------------|-------------|
@@ -295,11 +484,9 @@ from google.adk.tools.tool_context import ToolContext
 
 def remember_favorite_city(city: str, tool_context: ToolContext) -> dict:
     """Tool with state access and agent transfer capability."""
-    # Read and write session state
     tool_context.state["user:favorite_city"] = city
     tool_context.state["temp:last_operation"] = "city_saved"
 
-    # Transfer to another agent if needed
     if tool_context.state.get("needs_escalation"):
         tool_context.actions.transfer_to_agent = "human_support_agent"
 
@@ -355,7 +542,31 @@ greeting_agent = LlmAgent(
 )
 ```
 
-### 3.4 Session Services
+### 3.4 State Delta System
+
+State modifications in ADK are **event-driven**, not direct mutations:
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     State Delta Flow                                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│  1. Code modifies context.state:                                        │
+│     callback_context.state["key"] = "value"                             │
+│                                                                          │
+│  2. Framework intercepts modification:                                   │
+│     - Change is NOT immediately applied to session.state                │
+│     - Change is recorded in pending_delta dictionary                    │
+│                                                                          │
+│  3. When event is yielded:                                              │
+│     event.actions.state_delta = {"key": "value"}                        │
+│                                                                          │
+│  4. SessionService.append_event(event):                                 │
+│     - Merges state_delta into session.state atomically                  │
+│     - Persists event with delta to storage                              │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### 3.5 Session Services
 
 | Service | Persistence | Best For |
 |---------|-------------|----------|
@@ -382,7 +593,7 @@ session = await session_service.create_session(
 )
 ```
 
-### 3.5 Memory Systems (Long-Term)
+### 3.6 Memory Systems (Long-Term)
 
 | Concept | Analogy | Scope |
 |---------|---------|-------|
@@ -399,7 +610,7 @@ agent = LlmAgent(
     name="MemoryAgent",
     model="gemini-2.0-flash",
     instruction="You can recall past conversations using load_memory.",
-    tools=[load_memory]  # Built-in tool
+    tools=[load_memory]
 )
 
 runner = Runner(
@@ -413,7 +624,7 @@ runner = Runner(
 await memory_service.add_session_to_memory(completed_session)
 ```
 
-### 3.6 Multi-Agent Context Patterns
+### 3.7 Multi-Agent Context Patterns
 
 #### Sub-Agents (Shared Context)
 
@@ -424,18 +635,18 @@ researcher = LlmAgent(
     name="Researcher",
     model="gemini-2.0-flash",
     instruction="Research the topic.",
-    output_key="research_findings"  # Saves to shared state
+    output_key="research_findings"
 )
 
 writer = LlmAgent(
     name="Writer",
     model="gemini-2.0-flash",
-    instruction="Write based on: {research_findings}"  # Reads from state
+    instruction="Write based on: {research_findings}"
 )
 
 pipeline = SequentialAgent(
     name="ResearchPipeline",
-    sub_agents=[researcher, writer]  # Shared context
+    sub_agents=[researcher, writer]
 )
 ```
 
@@ -444,23 +655,21 @@ pipeline = SequentialAgent(
 ```python
 from google.adk.tools import AgentTool
 
-# This agent runs in isolation
 calculator_agent = LlmAgent(
     name="Calculator",
     model="gemini-2.0-flash",
     instruction="Perform calculations."
 )
 
-# Wrap as tool - creates isolated execution
 calculator_tool = AgentTool(agent=calculator_agent)
 
 main_agent = LlmAgent(
     name="MainAgent",
-    tools=[calculator_tool]  # Uses like external API
+    tools=[calculator_tool]
 )
 ```
 
-### 3.7 Events System
+### 3.8 Events System
 
 ```python
 from google.adk.events import Event, EventActions
@@ -476,6 +685,52 @@ event = Event(
         escalate=False
     ),
     timestamp=1234567890.0
+)
+```
+
+### 3.9 Agent Transfer Protocol
+
+```python
+# Transfer via tool
+def escalate_to_human(reason: str, tool_context: ToolContext) -> dict:
+    tool_context.actions.transfer_to_agent = "human_support_agent"
+    return {"status": "transferring", "reason": reason}
+
+# Transfer via agent logic
+class TriageAgent(BaseAgent):
+    async def _run_async_impl(self, ctx: InvocationContext):
+        category = await self._categorize(ctx.user_content)
+        yield Event(
+            author=self.name,
+            invocation_id=ctx.invocation_id,
+            content=Content(parts=[Part(text=f"Routing to {category}")]),
+            actions=EventActions(transfer_to_agent=f"{category}_specialist")
+        )
+```
+
+### 3.10 Callbacks System
+
+```python
+from google.adk.agents import LlmAgent
+from google.adk.agents.callback_context import CallbackContext
+from typing import Optional
+
+def before_model_callback(ctx: CallbackContext, request: LlmRequest) -> Optional[LlmResponse]:
+    """Called before LLM API call - implement guardrails, caching."""
+    if contains_forbidden_content(request):
+        return LlmResponse(content=Content(parts=[Part(text="Cannot process.")]))
+    return None
+
+def after_model_callback(ctx: CallbackContext, response: LlmResponse) -> Optional[LlmResponse]:
+    """Called after LLM response - implement logging, modification."""
+    print(f"LLM responded with {len(response.content.parts)} parts")
+    return None
+
+agent = LlmAgent(
+    name="CallbackDemo",
+    model="gemini-2.0-flash",
+    before_model_callback=before_model_callback,
+    after_model_callback=after_model_callback
 )
 ```
 
@@ -506,38 +761,80 @@ LangChain provides **pluggable memory abstractions** with extensive integration 
 └──────────────────────────────────────────────────────────────────┘
 ```
 
-### 4.2 Memory Types
+### 4.2 Message Type System
+
+LangChain's message system is built on a class hierarchy:
+
+```
+BaseMessage (abstract)
+├── HumanMessage      (type: "human")
+├── AIMessage         (type: "ai")
+├── SystemMessage     (type: "system")
+├── ToolMessage       (type: "tool")
+├── FunctionMessage   (type: "function") [deprecated]
+└── ChatMessage       (type: "chat", dynamic role)
+```
+
+#### BaseMessage Core Structure
+```python
+class BaseMessage(Serializable):
+    content: Union[str, List[Union[str, Dict]]]
+    additional_kwargs: dict = Field(default_factory=dict)
+    response_metadata: dict = Field(default_factory=dict)
+    type: str
+    name: Optional[str] = None
+    id: Optional[str] = None
+```
+
+#### AIMessage with Tool Calls
+```python
+AIMessage(
+    content='',
+    tool_calls=[{
+        'name': 'add',
+        'args': {'x': 10, 'y': 10},
+        'id': 'call_abc123',
+        'type': 'tool_call'
+    }],
+    response_metadata={
+        'model': 'gpt-4',
+        'finish_reason': 'tool_calls',
+        'usage': {'prompt_tokens': 50, 'completion_tokens': 20}
+    }
+)
+```
+
+#### ToolMessage
+```python
+class ToolMessage(BaseMessage):
+    type: Literal["tool"] = "tool"
+    tool_call_id: str  # Essential for parallel tool calls
+    artifact: Optional[Any] = None
+    status: Literal["success", "error"] = "success"
+```
+
+### 4.3 Memory Types
 
 #### ConversationBufferMemory
-Stores complete conversation history:
-
 ```python
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from langchain_openai import ChatOpenAI
 
 memory = ConversationBufferMemory()
-conversation = ConversationChain(
-    llm=ChatOpenAI(model="gpt-4"),
-    memory=memory
-)
+conversation = ConversationChain(llm=ChatOpenAI(model="gpt-4"), memory=memory)
 
 conversation.predict(input="Hi, I'm Alice")
 conversation.predict(input="What's my name?")  # Remembers "Alice"
 ```
 
 #### ConversationBufferWindowMemory
-Keeps only the last K interactions:
-
 ```python
 from langchain.memory import ConversationBufferWindowMemory
-
 memory = ConversationBufferWindowMemory(k=3)  # Last 3 exchanges
 ```
 
 #### ConversationSummaryMemory
-Maintains a running summary:
-
 ```python
 from langchain.memory import ConversationSummaryMemory
 from langchain_openai import OpenAI
@@ -547,25 +844,10 @@ memory.save_context(
     {"input": "Hi, I'm working on a project about AI"},
     {"output": "That sounds interesting! Tell me more."}
 )
-# Returns summarized history
-memory.load_memory_variables({})
-```
-
-#### ConversationSummaryBufferMemory
-Hybrid: keeps recent messages + summarizes older ones:
-
-```python
-from langchain.memory import ConversationSummaryBufferMemory
-
-memory = ConversationSummaryBufferMemory(
-    llm=llm,
-    max_token_limit=650  # Summarize when exceeding
-)
+memory.load_memory_variables({})  # Returns summarized history
 ```
 
 #### VectorStoreRetrieverMemory
-Semantic retrieval from vector store:
-
 ```python
 from langchain.memory import VectorStoreRetrieverMemory
 from langchain_openai import OpenAIEmbeddings
@@ -580,27 +862,10 @@ memory.save_context(
     {"input": "My favorite food is pizza"},
     {"output": "That's great!"}
 )
-# Retrieve relevant memories
 memory.load_memory_variables({"input": "What food do I like?"})
 ```
 
-#### ConversationEntityMemory
-Extracts and tracks named entities:
-
-```python
-from langchain.memory import ConversationEntityMemory
-
-memory = ConversationEntityMemory(llm=llm)
-memory.save_context(
-    {"input": "Deven and Sam are working on a hackathon project"},
-    {"output": "That's exciting!"}
-)
-# Query about specific entity
-result = memory.load_memory_variables({"input": "Who is Sam?"})
-# {'entities': {'Sam': 'Sam is working on a hackathon project with Deven.'}}
-```
-
-### 4.3 Memory Selection Guide
+### 4.4 Memory Selection Guide
 
 | Memory Type | Best For | Token Usage | Context Retention |
 |-------------|----------|-------------|-------------------|
@@ -611,7 +876,7 @@ result = memory.load_memory_variables({"input": "Who is Sam?"})
 | VectorStoreRetriever | Semantic recall | Variable | Query-based |
 | Entity | Entity tracking | Medium | Entity-focused |
 
-### 4.4 Modern Approach: RunnableWithMessageHistory
+### 4.5 Modern Approach: RunnableWithMessageHistory
 
 ```python
 from langchain_core.runnables.history import RunnableWithMessageHistory
@@ -647,7 +912,7 @@ response = chain_with_history.invoke(
 )
 ```
 
-### 4.5 Token Management
+### 4.6 Token Management
 
 ```python
 from langchain_core.messages.utils import trim_messages, count_tokens_approximately
@@ -663,21 +928,48 @@ trimmed = trim_messages(
 )
 ```
 
-### 4.6 LangGraph Persistence (Production)
+### 4.7 LangGraph State Management
+
+```python
+from typing import TypedDict, Annotated
+from langchain_core.messages import BaseMessage
+from langgraph.graph import add_messages, StateGraph
+
+class State(TypedDict):
+    messages: Annotated[list[BaseMessage], add_messages]
+    user_id: str
+
+graph = StateGraph(State)
+```
+
+**Reducer Functions:**
+```python
+def add_messages(left: list, right: list) -> list:
+    """Append messages with ID-based deduplication."""
+    left_by_id = {m.id: m for m in left if m.id}
+    result = list(left)
+    for msg in right:
+        if msg.id and msg.id in left_by_id:
+            idx = next(i for i, m in enumerate(result) if m.id == msg.id)
+            result[idx] = msg
+        else:
+            result.append(msg)
+    return result
+```
+
+### 4.8 LangGraph Persistence (Production)
 
 ```python
 from langgraph.checkpoint.postgres import PostgresSaver
 from langgraph.store.memory import InMemoryStore
 
-# Checkpointer for thread-scoped persistence
 checkpointer = PostgresSaver.from_conn_string(
     "postgresql://user:pass@localhost:5432/db"
 )
 
-# Store for cross-thread memory
 store = InMemoryStore()
 
-graph = workflow.compile(checkpointer=checkpointer)
+graph = workflow.compile(checkpointer=checkpointer, store=store)
 
 result = graph.invoke(
     {"messages": [HumanMessage(content="Hello")]},
@@ -685,7 +977,7 @@ result = graph.invoke(
 )
 ```
 
-### 4.7 Persistence Options
+### 4.9 Persistence Options
 
 | Backend | Implementation | Best For |
 |---------|----------------|----------|
@@ -694,118 +986,426 @@ result = graph.invoke(
 | MongoDB | `MongoDBChatMessageHistory` | Document storage, flexibility |
 | SQLite | `SqliteSaver` | Local development |
 
-```python
-from langchain_redis import RedisChatMessageHistory
+### 4.10 Callback System
 
-history = RedisChatMessageHistory(
-    session_id="user123",
-    url="redis://localhost:6379/0",
-    ttl=3600  # Expire after 1 hour
-)
+```python
+from langchain_core.callbacks import BaseCallbackHandler
+
+class MemoryTrackingCallback(BaseCallbackHandler):
+    def __init__(self):
+        self.token_counts = []
+
+    def on_llm_end(self, response, **kwargs):
+        for generation in response.generations:
+            for gen in generation:
+                if hasattr(gen, 'generation_info'):
+                    usage = gen.generation_info.get('token_usage', {})
+                    self.token_counts.append({
+                        "prompt_tokens": usage.get("prompt_tokens", 0),
+                        "completion_tokens": usage.get("completion_tokens", 0)
+                    })
 ```
 
 ---
 
-## 5. Comparative Analysis
+## 5. Manus Context Management
 
-### 5.1 Philosophy Comparison
+### 5.1 Architecture Overview
 
-| Aspect | Claude SDK | Google ADK | LangChain |
-|--------|------------|------------|-----------|
-| **State Model** | Stateless API (explicit) | Stateful (built-in sessions) | Flexible (multiple patterns) |
-| **Design Philosophy** | Simplicity, control | Hierarchical, structured | Modularity, extensibility |
-| **Primary Focus** | Token efficiency, context editing | Multi-agent coordination | Ecosystem integration |
+Manus AI is an autonomous agent system developed by Monica.im (launched March 2025) that represents a significant advancement in **context engineering**. The team has rebuilt their agent framework four times, with each iteration focused on context optimization.
 
-### 5.2 Feature Matrix
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        Manus Architecture                        │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐      │
+│  │   Planner    │    │   Executor   │    │   Verifier   │      │
+│  │    Agent     │───▶│    Agent     │───▶│    Agent     │      │
+│  └──────────────┘    └──────────────┘    └──────────────┘      │
+│         │                   │                   │               │
+│         └───────────────────┼───────────────────┘               │
+│                             ▼                                   │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                    Event Stream                          │   │
+│  │   (Messages, Actions, Observations, Plans, Knowledge)    │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                             │                                   │
+│         ┌───────────────────┼───────────────────┐              │
+│         ▼                   ▼                   ▼              │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐     │
+│  │   Browser    │    │    Shell     │    │    File      │     │
+│  │  (Playwright)│    │   Execute    │    │   System     │     │
+│  └──────────────┘    └──────────────┘    └──────────────┘     │
+│                             │                                   │
+│                    ┌────────▼────────┐                         │
+│                    │  Ubuntu Sandbox  │                         │
+│                    │    (Docker)      │                         │
+│                    └─────────────────┘                         │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-| Feature | Claude SDK | Google ADK | LangChain |
-|---------|------------|------------|-----------|
-| **Built-in Session Management** | Agent SDK only | Yes | Via integrations |
-| **State Scoping** | Manual | Prefix-based (user:, app:, temp:) | Via store selection |
-| **Token Counting** | Native API | Via model | Utility functions |
-| **Context Editing** | Native (beta) | Manual | trim_messages |
-| **Memory Persistence** | File-based tool | Session/Memory services | Multiple backends |
-| **Vector Memory** | Custom implementation | Via MemoryService | Native support |
-| **Multi-Agent Support** | Subagents (isolated) | Sub-agents (shared), AgentTool (isolated) | LangGraph |
-| **Summarization** | Via context editing | Custom implementation | Native memory types |
+### 5.2 Core Design Philosophy: CodeAct Paradigm
 
-### 5.3 Context Window Management
+Manus operates on a **"CodeAct" paradigm** (from arXiv:2402.01030) where executable Python code serves as the universal action format rather than rigid JSON function calls:
 
-| Framework | Approach | Automation Level |
-|-----------|----------|------------------|
-| **Claude SDK** | Token counting API + context editing rules | High (declarative rules) |
-| **Google ADK** | Manual state management, include_contents param | Medium (explicit control) |
-| **LangChain** | trim_messages, summary memories, window memories | High (multiple strategies) |
+```python
+# Traditional: JSON function calling
+{"function": "search", "parameters": {"query": "AI news"}}
 
-### 5.4 Multi-Agent Context Patterns
+# CodeAct: Executable Python
+search_results = web_search("AI news")
+for result in search_results[:5]:
+    print(f"- {result.title}: {result.url}")
+```
+
+### 5.3 KV-Cache Optimization
+
+Manus considers **KV-cache hit rate** as "the single most important metric for a production-stage AI agent":
+
+- **Input-to-output token ratio**: ~100:1
+- **Cost difference**: Cached tokens ($0.30/MTok) vs uncached ($3.00/MTok) = **10x savings**
+
+**Three Core Principles:**
+
+```python
+# Principle 1: Stable Prefixes
+# BAD - timestamp invalidates cache
+system_prompt = f"Current time: {datetime.now()}\n{instructions}"
+
+# GOOD - static prefix
+system_prompt = f"{instructions}"  # Timestamp passed separately
+
+# Principle 2: Append-Only Context
+# NEVER modify previous actions/observations
+context.append(new_observation)  # Always append, never mutate
+
+# Principle 3: Explicit Cache Breakpoints
+cache_breakpoints = [
+    system_prompt_end,
+    tool_definitions_end,
+    conversation_history_start
+]
+```
+
+### 5.4 Tool Management via Logit Masking
+
+Instead of dynamically removing tools (which breaks KV-cache), Manus uses **logit masking**:
+
+```python
+class ToolManager:
+    def __init__(self, all_tools):
+        self.all_tools = all_tools  # Keep stable for KV-cache
+        self.tool_prefixes = {
+            'browser': ['browser_navigate', 'browser_click', 'browser_input'],
+            'shell': ['shell_exec', 'shell_view', 'shell_wait'],
+            'file': ['file_read', 'file_write', 'file_str_replace']
+        }
+
+    def get_logit_mask(self, allowed_groups):
+        """Returns mask that prevents selection of disallowed tools
+        during decoding, without modifying the tool definitions."""
+        mask = {}
+        for group, tools in self.tool_prefixes.items():
+            if group not in allowed_groups:
+                for tool in tools:
+                    mask[tool] = float('-inf')
+        return mask
+```
+
+### 5.5 File System as Extended Context
+
+Manus treats the **file system as unlimited, persistent memory**:
+
+```python
+class FileSystemMemory:
+    def __init__(self, workspace="/home/ubuntu"):
+        self.workspace = workspace
+        self.todo_file = f"{workspace}/todo.md"
+        self.notes_dir = f"{workspace}/notes"
+
+    def save_intermediate_result(self, filename, content):
+        """Save large content to file, keep only path in context"""
+        path = f"{self.notes_dir}/{filename}"
+        with open(path, 'w') as f:
+            f.write(content)
+        return path  # Return path for context, not full content
+
+    def update_todo(self, tasks):
+        """Constantly rewrite todo.md to maintain focus"""
+        with open(self.todo_file, 'w') as f:
+            for i, task in enumerate(tasks):
+                status = "x" if task['done'] else " "
+                f.write(f"- [{status}] {task['description']}\n")
+```
+
+**The `todo.md` Pattern:**
+```markdown
+# Task: Research Manus AI architecture
+
+- [x] Search for official documentation
+- [x] Analyze system prompts
+- [ ] Document context management strategies  <-- Current
+- [ ] Compile technical examples
+- [ ] Write final report
+```
+
+By constantly rewriting `todo.md`, Manus **recites its objectives into the end of context**, pushing the global plan into the model's recent attention span.
+
+### 5.6 Recoverable Compression Strategy
+
+```python
+class ContextCompressor:
+    def __init__(self, max_tokens=128000):
+        self.max_tokens = max_tokens
+
+    def compress(self, context):
+        """
+        Compression strategies (in order of preference):
+        1. Raw (no compression) - best quality
+        2. Compaction (drop recoverable content)
+        3. Summarization (only when necessary)
+        """
+        if self.count_tokens(context) < self.max_tokens:
+            return context
+
+        # Phase 1: Compaction - drop recoverable content
+        for item in context:
+            if item.type == 'webpage':
+                item.content = f"[Content available at: {item.url}]"
+            elif item.type == 'file':
+                item.content = f"[File contents at: {item.path}]"
+
+        if self.count_tokens(context) < self.max_tokens:
+            return context
+
+        # Phase 2: Summarization - preserve recent turns raw
+        recent_turns = context[-3:]
+        older_turns = context[:-3]
+        summary = self.llm_summarize(older_turns)
+        return [{'type': 'summary', 'content': summary}] + recent_turns
+```
+
+### 5.7 Three-Tier Memory Architecture
+
+```python
+class ManusMemory:
+    def __init__(self):
+        # Tier 1: Active Context (in LLM context window)
+        self.active_context = []
+
+        # Tier 2: Session Memory (file system)
+        self.session_files = {}
+
+        # Tier 3: Long-term Memory (persistent storage)
+        self.ltm_store = VectorDatabase()
+
+    def retrieve_relevant(self, query, k=5):
+        """Retrieval-augmented generation for relevant history"""
+        return self.ltm_store.similarity_search(query, k=k)
+
+    def save_to_ltm(self, interaction):
+        """Store important interactions for future sessions"""
+        embedding = self.embed(interaction)
+        self.ltm_store.insert(interaction, embedding)
+```
+
+### 5.8 Event Stream Architecture
+
+```python
+class EventStream:
+    """Chronological log of all interactions (backbone of context)"""
+
+    EVENT_TYPES = ['message', 'action', 'observation', 'plan', 'knowledge', 'datasource']
+
+    def __init__(self):
+        self.events = []
+
+    def add_event(self, event_type, content, metadata=None):
+        event = {
+            'id': uuid4(),
+            'type': event_type,
+            'content': content,
+            'timestamp': datetime.now(),
+            'metadata': metadata or {}
+        }
+        self.events.append(event)  # Append-only for KV-cache
+        return event
+
+    def get_context_window(self, max_tokens):
+        """Build context prioritizing recent events."""
+        recent = self.events[-10:]
+        older = self.events[:-10]
+
+        if self.count_tokens(older) > max_tokens * 0.3:
+            older = self.summarize_events(older)
+
+        return older + recent
+```
+
+### 5.9 Error Preservation Pattern
+
+```python
+class ErrorPreservation:
+    """Leave wrong turns in context for implicit learning"""
+
+    def handle_tool_failure(self, action, error):
+        """DON'T remove failed action; DO keep visible for model to learn."""
+        observation = {
+            'type': 'observation',
+            'action': action,
+            'success': False,
+            'error': str(error),
+            'stacktrace': traceback.format_exc()
+        }
+        self.event_stream.add_event('observation', observation)
+        return observation
+```
+
+### 5.10 Multi-Agent Patterns
+
+#### Wide Research (100+ Parallel Agents)
+
+```python
+class WideResearch:
+    """Execute large-scale tasks with 100+ parallel agents"""
+
+    async def execute_wide_research(self, query, num_agents=100):
+        research_tracks = self.decompose_query(query, num_agents)
+
+        agents = [
+            ResearchAgent(
+                context=self.create_isolated_context(track),
+                sandbox=self.create_sandbox()
+            )
+            for track in research_tracks
+        ]
+
+        results = await asyncio.gather(*[agent.research() for agent in agents])
+        return self.synthesize_with_consensus(results)
+```
+
+#### Context Isolation (Go-Lang Pattern)
+
+```python
+class AgentCommunication:
+    """Share memory by communicating, don't communicate by sharing memory"""
+
+    def __init__(self):
+        self.message_queues = defaultdict(asyncio.Queue)
+
+    async def send_to_agent(self, target_agent, message):
+        structured_message = {
+            'from': self.agent_id,
+            'to': target_agent,
+            'type': message.type,
+            'summary': message.summary,  # Summarized, not raw
+            'data_path': message.data_path  # Reference, not content
+        }
+        await self.message_queues[target_agent].put(structured_message)
+```
+
+### 5.11 GAIA Benchmark Performance
+
+| Level | Manus | OpenAI Operator | Previous SOTA |
+|-------|-------|-----------------|---------------|
+| Level 1 | **86.5%** | 74.3% | 67.9% |
+| Level 2 | **70.1%** | 69.1% | 67.4% |
+| Level 3 | **57.7%** | 47.6% | 42.3% |
+
+### 5.12 Key Differentiators
+
+| Feature | Manus | Other Frameworks |
+|---------|-------|------------------|
+| Context Philosophy | File system as memory | In-memory/vector stores |
+| Tool Approach | Logit masking (KV-cache aware) | Dynamic tool injection |
+| Action Format | CodeAct (Python execution) | JSON function calls |
+| Autonomy | Full end-to-end execution | Requires orchestration |
+| Core Insight | "Context engineering > Model capabilities" | Model-centric approach |
+
+---
+
+## 6. Comparative Analysis
+
+### 6.1 Philosophy Comparison
+
+| Aspect | Claude SDK | Google ADK | LangChain | Manus |
+|--------|------------|------------|-----------|-------|
+| **State Model** | Stateless (explicit) | Stateful (sessions) | Flexible (patterns) | Append-only (KV-cache) |
+| **Design Philosophy** | Simplicity, control | Hierarchical, structured | Modularity, extensibility | Efficiency, production-first |
+| **Primary Focus** | Token efficiency | Multi-agent coordination | Ecosystem integration | Context engineering |
+
+### 6.2 Feature Matrix
+
+| Feature | Claude SDK | Google ADK | LangChain | Manus |
+|---------|------------|------------|-----------|-------|
+| **Built-in Session Management** | Agent SDK only | Yes | Via integrations | File-based |
+| **State Scoping** | Manual | Prefix-based | Via store selection | Hierarchical (3-tier) |
+| **Token Counting** | Native API | Via model | Utility functions | Implicit (KV-cache) |
+| **Context Editing** | Native (beta) | Manual | trim_messages | Recoverable compression |
+| **Memory Persistence** | File-based tool | Session/Memory services | Multiple backends | File system + Vector DB |
+| **Multi-Agent Support** | Subagents (isolated) | Sub-agents (shared/isolated) | LangGraph | Wide Research (100+) |
+| **Cache Optimization** | Prompt caching | Manual | None | KV-cache first design |
+
+### 6.3 Context Window Management
+
+| Framework | Approach | Automation Level | Cache Awareness |
+|-----------|----------|------------------|-----------------|
+| **Claude SDK** | Token counting + context editing | High (declarative) | Prompt caching |
+| **Google ADK** | State management, include_contents | Medium (explicit) | None |
+| **LangChain** | trim_messages, summary memories | High (strategies) | None |
+| **Manus** | Recoverable compression + file offload | High (automatic) | Primary design goal |
+
+### 6.4 Multi-Agent Context Patterns
 
 ```
 Claude SDK Subagents:
 ┌───────────────┐
-│  Orchestrator │
-│  (global ctx) │
-└───────┬───────┘
-        │ spawns (isolated)
-┌───────┴───────┐
-│   Subagent    │──► Returns summary only
-│  (local ctx)  │
+│  Orchestrator │ ──► spawns (isolated) ──► Returns summary only
 └───────────────┘
 
 Google ADK Sub-agents:
 ┌───────────────┐
-│   Sequential  │
-│    Agent      │
-└───────┬───────┘
-        │ passes (shared context)
-┌───────┴───────┐
-│  Sub-agent 1  │──► Writes to state["output_key"]
-│  Sub-agent 2  │──► Reads from state["output_key"]
+│  Sequential   │ ──► passes (shared context) ──► Writes to state["output_key"]
 └───────────────┘
 
 LangChain LangGraph:
 ┌───────────────┐
-│    Graph      │
-│  (compiled)   │
-└───────┬───────┘
-        │ checkpointed
-┌───────┴───────┐
-│    Nodes      │──► Shared state via checkpointer
-│  (functions)  │
+│    Graph      │ ──► checkpointed ──► Shared state via checkpointer
+└───────────────┘
+
+Manus Wide Research:
+┌───────────────┐
+│  Orchestrator │ ──► 100+ parallel agents ──► Consensus synthesis
 └───────────────┘
 ```
 
-### 5.5 Persistence Architecture
+### 6.5 Code Complexity Comparison
 
-| Claude SDK | Google ADK | LangChain |
-|------------|------------|-----------|
-| File-based memory tool | SessionService abstraction | ChatMessageHistory abstraction |
-| Custom backends via abstract class | InMemory, Database, Vertex AI | Redis, PostgreSQL, MongoDB, etc. |
-| Designed for agent-controlled persistence | Designed for application-controlled | Designed for integration flexibility |
+**Simple Chat with Memory:**
 
-### 5.6 Code Complexity Comparison
-
-**Simple Chat with Memory - Claude SDK:**
 ```python
-messages = []  # Developer manages
+# Claude SDK
+messages = []
 response = client.messages.create(model="...", messages=messages)
 messages.append({"role": "assistant", "content": response.content})
-```
 
-**Simple Chat with Memory - Google ADK:**
-```python
+# Google ADK
 runner = Runner(agent=agent, session_service=session_service)
 async for event in runner.run_async(user_id="u1", session_id="s1", new_message=content):
     if event.is_final_response():
         print(event.content)
-```
 
-**Simple Chat with Memory - LangChain:**
-```python
+# LangChain
 chain_with_history = RunnableWithMessageHistory(chain, get_session_history, ...)
 response = chain_with_history.invoke({"input": "..."}, config={"configurable": {"session_id": "..."}})
+
+# Manus
+context.append(user_message)  # Append-only
+with open("/workspace/context.txt", "a") as f:
+    f.write(response)  # File as extended memory
 ```
 
-### 5.7 Strengths and Weaknesses
+### 6.6 Strengths and Weaknesses
 
 #### Claude SDK
 
@@ -814,7 +1414,6 @@ response = chain_with_history.invoke({"input": "..."}, config={"configurable": {
 - Token counting API for precise management
 - Context editing for automatic pruning
 - Clean, simple API design
-- Memory tool for agent-controlled persistence
 
 **Weaknesses:**
 - Requires manual history management
@@ -827,7 +1426,6 @@ response = chain_with_history.invoke({"input": "..."}, config={"configurable": {
 - Rich state scoping with prefixes
 - Built-in session management
 - Excellent multi-agent patterns
-- Template injection in instructions
 - Google Cloud integration
 
 **Weaknesses:**
@@ -841,37 +1439,43 @@ response = chain_with_history.invoke({"input": "..."}, config={"configurable": {
 - Extensive memory type options
 - Large ecosystem of integrations
 - Mature community and documentation
-- Flexible architecture
 - Multiple LLM support
 
 **Weaknesses:**
 - Legacy memory API deprecated
 - Multiple patterns can be confusing
 - Overhead for simple use cases
-- Frequent API changes
+
+#### Manus
+
+**Strengths:**
+- Production-optimized (KV-cache first)
+- File system as unlimited memory
+- Massive parallelization (100+ agents)
+- Recoverable compression
+
+**Weaknesses:**
+- Closed-source (OpenManus is reconstruction)
+- Complex setup (Docker sandbox required)
+- Specific to agentic workflows
 
 ---
 
-## 6. Recommendations
+## 7. Recommendations
 
-### 6.1 When to Use Each Framework
+### 7.1 When to Use Each Framework
 
-| Scenario | Recommended Framework | Reason |
-|----------|----------------------|--------|
-| Claude-specific applications | Claude SDK | Native token management, context editing |
+| Scenario | Recommended | Reason |
+|----------|-------------|--------|
+| Claude-specific apps | Claude SDK | Native token management, context editing |
 | Google Cloud deployment | Google ADK | Vertex AI integration, managed services |
 | Multi-LLM applications | LangChain | Provider abstraction, easy switching |
-| Complex multi-agent systems | Google ADK | Rich sub-agent patterns, state sharing |
-| Token-constrained applications | Claude SDK | Context editing, precise counting |
+| Complex multi-agent systems | Google ADK or Manus | Rich patterns, state sharing |
+| Token-constrained apps | Claude SDK or Manus | Context editing, KV-cache optimization |
 | Rapid prototyping | LangChain | Large ecosystem, many examples |
-| Production with custom backends | LangChain | Extensive persistence options |
+| Production at scale | Manus patterns | 10x cost reduction via caching |
 
-### 6.2 Migration Considerations
-
-**From LangChain Legacy Memory to Modern:**
-1. Replace `ConversationBufferMemory` with `RunnableWithMessageHistory`
-2. Use LangGraph checkpointers for state persistence
-3. Implement custom `BaseChatMessageHistory` for specialized storage
+### 7.2 Migration Considerations
 
 **From LangChain to Claude SDK:**
 1. Implement explicit message history management
@@ -883,18 +1487,25 @@ response = chain_with_history.invoke({"input": "..."}, config={"configurable": {
 2. Implement SessionService for persistence
 3. Refactor chains to agent/sub-agent patterns
 
-### 6.3 Best Practices
+**Adopting Manus Patterns:**
+1. Design for append-only context (never mutate)
+2. Use file system for large intermediate results
+3. Implement logit masking for tool availability
+4. Add `todo.md` pattern for focus maintenance
+
+### 7.3 Best Practices
 
 1. **Always implement persistence for production** - Don't rely on in-memory storage
 2. **Use token counting proactively** - Prevent context overflow before it happens
 3. **Choose state scoping carefully** - user: vs app: vs session vs temp:
 4. **Implement summarization for long conversations** - Preserve important context
-5. **Isolate expensive operations** - Use subagents or AgentTool for heavy processing
-6. **Version your memory schemas** - Enable migration as requirements evolve
+5. **Consider KV-cache hit rate** - Structure prompts for stable prefixes
+6. **Use file system for large outputs** - Keep only paths in context
+7. **Leave errors visible** - Models learn from failures in context
 
 ---
 
-## 7. Conclusion
+## 8. Conclusion
 
 Context management is critical for building effective AI agents. Each framework offers distinct approaches:
 
@@ -904,7 +1515,11 @@ Context management is critical for building effective AI agents. Each framework 
 
 - **LangChain** delivers maximum flexibility with extensive memory types and integrations, suitable for diverse deployment scenarios.
 
-The choice depends on your specific needs: model preference, deployment environment, complexity requirements, and team expertise. All three frameworks continue to evolve rapidly, with context management remaining a key area of innovation.
+- **Manus** introduces production-first context engineering principles, prioritizing KV-cache efficiency and file-based extended memory for autonomous agents.
+
+The choice depends on your specific needs: model preference, deployment environment, complexity requirements, and production scale. All four frameworks continue to evolve rapidly, with context management remaining a key area of innovation.
+
+**Key Insight from Manus:** "Context engineering is not about adding more context—it is about finding the minimal effective context required for the next step."
 
 ---
 
@@ -930,3 +1545,17 @@ The choice depends on your specific needs: model preference, deployment environm
 - [LangGraph Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)
 - [RunnableWithMessageHistory API](https://python.langchain.com/api_reference/core/runnables/langchain_core.runnables.history.RunnableWithMessageHistory.html)
 - [Memory Migration Guide](https://python.langchain.com/docs/versions/migrating_memory/)
+
+### Manus
+- [Context Engineering for AI Agents: Lessons from Building Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)
+- [In-depth Technical Investigation into Manus AI](https://gist.github.com/renschni/4fbc70b31bad8dd57f3370239dccd58f)
+- [OpenManus GitHub Repository](https://github.com/FoundationAgents/OpenManus)
+- [CodeAct Research Paper](https://arxiv.org/abs/2402.01030)
+- [Wide Research Announcement](https://manus.im/blog/introducing-wide-research)
+
+---
+
+## Appendices
+
+- [Appendix A: Claude SDK Deep Technical Reference](./context-management-deep-technical.md)
+- [Appendix B: LangChain Deep Technical Reference](./langchain-technical-deep-dive.md)
